@@ -172,3 +172,14 @@ testcode.cpp:76:32: error: ‘class qbMatrix2<double>’ has no member named ‘
 testcode.cpp:77:25: error: ‘Compare’ was not declared in this scope
                      if (Compare(leftMatrix, rightMatrix, 1e-9)) {
                          ^~~~~~~
+***********************************************************************************************************************************************
+                         ///////////////////////////////////////////////////////////////////////////////////////////////
+
+                         vsduser@vsdsquadron:~/Downloads$ g++ -o testcode testcode.cpp -std=c++17
+testcode.cpp: In function ‘int main()’:
+testcode.cpp:77:25: error: ‘Compare’ was not declared in this scope
+                     if (Compare(leftMatrix, rightMatrix, 1e-9)) {
+
+***********************************************************************************************************************************************
+
+
