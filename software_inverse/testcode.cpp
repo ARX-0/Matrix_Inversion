@@ -7,7 +7,7 @@
 #include <math.h>
 #include <sstream>
 #include <fstream>
-#include "qbMatrix3.h"
+#include "qbMatrix3.hpp"
 
 using namespace std;
 
@@ -102,5 +102,6 @@ int main() {
         return 1;
     }
 }
+
 
 
