@@ -579,29 +579,38 @@ int originalNumCols = m_nCols;
     int count = 0;
     bool completeFlag = false;
     while((!completeFlag) && (count < maxCount)) {
-        for (int diagIndex = 0; diagIndex < m_nRows; ++diagIndex) {
-            int cRow = diagIndex;
-            int cCol = diagIndex;
+        for (int diagIndex = 0; diagIndex < m_nRows; ++diagIndex) 
+        {
+             cRow = diagIndex;
+             cCol = diagIndex;
 
             // Find the row with the largest element in this column
             int maxIndex = FindRowWithMaxElement(cCol, cRow);
+            // Swap the current row with the row of the largest element
             if (maxIndex != cRow) {
                 SwapRow(cRow, maxIndex);
             }
 
             // Make the diagonal element 1 by multiplying the row by the inverse of the diagonal element
-            if (m_matrix_Data[Sub2Ind(cRow, cCol)] != 1.0) {
+            if (m_matrix_Data[Sub2Ind(cRow, cCol)] != 1.0)
+            {
                 T multFactor = 1.0 / m_matrix_Data[Sub2Ind(cRow, cCol)];
                 RowMult(cRow, multFactor);
             }
 
             // Eliminate below-diagonal elements in this column
-            for (int rowIndex = cRow + 1; rowIndex < m_nRows; ++rowIndex) {
-                if (!CloseEnough(m_matrix_Data[Sub2Ind(rowIndex, cCol)], 0.0)) { //elm actually 0 so skip op
+            for (int rowIndex = cRow + 1; rowIndex < m_nRows; ++rowIndex) 
+            {
+                if (!CloseEnough(m_matrix_Data[Sub2Ind(rowIndex, cCol)], 0.0))
+                 { //elm actually 0 so skip op
                     int rowOneIndex = cCol;
+
                     T currentElement = m_matrix_Data[Sub2Ind(rowIndex, cCol)];
+
                     T rowOneValue = m_matrix_Data[Sub2Ind(rowOneIndex, cCol)];
-                    if (!CloseEnough(rowOneValue, 0.0)) {
+
+                    if (!CloseEnough(rowOneValue, 0.0)) 
+                    {
                         T correctionFactor = -(currentElement / rowOneValue);
                         MultAdd(rowIndex, rowOneIndex, correctionFactor);
                     }
@@ -609,13 +618,20 @@ int originalNumCols = m_nCols;
             }
 
             // Eliminate off-diagonal elements in this row
-            for (int colIndex = cCol + 1; colIndex < m_nCols; ++colIndex) {
-                if (!CloseEnough(m_matrix_Data[Sub2Ind(cRow, colIndex)], 0.0)) {
+            for (int colIndex = cCol + 1; colIndex < originalNumCols; ++colIndex)
+             {
+                if (!CloseEnough(m_matrix_Data[Sub2Ind(cRow, colIndex)], 0.0)) 
+                { //elm actually 0 so skip op
                     int rowOneIndex = colIndex;
+
                     T currentElement = m_matrix_Data[Sub2Ind(cRow, colIndex)];
+
                     T rowOneValue = m_matrix_Data[Sub2Ind(rowOneIndex, colIndex)];
-                    if (!CloseEnough(rowOneValue, 0.0)) {
+
+                    if (!CloseEnough(rowOneValue, 0.0))
+                    {
                         T correctionFactor = -(currentElement / rowOneValue);
+
                         MultAdd(cRow, rowOneIndex, correctionFactor);
                     }
                 }
@@ -635,9 +651,9 @@ int originalNumCols = m_nCols;
             m_nElements = m_nRows * m_nCols;
             delete[] m_matrix_Data;
             m_matrix_Data = new T[m_nElements];
-            for (int i = 0; i < m_nElements; ++i) {
+            for (int i = 0; i < m_nElements; ++i) 
                 m_matrix_Data[i] = rightHalf.m_matrix_Data[i];
-            }
+            
         }
         count++; // Always increment count to avoid infinite loop
     }
