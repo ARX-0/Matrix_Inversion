@@ -1,5 +1,4 @@
 #include <iostream>
-#include "qbMatrix3.hpp"    
 #include <iomanip>
 #include <string>
 #include <cmath>
@@ -8,18 +7,23 @@
 #include <sstream>
 #include <stdexcept>
 
+//#include "qbMatrix3.hpp"    
+#include "coppy_qbMatrix3.hpp"
+
 using namespace std;    
 
 // ---------------- Helper: Print Matrix ---------------- //
 template<class T>
 void PrintMatrix(const qbMatrix2<T>& matrix) {
-    int nRows = matrix.GetNumRows();
-    int nCols = matrix.GetNumCols();
+    qbMatrix2<T>& m = const_cast<qbMatrix2<T>&>(matrix);
+
+    int nRows = m.GetNumRows();
+    int nCols = m.GetNumCols();
 
     for (int i = 0; i < nRows; i++) {
         for (int j = 0; j < nCols; j++) {
             cout << std::fixed << std::setprecision(3) 
-                 << matrix.GetElement(i, j) << "  ";
+                 << m.GetElement(i, j) << "  ";
         }
         cout << endl;
     }
@@ -138,26 +142,23 @@ int main() {
     // Test matrix inversion: Non-singular 4x4
     //***************************************************************//
     cout << endl << "****************************" << endl;
-    cout << "Test inversion of a 4x4 non-singular matrix" << endl;
+    cout << "Test inversion of a 5x5 non-singular matrix" << endl;
 
-    double nonsingularData[16] = {
-        4, 7, 2, 3,
-        0, 5, 0, 1,
-        2, 6, 3, 8,
-        1, 0, 0, 1
+    double nonsingularData[25] = {
+       2.0, 3.0 , 4.0 , 5.0 ,6.0,
+       1.0, 2.0 , 3.0 , 4.0 , 5.0 ,
+       9.0, 5.0, 3.0 , 2.0, 6.0 ,
+       2.0, 4.0, 6.0 , 5.0, 1.0,
+       1.0, 7.0, 5.0, 2.0, 3.0,
     };
-    qbMatrix2<double> nonsingular(4,4,nonsingularData);
+    qbMatrix2<double> nonsingular(5,5,nonsingularData);
+qbMatrix2<double> inverResult2= nonsingular;
+inverResult2.Inverse();
 
     cout << "Original matrix:" << endl;
     PrintMatrix(nonsingular);
-
-    try {
-        nonsingular.Inverse();
-        cout << "Inverted matrix:" << endl;
-        PrintMatrix(nonsingular);
-    } catch (invalid_argument& e) {
-        cerr << "Exception caught: " << e.what() << endl;
-    }
+    cout <<"Inversion" << endl;
+    PrintMatrix(inverResult2);
 
     //***************************************************************//
     // Test matrix inversion: Singular 4x4
