@@ -1,3 +1,22 @@
+## The RESULTS for 1000 matrices. on Forward and Backward LU that gets the inverse of the matrix The (CSV_LU_Inversion.cpp)
+
+### Note:- The Golden result is taken form the EIGEN C++ LAPACK .lib
+
+#### TOL as 1e-9 is 0.000000001
+
+<img width="934" height="160" alt="image" src="https://github.com/user-attachments/assets/258218f1-9eb4-4ef4-977b-f7b79c463467" />
+
+#### TOL as 1e-12
+
+<img width="934" height="484" alt="image" src="https://github.com/user-attachments/assets/f5351a08-1158-4605-95f7-5b915a790bad" />
+
+#### TOL as 1e-15 (AS you observe the noticable diference is not much significant)
+
+<img width="662" height="111" alt="image" src="https://github.com/user-attachments/assets/18bd0a6c-011d-4a9a-812f-67a488aad2e8" />
+
+<img width="828" height="404" alt="image" src="https://github.com/user-attachments/assets/7c841c5d-1bef-4d16-9f33-ea03f4a7a0f7" />
+
+
 # Static 4x4 Matrix Inversion (Inspired by Eigen Library)
 
 ## Overview
@@ -105,9 +124,4 @@ struct compute_inverse {
 };
 ````
 for matrix sizes above 4x4 this is the general implementation where in the Partial pivoting LU decpmpostion is used. (SIZE > 4)
-
-
-# The RESULTS for 1000 matrices. on Forward and Backward LU that gets the inverse of the matrix
-
-## The Golden result is taken form the EIGEN C++ LAPACK .lib
 
