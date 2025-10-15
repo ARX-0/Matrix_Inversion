@@ -106,3 +106,8 @@ struct compute_inverse {
 ````
 for matrix sizes above 4x4 this is the general implementation where in the Partial pivoting LU decpmpostion is used. (SIZE > 4)
 
+
+# The RESULTS for 1000 matrices. on Forward and Backward LU that gets the inverse of the matrix
+
+## The Golden result is taken form the EIGEN C++ LAPACK .lib
+
