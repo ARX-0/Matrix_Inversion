@@ -1,0 +1,964 @@
+
+
+================================================================
+== Vitis HLS Report for 'axi4_lu_forward'
+================================================================
+* Date:           Fri Oct 17 17:43:58 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        LU_inversion
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 65
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.32>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%A = alloca i64 1" [LU.cpp:152]   --->   Operation 66 'alloca' 'A' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%A_addr = getelementptr i32 %A, i64 0, i64 0" [LU.cpp:175]   --->   Operation 67 'getelementptr' 'A_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (1.00ns)   --->   "%p_086 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %len" [LU.cpp:165]   --->   Operation 68 'read' 'p_086' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_1 : Operation 69 [1/1] (1.00ns)   --->   "%A_in_read = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 69 'read' 'A_in_read' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%trunc_ln174 = trunc i64 %A_in_read" [LU.cpp:174]   --->   Operation 70 'trunc' 'trunc_ln174' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%pkt_data = bitcast i32 %trunc_ln174" [LU.cpp:174]   --->   Operation 71 'bitcast' 'pkt_data' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data, i4 %A_addr" [LU.cpp:175]   --->   Operation 72 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 2 <SV = 1> <Delay = 3.32>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%A_addr_21 = getelementptr i32 %A, i64 0, i64 1" [LU.cpp:175]   --->   Operation 73 'getelementptr' 'A_addr_21' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (1.00ns)   --->   "%A_in_read_1 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 74 'read' 'A_in_read_1' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%trunc_ln174_1 = trunc i64 %A_in_read_1" [LU.cpp:174]   --->   Operation 75 'trunc' 'trunc_ln174_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%pkt_data_1 = bitcast i32 %trunc_ln174_1" [LU.cpp:174]   --->   Operation 76 'bitcast' 'pkt_data_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_1, i4 %A_addr_21" [LU.cpp:175]   --->   Operation 77 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 3 <SV = 2> <Delay = 3.32>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%A_addr_22 = getelementptr i32 %A, i64 0, i64 2" [LU.cpp:175]   --->   Operation 78 'getelementptr' 'A_addr_22' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (1.00ns)   --->   "%A_in_read_2 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 79 'read' 'A_in_read_2' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%trunc_ln174_2 = trunc i64 %A_in_read_2" [LU.cpp:174]   --->   Operation 80 'trunc' 'trunc_ln174_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%pkt_data_2 = bitcast i32 %trunc_ln174_2" [LU.cpp:174]   --->   Operation 81 'bitcast' 'pkt_data_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_2, i4 %A_addr_22" [LU.cpp:175]   --->   Operation 82 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 4 <SV = 3> <Delay = 3.32>
+ST_4 : Operation 83 [1/1] (0.00ns)   --->   "%A_addr_23 = getelementptr i32 %A, i64 0, i64 3" [LU.cpp:175]   --->   Operation 83 'getelementptr' 'A_addr_23' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 84 [1/1] (1.00ns)   --->   "%A_in_read_3 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 84 'read' 'A_in_read_3' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_4 : Operation 85 [1/1] (0.00ns)   --->   "%trunc_ln174_3 = trunc i64 %A_in_read_3" [LU.cpp:174]   --->   Operation 85 'trunc' 'trunc_ln174_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 86 [1/1] (0.00ns)   --->   "%pkt_data_3 = bitcast i32 %trunc_ln174_3" [LU.cpp:174]   --->   Operation 86 'bitcast' 'pkt_data_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 87 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_3, i4 %A_addr_23" [LU.cpp:175]   --->   Operation 87 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 5 <SV = 4> <Delay = 3.32>
+ST_5 : Operation 88 [1/1] (0.00ns)   --->   "%A_addr_24 = getelementptr i32 %A, i64 0, i64 4" [LU.cpp:175]   --->   Operation 88 'getelementptr' 'A_addr_24' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 89 [1/1] (1.00ns)   --->   "%A_in_read_4 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 89 'read' 'A_in_read_4' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_5 : Operation 90 [1/1] (0.00ns)   --->   "%trunc_ln174_4 = trunc i64 %A_in_read_4" [LU.cpp:174]   --->   Operation 90 'trunc' 'trunc_ln174_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 91 [1/1] (0.00ns)   --->   "%pkt_data_4 = bitcast i32 %trunc_ln174_4" [LU.cpp:174]   --->   Operation 91 'bitcast' 'pkt_data_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 92 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_4, i4 %A_addr_24" [LU.cpp:175]   --->   Operation 92 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 6 <SV = 5> <Delay = 3.32>
+ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%A_addr_25 = getelementptr i32 %A, i64 0, i64 5" [LU.cpp:175]   --->   Operation 93 'getelementptr' 'A_addr_25' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 94 [1/1] (1.00ns)   --->   "%A_in_read_5 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 94 'read' 'A_in_read_5' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_6 : Operation 95 [1/1] (0.00ns)   --->   "%trunc_ln174_5 = trunc i64 %A_in_read_5" [LU.cpp:174]   --->   Operation 95 'trunc' 'trunc_ln174_5' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 96 [1/1] (0.00ns)   --->   "%pkt_data_5 = bitcast i32 %trunc_ln174_5" [LU.cpp:174]   --->   Operation 96 'bitcast' 'pkt_data_5' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 97 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_5, i4 %A_addr_25" [LU.cpp:175]   --->   Operation 97 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 7 <SV = 6> <Delay = 3.32>
+ST_7 : Operation 98 [1/1] (0.00ns)   --->   "%A_addr_26 = getelementptr i32 %A, i64 0, i64 6" [LU.cpp:175]   --->   Operation 98 'getelementptr' 'A_addr_26' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 99 [1/1] (1.00ns)   --->   "%A_in_read_6 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 99 'read' 'A_in_read_6' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_7 : Operation 100 [1/1] (0.00ns)   --->   "%trunc_ln174_6 = trunc i64 %A_in_read_6" [LU.cpp:174]   --->   Operation 100 'trunc' 'trunc_ln174_6' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 101 [1/1] (0.00ns)   --->   "%pkt_data_6 = bitcast i32 %trunc_ln174_6" [LU.cpp:174]   --->   Operation 101 'bitcast' 'pkt_data_6' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 102 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_6, i4 %A_addr_26" [LU.cpp:175]   --->   Operation 102 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 8 <SV = 7> <Delay = 3.32>
+ST_8 : Operation 103 [1/1] (0.00ns)   --->   "%A_addr_27 = getelementptr i32 %A, i64 0, i64 7" [LU.cpp:175]   --->   Operation 103 'getelementptr' 'A_addr_27' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 104 [1/1] (1.00ns)   --->   "%A_in_read_7 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 104 'read' 'A_in_read_7' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_8 : Operation 105 [1/1] (0.00ns)   --->   "%trunc_ln174_7 = trunc i64 %A_in_read_7" [LU.cpp:174]   --->   Operation 105 'trunc' 'trunc_ln174_7' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 106 [1/1] (0.00ns)   --->   "%pkt_data_7 = bitcast i32 %trunc_ln174_7" [LU.cpp:174]   --->   Operation 106 'bitcast' 'pkt_data_7' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 107 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_7, i4 %A_addr_27" [LU.cpp:175]   --->   Operation 107 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 9 <SV = 8> <Delay = 3.32>
+ST_9 : Operation 108 [1/1] (0.00ns)   --->   "%A_addr_28 = getelementptr i32 %A, i64 0, i64 8" [LU.cpp:175]   --->   Operation 108 'getelementptr' 'A_addr_28' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 109 [1/1] (1.00ns)   --->   "%A_in_read_8 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 109 'read' 'A_in_read_8' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_9 : Operation 110 [1/1] (0.00ns)   --->   "%trunc_ln174_8 = trunc i64 %A_in_read_8" [LU.cpp:174]   --->   Operation 110 'trunc' 'trunc_ln174_8' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 111 [1/1] (0.00ns)   --->   "%pkt_data_8 = bitcast i32 %trunc_ln174_8" [LU.cpp:174]   --->   Operation 111 'bitcast' 'pkt_data_8' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 112 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_8, i4 %A_addr_28" [LU.cpp:175]   --->   Operation 112 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 10 <SV = 9> <Delay = 3.32>
+ST_10 : Operation 113 [1/1] (0.00ns)   --->   "%A_addr_29 = getelementptr i32 %A, i64 0, i64 9" [LU.cpp:175]   --->   Operation 113 'getelementptr' 'A_addr_29' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 114 [1/1] (1.00ns)   --->   "%A_in_read_9 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 114 'read' 'A_in_read_9' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_10 : Operation 115 [1/1] (0.00ns)   --->   "%trunc_ln174_9 = trunc i64 %A_in_read_9" [LU.cpp:174]   --->   Operation 115 'trunc' 'trunc_ln174_9' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 116 [1/1] (0.00ns)   --->   "%pkt_data_9 = bitcast i32 %trunc_ln174_9" [LU.cpp:174]   --->   Operation 116 'bitcast' 'pkt_data_9' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 117 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_9, i4 %A_addr_29" [LU.cpp:175]   --->   Operation 117 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 11 <SV = 10> <Delay = 3.32>
+ST_11 : Operation 118 [1/1] (0.00ns)   --->   "%A_addr_30 = getelementptr i32 %A, i64 0, i64 10" [LU.cpp:175]   --->   Operation 118 'getelementptr' 'A_addr_30' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 119 [1/1] (1.00ns)   --->   "%A_in_read_10 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 119 'read' 'A_in_read_10' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_11 : Operation 120 [1/1] (0.00ns)   --->   "%trunc_ln174_10 = trunc i64 %A_in_read_10" [LU.cpp:174]   --->   Operation 120 'trunc' 'trunc_ln174_10' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 121 [1/1] (0.00ns)   --->   "%pkt_data_10 = bitcast i32 %trunc_ln174_10" [LU.cpp:174]   --->   Operation 121 'bitcast' 'pkt_data_10' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 122 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_10, i4 %A_addr_30" [LU.cpp:175]   --->   Operation 122 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 12 <SV = 11> <Delay = 3.32>
+ST_12 : Operation 123 [1/1] (0.00ns)   --->   "%A_addr_31 = getelementptr i32 %A, i64 0, i64 11" [LU.cpp:175]   --->   Operation 123 'getelementptr' 'A_addr_31' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 124 [1/1] (1.00ns)   --->   "%A_in_read_11 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 124 'read' 'A_in_read_11' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_12 : Operation 125 [1/1] (0.00ns)   --->   "%trunc_ln174_11 = trunc i64 %A_in_read_11" [LU.cpp:174]   --->   Operation 125 'trunc' 'trunc_ln174_11' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 126 [1/1] (0.00ns)   --->   "%pkt_data_11 = bitcast i32 %trunc_ln174_11" [LU.cpp:174]   --->   Operation 126 'bitcast' 'pkt_data_11' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 127 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_11, i4 %A_addr_31" [LU.cpp:175]   --->   Operation 127 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 13 <SV = 12> <Delay = 3.32>
+ST_13 : Operation 128 [1/1] (0.00ns)   --->   "%A_addr_32 = getelementptr i32 %A, i64 0, i64 12" [LU.cpp:175]   --->   Operation 128 'getelementptr' 'A_addr_32' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 129 [1/1] (1.00ns)   --->   "%A_in_read_12 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 129 'read' 'A_in_read_12' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_13 : Operation 130 [1/1] (0.00ns)   --->   "%trunc_ln174_12 = trunc i64 %A_in_read_12" [LU.cpp:174]   --->   Operation 130 'trunc' 'trunc_ln174_12' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 131 [1/1] (0.00ns)   --->   "%pkt_data_12 = bitcast i32 %trunc_ln174_12" [LU.cpp:174]   --->   Operation 131 'bitcast' 'pkt_data_12' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 132 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_12, i4 %A_addr_32" [LU.cpp:175]   --->   Operation 132 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 14 <SV = 13> <Delay = 3.32>
+ST_14 : Operation 133 [1/1] (0.00ns)   --->   "%A_addr_33 = getelementptr i32 %A, i64 0, i64 13" [LU.cpp:175]   --->   Operation 133 'getelementptr' 'A_addr_33' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 134 [1/1] (1.00ns)   --->   "%A_in_read_13 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 134 'read' 'A_in_read_13' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_14 : Operation 135 [1/1] (0.00ns)   --->   "%trunc_ln174_13 = trunc i64 %A_in_read_13" [LU.cpp:174]   --->   Operation 135 'trunc' 'trunc_ln174_13' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 136 [1/1] (0.00ns)   --->   "%pkt_data_13 = bitcast i32 %trunc_ln174_13" [LU.cpp:174]   --->   Operation 136 'bitcast' 'pkt_data_13' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 137 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_13, i4 %A_addr_33" [LU.cpp:175]   --->   Operation 137 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 15 <SV = 14> <Delay = 3.32>
+ST_15 : Operation 138 [1/1] (0.00ns)   --->   "%A_addr_34 = getelementptr i32 %A, i64 0, i64 14" [LU.cpp:175]   --->   Operation 138 'getelementptr' 'A_addr_34' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 139 [1/1] (1.00ns)   --->   "%A_in_read_14 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 139 'read' 'A_in_read_14' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_15 : Operation 140 [1/1] (0.00ns)   --->   "%trunc_ln174_14 = trunc i64 %A_in_read_14" [LU.cpp:174]   --->   Operation 140 'trunc' 'trunc_ln174_14' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 141 [1/1] (0.00ns)   --->   "%pkt_data_14 = bitcast i32 %trunc_ln174_14" [LU.cpp:174]   --->   Operation 141 'bitcast' 'pkt_data_14' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 142 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_14, i4 %A_addr_34" [LU.cpp:175]   --->   Operation 142 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 16 <SV = 15> <Delay = 3.32>
+ST_16 : Operation 143 [1/1] (0.00ns)   --->   "%A_addr_35 = getelementptr i32 %A, i64 0, i64 15" [LU.cpp:175]   --->   Operation 143 'getelementptr' 'A_addr_35' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 144 [1/1] (1.00ns)   --->   "%A_in_read_15 = read i64 @_ssdm_op_Read.axis.volatile.i64P128A, i64 %A_in" [LU.cpp:174]   --->   Operation 144 'read' 'A_in_read_15' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_16 : Operation 145 [1/1] (0.00ns)   --->   "%trunc_ln174_15 = trunc i64 %A_in_read_15" [LU.cpp:174]   --->   Operation 145 'trunc' 'trunc_ln174_15' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 146 [1/1] (0.00ns)   --->   "%pkt_data_15 = bitcast i32 %trunc_ln174_15" [LU.cpp:174]   --->   Operation 146 'bitcast' 'pkt_data_15' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 147 [1/1] (2.32ns)   --->   "%store_ln175 = store i32 %pkt_data_15, i4 %A_addr_35" [LU.cpp:175]   --->   Operation 147 'store' 'store_ln175' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 17 <SV = 16> <Delay = 0.00>
+ST_17 : Operation 148 [2/2] (0.00ns)   --->   "%call_ret4 = call i320 @luDecomposition, i32 %A" [LU.cpp:192]   --->   Operation 148 'call' 'call_ret4' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 2.32>
+ST_18 : Operation 149 [1/2] (2.32ns)   --->   "%call_ret4 = call i320 @luDecomposition, i32 %A" [LU.cpp:192]   --->   Operation 149 'call' 'call_ret4' <Predicate = true> <Delay = 2.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 150 [1/1] (0.00ns)   --->   "%L_1 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 150 'extractvalue' 'L_1' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 151 [1/1] (0.00ns)   --->   "%L_2_1 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 151 'extractvalue' 'L_2_1' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 152 [1/1] (0.00ns)   --->   "%L_3_2 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 152 'extractvalue' 'L_3_2' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 153 [1/1] (0.00ns)   --->   "%L_2 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 153 'extractvalue' 'L_2' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 154 [1/1] (0.00ns)   --->   "%L_3 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 154 'extractvalue' 'L_3' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 155 [1/1] (0.00ns)   --->   "%L_3_1 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 155 'extractvalue' 'L_3_1' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 156 [1/1] (0.00ns)   --->   "%P_0 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 156 'extractvalue' 'P_0' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 157 [1/1] (0.00ns)   --->   "%P_1 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 157 'extractvalue' 'P_1' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 158 [1/1] (0.00ns)   --->   "%P_2 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 158 'extractvalue' 'P_2' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 159 [1/1] (0.00ns)   --->   "%P_3 = extractvalue i320 %call_ret4" [LU.cpp:192]   --->   Operation 159 'extractvalue' 'P_3' <Predicate = true> <Delay = 0.00>
+
+State 19 <SV = 18> <Delay = 5.70>
+ST_19 : Operation 160 [34/34] (5.70ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 160 'call' 'call_ret' <Predicate = true> <Delay = 5.70> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_19 : Operation 161 [2/2] (2.32ns)   --->   "%pkt_data_16 = load i4 %A_addr" [LU.cpp:202]   --->   Operation 161 'load' 'pkt_data_16' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 20 <SV = 19> <Delay = 7.25>
+ST_20 : Operation 162 [33/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 162 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_20 : Operation 163 [1/2] (2.32ns)   --->   "%pkt_data_16 = load i4 %A_addr" [LU.cpp:202]   --->   Operation 163 'load' 'pkt_data_16' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_20 : Operation 164 [1/1] (0.00ns)   --->   "%bitcast_ln204 = bitcast i32 %pkt_data_16" [LU.cpp:204]   --->   Operation 164 'bitcast' 'bitcast_ln204' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 165 [1/1] (0.00ns)   --->   "%zext_ln204 = zext i32 %bitcast_ln204" [LU.cpp:204]   --->   Operation 165 'zext' 'zext_ln204' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 166 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204" [LU.cpp:204]   --->   Operation 166 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_20 : Operation 167 [2/2] (2.32ns)   --->   "%pkt_data_17 = load i4 %A_addr_21" [LU.cpp:202]   --->   Operation 167 'load' 'pkt_data_17' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_20 : Operation 168 [1/1] (0.00ns)   --->   "%zext_ln216 = zext i32 %P_0" [LU.cpp:216]   --->   Operation 168 'zext' 'zext_ln216' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 169 [2/2] (1.00ns)   --->   "%write_ln216 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %P_out, i64 %zext_ln216" [LU.cpp:216]   --->   Operation 169 'write' 'write_ln216' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_20 : Operation 170 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 1065353216" [LU.cpp:228]   --->   Operation 170 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 21 <SV = 20> <Delay = 7.25>
+ST_21 : Operation 171 [32/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 171 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_21 : Operation 172 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204" [LU.cpp:204]   --->   Operation 172 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_21 : Operation 173 [1/2] (2.32ns)   --->   "%pkt_data_17 = load i4 %A_addr_21" [LU.cpp:202]   --->   Operation 173 'load' 'pkt_data_17' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_21 : Operation 174 [1/1] (0.00ns)   --->   "%bitcast_ln204_1 = bitcast i32 %pkt_data_17" [LU.cpp:204]   --->   Operation 174 'bitcast' 'bitcast_ln204_1' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 175 [1/1] (0.00ns)   --->   "%zext_ln204_1 = zext i32 %bitcast_ln204_1" [LU.cpp:204]   --->   Operation 175 'zext' 'zext_ln204_1' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 176 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_1" [LU.cpp:204]   --->   Operation 176 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_21 : Operation 177 [2/2] (2.32ns)   --->   "%pkt_data_18 = load i4 %A_addr_22" [LU.cpp:202]   --->   Operation 177 'load' 'pkt_data_18' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_21 : Operation 178 [1/2] (1.00ns)   --->   "%write_ln216 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %P_out, i64 %zext_ln216" [LU.cpp:216]   --->   Operation 178 'write' 'write_ln216' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_21 : Operation 179 [1/1] (0.00ns)   --->   "%zext_ln216_1 = zext i32 %P_1" [LU.cpp:216]   --->   Operation 179 'zext' 'zext_ln216_1' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 180 [2/2] (1.00ns)   --->   "%write_ln216 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %P_out, i64 %zext_ln216_1" [LU.cpp:216]   --->   Operation 180 'write' 'write_ln216' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_21 : Operation 181 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 1065353216" [LU.cpp:228]   --->   Operation 181 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_21 : Operation 182 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 0" [LU.cpp:228]   --->   Operation 182 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 22 <SV = 21> <Delay = 7.25>
+ST_22 : Operation 183 [31/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 183 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_22 : Operation 184 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_1" [LU.cpp:204]   --->   Operation 184 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_22 : Operation 185 [1/2] (2.32ns)   --->   "%pkt_data_18 = load i4 %A_addr_22" [LU.cpp:202]   --->   Operation 185 'load' 'pkt_data_18' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_22 : Operation 186 [1/1] (0.00ns)   --->   "%bitcast_ln204_2 = bitcast i32 %pkt_data_18" [LU.cpp:204]   --->   Operation 186 'bitcast' 'bitcast_ln204_2' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 187 [1/1] (0.00ns)   --->   "%zext_ln204_2 = zext i32 %bitcast_ln204_2" [LU.cpp:204]   --->   Operation 187 'zext' 'zext_ln204_2' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 188 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_2" [LU.cpp:204]   --->   Operation 188 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_22 : Operation 189 [2/2] (2.32ns)   --->   "%pkt_data_19 = load i4 %A_addr_23" [LU.cpp:202]   --->   Operation 189 'load' 'pkt_data_19' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_22 : Operation 190 [1/2] (1.00ns)   --->   "%write_ln216 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %P_out, i64 %zext_ln216_1" [LU.cpp:216]   --->   Operation 190 'write' 'write_ln216' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_22 : Operation 191 [1/1] (0.00ns)   --->   "%zext_ln216_2 = zext i32 %P_2" [LU.cpp:216]   --->   Operation 191 'zext' 'zext_ln216_2' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 192 [2/2] (1.00ns)   --->   "%write_ln216 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %P_out, i64 %zext_ln216_2" [LU.cpp:216]   --->   Operation 192 'write' 'write_ln216' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_22 : Operation 193 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 0" [LU.cpp:228]   --->   Operation 193 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_22 : Operation 194 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 0" [LU.cpp:228]   --->   Operation 194 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 23 <SV = 22> <Delay = 7.25>
+ST_23 : Operation 195 [30/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 195 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 196 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_2" [LU.cpp:204]   --->   Operation 196 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_23 : Operation 197 [1/2] (2.32ns)   --->   "%pkt_data_19 = load i4 %A_addr_23" [LU.cpp:202]   --->   Operation 197 'load' 'pkt_data_19' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_23 : Operation 198 [1/1] (0.00ns)   --->   "%bitcast_ln204_3 = bitcast i32 %pkt_data_19" [LU.cpp:204]   --->   Operation 198 'bitcast' 'bitcast_ln204_3' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 199 [1/1] (0.00ns)   --->   "%zext_ln204_3 = zext i32 %bitcast_ln204_3" [LU.cpp:204]   --->   Operation 199 'zext' 'zext_ln204_3' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 200 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_3" [LU.cpp:204]   --->   Operation 200 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_23 : Operation 201 [1/2] (1.00ns)   --->   "%write_ln216 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %P_out, i64 %zext_ln216_2" [LU.cpp:216]   --->   Operation 201 'write' 'write_ln216' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_23 : Operation 202 [1/1] (0.00ns)   --->   "%zext_ln216_3_cast = bitconcatenate i33 @_ssdm_op_BitConcatenate.i33.i1.i32, i1 1, i32 %P_3" [LU.cpp:216]   --->   Operation 202 'bitconcatenate' 'zext_ln216_3_cast' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 203 [1/1] (0.00ns)   --->   "%zext_ln216_3 = zext i33 %zext_ln216_3_cast" [LU.cpp:216]   --->   Operation 203 'zext' 'zext_ln216_3' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 204 [2/2] (1.00ns)   --->   "%write_ln216 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %P_out, i64 %zext_ln216_3" [LU.cpp:216]   --->   Operation 204 'write' 'write_ln216' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_23 : Operation 205 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 0" [LU.cpp:228]   --->   Operation 205 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_23 : Operation 206 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 0" [LU.cpp:228]   --->   Operation 206 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 24 <SV = 23> <Delay = 7.25>
+ST_24 : Operation 207 [29/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 207 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 208 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_3" [LU.cpp:204]   --->   Operation 208 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_24 : Operation 209 [1/2] (1.00ns)   --->   "%write_ln216 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %P_out, i64 %zext_ln216_3" [LU.cpp:216]   --->   Operation 209 'write' 'write_ln216' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_24 : Operation 210 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 0" [LU.cpp:228]   --->   Operation 210 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 25 <SV = 24> <Delay = 7.25>
+ST_25 : Operation 211 [28/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 211 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 25> <Delay = 7.25>
+ST_26 : Operation 212 [27/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 212 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 26> <Delay = 7.25>
+ST_27 : Operation 213 [26/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 213 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 28 <SV = 27> <Delay = 7.25>
+ST_28 : Operation 214 [25/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 214 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 28> <Delay = 7.25>
+ST_29 : Operation 215 [24/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 215 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 30 <SV = 29> <Delay = 7.25>
+ST_30 : Operation 216 [23/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 216 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 31 <SV = 30> <Delay = 7.25>
+ST_31 : Operation 217 [22/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 217 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 32 <SV = 31> <Delay = 7.25>
+ST_32 : Operation 218 [21/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 218 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 33 <SV = 32> <Delay = 7.25>
+ST_33 : Operation 219 [20/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 219 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 34 <SV = 33> <Delay = 7.25>
+ST_34 : Operation 220 [19/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 220 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 35 <SV = 34> <Delay = 7.25>
+ST_35 : Operation 221 [18/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 221 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 36 <SV = 35> <Delay = 7.25>
+ST_36 : Operation 222 [17/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 222 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 37 <SV = 36> <Delay = 7.25>
+ST_37 : Operation 223 [16/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 223 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 38 <SV = 37> <Delay = 7.25>
+ST_38 : Operation 224 [15/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 224 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 39 <SV = 38> <Delay = 7.25>
+ST_39 : Operation 225 [14/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 225 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 40 <SV = 39> <Delay = 7.25>
+ST_40 : Operation 226 [13/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 226 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 41 <SV = 40> <Delay = 7.25>
+ST_41 : Operation 227 [12/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 227 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 42 <SV = 41> <Delay = 7.25>
+ST_42 : Operation 228 [11/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 228 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 43 <SV = 42> <Delay = 7.25>
+ST_43 : Operation 229 [10/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 229 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 44 <SV = 43> <Delay = 7.25>
+ST_44 : Operation 230 [9/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 230 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 45 <SV = 44> <Delay = 7.25>
+ST_45 : Operation 231 [8/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 231 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 46 <SV = 45> <Delay = 7.25>
+ST_46 : Operation 232 [7/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 232 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 47 <SV = 46> <Delay = 7.25>
+ST_47 : Operation 233 [6/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 233 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 48 <SV = 47> <Delay = 7.25>
+ST_48 : Operation 234 [5/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 234 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 49 <SV = 48> <Delay = 7.25>
+ST_49 : Operation 235 [4/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 235 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 50 <SV = 49> <Delay = 7.25>
+ST_50 : Operation 236 [3/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 236 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 51 <SV = 50> <Delay = 7.25>
+ST_51 : Operation 237 [2/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 237 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 52 <SV = 51> <Delay = 7.25>
+ST_52 : Operation 238 [1/34] (7.25ns)   --->   "%call_ret = call i384 @forwardSubstitution, i32 %L_1, i32 %L_2_1, i32 %L_3_2, i32 %L_2, i32 %L_3, i32 %L_3_1" [LU.cpp:193]   --->   Operation 238 'call' 'call_ret' <Predicate = true> <Delay = 7.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_52 : Operation 239 [1/1] (0.00ns)   --->   "%Y_1_0 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 239 'extractvalue' 'Y_1_0' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 240 [1/1] (0.00ns)   --->   "%Y_1_1 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 240 'extractvalue' 'Y_1_1' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 241 [1/1] (0.00ns)   --->   "%Y_1_2 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 241 'extractvalue' 'Y_1_2' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 242 [1/1] (0.00ns)   --->   "%Y_1_3 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 242 'extractvalue' 'Y_1_3' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 243 [1/1] (0.00ns)   --->   "%Y_2_0 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 243 'extractvalue' 'Y_2_0' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 244 [1/1] (0.00ns)   --->   "%Y_2_1 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 244 'extractvalue' 'Y_2_1' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 245 [1/1] (0.00ns)   --->   "%Y_2_2 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 245 'extractvalue' 'Y_2_2' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 246 [1/1] (0.00ns)   --->   "%Y_2_3 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 246 'extractvalue' 'Y_2_3' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 247 [1/1] (0.00ns)   --->   "%Y_3_0 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 247 'extractvalue' 'Y_3_0' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 248 [1/1] (0.00ns)   --->   "%Y_3_1 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 248 'extractvalue' 'Y_3_1' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 249 [1/1] (0.00ns)   --->   "%Y_3_2 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 249 'extractvalue' 'Y_3_2' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 250 [1/1] (0.00ns)   --->   "%Y_3_3 = extractvalue i384 %call_ret" [LU.cpp:193]   --->   Operation 250 'extractvalue' 'Y_3_3' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 251 [2/2] (2.32ns)   --->   "%pkt_data_20 = load i4 %A_addr_24" [LU.cpp:202]   --->   Operation 251 'load' 'pkt_data_20' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 53 <SV = 52> <Delay = 3.32>
+ST_53 : Operation 252 [1/2] (2.32ns)   --->   "%pkt_data_20 = load i4 %A_addr_24" [LU.cpp:202]   --->   Operation 252 'load' 'pkt_data_20' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_53 : Operation 253 [1/1] (0.00ns)   --->   "%bitcast_ln204_4 = bitcast i32 %pkt_data_20" [LU.cpp:204]   --->   Operation 253 'bitcast' 'bitcast_ln204_4' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 254 [1/1] (0.00ns)   --->   "%zext_ln204_4 = zext i32 %bitcast_ln204_4" [LU.cpp:204]   --->   Operation 254 'zext' 'zext_ln204_4' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 255 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_4" [LU.cpp:204]   --->   Operation 255 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_53 : Operation 256 [2/2] (2.32ns)   --->   "%pkt_data_21 = load i4 %A_addr_25" [LU.cpp:202]   --->   Operation 256 'load' 'pkt_data_21' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_53 : Operation 257 [1/1] (0.00ns)   --->   "%bitcast_ln228 = bitcast i32 %Y_1_0" [LU.cpp:228]   --->   Operation 257 'bitcast' 'bitcast_ln228' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 258 [1/1] (0.00ns)   --->   "%zext_ln228 = zext i32 %bitcast_ln228" [LU.cpp:228]   --->   Operation 258 'zext' 'zext_ln228' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 259 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228" [LU.cpp:228]   --->   Operation 259 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 54 <SV = 53> <Delay = 3.32>
+ST_54 : Operation 260 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_4" [LU.cpp:204]   --->   Operation 260 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_54 : Operation 261 [1/2] (2.32ns)   --->   "%pkt_data_21 = load i4 %A_addr_25" [LU.cpp:202]   --->   Operation 261 'load' 'pkt_data_21' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_54 : Operation 262 [1/1] (0.00ns)   --->   "%bitcast_ln204_5 = bitcast i32 %pkt_data_21" [LU.cpp:204]   --->   Operation 262 'bitcast' 'bitcast_ln204_5' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 263 [1/1] (0.00ns)   --->   "%zext_ln204_5 = zext i32 %bitcast_ln204_5" [LU.cpp:204]   --->   Operation 263 'zext' 'zext_ln204_5' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 264 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_5" [LU.cpp:204]   --->   Operation 264 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_54 : Operation 265 [2/2] (2.32ns)   --->   "%pkt_data_22 = load i4 %A_addr_26" [LU.cpp:202]   --->   Operation 265 'load' 'pkt_data_22' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_54 : Operation 266 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228" [LU.cpp:228]   --->   Operation 266 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_54 : Operation 267 [1/1] (0.00ns)   --->   "%bitcast_ln228_1 = bitcast i32 %Y_1_1" [LU.cpp:228]   --->   Operation 267 'bitcast' 'bitcast_ln228_1' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 268 [1/1] (0.00ns)   --->   "%zext_ln228_1 = zext i32 %bitcast_ln228_1" [LU.cpp:228]   --->   Operation 268 'zext' 'zext_ln228_1' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 269 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_1" [LU.cpp:228]   --->   Operation 269 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 55 <SV = 54> <Delay = 3.32>
+ST_55 : Operation 270 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_5" [LU.cpp:204]   --->   Operation 270 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_55 : Operation 271 [1/2] (2.32ns)   --->   "%pkt_data_22 = load i4 %A_addr_26" [LU.cpp:202]   --->   Operation 271 'load' 'pkt_data_22' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_55 : Operation 272 [1/1] (0.00ns)   --->   "%bitcast_ln204_6 = bitcast i32 %pkt_data_22" [LU.cpp:204]   --->   Operation 272 'bitcast' 'bitcast_ln204_6' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 273 [1/1] (0.00ns)   --->   "%zext_ln204_6 = zext i32 %bitcast_ln204_6" [LU.cpp:204]   --->   Operation 273 'zext' 'zext_ln204_6' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 274 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_6" [LU.cpp:204]   --->   Operation 274 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_55 : Operation 275 [2/2] (2.32ns)   --->   "%pkt_data_23 = load i4 %A_addr_27" [LU.cpp:202]   --->   Operation 275 'load' 'pkt_data_23' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_55 : Operation 276 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_1" [LU.cpp:228]   --->   Operation 276 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_55 : Operation 277 [1/1] (0.00ns)   --->   "%bitcast_ln228_2 = bitcast i32 %Y_1_2" [LU.cpp:228]   --->   Operation 277 'bitcast' 'bitcast_ln228_2' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 278 [1/1] (0.00ns)   --->   "%zext_ln228_2 = zext i32 %bitcast_ln228_2" [LU.cpp:228]   --->   Operation 278 'zext' 'zext_ln228_2' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 279 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_2" [LU.cpp:228]   --->   Operation 279 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 56 <SV = 55> <Delay = 3.32>
+ST_56 : Operation 280 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_6" [LU.cpp:204]   --->   Operation 280 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_56 : Operation 281 [1/2] (2.32ns)   --->   "%pkt_data_23 = load i4 %A_addr_27" [LU.cpp:202]   --->   Operation 281 'load' 'pkt_data_23' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_56 : Operation 282 [1/1] (0.00ns)   --->   "%bitcast_ln204_7 = bitcast i32 %pkt_data_23" [LU.cpp:204]   --->   Operation 282 'bitcast' 'bitcast_ln204_7' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 283 [1/1] (0.00ns)   --->   "%zext_ln204_7 = zext i32 %bitcast_ln204_7" [LU.cpp:204]   --->   Operation 283 'zext' 'zext_ln204_7' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 284 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_7" [LU.cpp:204]   --->   Operation 284 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_56 : Operation 285 [2/2] (2.32ns)   --->   "%pkt_data_24 = load i4 %A_addr_28" [LU.cpp:202]   --->   Operation 285 'load' 'pkt_data_24' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_56 : Operation 286 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_2" [LU.cpp:228]   --->   Operation 286 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_56 : Operation 287 [1/1] (0.00ns)   --->   "%bitcast_ln228_3 = bitcast i32 %Y_1_3" [LU.cpp:228]   --->   Operation 287 'bitcast' 'bitcast_ln228_3' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 288 [1/1] (0.00ns)   --->   "%zext_ln228_3 = zext i32 %bitcast_ln228_3" [LU.cpp:228]   --->   Operation 288 'zext' 'zext_ln228_3' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 289 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_3" [LU.cpp:228]   --->   Operation 289 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 57 <SV = 56> <Delay = 3.32>
+ST_57 : Operation 290 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_7" [LU.cpp:204]   --->   Operation 290 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_57 : Operation 291 [1/2] (2.32ns)   --->   "%pkt_data_24 = load i4 %A_addr_28" [LU.cpp:202]   --->   Operation 291 'load' 'pkt_data_24' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_57 : Operation 292 [1/1] (0.00ns)   --->   "%bitcast_ln204_8 = bitcast i32 %pkt_data_24" [LU.cpp:204]   --->   Operation 292 'bitcast' 'bitcast_ln204_8' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 293 [1/1] (0.00ns)   --->   "%zext_ln204_8 = zext i32 %bitcast_ln204_8" [LU.cpp:204]   --->   Operation 293 'zext' 'zext_ln204_8' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 294 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_8" [LU.cpp:204]   --->   Operation 294 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_57 : Operation 295 [2/2] (2.32ns)   --->   "%pkt_data_25 = load i4 %A_addr_29" [LU.cpp:202]   --->   Operation 295 'load' 'pkt_data_25' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_57 : Operation 296 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_3" [LU.cpp:228]   --->   Operation 296 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_57 : Operation 297 [1/1] (0.00ns)   --->   "%bitcast_ln228_4 = bitcast i32 %Y_2_0" [LU.cpp:228]   --->   Operation 297 'bitcast' 'bitcast_ln228_4' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 298 [1/1] (0.00ns)   --->   "%zext_ln228_4 = zext i32 %bitcast_ln228_4" [LU.cpp:228]   --->   Operation 298 'zext' 'zext_ln228_4' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 299 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_4" [LU.cpp:228]   --->   Operation 299 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 58 <SV = 57> <Delay = 3.32>
+ST_58 : Operation 300 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_8" [LU.cpp:204]   --->   Operation 300 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_58 : Operation 301 [1/2] (2.32ns)   --->   "%pkt_data_25 = load i4 %A_addr_29" [LU.cpp:202]   --->   Operation 301 'load' 'pkt_data_25' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_58 : Operation 302 [1/1] (0.00ns)   --->   "%bitcast_ln204_9 = bitcast i32 %pkt_data_25" [LU.cpp:204]   --->   Operation 302 'bitcast' 'bitcast_ln204_9' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 303 [1/1] (0.00ns)   --->   "%zext_ln204_9 = zext i32 %bitcast_ln204_9" [LU.cpp:204]   --->   Operation 303 'zext' 'zext_ln204_9' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 304 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_9" [LU.cpp:204]   --->   Operation 304 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_58 : Operation 305 [2/2] (2.32ns)   --->   "%pkt_data_26 = load i4 %A_addr_30" [LU.cpp:202]   --->   Operation 305 'load' 'pkt_data_26' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_58 : Operation 306 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_4" [LU.cpp:228]   --->   Operation 306 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_58 : Operation 307 [1/1] (0.00ns)   --->   "%bitcast_ln228_5 = bitcast i32 %Y_2_1" [LU.cpp:228]   --->   Operation 307 'bitcast' 'bitcast_ln228_5' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 308 [1/1] (0.00ns)   --->   "%zext_ln228_5 = zext i32 %bitcast_ln228_5" [LU.cpp:228]   --->   Operation 308 'zext' 'zext_ln228_5' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 309 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_5" [LU.cpp:228]   --->   Operation 309 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 59 <SV = 58> <Delay = 3.32>
+ST_59 : Operation 310 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_9" [LU.cpp:204]   --->   Operation 310 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_59 : Operation 311 [1/2] (2.32ns)   --->   "%pkt_data_26 = load i4 %A_addr_30" [LU.cpp:202]   --->   Operation 311 'load' 'pkt_data_26' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_59 : Operation 312 [1/1] (0.00ns)   --->   "%bitcast_ln204_10 = bitcast i32 %pkt_data_26" [LU.cpp:204]   --->   Operation 312 'bitcast' 'bitcast_ln204_10' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 313 [1/1] (0.00ns)   --->   "%zext_ln204_10 = zext i32 %bitcast_ln204_10" [LU.cpp:204]   --->   Operation 313 'zext' 'zext_ln204_10' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 314 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_10" [LU.cpp:204]   --->   Operation 314 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_59 : Operation 315 [2/2] (2.32ns)   --->   "%pkt_data_27 = load i4 %A_addr_31" [LU.cpp:202]   --->   Operation 315 'load' 'pkt_data_27' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_59 : Operation 316 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_5" [LU.cpp:228]   --->   Operation 316 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_59 : Operation 317 [1/1] (0.00ns)   --->   "%bitcast_ln228_6 = bitcast i32 %Y_2_2" [LU.cpp:228]   --->   Operation 317 'bitcast' 'bitcast_ln228_6' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 318 [1/1] (0.00ns)   --->   "%zext_ln228_6 = zext i32 %bitcast_ln228_6" [LU.cpp:228]   --->   Operation 318 'zext' 'zext_ln228_6' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 319 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_6" [LU.cpp:228]   --->   Operation 319 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 60 <SV = 59> <Delay = 3.32>
+ST_60 : Operation 320 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_10" [LU.cpp:204]   --->   Operation 320 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_60 : Operation 321 [1/2] (2.32ns)   --->   "%pkt_data_27 = load i4 %A_addr_31" [LU.cpp:202]   --->   Operation 321 'load' 'pkt_data_27' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_60 : Operation 322 [1/1] (0.00ns)   --->   "%bitcast_ln204_11 = bitcast i32 %pkt_data_27" [LU.cpp:204]   --->   Operation 322 'bitcast' 'bitcast_ln204_11' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 323 [1/1] (0.00ns)   --->   "%zext_ln204_11 = zext i32 %bitcast_ln204_11" [LU.cpp:204]   --->   Operation 323 'zext' 'zext_ln204_11' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 324 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_11" [LU.cpp:204]   --->   Operation 324 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_60 : Operation 325 [2/2] (2.32ns)   --->   "%pkt_data_28 = load i4 %A_addr_32" [LU.cpp:202]   --->   Operation 325 'load' 'pkt_data_28' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_60 : Operation 326 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_6" [LU.cpp:228]   --->   Operation 326 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_60 : Operation 327 [1/1] (0.00ns)   --->   "%bitcast_ln228_7 = bitcast i32 %Y_2_3" [LU.cpp:228]   --->   Operation 327 'bitcast' 'bitcast_ln228_7' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 328 [1/1] (0.00ns)   --->   "%zext_ln228_7 = zext i32 %bitcast_ln228_7" [LU.cpp:228]   --->   Operation 328 'zext' 'zext_ln228_7' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 329 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_7" [LU.cpp:228]   --->   Operation 329 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 61 <SV = 60> <Delay = 3.32>
+ST_61 : Operation 330 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_11" [LU.cpp:204]   --->   Operation 330 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_61 : Operation 331 [1/2] (2.32ns)   --->   "%pkt_data_28 = load i4 %A_addr_32" [LU.cpp:202]   --->   Operation 331 'load' 'pkt_data_28' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_61 : Operation 332 [1/1] (0.00ns)   --->   "%bitcast_ln204_12 = bitcast i32 %pkt_data_28" [LU.cpp:204]   --->   Operation 332 'bitcast' 'bitcast_ln204_12' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 333 [1/1] (0.00ns)   --->   "%zext_ln204_12 = zext i32 %bitcast_ln204_12" [LU.cpp:204]   --->   Operation 333 'zext' 'zext_ln204_12' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 334 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_12" [LU.cpp:204]   --->   Operation 334 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_61 : Operation 335 [2/2] (2.32ns)   --->   "%pkt_data_29 = load i4 %A_addr_33" [LU.cpp:202]   --->   Operation 335 'load' 'pkt_data_29' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_61 : Operation 336 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_7" [LU.cpp:228]   --->   Operation 336 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_61 : Operation 337 [1/1] (0.00ns)   --->   "%bitcast_ln228_8 = bitcast i32 %Y_3_0" [LU.cpp:228]   --->   Operation 337 'bitcast' 'bitcast_ln228_8' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 338 [1/1] (0.00ns)   --->   "%zext_ln228_8 = zext i32 %bitcast_ln228_8" [LU.cpp:228]   --->   Operation 338 'zext' 'zext_ln228_8' <Predicate = true> <Delay = 0.00>
+ST_61 : Operation 339 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_8" [LU.cpp:228]   --->   Operation 339 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 62 <SV = 61> <Delay = 3.32>
+ST_62 : Operation 340 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_12" [LU.cpp:204]   --->   Operation 340 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_62 : Operation 341 [1/2] (2.32ns)   --->   "%pkt_data_29 = load i4 %A_addr_33" [LU.cpp:202]   --->   Operation 341 'load' 'pkt_data_29' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_62 : Operation 342 [1/1] (0.00ns)   --->   "%bitcast_ln204_13 = bitcast i32 %pkt_data_29" [LU.cpp:204]   --->   Operation 342 'bitcast' 'bitcast_ln204_13' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 343 [1/1] (0.00ns)   --->   "%zext_ln204_13 = zext i32 %bitcast_ln204_13" [LU.cpp:204]   --->   Operation 343 'zext' 'zext_ln204_13' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 344 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_13" [LU.cpp:204]   --->   Operation 344 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_62 : Operation 345 [2/2] (2.32ns)   --->   "%pkt_data_30 = load i4 %A_addr_34" [LU.cpp:202]   --->   Operation 345 'load' 'pkt_data_30' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_62 : Operation 346 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_8" [LU.cpp:228]   --->   Operation 346 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_62 : Operation 347 [1/1] (0.00ns)   --->   "%bitcast_ln228_9 = bitcast i32 %Y_3_1" [LU.cpp:228]   --->   Operation 347 'bitcast' 'bitcast_ln228_9' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 348 [1/1] (0.00ns)   --->   "%zext_ln228_9 = zext i32 %bitcast_ln228_9" [LU.cpp:228]   --->   Operation 348 'zext' 'zext_ln228_9' <Predicate = true> <Delay = 0.00>
+ST_62 : Operation 349 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_9" [LU.cpp:228]   --->   Operation 349 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 63 <SV = 62> <Delay = 3.32>
+ST_63 : Operation 350 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_13" [LU.cpp:204]   --->   Operation 350 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_63 : Operation 351 [1/2] (2.32ns)   --->   "%pkt_data_30 = load i4 %A_addr_34" [LU.cpp:202]   --->   Operation 351 'load' 'pkt_data_30' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_63 : Operation 352 [1/1] (0.00ns)   --->   "%bitcast_ln204_14 = bitcast i32 %pkt_data_30" [LU.cpp:204]   --->   Operation 352 'bitcast' 'bitcast_ln204_14' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 353 [1/1] (0.00ns)   --->   "%zext_ln204_14 = zext i32 %bitcast_ln204_14" [LU.cpp:204]   --->   Operation 353 'zext' 'zext_ln204_14' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 354 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_14" [LU.cpp:204]   --->   Operation 354 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_63 : Operation 355 [2/2] (2.32ns)   --->   "%pkt_data_31 = load i4 %A_addr_35" [LU.cpp:202]   --->   Operation 355 'load' 'pkt_data_31' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_63 : Operation 356 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_9" [LU.cpp:228]   --->   Operation 356 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_63 : Operation 357 [1/1] (0.00ns)   --->   "%bitcast_ln228_10 = bitcast i32 %Y_3_2" [LU.cpp:228]   --->   Operation 357 'bitcast' 'bitcast_ln228_10' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 358 [1/1] (0.00ns)   --->   "%zext_ln228_10 = zext i32 %bitcast_ln228_10" [LU.cpp:228]   --->   Operation 358 'zext' 'zext_ln228_10' <Predicate = true> <Delay = 0.00>
+ST_63 : Operation 359 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_10" [LU.cpp:228]   --->   Operation 359 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 64 <SV = 63> <Delay = 3.32>
+ST_64 : Operation 360 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_14" [LU.cpp:204]   --->   Operation 360 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_64 : Operation 361 [1/2] (2.32ns)   --->   "%pkt_data_31 = load i4 %A_addr_35" [LU.cpp:202]   --->   Operation 361 'load' 'pkt_data_31' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_64 : Operation 362 [1/1] (0.00ns)   --->   "%bitcast_ln204_15 = bitcast i32 %pkt_data_31" [LU.cpp:204]   --->   Operation 362 'bitcast' 'bitcast_ln204_15' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 363 [1/1] (0.00ns)   --->   "%zext_ln204_15_cast = bitconcatenate i33 @_ssdm_op_BitConcatenate.i33.i1.i32, i1 1, i32 %bitcast_ln204_15" [LU.cpp:204]   --->   Operation 363 'bitconcatenate' 'zext_ln204_15_cast' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 364 [1/1] (0.00ns)   --->   "%zext_ln204_15 = zext i33 %zext_ln204_15_cast" [LU.cpp:204]   --->   Operation 364 'zext' 'zext_ln204_15' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 365 [2/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_15" [LU.cpp:204]   --->   Operation 365 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_64 : Operation 366 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_10" [LU.cpp:228]   --->   Operation 366 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_64 : Operation 367 [1/1] (0.00ns)   --->   "%bitcast_ln228_11 = bitcast i32 %Y_3_3" [LU.cpp:228]   --->   Operation 367 'bitcast' 'bitcast_ln228_11' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 368 [1/1] (0.00ns)   --->   "%zext_ln228_11_cast = bitconcatenate i33 @_ssdm_op_BitConcatenate.i33.i1.i32, i1 1, i32 %bitcast_ln228_11" [LU.cpp:228]   --->   Operation 368 'bitconcatenate' 'zext_ln228_11_cast' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 369 [1/1] (0.00ns)   --->   "%zext_ln228_11 = zext i33 %zext_ln228_11_cast" [LU.cpp:228]   --->   Operation 369 'zext' 'zext_ln228_11' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 370 [2/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_11" [LU.cpp:228]   --->   Operation 370 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 65 <SV = 64> <Delay = 1.00>
+ST_65 : Operation 371 [1/1] (0.00ns)   --->   "%specpipeline_ln150 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_1" [LU.cpp:150]   --->   Operation 371 'specpipeline' 'specpipeline_ln150' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 372 [1/1] (0.00ns)   --->   "%spectopmodule_ln136 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_2" [LU.cpp:136]   --->   Operation 372 'spectopmodule' 'spectopmodule_ln136' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 373 [1/1] (0.00ns)   --->   "%specinterface_ln136 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_3, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0" [LU.cpp:136]   --->   Operation 373 'specinterface' 'specinterface_ln136' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 374 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %A_in, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 374 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 375 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %A_in"   --->   Operation 375 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 376 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %A_LU_out, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 376 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 377 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %A_LU_out"   --->   Operation 377 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 378 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %P_out, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 378 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 379 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %P_out"   --->   Operation 379 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 380 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %Y_out, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 380 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 381 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %Y_out"   --->   Operation 381 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 382 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %len, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 382 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 383 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %len"   --->   Operation 383 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_65 : Operation 384 [1/2] (1.00ns)   --->   "%write_ln204 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %A_LU_out, i64 %zext_ln204_15" [LU.cpp:204]   --->   Operation 384 'write' 'write_ln204' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_65 : Operation 385 [1/2] (1.00ns)   --->   "%write_ln228 = write void @_ssdm_op_Write.axis.volatile.i64P128A, i64 %Y_out, i64 %zext_ln228_11" [LU.cpp:228]   --->   Operation 385 'write' 'write_ln228' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_65 : Operation 386 [1/1] (0.00ns)   --->   "%ret_ln231 = ret" [LU.cpp:231]   --->   Operation 386 'ret' 'ret_ln231' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read', LU.cpp:174) on port 'A_in' (LU.cpp:174) [37]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [40]  (2.322 ns)
+
+ <State 2>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_1', LU.cpp:174) on port 'A_in' (LU.cpp:174) [41]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [44]  (2.322 ns)
+
+ <State 3>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_2', LU.cpp:174) on port 'A_in' (LU.cpp:174) [45]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [48]  (2.322 ns)
+
+ <State 4>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_3', LU.cpp:174) on port 'A_in' (LU.cpp:174) [49]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [52]  (2.322 ns)
+
+ <State 5>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_4', LU.cpp:174) on port 'A_in' (LU.cpp:174) [53]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [56]  (2.322 ns)
+
+ <State 6>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_5', LU.cpp:174) on port 'A_in' (LU.cpp:174) [57]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [60]  (2.322 ns)
+
+ <State 7>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_6', LU.cpp:174) on port 'A_in' (LU.cpp:174) [61]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [64]  (2.322 ns)
+
+ <State 8>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_7', LU.cpp:174) on port 'A_in' (LU.cpp:174) [65]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [68]  (2.322 ns)
+
+ <State 9>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_8', LU.cpp:174) on port 'A_in' (LU.cpp:174) [69]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [72]  (2.322 ns)
+
+ <State 10>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_9', LU.cpp:174) on port 'A_in' (LU.cpp:174) [73]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [76]  (2.322 ns)
+
+ <State 11>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_10', LU.cpp:174) on port 'A_in' (LU.cpp:174) [77]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [80]  (2.322 ns)
+
+ <State 12>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_11', LU.cpp:174) on port 'A_in' (LU.cpp:174) [81]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [84]  (2.322 ns)
+
+ <State 13>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_12', LU.cpp:174) on port 'A_in' (LU.cpp:174) [85]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [88]  (2.322 ns)
+
+ <State 14>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_13', LU.cpp:174) on port 'A_in' (LU.cpp:174) [89]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [92]  (2.322 ns)
+
+ <State 15>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_14', LU.cpp:174) on port 'A_in' (LU.cpp:174) [93]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [96]  (2.322 ns)
+
+ <State 16>: 3.322ns
+The critical path consists of the following:
+	axis read operation ('A_in_read_15', LU.cpp:174) on port 'A_in' (LU.cpp:174) [97]  (1.000 ns)
+	'store' operation 0 bit ('store_ln175', LU.cpp:175) of variable 'pkt.data', LU.cpp:174 on array 'A', LU.cpp:152 [100]  (2.322 ns)
+
+ <State 17>: 0.000ns
+The critical path consists of the following:
+
+ <State 18>: 2.322ns
+The critical path consists of the following:
+	'call' operation 320 bit ('call_ret4', LU.cpp:192) to 'luDecomposition' [101]  (2.322 ns)
+
+ <State 19>: 5.702ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (5.702 ns)
+
+ <State 20>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 21>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 22>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 23>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 24>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 25>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 26>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 27>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 28>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 29>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 30>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 31>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 32>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 33>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 34>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 35>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 36>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 37>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 38>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 39>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 40>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 41>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 42>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 43>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 44>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 45>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 46>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 47>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 48>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 49>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 50>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 51>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 52>: 7.256ns
+The critical path consists of the following:
+	'call' operation 384 bit ('call_ret', LU.cpp:193) to 'forwardSubstitution' [112]  (7.256 ns)
+
+ <State 53>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [141]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [144]  (1.000 ns)
+
+ <State 54>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [145]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [148]  (1.000 ns)
+
+ <State 55>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [149]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [152]  (1.000 ns)
+
+ <State 56>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [153]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [156]  (1.000 ns)
+
+ <State 57>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [157]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [160]  (1.000 ns)
+
+ <State 58>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [161]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [164]  (1.000 ns)
+
+ <State 59>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [165]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [168]  (1.000 ns)
+
+ <State 60>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [169]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [172]  (1.000 ns)
+
+ <State 61>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [173]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [176]  (1.000 ns)
+
+ <State 62>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [177]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [180]  (1.000 ns)
+
+ <State 63>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [181]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [184]  (1.000 ns)
+
+ <State 64>: 3.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('pkt.data', LU.cpp:202) on array 'A', LU.cpp:152 [185]  (2.322 ns)
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [189]  (1.000 ns)
+
+ <State 65>: 1.000ns
+The critical path consists of the following:
+	axis write operation ('write_ln204', LU.cpp:204) on port 'A_LU_out' (LU.cpp:204) [189]  (1.000 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

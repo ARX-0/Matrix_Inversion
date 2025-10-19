@@ -1,0 +1,1269 @@
+INFO-FLOW: Workspace C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1 opened at Fri Oct 17 17:43:11 +0530 2025
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7z020-clg400-1 
+Execute       create_platform xc7z020-clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2023.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2023.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Command       create_platform done; 0.718 sec.
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.828 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     send_msg_by_id INFO @200-1464@%s config_export -flow=syn 
+INFO: [HLS 200-1464] Running solution command: config_export -flow=syn
+Execute     config_export -flow=syn 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -vivado_clock=10 
+INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=10
+Execute     config_export -vivado_clock=10 
+Command   open_solution done; 0.951 sec.
+Execute   set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+Execute     create_platform xc7z020-clg400-1 -board  
+Execute     source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.183 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   config_export -flow syn -format ip_catalog -rtl verilog -vivado_clock 10 
+INFO: [HLS 200-1510] Running: config_export -flow syn -format ip_catalog -rtl verilog -vivado_clock 10 
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 131.797 MB.
+Execute       set_directive_top axi4_lu_forward -name=axi4_lu_forward 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+INFO: [HLS 200-10] Analyzing design file 'LU.cpp' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling LU.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang LU.cpp -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.cpp.clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.cpp.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.4 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.err.log
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/.systemc_flag -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 2.824 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 3.107 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 3.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp.clang-tidy.loop-label.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp.clang-tidy.loop-label.err.log
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command       clang_tidy done; 6.052 sec.
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp.xilinx-dataflow-lawyer.err.log
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp.clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.pp.0.cpp.clang.err.log
+INFO: [HLS 200-10] Analyzing design file 'LU_2.cpp' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling LU_2.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang LU_2.cpp -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.cpp.clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.cpp.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.5 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.err.log
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/.systemc_flag -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp.clang-tidy.loop-label.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp.clang-tidy.loop-label.err.log
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp.xilinx-dataflow-lawyer.err.log
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp.clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.pp.0.cpp.clang.err.log
+INFO: [HLS 200-10] Analyzing design file 'LU_tb.cpp' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling LU_tb.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang LU_tb.cpp -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.cpp.clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.cpp.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.5 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.err.log
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/.systemc_flag -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp.clang-tidy.loop-label.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp.clang-tidy.loop-label.err.log
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp.xilinx-dataflow-lawyer.err.log
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp.clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.pp.0.cpp.clang.err.log
+INFO: [HLS 200-10] Analyzing design file 'lufwd.cpp' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling lufwd.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang lufwd.cpp -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.cpp.clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.cpp.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.6 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/clang.err.log
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/.systemc_flag -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/all.directive.json -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp.clang-tidy.loop-label.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp.clang-tidy.loop-label.err.log
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp.xilinx-dataflow-lawyer.err.log
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp.clang.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.pp.0.cpp.clang.err.log
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 27.239 seconds; current allocated memory: 138.250 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.0.bc -args  "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.g.bc" "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.g.bc" "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.g.bc" "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.g.bc"  
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU.g.bc C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_2.g.bc C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/LU_tb.g.bc C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/lufwd.g.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.0.bc > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.218 sec.
+Execute       run_link_or_opt -opt -out C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.1.lower.bc -args C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.1.lower.bc > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command       run_link_or_opt done; 0.223 sec.
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.2.m1.bc -args C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsmc++_39.bc 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsmc++_39.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.2.m1.bc > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
+INFO-FLOW: 
+Command       run_link_or_opt done; 2.264 sec.
+Execute       run_link_or_opt -opt -out C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=axi4_lu_forward -reflow-float-conversion 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=axi4_lu_forward -reflow-float-conversion -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.3.fpc.bc > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command       run_link_or_opt done; 1.09 sec.
+Execute       run_link_or_opt -out C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.4.m2.bc -args C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libfloatconversion_39.bc 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libfloatconversion_39.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.4.m2.bc > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=axi4_lu_forward 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=axi4_lu_forward -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.5.gdce.bc > C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+INFO-FLOW: run_clang (background poll_ms 5000) exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=axi4_lu_forward -mllvm -hls-db-dir -mllvm C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -enable-fp-thr=0 -mllvm -reflow-bdd-simplify-threshold=1048576 -mllvm -reflow-fanout-threshold=16 -mllvm -assume-maxi-align=1 -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=0 -mllvm -enable-reflow-auto-loop-pipeline -mllvm -reflow-max-unroll-threshold=409600 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -reflow-emit-hint-scope=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=10 -x ir C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.lto.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 2> C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log bg_poll_cmd: ::AP::poll_clang_39_closed_source
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 5,524 Compile/Link C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 5,524 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 2,152 Unroll/Inline (step 1) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 2,152 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,077 Unroll/Inline (step 2) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,077 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,098 Unroll/Inline (step 3) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,098 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 924 Unroll/Inline (step 4) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 924 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,339 Array/Struct (step 1) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,339 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,180 Array/Struct (step 2) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,180 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,180 Array/Struct (step 3) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,180 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,171 Array/Struct (step 4) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,171 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,162 Array/Struct (step 5) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,162 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,141 Performance (step 1) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,141 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,135 Performance (step 2) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,135 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,135 Performance (step 3) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,135 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,135 Performance (step 4) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,135 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,187 HW Transforms (step 1) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,187 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,324 HW Transforms (step 2) C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,324 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-291] Loop 'write_Y' is marked as complete unroll implied by the pipeline pragma (LU.cpp:222:14)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_223_4' is marked as complete unroll implied by the pipeline pragma (LU.cpp:223:27)
+INFO: [HLS 214-291] Loop 'write_P' is marked as complete unroll implied by the pipeline pragma (LU.cpp:211:14)
+INFO: [HLS 214-291] Loop 'write_LU' is marked as complete unroll implied by the pipeline pragma (LU.cpp:198:15)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_199_3' is marked as complete unroll implied by the pipeline pragma (LU.cpp:199:27)
+INFO: [HLS 214-291] Loop 'read_A' is marked as complete unroll implied by the pipeline pragma (LU.cpp:171:13)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_172_1' is marked as complete unroll implied by the pipeline pragma (LU.cpp:172:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_119_1' is marked as complete unroll implied by the pipeline pragma (LU.cpp:119:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_121_2' is marked as complete unroll implied by the pipeline pragma (LU.cpp:121:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_123_3' is marked as complete unroll implied by the pipeline pragma (LU.cpp:123:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_103_2' is marked as complete unroll implied by the pipeline pragma (LU.cpp:103:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_97_1' is marked as complete unroll implied by the pipeline pragma (LU.cpp:97:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_80_1' is marked as complete unroll implied by the pipeline pragma (LU.cpp:80:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_82_2' is marked as complete unroll implied by the pipeline pragma (LU.cpp:82:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_66_1' is marked as complete unroll implied by the pipeline pragma (LU.cpp:66:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_69_2' is marked as complete unroll implied by the pipeline pragma (LU.cpp:69:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_53_1' is marked as complete unroll implied by the pipeline pragma (LU.cpp:53:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_56_2' is marked as complete unroll implied by the pipeline pragma (LU.cpp:56:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_38_2' is marked as complete unroll implied by the pipeline pragma (LU.cpp:38:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_29_1' is marked as complete unroll implied by the pipeline pragma (LU.cpp:29:22)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_18_2' is marked as complete unroll implied by the pipeline pragma (LU.cpp:18:22)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_14_1' is marked as complete unroll implied by the pipeline pragma (LU.cpp:14:19)
+INFO: [HLS 214-186] Unrolling loop 'write_Y' (LU.cpp:222:14) in function 'axi4_lu_forward' completely with a factor of 4 (LU.cpp:141:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_223_4' (LU.cpp:223:27) in function 'axi4_lu_forward' completely with a factor of 4 (LU.cpp:141:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_223_4' (LU.cpp:223:27) in function 'axi4_lu_forward' has been removed because the loop is unrolled completely (LU.cpp:141:0)
+INFO: [HLS 214-186] Unrolling loop 'write_P' (LU.cpp:211:14) in function 'axi4_lu_forward' completely with a factor of 4 (LU.cpp:141:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'write_P' (LU.cpp:211:14) in function 'axi4_lu_forward' has been removed because the loop is unrolled completely (LU.cpp:141:0)
+INFO: [HLS 214-186] Unrolling loop 'write_LU' (LU.cpp:198:15) in function 'axi4_lu_forward' completely with a factor of 4 (LU.cpp:141:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_199_3' (LU.cpp:199:27) in function 'axi4_lu_forward' completely with a factor of 4 (LU.cpp:141:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_199_3' (LU.cpp:199:27) in function 'axi4_lu_forward' has been removed because the loop is unrolled completely (LU.cpp:141:0)
+INFO: [HLS 214-186] Unrolling loop 'read_A' (LU.cpp:171:13) in function 'axi4_lu_forward' completely with a factor of 4 (LU.cpp:141:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_172_1' (LU.cpp:172:27) in function 'axi4_lu_forward' completely with a factor of 4 (LU.cpp:141:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_172_1' (LU.cpp:172:27) in function 'axi4_lu_forward' has been removed because the loop is unrolled completely (LU.cpp:141:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_119_1' (LU.cpp:119:20) in function 'forwardSubstitution' completely with a factor of 4 (LU.cpp:114:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_119_1' (LU.cpp:119:20) in function 'forwardSubstitution' has been removed because the loop is unrolled completely (LU.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_121_2' (LU.cpp:121:20) in function 'forwardSubstitution' completely with a factor of 4 (LU.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_123_3' (LU.cpp:123:31) in function 'forwardSubstitution' completely with a factor of 3 (LU.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_123_3' (LU.cpp:123:31) in function 'forwardSubstitution' completely with a factor of 2 (LU.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_123_3' (LU.cpp:123:31) in function 'forwardSubstitution' completely with a factor of 1 (LU.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_103_2' (LU.cpp:103:23) in function 'luDecomposition' completely with a factor of 3 (LU.cpp:91:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_103_2' (LU.cpp:103:23) in function 'luDecomposition' has been removed because the loop is unrolled completely (LU.cpp:91:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_97_1' (LU.cpp:97:19) in function 'luDecomposition' completely with a factor of 4 (LU.cpp:91:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_80_1' (LU.cpp:80:19) in function 'extract_LU' completely with a factor of 4 (LU.cpp:78:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_80_1' (LU.cpp:80:19) in function 'extract_LU' has been removed because the loop is unrolled completely (LU.cpp:78:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_82_2' (LU.cpp:82:19) in function 'extract_LU' completely with a factor of 4 (LU.cpp:78:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_38_2' (LU.cpp:38:26) in function 'find_and_swap_pivot' completely with a factor of 4 (LU.cpp:25:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_38_2' (LU.cpp:38:26) in function 'find_and_swap_pivot' has been removed because the loop is unrolled completely (LU.cpp:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_18_2' (LU.cpp:18:22) in function 'base_iteration' completely with a factor of 3 (LU.cpp:12:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_14_1' (LU.cpp:14:19) in function 'base_iteration' completely with a factor of 4 (LU.cpp:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::data() const' into 'fp_struct<float>::to_float() const' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:322:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_float() const' into 'fp_struct<float>::to_ieee() const' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:346:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'float generic_copysign<float>(float, float)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into 'float generic_copysign<float>(float, float)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'float generic_copysign<float>(float, float)' into 'float generic_fabs<float>(float)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_fabs.h:12:0)
+INFO: [HLS 214-178] Inlining function 'float generic_fabs<float>(float)' into 'hls::fabs(float)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\c++\fabsfloat.cpp:6:0)
+INFO: [HLS 214-178] Inlining function 'hls::fabs(float)' into 'find_and_swap_pivot(float (*) [4], int*, int)' (LU.cpp:25:0)
+INFO: [HLS 214-248] Applying array_partition to 'L': Complete partitioning on dimension 2. (LU.cpp:153:11)
+INFO: [HLS 214-248] Applying array_partition to 'U': Complete partitioning on dimension 2. (LU.cpp:154:11)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 11.792 seconds; current allocated memory: 140.242 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.024 seconds; current allocated memory: 140.242 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top axi4_lu_forward -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.0.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 0.183 sec.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 146.902 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.1.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.134 seconds; current allocated memory: 150.066 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.g.1.bc to C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.o.1.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'process_U_row' (LU.cpp:53:19).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'process_L_column' (LU.cpp:66:19).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'find_and_swap_pivot' (LU.cpp:27:5).
+WARNING: [HLS 200-932] Cannot unroll loop 'VITIS_LOOP_53_1' (LU.cpp:53) in function 'process_U_row' completely: variable loop bound.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_56_2' (LU.cpp:56) in function 'process_U_row': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-932] Cannot unroll loop 'VITIS_LOOP_66_1' (LU.cpp:66) in function 'process_L_column' completely: variable loop bound.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_69_2' (LU.cpp:69) in function 'process_L_column': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-932] Cannot unroll loop 'VITIS_LOOP_29_1' (LU.cpp:29) in function 'find_and_swap_pivot' completely: variable loop bound.
+INFO: [XFORM 203-102] Partitioning array 'Y.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'Y.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'Y.2' automatically.
+INFO: [XFORM 203-102] Partitioning array 'Y.3' automatically.
+INFO: [XFORM 203-102] Partitioning array 'Y' (LU.cpp:157) in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'Y.0' (LU.cpp:157) automatically.
+INFO: [XFORM 203-102] Partitioning array 'Y.1' (LU.cpp:157) automatically.
+INFO: [XFORM 203-102] Partitioning array 'Y.2' (LU.cpp:157) automatically.
+INFO: [XFORM 203-102] Partitioning array 'Y.3' (LU.cpp:157) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'P' (LU.cpp:155) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'P' (LU.cpp:155) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'L' (LU.cpp:153) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'L.1' (LU.cpp:153) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'L.2' (LU.cpp:153) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'L.3' (LU.cpp:153) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'U' (LU.cpp:154) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'U.1' (LU.cpp:154) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'U.2' (LU.cpp:154) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'U.3' (LU.cpp:154) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'L' (LU.cpp:153) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'L.1' (LU.cpp:153) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'L.2' (LU.cpp:153) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'L.3' (LU.cpp:153) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'U' (LU.cpp:154) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'U.1' (LU.cpp:154) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'U.2' (LU.cpp:154) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'U.3' (LU.cpp:154) in dimension 1 completely.
+Command         transform done; 0.988 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+Command         transform done; 0.193 sec.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.185 seconds; current allocated memory: 174.855 MB.
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dce -dump-loop-dep-to-ir -check-all-ssdm -dump-complexity-metric -cdfg-build C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.o.2.bc -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Execute           auto_get_db
+Command         transform done; 0.443 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.444 seconds; current allocated memory: 233.238 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 2.017 sec.
+Command     elaborate done; 41.087 sec.
+Execute     ap_eval exec zip -j C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Command     ap_eval done; 0.369 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'axi4_lu_forward' ...
+Execute       ap_set_top_model axi4_lu_forward 
+Execute       get_model_list axi4_lu_forward -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model axi4_lu_forward 
+Execute       preproc_iomode -model forwardSubstitution 
+Execute       preproc_iomode -model luDecomposition 
+Execute       preproc_iomode -model extract_LU 
+Execute       preproc_iomode -model process_L_column 
+Execute       preproc_iomode -model process_U_row 
+Execute       preproc_iomode -model find_and_swap_pivot 
+Execute       preproc_iomode -model base_iteration 
+Execute       get_model_list axi4_lu_forward -filter all-wo-channel 
+INFO-FLOW: Model list for configure: base_iteration find_and_swap_pivot process_U_row process_L_column extract_LU luDecomposition forwardSubstitution axi4_lu_forward
+INFO-FLOW: Configuring Module : base_iteration ...
+Execute       set_default_model base_iteration 
+Execute       apply_spec_resource_limit base_iteration 
+INFO-FLOW: Configuring Module : find_and_swap_pivot ...
+Execute       set_default_model find_and_swap_pivot 
+Execute       apply_spec_resource_limit find_and_swap_pivot 
+INFO-FLOW: Configuring Module : process_U_row ...
+Execute       set_default_model process_U_row 
+Execute       apply_spec_resource_limit process_U_row 
+INFO-FLOW: Configuring Module : process_L_column ...
+Execute       set_default_model process_L_column 
+Execute       apply_spec_resource_limit process_L_column 
+INFO-FLOW: Configuring Module : extract_LU ...
+Execute       set_default_model extract_LU 
+Execute       apply_spec_resource_limit extract_LU 
+INFO-FLOW: Configuring Module : luDecomposition ...
+Execute       set_default_model luDecomposition 
+Execute       apply_spec_resource_limit luDecomposition 
+INFO-FLOW: Configuring Module : forwardSubstitution ...
+Execute       set_default_model forwardSubstitution 
+Execute       apply_spec_resource_limit forwardSubstitution 
+INFO-FLOW: Configuring Module : axi4_lu_forward ...
+Execute       set_default_model axi4_lu_forward 
+Execute       apply_spec_resource_limit axi4_lu_forward 
+INFO-FLOW: Model list for preprocess: base_iteration find_and_swap_pivot process_U_row process_L_column extract_LU luDecomposition forwardSubstitution axi4_lu_forward
+INFO-FLOW: Preprocessing Module: base_iteration ...
+Execute       set_default_model base_iteration 
+Execute       cdfg_preprocess -model base_iteration 
+Execute       rtl_gen_preprocess base_iteration 
+INFO-FLOW: Preprocessing Module: find_and_swap_pivot ...
+Execute       set_default_model find_and_swap_pivot 
+Execute       cdfg_preprocess -model find_and_swap_pivot 
+Execute       rtl_gen_preprocess find_and_swap_pivot 
+INFO-FLOW: Preprocessing Module: process_U_row ...
+Execute       set_default_model process_U_row 
+Execute       cdfg_preprocess -model process_U_row 
+Execute       rtl_gen_preprocess process_U_row 
+INFO-FLOW: Preprocessing Module: process_L_column ...
+Execute       set_default_model process_L_column 
+Execute       cdfg_preprocess -model process_L_column 
+Execute       rtl_gen_preprocess process_L_column 
+INFO-FLOW: Preprocessing Module: extract_LU ...
+Execute       set_default_model extract_LU 
+Execute       cdfg_preprocess -model extract_LU 
+Execute       rtl_gen_preprocess extract_LU 
+INFO-FLOW: Preprocessing Module: luDecomposition ...
+Execute       set_default_model luDecomposition 
+Execute       cdfg_preprocess -model luDecomposition 
+Execute       rtl_gen_preprocess luDecomposition 
+INFO-FLOW: Preprocessing Module: forwardSubstitution ...
+Execute       set_default_model forwardSubstitution 
+Execute       cdfg_preprocess -model forwardSubstitution 
+Execute       rtl_gen_preprocess forwardSubstitution 
+INFO-FLOW: Preprocessing Module: axi4_lu_forward ...
+Execute       set_default_model axi4_lu_forward 
+Execute       cdfg_preprocess -model axi4_lu_forward 
+Execute       rtl_gen_preprocess axi4_lu_forward 
+INFO-FLOW: Model list for synthesis: base_iteration find_and_swap_pivot process_U_row process_L_column extract_LU luDecomposition forwardSubstitution axi4_lu_forward
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'base_iteration' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model base_iteration 
+Execute       schedule -model base_iteration 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'base_iteration'.
+WARNING: [HLS 200-885] The II Violation in module 'base_iteration' (function 'base_iteration'): Unable to schedule 'load' operation 32 bit ('A_load_18', LU.cpp:20) on array 'A' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'A'.
+WARNING: [HLS 200-885] The II Violation in module 'base_iteration' (function 'base_iteration'): Unable to schedule 'load' operation 32 bit ('A_load_20', LU.cpp:20) on array 'A' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'A'.
+WARNING: [HLS 200-885] The II Violation in module 'base_iteration' (function 'base_iteration'): Unable to schedule 'load' operation 32 bit ('A_load_16', LU.cpp:16) on array 'A' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 20, function 'base_iteration'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.284 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.842 seconds; current allocated memory: 237.613 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.sched.adb -f 
+INFO-FLOW: Finish scheduling base_iteration.
+Execute       set_default_model base_iteration 
+Execute       bind -model base_iteration 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.105 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 238.816 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.bind.adb -f 
+INFO-FLOW: Finish binding base_iteration.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'find_and_swap_pivot' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model find_and_swap_pivot 
+Execute       schedule -model find_and_swap_pivot 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'find_and_swap_pivot': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.14 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.232 seconds; current allocated memory: 240.805 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.sched.adb -f 
+INFO-FLOW: Finish scheduling find_and_swap_pivot.
+Execute       set_default_model find_and_swap_pivot 
+Execute       bind -model find_and_swap_pivot 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.108 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 241.234 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.bind.adb -f 
+INFO-FLOW: Finish binding find_and_swap_pivot.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'process_U_row' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model process_U_row 
+Execute       schedule -model process_U_row 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'process_U_row': contains subloop(s) that are not unrolled.
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'VITIS_LOOP_53_1': contains subloop(s) that are not unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.174 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.301 seconds; current allocated memory: 241.895 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.sched.adb -f 
+INFO-FLOW: Finish scheduling process_U_row.
+Execute       set_default_model process_U_row 
+Execute       bind -model process_U_row 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.149 seconds; current allocated memory: 242.109 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.bind.adb -f 
+INFO-FLOW: Finish binding process_U_row.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'process_L_column' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model process_L_column 
+Execute       schedule -model process_L_column 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'process_L_column': contains subloop(s) that are not unrolled.
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'VITIS_LOOP_66_1': contains subloop(s) that are not unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.121 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.235 seconds; current allocated memory: 243.223 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.sched.adb -f 
+INFO-FLOW: Finish scheduling process_L_column.
+Execute       set_default_model process_L_column 
+Execute       bind -model process_L_column 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.106 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 243.391 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.bind.adb -f 
+INFO-FLOW: Finish binding process_L_column.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'extract_LU' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model extract_LU 
+Execute       schedule -model extract_LU 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'extract_LU'.
+WARNING: [HLS 200-885] The II Violation in module 'extract_LU' (function 'extract_LU'): Unable to schedule 'load' operation 32 bit ('L[2]', LU.cpp:84) on array 'A' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'A'.
+WARNING: [HLS 200-885] The II Violation in module 'extract_LU' (function 'extract_LU'): Unable to schedule 'load' operation 32 bit ('L[3]', LU.cpp:84) on array 'A' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 4, function 'extract_LU'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.202 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.344 seconds; current allocated memory: 243.605 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.sched.adb -f 
+INFO-FLOW: Finish scheduling extract_LU.
+Execute       set_default_model extract_LU 
+Execute       bind -model extract_LU 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.171 seconds; current allocated memory: 243.609 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Command       syn_report done; 0.103 sec.
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.bind.adb -f 
+INFO-FLOW: Finish binding extract_LU.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'luDecomposition' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model luDecomposition 
+Execute       schedule -model luDecomposition 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-67] Unable to satisfy pipeline directive for function 'luDecomposition': contains subfunction 'find_and_swap_pivot' which is not pipelined.
+WARNING: [SCHED 204-67] Unable to satisfy pipeline directive for function 'luDecomposition': contains subfunction 'find_and_swap_pivot' which is not pipelined.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.136 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.344 seconds; current allocated memory: 244.605 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.sched.adb -f 
+INFO-FLOW: Finish scheduling luDecomposition.
+Execute       set_default_model luDecomposition 
+Execute       bind -model luDecomposition 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.132 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.174 seconds; current allocated memory: 245.309 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.bind.adb -f 
+INFO-FLOW: Finish binding luDecomposition.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forwardSubstitution' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forwardSubstitution 
+Execute       schedule -model forwardSubstitution 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'forwardSubstitution'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 33, function 'forwardSubstitution'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.118 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 246.105 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.sched.adb -f 
+INFO-FLOW: Finish scheduling forwardSubstitution.
+Execute       set_default_model forwardSubstitution 
+Execute       bind -model forwardSubstitution 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.125 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.174 seconds; current allocated memory: 246.461 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.bind.adb -f 
+INFO-FLOW: Finish binding forwardSubstitution.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'axi4_lu_forward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model axi4_lu_forward 
+Execute       schedule -model axi4_lu_forward 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-67] Unable to satisfy pipeline directive for function 'axi4_lu_forward': contains subfunction 'luDecomposition' which is not pipelined.
+WARNING: [SCHED 204-67] Unable to satisfy pipeline directive for function 'axi4_lu_forward': contains subfunction 'luDecomposition' which is not pipelined.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.156 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.299 seconds; current allocated memory: 248.090 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.sched.adb -f 
+INFO-FLOW: Finish scheduling axi4_lu_forward.
+Execute       set_default_model axi4_lu_forward 
+Execute       bind -model axi4_lu_forward 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.121 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.215 seconds; current allocated memory: 248.379 MB.
+Execute       syn_report -verbosereport -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.bind.adb -f 
+INFO-FLOW: Finish binding axi4_lu_forward.
+Execute       get_model_list axi4_lu_forward -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess base_iteration 
+Execute       rtl_gen_preprocess find_and_swap_pivot 
+Execute       rtl_gen_preprocess process_U_row 
+Execute       rtl_gen_preprocess process_L_column 
+Execute       rtl_gen_preprocess extract_LU 
+Execute       rtl_gen_preprocess luDecomposition 
+Execute       rtl_gen_preprocess forwardSubstitution 
+Execute       rtl_gen_preprocess axi4_lu_forward 
+INFO-FLOW: Model list for RTL generation: base_iteration find_and_swap_pivot process_U_row process_L_column extract_LU luDecomposition forwardSubstitution axi4_lu_forward
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'base_iteration' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model base_iteration -top_prefix axi4_lu_forward_ -sub_prefix axi4_lu_forward_ -mg_file C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'base_iteration' pipeline 'base_iteration' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_16_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'base_iteration'.
+Command       create_rtl_model done; 0.18 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.377 seconds; current allocated memory: 250.738 MB.
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.rtl_wrap.cfg.tcl 
+Execute       gen_rtl base_iteration -style xilinx -f -lang vhdl -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/vhdl/axi4_lu_forward_base_iteration 
+Execute       gen_rtl base_iteration -style xilinx -f -lang vlog -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/verilog/axi4_lu_forward_base_iteration 
+Execute       syn_report -csynth -model base_iteration -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/base_iteration_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model base_iteration -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/base_iteration_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model base_iteration -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model base_iteration -f -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.adb 
+Execute       db_write -model base_iteration -bindview -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info base_iteration -p C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'find_and_swap_pivot' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model find_and_swap_pivot -top_prefix axi4_lu_forward_ -sub_prefix axi4_lu_forward_ -mg_file C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_4_2_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'find_and_swap_pivot'.
+Command       create_rtl_model done; 0.137 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.433 seconds; current allocated memory: 252.773 MB.
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.rtl_wrap.cfg.tcl 
+Execute       gen_rtl find_and_swap_pivot -style xilinx -f -lang vhdl -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/vhdl/axi4_lu_forward_find_and_swap_pivot 
+Execute       gen_rtl find_and_swap_pivot -style xilinx -f -lang vlog -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/verilog/axi4_lu_forward_find_and_swap_pivot 
+Execute       syn_report -csynth -model find_and_swap_pivot -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/find_and_swap_pivot_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model find_and_swap_pivot -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/find_and_swap_pivot_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model find_and_swap_pivot -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model find_and_swap_pivot -f -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.adb 
+Execute       db_write -model find_and_swap_pivot -bindview -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info find_and_swap_pivot -p C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'process_U_row' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model process_U_row -top_prefix axi4_lu_forward_ -sub_prefix axi4_lu_forward_ -mg_file C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_4_2_32_1_1': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_2_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'process_U_row'.
+Command       create_rtl_model done; 0.223 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.802 seconds; current allocated memory: 256.281 MB.
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.rtl_wrap.cfg.tcl 
+Execute       gen_rtl process_U_row -style xilinx -f -lang vhdl -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/vhdl/axi4_lu_forward_process_U_row 
+Execute       gen_rtl process_U_row -style xilinx -f -lang vlog -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/verilog/axi4_lu_forward_process_U_row 
+Execute       syn_report -csynth -model process_U_row -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/process_U_row_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model process_U_row -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/process_U_row_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model process_U_row -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model process_U_row -f -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.adb 
+Execute       db_write -model process_U_row -bindview -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info process_U_row -p C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'process_L_column' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model process_L_column -top_prefix axi4_lu_forward_ -sub_prefix axi4_lu_forward_ -mg_file C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.compgen.tcl 
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_7_2_32_1_1' is changed to 'sparsemux_7_2_32_1_1_x' due to conflict.
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_16_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_4_2_32_1_1': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_32_1_1_x': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'process_L_column'.
+Command       create_rtl_model done; 0.282 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.768 seconds; current allocated memory: 259.762 MB.
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.rtl_wrap.cfg.tcl 
+Execute       gen_rtl process_L_column -style xilinx -f -lang vhdl -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/vhdl/axi4_lu_forward_process_L_column 
+Execute       gen_rtl process_L_column -style xilinx -f -lang vlog -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/verilog/axi4_lu_forward_process_L_column 
+Execute       syn_report -csynth -model process_L_column -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/process_L_column_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model process_L_column -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/process_L_column_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model process_L_column -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model process_L_column -f -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.adb 
+Execute       db_write -model process_L_column -bindview -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info process_L_column -p C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'extract_LU' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model extract_LU -top_prefix axi4_lu_forward_ -sub_prefix axi4_lu_forward_ -mg_file C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'extract_LU' pipeline 'extract_LU' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'extract_LU'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.003 seconds; current allocated memory: 262.117 MB.
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.rtl_wrap.cfg.tcl 
+Execute       gen_rtl extract_LU -style xilinx -f -lang vhdl -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/vhdl/axi4_lu_forward_extract_LU 
+Execute       gen_rtl extract_LU -style xilinx -f -lang vlog -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/verilog/axi4_lu_forward_extract_LU 
+Execute       syn_report -csynth -model extract_LU -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/extract_LU_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model extract_LU -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/extract_LU_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model extract_LU -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model extract_LU -f -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.adb 
+Execute       db_write -model extract_LU -bindview -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info extract_LU -p C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'luDecomposition' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model luDecomposition -top_prefix axi4_lu_forward_ -sub_prefix axi4_lu_forward_ -mg_file C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'luDecomposition'.
+Command       create_rtl_model done; 0.255 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.695 seconds; current allocated memory: 264.629 MB.
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.rtl_wrap.cfg.tcl 
+Execute       gen_rtl luDecomposition -style xilinx -f -lang vhdl -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/vhdl/axi4_lu_forward_luDecomposition 
+Execute       gen_rtl luDecomposition -style xilinx -f -lang vlog -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/verilog/axi4_lu_forward_luDecomposition 
+Execute       syn_report -csynth -model luDecomposition -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/luDecomposition_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model luDecomposition -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/luDecomposition_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model luDecomposition -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model luDecomposition -f -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.adb 
+Execute       db_write -model luDecomposition -bindview -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info luDecomposition -p C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forwardSubstitution' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model forwardSubstitution -top_prefix axi4_lu_forward_ -sub_prefix axi4_lu_forward_ -mg_file C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.compgen.tcl 
+INFO: [RTGEN 206-104] Estimated max fanout for 'forwardSubstitution' is 7872 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 13 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_5_full_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forwardSubstitution'.
+Command       create_rtl_model done; 0.198 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.644 seconds; current allocated memory: 269.133 MB.
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forwardSubstitution -style xilinx -f -lang vhdl -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/vhdl/axi4_lu_forward_forwardSubstitution 
+Execute       gen_rtl forwardSubstitution -style xilinx -f -lang vlog -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/verilog/axi4_lu_forward_forwardSubstitution 
+Execute       syn_report -csynth -model forwardSubstitution -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/forwardSubstitution_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model forwardSubstitution -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/forwardSubstitution_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model forwardSubstitution -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model forwardSubstitution -f -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.adb 
+Execute       db_write -model forwardSubstitution -bindview -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info forwardSubstitution -p C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'axi4_lu_forward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model axi4_lu_forward -top_prefix  -sub_prefix axi4_lu_forward_ -mg_file C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi4_lu_forward/A_in' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi4_lu_forward/A_LU_out' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi4_lu_forward/P_out' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi4_lu_forward/Y_out' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi4_lu_forward/len' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'axi4_lu_forward' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'axi4_lu_forward'.
+INFO: [RTMG 210-278] Implementing memory 'axi4_lu_forward_A_RAM_AUTO_1R1W' using auto RAMs.
+Command       create_rtl_model done; 0.282 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.714 seconds; current allocated memory: 273.547 MB.
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.rtl_wrap.cfg.tcl 
+Execute       gen_rtl axi4_lu_forward -istop -style xilinx -f -lang vhdl -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/vhdl/axi4_lu_forward 
+Execute       gen_rtl axi4_lu_forward -istop -style xilinx -f -lang vlog -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/verilog/axi4_lu_forward 
+Execute       syn_report -csynth -model axi4_lu_forward -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/axi4_lu_forward_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model axi4_lu_forward -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/axi4_lu_forward_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model axi4_lu_forward -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model axi4_lu_forward -f -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.adb 
+Execute       db_write -model axi4_lu_forward -bindview -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info axi4_lu_forward -p C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward 
+Execute       export_constraint_db -f -tool general -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.constraint.tcl 
+Execute       syn_report -designview -model axi4_lu_forward -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.design.xml 
+Execute       syn_report -csynthDesign -model axi4_lu_forward -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth.rpt -MHOut C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/kernel_module_hierarchy.tcl 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -wcfg -model axi4_lu_forward -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model axi4_lu_forward -o C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.protoinst 
+Execute       sc_get_clocks axi4_lu_forward 
+Execute       sc_get_portdomain axi4_lu_forward 
+INFO-FLOW: Model list for RTL component generation: base_iteration find_and_swap_pivot process_U_row process_L_column extract_LU luDecomposition forwardSubstitution axi4_lu_forward
+INFO-FLOW: Handling components in module [base_iteration] ... 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.compgen.tcl 
+INFO-FLOW: Found component axi4_lu_forward_fdiv_32ns_32ns_32_16_no_dsp_1.
+INFO-FLOW: Append model axi4_lu_forward_fdiv_32ns_32ns_32_16_no_dsp_1
+INFO-FLOW: Handling components in module [find_and_swap_pivot] ... 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.compgen.tcl 
+INFO-FLOW: Found component axi4_lu_forward_fcmp_32ns_32ns_1_2_no_dsp_1.
+INFO-FLOW: Append model axi4_lu_forward_fcmp_32ns_32ns_1_2_no_dsp_1
+INFO-FLOW: Found component axi4_lu_forward_mux_4_2_32_1_1.
+INFO-FLOW: Append model axi4_lu_forward_mux_4_2_32_1_1
+INFO-FLOW: Handling components in module [process_U_row] ... 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.compgen.tcl 
+INFO-FLOW: Found component axi4_lu_forward_faddfsub_32ns_32ns_32_5_full_dsp_1.
+INFO-FLOW: Append model axi4_lu_forward_faddfsub_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: Found component axi4_lu_forward_fmul_32ns_32ns_32_4_max_dsp_1.
+INFO-FLOW: Append model axi4_lu_forward_fmul_32ns_32ns_32_4_max_dsp_1
+INFO-FLOW: Found component axi4_lu_forward_sparsemux_7_2_32_1_1.
+INFO-FLOW: Append model axi4_lu_forward_sparsemux_7_2_32_1_1
+INFO-FLOW: Found component axi4_lu_forward_sparsemux_9_2_32_1_1.
+INFO-FLOW: Append model axi4_lu_forward_sparsemux_9_2_32_1_1
+INFO-FLOW: Handling components in module [process_L_column] ... 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.compgen.tcl 
+INFO-FLOW: Found component axi4_lu_forward_sparsemux_7_2_32_1_1_x.
+INFO-FLOW: Append model axi4_lu_forward_sparsemux_7_2_32_1_1_x
+INFO-FLOW: Handling components in module [extract_LU] ... 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.compgen.tcl 
+INFO-FLOW: Handling components in module [luDecomposition] ... 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.compgen.tcl 
+INFO-FLOW: Handling components in module [forwardSubstitution] ... 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.compgen.tcl 
+INFO-FLOW: Found component axi4_lu_forward_fadd_32ns_32ns_32_5_full_dsp_1.
+INFO-FLOW: Append model axi4_lu_forward_fadd_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: Found component axi4_lu_forward_fsub_32ns_32ns_32_5_full_dsp_1.
+INFO-FLOW: Append model axi4_lu_forward_fsub_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: Handling components in module [axi4_lu_forward] ... 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.compgen.tcl 
+INFO-FLOW: Found component axi4_lu_forward_A_RAM_AUTO_1R1W.
+INFO-FLOW: Append model axi4_lu_forward_A_RAM_AUTO_1R1W
+INFO-FLOW: Found component axi4_lu_forward_regslice_both.
+INFO-FLOW: Append model axi4_lu_forward_regslice_both
+INFO-FLOW: Found component axi4_lu_forward_regslice_both.
+INFO-FLOW: Append model axi4_lu_forward_regslice_both
+INFO-FLOW: Found component axi4_lu_forward_regslice_both.
+INFO-FLOW: Append model axi4_lu_forward_regslice_both
+INFO-FLOW: Found component axi4_lu_forward_regslice_both.
+INFO-FLOW: Append model axi4_lu_forward_regslice_both
+INFO-FLOW: Found component axi4_lu_forward_regslice_both.
+INFO-FLOW: Append model axi4_lu_forward_regslice_both
+INFO-FLOW: Append model base_iteration
+INFO-FLOW: Append model find_and_swap_pivot
+INFO-FLOW: Append model process_U_row
+INFO-FLOW: Append model process_L_column
+INFO-FLOW: Append model extract_LU
+INFO-FLOW: Append model luDecomposition
+INFO-FLOW: Append model forwardSubstitution
+INFO-FLOW: Append model axi4_lu_forward
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: axi4_lu_forward_fdiv_32ns_32ns_32_16_no_dsp_1 axi4_lu_forward_fcmp_32ns_32ns_1_2_no_dsp_1 axi4_lu_forward_mux_4_2_32_1_1 axi4_lu_forward_faddfsub_32ns_32ns_32_5_full_dsp_1 axi4_lu_forward_fmul_32ns_32ns_32_4_max_dsp_1 axi4_lu_forward_sparsemux_7_2_32_1_1 axi4_lu_forward_sparsemux_9_2_32_1_1 axi4_lu_forward_sparsemux_7_2_32_1_1_x axi4_lu_forward_fadd_32ns_32ns_32_5_full_dsp_1 axi4_lu_forward_fsub_32ns_32ns_32_5_full_dsp_1 axi4_lu_forward_A_RAM_AUTO_1R1W axi4_lu_forward_regslice_both axi4_lu_forward_regslice_both axi4_lu_forward_regslice_both axi4_lu_forward_regslice_both axi4_lu_forward_regslice_both base_iteration find_and_swap_pivot process_U_row process_L_column extract_LU luDecomposition forwardSubstitution axi4_lu_forward
+INFO-FLOW: Generating C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model axi4_lu_forward_fdiv_32ns_32ns_32_16_no_dsp_1
+INFO-FLOW: To file: write model axi4_lu_forward_fcmp_32ns_32ns_1_2_no_dsp_1
+INFO-FLOW: To file: write model axi4_lu_forward_mux_4_2_32_1_1
+INFO-FLOW: To file: write model axi4_lu_forward_faddfsub_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: To file: write model axi4_lu_forward_fmul_32ns_32ns_32_4_max_dsp_1
+INFO-FLOW: To file: write model axi4_lu_forward_sparsemux_7_2_32_1_1
+INFO-FLOW: To file: write model axi4_lu_forward_sparsemux_9_2_32_1_1
+INFO-FLOW: To file: write model axi4_lu_forward_sparsemux_7_2_32_1_1_x
+INFO-FLOW: To file: write model axi4_lu_forward_fadd_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: To file: write model axi4_lu_forward_fsub_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: To file: write model axi4_lu_forward_A_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model axi4_lu_forward_regslice_both
+INFO-FLOW: To file: write model axi4_lu_forward_regslice_both
+INFO-FLOW: To file: write model axi4_lu_forward_regslice_both
+INFO-FLOW: To file: write model axi4_lu_forward_regslice_both
+INFO-FLOW: To file: write model axi4_lu_forward_regslice_both
+INFO-FLOW: To file: write model base_iteration
+INFO-FLOW: To file: write model find_and_swap_pivot
+INFO-FLOW: To file: write model process_U_row
+INFO-FLOW: To file: write model process_L_column
+INFO-FLOW: To file: write model extract_LU
+INFO-FLOW: To file: write model luDecomposition
+INFO-FLOW: To file: write model forwardSubstitution
+INFO-FLOW: To file: write model axi4_lu_forward
+INFO-FLOW: Generating C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.12 sec.
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/vhdl' dstVlogDir='C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/vlog' tclDir='C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db' modelList='axi4_lu_forward_fdiv_32ns_32ns_32_16_no_dsp_1
+axi4_lu_forward_fcmp_32ns_32ns_1_2_no_dsp_1
+axi4_lu_forward_mux_4_2_32_1_1
+axi4_lu_forward_faddfsub_32ns_32ns_32_5_full_dsp_1
+axi4_lu_forward_fmul_32ns_32ns_32_4_max_dsp_1
+axi4_lu_forward_sparsemux_7_2_32_1_1
+axi4_lu_forward_sparsemux_9_2_32_1_1
+axi4_lu_forward_sparsemux_7_2_32_1_1_x
+axi4_lu_forward_fadd_32ns_32ns_32_5_full_dsp_1
+axi4_lu_forward_fsub_32ns_32ns_32_5_full_dsp_1
+axi4_lu_forward_A_RAM_AUTO_1R1W
+axi4_lu_forward_regslice_both
+axi4_lu_forward_regslice_both
+axi4_lu_forward_regslice_both
+axi4_lu_forward_regslice_both
+axi4_lu_forward_regslice_both
+base_iteration
+find_and_swap_pivot
+process_U_row
+process_L_column
+extract_LU
+luDecomposition
+forwardSubstitution
+axi4_lu_forward
+' expOnly='0'
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.compgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.compgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.compgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.compgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.compgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.compgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.compgen.tcl 
+Command       ap_source done; 0.122 sec.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.279 seconds; current allocated memory: 279.141 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='axi4_lu_forward_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: No bind nodes found for module_name extract_LU
+INFO-FLOW: No bind nodes found for module_name luDecomposition
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.8 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='axi4_lu_forward_fdiv_32ns_32ns_32_16_no_dsp_1
+axi4_lu_forward_fcmp_32ns_32ns_1_2_no_dsp_1
+axi4_lu_forward_mux_4_2_32_1_1
+axi4_lu_forward_faddfsub_32ns_32ns_32_5_full_dsp_1
+axi4_lu_forward_fmul_32ns_32ns_32_4_max_dsp_1
+axi4_lu_forward_sparsemux_7_2_32_1_1
+axi4_lu_forward_sparsemux_9_2_32_1_1
+axi4_lu_forward_sparsemux_7_2_32_1_1_x
+axi4_lu_forward_fadd_32ns_32ns_32_5_full_dsp_1
+axi4_lu_forward_fsub_32ns_32ns_32_5_full_dsp_1
+axi4_lu_forward_A_RAM_AUTO_1R1W
+axi4_lu_forward_regslice_both
+axi4_lu_forward_regslice_both
+axi4_lu_forward_regslice_both
+axi4_lu_forward_regslice_both
+axi4_lu_forward_regslice_both
+base_iteration
+find_and_swap_pivot
+process_U_row
+process_L_column
+extract_LU
+luDecomposition
+forwardSubstitution
+axi4_lu_forward
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.tbgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.compgen.dataonly.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/base_iteration.tbgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/find_and_swap_pivot.tbgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_U_row.tbgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/process_L_column.tbgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/extract_LU.tbgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/luDecomposition.tbgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/forwardSubstitution.tbgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.tbgen.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/axi4_lu_forward.constraint.tcl 
+Execute       sc_get_clocks axi4_lu_forward 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/impl/misc/axi4_lu_forward_fadd_32ns_32ns_32_5_full_dsp_1_ip.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/impl/misc/axi4_lu_forward_faddfsub_32ns_32ns_32_5_full_dsp_1_ip.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/impl/misc/axi4_lu_forward_fcmp_32ns_32ns_1_2_no_dsp_1_ip.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/impl/misc/axi4_lu_forward_fdiv_32ns_32ns_32_16_no_dsp_1_ip.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/impl/misc/axi4_lu_forward_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl 
+Execute       source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/impl/misc/axi4_lu_forward_fsub_32ns_32ns_32_5_full_dsp_1_ip.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} report_dict {TOPINST axi4_lu_forward MODULE2INSTS {axi4_lu_forward axi4_lu_forward luDecomposition grp_luDecomposition_fu_253 base_iteration grp_base_iteration_fu_168 find_and_swap_pivot grp_find_and_swap_pivot_fu_174 process_U_row grp_process_U_row_fu_200 process_L_column grp_process_L_column_fu_241 extract_LU grp_extract_LU_fu_279 forwardSubstitution grp_forwardSubstitution_fu_258} INST2MODULE {axi4_lu_forward axi4_lu_forward grp_luDecomposition_fu_253 luDecomposition grp_base_iteration_fu_168 base_iteration grp_find_and_swap_pivot_fu_174 find_and_swap_pivot grp_process_U_row_fu_200 process_U_row grp_process_L_column_fu_241 process_L_column grp_extract_LU_fu_279 extract_LU grp_forwardSubstitution_fu_258 forwardSubstitution} INSTDATA {axi4_lu_forward {DEPTH 1 CHILDREN {grp_luDecomposition_fu_253 grp_forwardSubstitution_fu_258}} grp_luDecomposition_fu_253 {DEPTH 2 CHILDREN {grp_base_iteration_fu_168 grp_find_and_swap_pivot_fu_174 grp_process_U_row_fu_200 grp_process_L_column_fu_241 grp_extract_LU_fu_279}} grp_base_iteration_fu_168 {DEPTH 3 CHILDREN {}} grp_find_and_swap_pivot_fu_174 {DEPTH 3 CHILDREN {}} grp_process_U_row_fu_200 {DEPTH 3 CHILDREN {}} grp_process_L_column_fu_241 {DEPTH 3 CHILDREN {}} grp_extract_LU_fu_279 {DEPTH 3 CHILDREN {}} grp_forwardSubstitution_fu_258 {DEPTH 2 CHILDREN {}}} MODULEDATA {base_iteration {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 15 OPTYPE fdiv PRAGMA {} RTLNAME fdiv_32ns_32ns_32_16_no_dsp_1_U1 SOURCE LU.cpp:20 VARIABLE L_s LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fdiv}} {BINDTYPE op ID {} IMPL fabric LATENCY 15 OPTYPE fdiv PRAGMA {} RTLNAME fdiv_32ns_32ns_32_16_no_dsp_1_U1 SOURCE LU.cpp:20 VARIABLE L_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fdiv}} {BINDTYPE op ID {} IMPL fabric LATENCY 15 OPTYPE fdiv PRAGMA {} RTLNAME fdiv_32ns_32ns_32_16_no_dsp_1_U1 SOURCE LU.cpp:20 VARIABLE L_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fdiv}}} AREA {DSP 0 BRAM 0 URAM 0}} find_and_swap_pivot {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME i_fu_435_p2 SOURCE LU.cpp:29 VARIABLE i LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln29_fu_564_p2 SOURCE LU.cpp:29 VARIABLE add_ln29 LOOP VITIS_LOOP_29_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} process_U_row {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln60_fu_449_p2 SOURCE LU.cpp:60 VARIABLE add_ln60 LOOP VITIS_LOOP_53_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln56_fu_486_p2 SOURCE LU.cpp:56 VARIABLE add_ln56 LOOP VITIS_LOOP_56_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U20 SOURCE LU.cpp:58 VARIABLE mul LOOP VITIS_LOOP_56_2 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME faddfsub_32ns_32ns_32_5_full_dsp_1_U19 SOURCE LU.cpp:58 VARIABLE sum_1 LOOP VITIS_LOOP_56_2 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME faddfsub_32ns_32ns_32_5_full_dsp_1_U19 SOURCE LU.cpp:60 VARIABLE sub LOOP VITIS_LOOP_53_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln53_fu_576_p2 SOURCE LU.cpp:53 VARIABLE add_ln53 LOOP VITIS_LOOP_53_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 5 BRAM 0 URAM 0}} process_L_column {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME i_fu_422_p2 SOURCE LU.cpp:66 VARIABLE i LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln69_fu_583_p2 SOURCE LU.cpp:69 VARIABLE add_ln69 LOOP VITIS_LOOP_69_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U62 SOURCE LU.cpp:71 VARIABLE mul LOOP VITIS_LOOP_69_2 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME faddfsub_32ns_32ns_32_5_full_dsp_1_U61 SOURCE LU.cpp:71 VARIABLE sum_2 LOOP VITIS_LOOP_69_2 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME faddfsub_32ns_32ns_32_5_full_dsp_1_U61 SOURCE LU.cpp:73 VARIABLE sub LOOP VITIS_LOOP_66_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL fabric LATENCY 15 OPTYPE fdiv PRAGMA {} RTLNAME fdiv_32ns_32ns_32_16_no_dsp_1_U63 SOURCE LU.cpp:73 VARIABLE div LOOP VITIS_LOOP_66_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fdiv}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln66_fu_658_p2 SOURCE LU.cpp:66 VARIABLE add_ln66 LOOP VITIS_LOOP_66_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 5 BRAM 0 URAM 0}} forwardSubstitution {BINDINFO {{BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U111 SOURCE LU.cpp:125 VARIABLE sum LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U113 SOURCE LU.cpp:125 VARIABLE sum_3 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U132 SOURCE LU.cpp:125 VARIABLE mul_227_1 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U117 SOURCE LU.cpp:125 VARIABLE sum_4 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U114 SOURCE LU.cpp:125 VARIABLE sum_5 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U133 SOURCE LU.cpp:125 VARIABLE mul_338_1 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U118 SOURCE LU.cpp:125 VARIABLE sum_6 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U138 SOURCE LU.cpp:125 VARIABLE mul_338_2 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U124 SOURCE LU.cpp:125 VARIABLE sum_7 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U128 SOURCE LU.cpp:125 VARIABLE mul_1_1 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U109 SOURCE LU.cpp:125 VARIABLE sum_8 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fsub PRAGMA {} RTLNAME fsub_32ns_32ns_32_5_full_dsp_1_U112 SOURCE LU.cpp:127 VARIABLE Y_1_1 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fsub}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U129 SOURCE LU.cpp:125 VARIABLE mul_1_2 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U110 SOURCE LU.cpp:125 VARIABLE sum_9 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U134 SOURCE LU.cpp:125 VARIABLE mul_1_2_1 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U119 SOURCE LU.cpp:125 VARIABLE sum_10 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U130 SOURCE LU.cpp:125 VARIABLE mul_1_3 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U115 SOURCE LU.cpp:125 VARIABLE sum_11 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U135 SOURCE LU.cpp:125 VARIABLE mul_1_3_1 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U120 SOURCE LU.cpp:125 VARIABLE sum_12 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U139 SOURCE LU.cpp:125 VARIABLE mul_1_3_2 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U125 SOURCE LU.cpp:125 VARIABLE sum_13 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U131 SOURCE LU.cpp:125 VARIABLE mul_2_2_1 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U116 SOURCE LU.cpp:125 VARIABLE sum_14 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fsub PRAGMA {} RTLNAME fsub_32ns_32ns_32_5_full_dsp_1_U121 SOURCE LU.cpp:127 VARIABLE Y_2_2 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fsub}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U136 SOURCE LU.cpp:125 VARIABLE mul_2_3_1 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U122 SOURCE LU.cpp:125 VARIABLE sum_15 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U140 SOURCE LU.cpp:125 VARIABLE mul_2_3_2 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U126 SOURCE LU.cpp:125 VARIABLE sum_16 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U137 SOURCE LU.cpp:125 VARIABLE mul_3_3_2 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_5_full_dsp_1_U123 SOURCE LU.cpp:125 VARIABLE sum_17 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE fsub PRAGMA {} RTLNAME fsub_32ns_32ns_32_5_full_dsp_1_U127 SOURCE LU.cpp:127 VARIABLE Y_3_3 LOOP {} BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fsub}}} AREA {DSP 77 BRAM 0 URAM 0}} axi4_lu_forward {BINDINFO {{BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_t2p PRAGMA {} RTLNAME A_U SOURCE LU.cpp:152 VARIABLE A LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 16 1} STORAGEUSAGE {ram_t2p array} DISPNAME {bind_storage ram_t2p}}} AREA {DSP 87 BRAM 0 URAM 0}} extract_LU {AREA {DSP 0 BRAM 0 URAM 0}} luDecomposition {AREA {DSP 10 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0.4 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 2.686 seconds; current allocated memory: 287.242 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for axi4_lu_forward.
+INFO: [VLOG 209-307] Generating Verilog RTL for axi4_lu_forward.
+Execute       syn_report -model axi4_lu_forward -printsummary 
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+Command     autosyn done; 14.99 sec.
+Command   csynth_design done; 56.55 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 8 seconds. CPU system time: 5 seconds. Elapsed time: 56.55 seconds; current allocated memory: 156.164 MB.
+Command ap_source done; 57.761 sec.
+Execute cleanup_all 
+Command cleanup_all done; 0.103 sec.
+INFO-FLOW: Workspace C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1 opened at Fri Oct 17 17:51:26 +0530 2025
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7z020-clg400-1 
+Execute       create_platform xc7z020-clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2023.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2023.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Command       create_platform done; 0.904 sec.
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.127 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.066 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     send_msg_by_id INFO @200-1464@%s config_export -flow=syn 
+INFO: [HLS 200-1464] Running solution command: config_export -flow=syn
+Execute     config_export -flow=syn 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -vivado_clock=10 
+INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=10
+Execute     config_export -vivado_clock=10 
+Command   open_solution done; 1.305 sec.
+Execute   set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+Execute     create_platform xc7z020-clg400-1 -board  
+Command     create_platform done; 0.153 sec.
+Execute     source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.101 sec.
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.143 sec.
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.331 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   config_export -flow syn -format ip_catalog -rtl verilog -vivado_clock 10 
+INFO: [HLS 200-1510] Running: config_export -flow syn -format ip_catalog -rtl verilog -vivado_clock 10 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.436 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 20.359 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 20.359 seconds; current allocated memory: 0.703 MB.
+Command ap_source done; 22.204 sec.
+Execute cleanup_all 

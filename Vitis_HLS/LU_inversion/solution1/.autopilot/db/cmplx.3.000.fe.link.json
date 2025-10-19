@@ -1,0 +1,260 @@
+{
+  "0": {
+    "basicblocks": 59,
+    "calls": "13 7 18",
+    "file": "LU.cpp",
+    "fileloc": 136,
+    "instructions": 218,
+    "loads": {
+      "L": 5
+    },
+    "name": "axi4_lu_forward",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 5524
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "16",
+    "file": "x_hls_utils.h",
+    "fileloc": 322,
+    "instructions": 14,
+    "loads": {
+      "L": 1
+    },
+    "name": "to_float",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 292
+  },
+  "10": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "x_hls_utils.h",
+    "fileloc": 346,
+    "instructions": 2,
+    "name": "to_ieee",
+    "total_instructions": 294
+  },
+  "11": {
+    "basicblocks": 1,
+    "calls": "19 19 10",
+    "file": "hls_copysign.h",
+    "fileloc": 10,
+    "instructions": 18,
+    "loads": {
+      "L": 1
+    },
+    "name": "generic_copysign<float>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 934
+  },
+  "12": {
+    "basicblocks": 16,
+    "calls": "19 15 17 17 6 6",
+    "file": "hls_case_IEEE754.h",
+    "fileloc": 12,
+    "instructions": 133,
+    "loads": {
+      "L": 1
+    },
+    "name": "generic_cast_IEEE754<int, AP_TRN_ZERO, float>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 2090
+  },
+  "13": {
+    "basicblocks": 1,
+    "calls": "3",
+    "file": "lib_floatconversion.cpp",
+    "fileloc": 51,
+    "instructions": 2,
+    "name": "__hls_fptosi_float_i32",
+    "total_instructions": 2094
+  },
+  "14": {
+    "basicblocks": 19,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 78,
+    "instructions": 72,
+    "loads": {
+      "L": 3
+    },
+    "name": "extract_LU",
+    "stores": {
+      "L": 6
+    },
+    "total_instructions": 72
+  },
+  "15": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 340,
+    "instructions": 24,
+    "name": "mantissa",
+    "total_instructions": 174
+  },
+  "16": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 309,
+    "instructions": 32,
+    "name": "data",
+    "total_instructions": 274
+  },
+  "17": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 316,
+    "instructions": 8,
+    "name": "expv",
+    "total_instructions": 109
+  },
+  "18": {
+    "basicblocks": 19,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 114,
+    "instructions": 53,
+    "loads": {
+      "L": 3
+    },
+    "name": "forwardSubstitution",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 53
+  },
+  "19": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 283,
+    "instructions": 55,
+    "loads": {
+      "L": 1
+    },
+    "name": "fp_struct",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 311
+  },
+  "2": {
+    "basicblocks": 13,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 12,
+    "instructions": 42,
+    "loads": {
+      "L": 3
+    },
+    "name": "base_iteration",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 42
+  },
+  "20": {
+    "basicblocks": 17,
+    "calls": "8 8 8",
+    "file": "LU.cpp",
+    "fileloc": 25,
+    "instructions": 80,
+    "loads": {
+      "L": 7
+    },
+    "name": "find_and_swap_pivot",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 2894
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "12",
+    "file": "hls_case_IEEE754.h",
+    "fileloc": 116,
+    "instructions": 2,
+    "name": "generic_cast_IEEE754<int, float>",
+    "total_instructions": 2092
+  },
+  "4": {
+    "basicblocks": 13,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 51,
+    "instructions": 43,
+    "loads": {
+      "L": 3
+    },
+    "name": "process_U_row",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 43
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "11",
+    "file": "hls_fabs.h",
+    "fileloc": 12,
+    "instructions": 2,
+    "name": "generic_fabs<float>",
+    "total_instructions": 936
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 349,
+    "instructions": 4,
+    "name": "__signbit",
+    "total_instructions": 9
+  },
+  "7": {
+    "basicblocks": 13,
+    "calls": "2 20 4 9 14",
+    "file": "LU.cpp",
+    "fileloc": 91,
+    "instructions": 29,
+    "name": "luDecomposition",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 3135
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "5",
+    "file": "fabsfloat.cpp",
+    "fileloc": 6,
+    "instructions": 2,
+    "name": "fabs",
+    "total_instructions": 938
+  },
+  "9": {
+    "basicblocks": 13,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 64,
+    "instructions": 55,
+    "loads": {
+      "L": 4
+    },
+    "name": "process_L_column",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 55
+  }
+}

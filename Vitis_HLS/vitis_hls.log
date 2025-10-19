@@ -1,0 +1,103 @@
+ECHO is off.
+ECHO is off.
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'varad' on host 'asusvivobook' (Windows NT_amd64 version 6.2) on Fri Oct 17 17:51:25 +0530 2025
+INFO: [HLS 200-10] In directory 'C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project LU_inversion 
+INFO: [HLS 200-10] Opening project 'C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion'.
+INFO: [HLS 200-1510] Running: set_top axi4_lu_forward 
+INFO: [HLS 200-1510] Running: add_files LU.cpp 
+INFO: [HLS 200-10] Adding design file 'LU.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files LU.hpp 
+INFO: [HLS 200-10] Adding design file 'LU.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files LU_2.cpp 
+INFO: [HLS 200-10] Adding design file 'LU_2.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files LU_tb.cpp 
+INFO: [HLS 200-10] Adding design file 'LU_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files lufwd.cpp 
+INFO: [HLS 200-10] Adding design file 'lufwd.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb LU_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'LU_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -flow=syn
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=10
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -flow syn -format ip_catalog -rtl verilog -vivado_clock 10 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../LU_tb.cpp in debug mode
+   Compiling ../../../../LU.cpp in debug mode
+   Compiling ../../../../LU_2.cpp in debug mode
+   Compiling ../../../../lufwd.cpp in debug mode
+   Generating csim.exe
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:150:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_math.h:15,
+                 from ../../../../LU.hpp:19,
+                 from ../../../../LU_tb.cpp:4:
+C:/Xilinx/Vitis_HLS/2023.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_math.h:15,
+                 from ../../../../LU.hpp:19,
+                 from ../../../../LU_tb.cpp:4:
+C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:142:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:150:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_math.h:15,
+                 from ../../../../LU.cpp:2:
+C:/Xilinx/Vitis_HLS/2023.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_math.h:15,
+                 from ../../../../LU.cpp:2:
+C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:142:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+=== Comparison: PL (LU+FWD+BACK) vs SW (Golden) ===
+PL[0][0]=-14.1425	SW=-0.196676	Diff=13.9458
+PL[0][1]=2.095	SW=-0.750693	Diff=2.84569
+PL[0][2]=-0.9275	SW=0.0720222	Diff=0.999522
+PL[0][3]=0.1825	SW=0.969529	Diff=0.787029
+PL[1][0]=-2.3625	SW=0.141274	Diff=2.50377
+PL[1][1]=0.325	SW=0.595568	Diff=0.270568
+PL[1][2]=-0.0875	SW=0.0609418	Diff=0.148442
+PL[1][3]=0.0125	SW=-0.795014	Diff=0.807514
+PL[2][0]=15.5	SW=0.196676	Diff=15.3033
+PL[2][1]=-2.25	SW=-0.249307	Diff=2.00069
+PL[2][2]=1	SW=-0.0720222	Diff=1.07202
+PL[2][3]=-0.25	SW=0.0304709	Diff=0.280471
+PL[3][0]=-5.125	SW=-0.0775623	Diff=5.04744
+PL[3][1]=0.75	SW=0.182825	Diff=0.567174
+PL[3][2]=-0.375	SW=-0.0138504	Diff=0.36115
+PL[3][3]=0.125	SW=0.0443213	Diff=0.0806787
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 16
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 20.359 seconds; current allocated memory: 0.703 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 22.937 seconds; peak allocated memory: 137.898 MB.

@@ -1,0 +1,1530 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 222, Column: 14 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        write_Y
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 223, Column: 27 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_223_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 211, Column: 14 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        write_P
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 198, Column: 15 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        write_LU
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 199, Column: 27 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_199_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 171, Column: 13 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        read_A
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 172, Column: 27 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_172_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 119, Column: 20 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_119_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 121, Column: 20 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_121_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 123, Column: 31 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 103, Column: 23 }
+Function:        _Z15luDecompositionPA4_fS0_S0_Pi
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_103_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 97, Column: 19 }
+Function:        _Z15luDecompositionPA4_fS0_S0_Pi
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_97_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 80, Column: 19 }
+Function:        _Z10extract_LUPA4_fS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_80_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 82, Column: 19 }
+Function:        _Z10extract_LUPA4_fS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_82_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 66, Column: 19 }
+Function:        _Z16process_L_columnPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_66_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 69, Column: 26 }
+Function:        _Z16process_L_columnPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_69_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 53, Column: 19 }
+Function:        _Z13process_U_rowPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_53_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 56, Column: 26 }
+Function:        _Z13process_U_rowPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_56_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 38, Column: 26 }
+Function:        _Z19find_and_swap_pivotPA4_fPii
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_38_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 29, Column: 22 }
+Function:        _Z19find_and_swap_pivotPA4_fPii
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_29_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 18, Column: 22 }
+Function:        _Z14base_iterationPA4_fS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_18_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 14, Column: 19 }
+Function:        _Z14base_iterationPA4_fS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_14_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        write_Y
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:222:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_223_4
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:223:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_223_4
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:223:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_223_4
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:223:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_223_4
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:223:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_223_4
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:223:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_223_4
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:223:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_223_4
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:223:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_223_4
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:223:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        write_P
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:211:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        write_P
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:211:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        write_LU
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:198:15'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_199_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:199:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_199_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:199:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_199_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:199:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_199_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:199:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_199_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:199:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_199_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:199:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_199_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:199:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_199_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:199:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        read_A
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:171:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_172_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:172:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_172_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:172:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_172_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:172:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_172_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:172:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_172_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:172:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_172_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:172:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_172_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:172:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 141, Column: 0 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_172_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:172:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          axi4_lu_forward
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_119_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:119:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_119_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:119:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_121_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:121:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_121_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:121:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_121_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:121:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_121_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:121:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 114, Column: 0 }
+Function:        _Z19forwardSubstitutionPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_123_3
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:123:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          forwardSubstitution
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 91, Column: 0 }
+Function:        _Z15luDecompositionPA4_fS0_S0_Pi
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_103_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:103:23'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          luDecomposition
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 91, Column: 0 }
+Function:        _Z15luDecompositionPA4_fS0_S0_Pi
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_103_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:103:23'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          luDecomposition
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 91, Column: 0 }
+Function:        _Z15luDecompositionPA4_fS0_S0_Pi
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_97_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:97:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          luDecomposition
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 78, Column: 0 }
+Function:        _Z10extract_LUPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_80_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:80:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          extract_LU
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 78, Column: 0 }
+Function:        _Z10extract_LUPA4_fS0_S0_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_80_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:80:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          extract_LU
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 78, Column: 0 }
+Function:        _Z10extract_LUPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_82_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:82:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          extract_LU
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 78, Column: 0 }
+Function:        _Z10extract_LUPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_82_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:82:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          extract_LU
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 78, Column: 0 }
+Function:        _Z10extract_LUPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_82_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:82:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          extract_LU
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 78, Column: 0 }
+Function:        _Z10extract_LUPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_82_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:82:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          extract_LU
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 25, Column: 0 }
+Function:        _Z19find_and_swap_pivotPA4_fPii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_38_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:38:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          find_and_swap_pivot
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: LU.cpp, Line: 25, Column: 0 }
+Function:        _Z19find_and_swap_pivotPA4_fPii
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_38_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:38:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          find_and_swap_pivot
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 12, Column: 0 }
+Function:        _Z14base_iterationPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_18_2
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:18:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          base_iteration
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: LU.cpp, Line: 12, Column: 0 }
+Function:        _Z14base_iterationPA4_fS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_14_1
+  - String:          ''' ('
+  - LoopLoc:         'LU.cpp:14:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          base_iteration
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                   Line: 322, Column: 0 }
+Function:        _ZNK9fp_structIfE8to_floatEv
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::data() const'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 309, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'fp_struct<float>::to_float() const'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 322, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                   Line: 346, Column: 0 }
+Function:        _ZNK9fp_structIfE7to_ieeeEv
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::to_float() const'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 322, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'fp_struct<float>::to_ieee() const'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 346, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h', 
+                   Line: 10, Column: 0 }
+Function:        _Z16generic_copysignIfET_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::fp_struct(float)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 283, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'float generic_copysign<float>(float, float)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h', 
+                       Line: 10, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h', 
+                   Line: 10, Column: 0 }
+Function:        _Z16generic_copysignIfET_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::to_ieee() const'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 346, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'float generic_copysign<float>(float, float)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h', 
+                       Line: 10, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_fabs.h', 
+                   Line: 12, Column: 0 }
+Function:        _Z12generic_fabsIfET_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'float generic_copysign<float>(float, float)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h', 
+                       Line: 10, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'float generic_fabs<float>(float)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_fabs.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\c++\fabsfloat.cpp', 
+                   Line: 6, Column: 0 }
+Function:        _ZN3hls4fabsEf
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'float generic_fabs<float>(float)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_fabs.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'hls::fabs(float)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\c++\fabsfloat.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: LU.cpp, Line: 25, Column: 0 }
+Function:        _Z19find_and_swap_pivotPA4_fPii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'hls::fabs(float)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\c++\fabsfloat.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'find_and_swap_pivot(float (*) [4], int*, int)'
+    DebugLoc:        { File: LU.cpp, Line: 25, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: LU.cpp, Line: 153, Column: 11 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          L
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: LU.cpp, Line: 154, Column: 11 }
+Function:        _Z15axi4_lu_forwardRN3hls6streamI17stream_packet_f32Li0EEES3_RNS0_I17stream_packet_intLi0EEES3_S3_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          U
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 66, Column: 19 }
+Function:        _Z16process_L_columnPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_66_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 69, Column: 26 }
+Function:        _Z16process_L_columnPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_69_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 53, Column: 19 }
+Function:        _Z13process_U_rowPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_53_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 56, Column: 26 }
+Function:        _Z13process_U_rowPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_56_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 29, Column: 22 }
+Function:        _Z19find_and_swap_pivotPA4_fPii
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_29_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 66, Column: 19 }
+Function:        _Z16process_L_columnPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_66_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 69, Column: 26 }
+Function:        _Z16process_L_columnPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_69_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 53, Column: 19 }
+Function:        _Z13process_U_rowPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_53_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 56, Column: 26 }
+Function:        _Z13process_U_rowPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_56_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 29, Column: 22 }
+Function:        _Z19find_and_swap_pivotPA4_fPii
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_29_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 66, Column: 19 }
+Function:        _Z16process_L_columnPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_66_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 69, Column: 26 }
+Function:        _Z16process_L_columnPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_69_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 53, Column: 19 }
+Function:        _Z13process_U_rowPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_53_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 56, Column: 26 }
+Function:        _Z13process_U_rowPA4_fS0_S0_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_56_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: LU.cpp, Line: 29, Column: 22 }
+Function:        _Z19find_and_swap_pivotPA4_fPii
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_29_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...

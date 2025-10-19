@@ -1,0 +1,211 @@
+
+
+================================================================
+== Synthesis Summary Report of 'axi4_lu_forward'
+================================================================
++ General Information: 
+    * Date:           Fri Oct 17 17:44:04 2025
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        LU_inversion
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+    |         Modules         | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |          |             |             |     |
+    |         & Loops         | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |      FF     |     LUT     | URAM|
+    +-------------------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+    |+ axi4_lu_forward        |     -|  0.04|        -|        -|         -|        -|     -|        no|     -|  87 (39%)|  14155 (13%)|  17647 (33%)|    -|
+    | + luDecomposition       |     -|  0.04|        -|        -|         -|        -|     -|        no|     -|   10 (4%)|    4879 (4%)|    4419 (8%)|    -|
+    |  + base_iteration       |    II|  1.22|       19|  190.000|         -|        4|     -|       yes|     -|         -|    297 (~0%)|    133 (~0%)|    -|
+    |  + find_and_swap_pivot  |     -|  0.19|        -|        -|         -|        -|     -|        no|     -|         -|    652 (~0%)|     858 (1%)|    -|
+    |   o VITIS_LOOP_29_1     |     -|  7.30|        -|        -|         5|        -|     -|        no|     -|         -|            -|            -|    -|
+    |  + process_U_row        |     -|  0.04|        -|        -|         -|        -|     -|        no|     -|    5 (2%)|    956 (~0%)|    1306 (2%)|    -|
+    |   o VITIS_LOOP_53_1     |     -|  7.30|        -|        -|        38|        -|     -|        no|     -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_56_2    |     -|  7.30|       30|  300.000|        10|        -|     3|        no|     -|         -|            -|            -|    -|
+    |  + process_L_column     |     -|  0.04|        -|        -|         -|        -|     -|        no|     -|    5 (2%)|    747 (~0%)|    1375 (2%)|    -|
+    |   o VITIS_LOOP_66_1     |     -|  7.30|        -|        -|        54|        -|     -|        no|     -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_69_2    |     -|  7.30|       30|  300.000|        10|        -|     3|        no|     -|         -|            -|            -|    -|
+    |  + extract_LU           |    II|  4.98|        3|   30.000|         -|        3|     -|       yes|     -|         -|    133 (~0%)|     80 (~0%)|    -|
+    | + forwardSubstitution   |    II|  0.04|       32|  320.000|         -|        1|     -|       yes|     -|  77 (35%)|    8442 (7%)|  12423 (23%)|    -|
+    +-------------------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AXIS
++-----------+-----------+---------------+-------+--------+--------+
+| Interface | Direction | Register Mode | TDATA | TREADY | TVALID |
++-----------+-----------+---------------+-------+--------+--------+
+| A_LU_out  | out       | both          | 64    | 1      | 1      |
+| A_in      | in        | both          | 64    | 1      | 1      |
+| P_out     | out       | both          | 64    | 1      | 1      |
+| Y_out     | out       | both          | 64    | 1      | 1      |
+| len       | in        | both          | 64    | 1      | 1      |
++-----------+-----------+---------------+-------+--------+--------+
+
+* TOP LEVEL CONTROL
++-----------+--------------+----------+
+| Interface | Type         | Ports    |
++-----------+--------------+----------+
+| ap_clk    | clock        | ap_clk   |
+| ap_rst_n  | reset        | ap_rst_n |
+| ap_ctrl   | ap_ctrl_none |          |
++-----------+--------------+----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+-------------------------------+
+| Argument | Direction | Datatype                      |
++----------+-----------+-------------------------------+
+| A_in     | in        | stream<stream_packet_f32, 0>& |
+| A_LU_out | out       | stream<stream_packet_f32, 0>& |
+| P_out    | out       | stream<stream_packet_int, 0>& |
+| Y_out    | out       | stream<stream_packet_f32, 0>& |
+| len      | in        | stream<stream_packet_f32, 0>& |
++----------+-----------+-------------------------------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+
+| Argument | HW Interface | HW Type   |
++----------+--------------+-----------+
+| A_in     | A_in         | interface |
+| A_LU_out | A_LU_out     | interface |
+| P_out    | P_out        | interface |
+| Y_out    | Y_out        | interface |
+| len      | len          | interface |
++----------+--------------+-----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------------+-----+--------+-----------+------+---------+---------+
+| Name                                       | DSP | Pragma | Variable  | Op   | Impl    | Latency |
++--------------------------------------------+-----+--------+-----------+------+---------+---------+
+| + axi4_lu_forward                          | 87  |        |           |      |         |         |
+|  + luDecomposition                         | 10  |        |           |      |         |         |
+|   + base_iteration                         | 0   |        |           |      |         |         |
+|     fdiv_32ns_32ns_32_16_no_dsp_1_U1       |     |        | L_s       | fdiv | fabric  | 15      |
+|     fdiv_32ns_32ns_32_16_no_dsp_1_U1       |     |        | L_1       | fdiv | fabric  | 15      |
+|     fdiv_32ns_32ns_32_16_no_dsp_1_U1       |     |        | L_2       | fdiv | fabric  | 15      |
+|   + find_and_swap_pivot                    | 0   |        |           |      |         |         |
+|     i_fu_435_p2                            |     |        | i         | add  | fabric  | 0       |
+|     add_ln29_fu_564_p2                     |     |        | add_ln29  | add  | fabric  | 0       |
+|   + process_U_row                          | 5   |        |           |      |         |         |
+|     add_ln60_fu_449_p2                     |     |        | add_ln60  | add  | fabric  | 0       |
+|     add_ln56_fu_486_p2                     |     |        | add_ln56  | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U20      | 3   |        | mul       | fmul | maxdsp  | 3       |
+|     faddfsub_32ns_32ns_32_5_full_dsp_1_U19 | 2   |        | sum_1     | fadd | fulldsp | 4       |
+|     faddfsub_32ns_32ns_32_5_full_dsp_1_U19 | 2   |        | sub       | fadd | fulldsp | 4       |
+|     add_ln53_fu_576_p2                     |     |        | add_ln53  | add  | fabric  | 0       |
+|   + process_L_column                       | 5   |        |           |      |         |         |
+|     i_fu_422_p2                            |     |        | i         | add  | fabric  | 0       |
+|     add_ln69_fu_583_p2                     |     |        | add_ln69  | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U62      | 3   |        | mul       | fmul | maxdsp  | 3       |
+|     faddfsub_32ns_32ns_32_5_full_dsp_1_U61 | 2   |        | sum_2     | fadd | fulldsp | 4       |
+|     faddfsub_32ns_32ns_32_5_full_dsp_1_U61 | 2   |        | sub       | fadd | fulldsp | 4       |
+|     fdiv_32ns_32ns_32_16_no_dsp_1_U63      |     |        | div       | fdiv | fabric  | 15      |
+|     add_ln66_fu_658_p2                     |     |        | add_ln66  | add  | fabric  | 0       |
+|  + forwardSubstitution                     | 77  |        |           |      |         |         |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U111     | 2   |        | sum       | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U113     | 2   |        | sum_3     | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U132      | 3   |        | mul_227_1 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U117     | 2   |        | sum_4     | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U114     | 2   |        | sum_5     | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U133      | 3   |        | mul_338_1 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U118     | 2   |        | sum_6     | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U138      | 3   |        | mul_338_2 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U124     | 2   |        | sum_7     | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U128      | 3   |        | mul_1_1   | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U109     | 2   |        | sum_8     | fadd | fulldsp | 4       |
+|    fsub_32ns_32ns_32_5_full_dsp_1_U112     | 2   |        | Y_1_1     | fsub | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U129      | 3   |        | mul_1_2   | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U110     | 2   |        | sum_9     | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U134      | 3   |        | mul_1_2_1 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U119     | 2   |        | sum_10    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U130      | 3   |        | mul_1_3   | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U115     | 2   |        | sum_11    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U135      | 3   |        | mul_1_3_1 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U120     | 2   |        | sum_12    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U139      | 3   |        | mul_1_3_2 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U125     | 2   |        | sum_13    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U131      | 3   |        | mul_2_2_1 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U116     | 2   |        | sum_14    | fadd | fulldsp | 4       |
+|    fsub_32ns_32ns_32_5_full_dsp_1_U121     | 2   |        | Y_2_2     | fsub | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U136      | 3   |        | mul_2_3_1 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U122     | 2   |        | sum_15    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U140      | 3   |        | mul_2_3_2 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U126     | 2   |        | sum_16    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U137      | 3   |        | mul_3_3_2 | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U123     | 2   |        | sum_17    | fadd | fulldsp | 4       |
+|    fsub_32ns_32ns_32_5_full_dsp_1_U127     | 2   |        | Y_3_3     | fsub | fulldsp | 4       |
++--------------------------------------------+-----+--------+-----------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+---------------+------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage         | Type | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |               |      |      |      |        |          |      |         | Banks            |
++-------------------+---------------+------+------+------+--------+----------+------+---------+------------------+
+| + axi4_lu_forward |               |      | 0    | 0    |        |          |      |         |                  |
+|   A_U             | ram_t2p array |      |      |      |        | A        | auto | 1       | 32, 16, 1        |
++-------------------+---------------+------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+---------------------------+-----------------------------------------+
+| Type            | Options                   | Location                                |
++-----------------+---------------------------+-----------------------------------------+
+| inline          | off                       | LU.cpp:13 in base_iteration             |
+| unroll          |                           | LU.cpp:15 in base_iteration             |
+| unroll          |                           | LU.cpp:19 in base_iteration             |
+| inline          | off                       | LU.cpp:26 in find_and_swap_pivot        |
+| pipeline        | II=1                      | LU.cpp:39 in find_and_swap_pivot        |
+| inline          | off                       | LU.cpp:52 in process_u_row              |
+| pipeline        | II=1                      | LU.cpp:54 in process_u_row              |
+| unroll          |                           | LU.cpp:57 in process_u_row              |
+| inline          | off                       | LU.cpp:65 in process_l_column           |
+| pipeline        | II=1                      | LU.cpp:67 in process_l_column           |
+| unroll          |                           | LU.cpp:70 in process_l_column           |
+| inline          | off                       | LU.cpp:79 in extract_lu                 |
+| pipeline        | II=1                      | LU.cpp:81 in extract_lu                 |
+| unroll          |                           | LU.cpp:83 in extract_lu                 |
+| pipeline        |                           | LU.cpp:92 in ludecomposition            |
+| array_partition | variable=L complete dim=2 | LU.cpp:93 in ludecomposition, L         |
+| array_partition | variable=U complete dim=2 | LU.cpp:94 in ludecomposition, U         |
+| pipeline        | II=1                      | LU.cpp:104 in ludecomposition           |
+| inline          | off                       | LU.cpp:115 in forwardsubstitution       |
+| array_partition | variable=L complete dim=2 | LU.cpp:116 in forwardsubstitution, L    |
+| pipeline        | II=1                      | LU.cpp:120 in forwardsubstitution       |
+| unroll          |                           | LU.cpp:124 in forwardsubstitution       |
+| interface       | axis port=A_in            | LU.cpp:142 in axi4_lu_forward, A_in     |
+| interface       | axis port=A_LU_out        | LU.cpp:143 in axi4_lu_forward, A_LU_out |
+| interface       | axis port=P_out           | LU.cpp:144 in axi4_lu_forward, P_out    |
+| interface       | axis port=Y_out           | LU.cpp:145 in axi4_lu_forward, Y_out    |
+| interface       | axis port=len             | LU.cpp:146 in axi4_lu_forward, len      |
+| interface       | ap_ctrl_none port=return  | LU.cpp:147 in axi4_lu_forward, return   |
+| pipeline        |                           | LU.cpp:150 in axi4_lu_forward           |
+| array_partition | variable=L complete dim=2 | LU.cpp:159 in axi4_lu_forward, L        |
+| array_partition | variable=U complete dim=2 | LU.cpp:160 in axi4_lu_forward, U        |
+| pipeline        | II=1                      | LU.cpp:173 in axi4_lu_forward           |
+| unroll          |                           | LU.cpp:184 in axi4_lu_forward           |
+| pipeline        | II=1                      | LU.cpp:200 in axi4_lu_forward           |
+| pipeline        | II=1                      | LU.cpp:212 in axi4_lu_forward           |
+| pipeline        | II=1                      | LU.cpp:224 in axi4_lu_forward           |
++-----------------+---------------------------+-----------------------------------------+
+
+

@@ -1,0 +1,27 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../LU_tb.cpp in debug mode
+   Compiling ../../../../LU.cpp in debug mode
+   Compiling ../../../../LU_2.cpp in debug mode
+   Compiling ../../../../lufwd.cpp in debug mode
+   Generating csim.exe
+=== Comparison: PL (LU+FWD+BACK) vs SW (Golden) ===
+PL[0][0]=-14.1425	SW=-0.196676	Diff=13.9458
+PL[0][1]=2.095	SW=-0.750693	Diff=2.84569
+PL[0][2]=-0.9275	SW=0.0720222	Diff=0.999522
+PL[0][3]=0.1825	SW=0.969529	Diff=0.787029
+PL[1][0]=-2.3625	SW=0.141274	Diff=2.50377
+PL[1][1]=0.325	SW=0.595568	Diff=0.270568
+PL[1][2]=-0.0875	SW=0.0609418	Diff=0.148442
+PL[1][3]=0.0125	SW=-0.795014	Diff=0.807514
+PL[2][0]=15.5	SW=0.196676	Diff=15.3033
+PL[2][1]=-2.25	SW=-0.249307	Diff=2.00069
+PL[2][2]=1	SW=-0.0720222	Diff=1.07202
+PL[2][3]=-0.25	SW=0.0304709	Diff=0.280471
+PL[3][0]=-5.125	SW=-0.0775623	Diff=5.04744
+PL[3][1]=0.75	SW=0.182825	Diff=0.567174
+PL[3][2]=-0.375	SW=-0.0138504	Diff=0.36115
+PL[3][3]=0.125	SW=0.0443213	Diff=0.0806787
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 16
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

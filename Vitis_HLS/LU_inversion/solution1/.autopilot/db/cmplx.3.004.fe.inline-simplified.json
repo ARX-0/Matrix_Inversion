@@ -1,0 +1,119 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "1 3",
+    "file": "LU.cpp",
+    "fileloc": 136,
+    "instructions": 257,
+    "loads": {
+      "L": 36
+    },
+    "name": "axi4_lu_forward",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 924
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "2 6 5 7 6 5 7 6 5 7 4",
+    "file": "LU.cpp",
+    "fileloc": 91,
+    "instructions": 19,
+    "name": "luDecomposition",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 582
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 12,
+    "instructions": 34,
+    "loads": {
+      "L": 7
+    },
+    "name": "base_iteration",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 34
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 114,
+    "instructions": 85,
+    "loads": {
+      "L": 6
+    },
+    "name": "forwardSubstitution",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 85
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 78,
+    "instructions": 97,
+    "loads": {
+      "L": 16
+    },
+    "name": "extract_LU",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 97
+  },
+  "5": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 51,
+    "instructions": 32,
+    "loads": {
+      "L": 3
+    },
+    "name": "process_U_row",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 32
+  },
+  "6": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 25,
+    "instructions": 72,
+    "loads": {
+      "L": 12
+    },
+    "name": "find_and_swap_pivot",
+    "stores": {
+      "L": 10
+    },
+    "total_instructions": 72
+  },
+  "7": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "LU.cpp",
+    "fileloc": 64,
+    "instructions": 40,
+    "loads": {
+      "L": 4
+    },
+    "name": "process_L_column",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 40
+  }
+}

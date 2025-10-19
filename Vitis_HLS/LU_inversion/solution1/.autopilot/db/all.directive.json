@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "axi4_lu_forward",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "axi4_lu_forward"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/LU_inversion/solution1/csynth.tcl",
+    "sourceLine": 19,
+    "success": true
+  }
+]

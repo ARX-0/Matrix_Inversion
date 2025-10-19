@@ -1,0 +1,158 @@
+
+
+================================================================
+== Vitis HLS Report for 'base_iteration'
+================================================================
+* Date:           Fri Oct 17 17:43:59 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        LU_inversion
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.075 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       19|       19|  0.190 us|  0.190 us|    4|    4|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     99|    -|
+|Register         |        -|    -|     297|     32|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     297|    133|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------+-------------------------------+---------+----+---+----+-----+
+    |             Instance             |             Module            | BRAM_18K| DSP| FF| LUT| URAM|
+    +----------------------------------+-------------------------------+---------+----+---+----+-----+
+    |fdiv_32ns_32ns_32_16_no_dsp_1_U1  |fdiv_32ns_32ns_32_16_no_dsp_1  |        0|   0|  0|   0|    0|
+    +----------------------------------+-------------------------------+---------+----+---+----+-----+
+    |Total                             |                               |        0|   0|  0|   0|    0|
+    +----------------------------------+-------------------------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------+----------+----+---+----+------------+------------+
+    | Variable Name | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------+----------+----+---+----+------------+------------+
+    |ap_enable_pp0  |       xor|   0|  0|   2|           1|           2|
+    +---------------+----------+----+---+----+------------+------------+
+    |Total          |          |   0|  0|   2|           1|           2|
+    +---------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |A_address0               |  25|          5|    4|         20|
+    |A_address1               |  20|          4|    4|         16|
+    |ap_NS_fsm                |  25|          5|    1|          5|
+    |ap_enable_reg_pp0_iter0  |   9|          2|    1|          2|
+    |grp_fu_90_p0             |  20|          4|   32|        128|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  99|         20|   42|        171|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------+----+----+-----+-----------+
+    |             Name            | FF | LUT| Bits| Const Bits|
+    +-----------------------------+----+----+-----+-----------+
+    |A_load_17_reg_178            |  32|   0|   32|          0|
+    |A_load_18_reg_158            |  32|   0|   32|          0|
+    |A_load_19_reg_163            |  32|   0|   32|          0|
+    |A_load_20_reg_168            |  32|   0|   32|          0|
+    |A_load_reg_152               |  32|   0|   32|          0|
+    |L_1_reg_198                  |  32|   0|   32|          0|
+    |L_s_reg_183                  |  32|   0|   32|          0|
+    |ap_CS_fsm                    |   4|   0|    4|          0|
+    |ap_enable_reg_pp0_iter0_reg  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1      |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2      |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3      |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4      |   1|   0|    1|          0|
+    |A_load_reg_152               |  64|  32|   32|          0|
+    +-----------------------------+----+----+-----+-----------+
+    |Total                        | 297|  32|  265|          0|
+    +-----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------+-----+-----+------------+----------------+--------------+
+|  RTL Ports  | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++-------------+-----+-----+------------+----------------+--------------+
+|ap_clk       |   in|    1|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_rst       |   in|    1|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_start     |   in|    1|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_done      |  out|    1|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_idle      |  out|    1|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_ready     |  out|    1|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_return_0  |  out|   32|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_return_1  |  out|   32|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_return_2  |  out|   32|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_return_3  |  out|   32|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_return_4  |  out|   32|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_return_5  |  out|   32|  ap_ctrl_hs|  base_iteration|  return value|
+|ap_return_6  |  out|   32|  ap_ctrl_hs|  base_iteration|  return value|
+|A_address0   |  out|    4|   ap_memory|               A|         array|
+|A_ce0        |  out|    1|   ap_memory|               A|         array|
+|A_q0         |   in|   32|   ap_memory|               A|         array|
+|A_address1   |  out|    4|   ap_memory|               A|         array|
+|A_ce1        |  out|    1|   ap_memory|               A|         array|
+|A_q1         |   in|   32|   ap_memory|               A|         array|
++-------------+-----+-----+------------+----------------+--------------+
+

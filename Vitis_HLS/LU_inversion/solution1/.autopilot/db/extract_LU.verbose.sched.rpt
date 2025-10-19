@@ -1,0 +1,158 @@
+
+
+================================================================
+== Vitis HLS Report for 'extract_LU'
+================================================================
+* Date:           Fri Oct 17 17:43:57 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        LU_inversion
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.322 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        3|        3|  30.000 ns|  30.000 ns|    3|    3|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 3, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 3, D = 4, States = { 1 2 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%A_addr = getelementptr i32 %A, i64 0, i64 4" [LU.cpp:84]   --->   Operation 5 'getelementptr' 'A_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%A_addr_10 = getelementptr i32 %A, i64 0, i64 8" [LU.cpp:84]   --->   Operation 6 'getelementptr' 'A_addr_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (2.32ns)   --->   "%A_load = load i4 %A_addr" [LU.cpp:84]   --->   Operation 7 'load' 'A_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_1 : Operation 8 [2/2] (2.32ns)   --->   "%A_load_10 = load i4 %A_addr_10" [LU.cpp:84]   --->   Operation 8 'load' 'A_load_10' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%A_addr_11 = getelementptr i32 %A, i64 0, i64 9" [LU.cpp:84]   --->   Operation 9 'getelementptr' 'A_addr_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%A_addr_12 = getelementptr i32 %A, i64 0, i64 12" [LU.cpp:84]   --->   Operation 10 'getelementptr' 'A_addr_12' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/2] (2.32ns)   --->   "%A_load = load i4 %A_addr" [LU.cpp:84]   --->   Operation 11 'load' 'A_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_2 : Operation 12 [1/2] (2.32ns)   --->   "%A_load_10 = load i4 %A_addr_10" [LU.cpp:84]   --->   Operation 12 'load' 'A_load_10' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_2 : Operation 13 [2/2] (2.32ns)   --->   "%A_load_11 = load i4 %A_addr_11" [LU.cpp:84]   --->   Operation 13 'load' 'A_load_11' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_2 : Operation 14 [2/2] (2.32ns)   --->   "%A_load_12 = load i4 %A_addr_12" [LU.cpp:84]   --->   Operation 14 'load' 'A_load_12' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 3 <SV = 2> <Delay = 2.32>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%A_addr_13 = getelementptr i32 %A, i64 0, i64 13" [LU.cpp:84]   --->   Operation 15 'getelementptr' 'A_addr_13' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%A_addr_14 = getelementptr i32 %A, i64 0, i64 14" [LU.cpp:84]   --->   Operation 16 'getelementptr' 'A_addr_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/2] (2.32ns)   --->   "%A_load_11 = load i4 %A_addr_11" [LU.cpp:84]   --->   Operation 17 'load' 'A_load_11' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_3 : Operation 18 [1/2] (2.32ns)   --->   "%A_load_12 = load i4 %A_addr_12" [LU.cpp:84]   --->   Operation 18 'load' 'A_load_12' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_3 : Operation 19 [2/2] (2.32ns)   --->   "%A_load_13 = load i4 %A_addr_13" [LU.cpp:84]   --->   Operation 19 'load' 'A_load_13' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_3 : Operation 20 [2/2] (2.32ns)   --->   "%A_load_14 = load i4 %A_addr_14" [LU.cpp:84]   --->   Operation 20 'load' 'A_load_14' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 4 <SV = 3> <Delay = 2.32>
+ST_4 : Operation 21 [1/2] (2.32ns)   --->   "%A_load_13 = load i4 %A_addr_13" [LU.cpp:84]   --->   Operation 21 'load' 'A_load_13' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_4 : Operation 22 [1/2] (2.32ns)   --->   "%A_load_14 = load i4 %A_addr_14" [LU.cpp:84]   --->   Operation 22 'load' 'A_load_14' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_4 : Operation 23 [1/1] (0.00ns)   --->   "%newret1 = insertvalue i192 <undef>, i32 %A_load" [LU.cpp:84]   --->   Operation 23 'insertvalue' 'newret1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%newret3 = insertvalue i192 %newret1, i32 %A_load_10" [LU.cpp:84]   --->   Operation 24 'insertvalue' 'newret3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%newret5 = insertvalue i192 %newret3, i32 %A_load_12" [LU.cpp:84]   --->   Operation 25 'insertvalue' 'newret5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%newret7 = insertvalue i192 %newret5, i32 %A_load_11" [LU.cpp:84]   --->   Operation 26 'insertvalue' 'newret7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%newret9 = insertvalue i192 %newret7, i32 %A_load_13" [LU.cpp:84]   --->   Operation 27 'insertvalue' 'newret9' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%newret11 = insertvalue i192 %newret9, i32 %A_load_14" [LU.cpp:84]   --->   Operation 28 'insertvalue' 'newret11' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%ret_ln84 = ret i192 %newret11" [LU.cpp:84]   --->   Operation 29 'ret' 'ret_ln84' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 2.322ns
+The critical path consists of the following:
+	'getelementptr' operation 4 bit ('A_addr', LU.cpp:84) [2]  (0.000 ns)
+	'load' operation 32 bit ('L[1]', LU.cpp:84) on array 'A' [8]  (2.322 ns)
+
+ <State 2>: 2.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('L[1]', LU.cpp:84) on array 'A' [8]  (2.322 ns)
+
+ <State 3>: 2.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('L[2]', LU.cpp:84) on array 'A' [10]  (2.322 ns)
+
+ <State 4>: 2.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('L[3]', LU.cpp:84) on array 'A' [12]  (2.322 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

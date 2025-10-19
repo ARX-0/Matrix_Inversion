@@ -1,0 +1,338 @@
+
+
+================================================================
+== Vitis HLS Report for 'base_iteration'
+================================================================
+* Date:           Fri Oct 17 17:43:55 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        LU_inversion
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.075 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       19|       19|  0.190 us|  0.190 us|    4|    4|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 4, depth = 20
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 20
+* Pipeline : 1
+  Pipeline-0 : II = 4, D = 20, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%A_addr = getelementptr i32 %A, i64 0, i64 0" [LU.cpp:16]   --->   Operation 21 'getelementptr' 'A_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%A_addr_18 = getelementptr i32 %A, i64 0, i64 4" [LU.cpp:20]   --->   Operation 22 'getelementptr' 'A_addr_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [2/2] (2.32ns)   --->   "%A_load = load i4 %A_addr" [LU.cpp:16]   --->   Operation 23 'load' 'A_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_1 : Operation 24 [2/2] (2.32ns)   --->   "%A_load_18 = load i4 %A_addr_18" [LU.cpp:20]   --->   Operation 24 'load' 'A_load_18' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%A_addr_19 = getelementptr i32 %A, i64 0, i64 8" [LU.cpp:20]   --->   Operation 25 'getelementptr' 'A_addr_19' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%A_addr_20 = getelementptr i32 %A, i64 0, i64 12" [LU.cpp:20]   --->   Operation 26 'getelementptr' 'A_addr_20' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/2] (2.32ns)   --->   "%A_load = load i4 %A_addr" [LU.cpp:16]   --->   Operation 27 'load' 'A_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_2 : Operation 28 [1/2] (2.32ns)   --->   "%A_load_18 = load i4 %A_addr_18" [LU.cpp:20]   --->   Operation 28 'load' 'A_load_18' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_2 : Operation 29 [2/2] (2.32ns)   --->   "%A_load_19 = load i4 %A_addr_19" [LU.cpp:20]   --->   Operation 29 'load' 'A_load_19' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_2 : Operation 30 [2/2] (2.32ns)   --->   "%A_load_20 = load i4 %A_addr_20" [LU.cpp:20]   --->   Operation 30 'load' 'A_load_20' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 3 <SV = 2> <Delay = 6.07>
+ST_3 : Operation 31 [16/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 31 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 32 [1/2] (2.32ns)   --->   "%A_load_19 = load i4 %A_addr_19" [LU.cpp:20]   --->   Operation 32 'load' 'A_load_19' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_3 : Operation 33 [1/2] (2.32ns)   --->   "%A_load_20 = load i4 %A_addr_20" [LU.cpp:20]   --->   Operation 33 'load' 'A_load_20' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+
+State 4 <SV = 3> <Delay = 6.07>
+ST_4 : Operation 34 [15/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 34 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 35 [16/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 35 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 6.07>
+ST_5 : Operation 36 [14/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 36 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 37 [15/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 37 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 38 [16/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 38 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 6.07>
+ST_6 : Operation 39 [13/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 39 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 40 [14/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 40 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 41 [15/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 41 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 6.07>
+ST_7 : Operation 42 [12/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 42 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 43 [13/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 43 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 44 [14/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 44 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 6.07>
+ST_8 : Operation 45 [11/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 45 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 46 [12/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 46 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 47 [13/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 47 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 6.07>
+ST_9 : Operation 48 [10/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 48 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 49 [11/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 49 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 50 [12/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 50 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 6.07>
+ST_10 : Operation 51 [9/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 51 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 52 [10/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 52 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 53 [11/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 53 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 6.07>
+ST_11 : Operation 54 [8/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 54 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 55 [9/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 55 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 56 [10/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 56 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 6.07>
+ST_12 : Operation 57 [7/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 57 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 58 [8/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 58 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 59 [9/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 59 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 6.07>
+ST_13 : Operation 60 [6/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 60 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 61 [7/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 61 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 62 [8/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 62 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 6.07>
+ST_14 : Operation 63 [5/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 63 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 64 [6/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 64 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 65 [7/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 65 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 6.07>
+ST_15 : Operation 66 [4/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 66 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 67 [5/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 67 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 68 [6/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 68 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 6.07>
+ST_16 : Operation 69 [1/1] (0.00ns)   --->   "%A_addr_17 = getelementptr i32 %A, i64 0, i64 3" [LU.cpp:16]   --->   Operation 69 'getelementptr' 'A_addr_17' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 70 [2/2] (2.32ns)   --->   "%A_load_17 = load i4 %A_addr_17" [LU.cpp:16]   --->   Operation 70 'load' 'A_load_17' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_16 : Operation 71 [3/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 71 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 72 [4/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 72 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 73 [5/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 73 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 6.07>
+ST_17 : Operation 74 [1/2] (2.32ns)   --->   "%A_load_17 = load i4 %A_addr_17" [LU.cpp:16]   --->   Operation 74 'load' 'A_load_17' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_17 : Operation 75 [2/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 75 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 76 [3/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 76 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 77 [4/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 77 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 6.07>
+ST_18 : Operation 78 [1/16] (6.07ns)   --->   "%L_s = fdiv i32 %A_load_18, i32 %A_load" [LU.cpp:20]   --->   Operation 78 'fdiv' 'L_s' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 79 [2/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 79 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 80 [3/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 80 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 6.07>
+ST_19 : Operation 81 [1/1] (0.00ns)   --->   "%A_addr_15 = getelementptr i32 %A, i64 0, i64 1" [LU.cpp:16]   --->   Operation 81 'getelementptr' 'A_addr_15' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 82 [1/1] (0.00ns)   --->   "%A_addr_16 = getelementptr i32 %A, i64 0, i64 2" [LU.cpp:16]   --->   Operation 82 'getelementptr' 'A_addr_16' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 83 [2/2] (2.32ns)   --->   "%A_load_15 = load i4 %A_addr_15" [LU.cpp:16]   --->   Operation 83 'load' 'A_load_15' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_19 : Operation 84 [2/2] (2.32ns)   --->   "%A_load_16 = load i4 %A_addr_16" [LU.cpp:16]   --->   Operation 84 'load' 'A_load_16' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_19 : Operation 85 [1/16] (6.07ns)   --->   "%L_1 = fdiv i32 %A_load_19, i32 %A_load" [LU.cpp:20]   --->   Operation 85 'fdiv' 'L_1' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 86 [2/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 86 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 6.07>
+ST_20 : Operation 87 [1/2] (2.32ns)   --->   "%A_load_15 = load i4 %A_addr_15" [LU.cpp:16]   --->   Operation 87 'load' 'A_load_15' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_20 : Operation 88 [1/2] (2.32ns)   --->   "%A_load_16 = load i4 %A_addr_16" [LU.cpp:16]   --->   Operation 88 'load' 'A_load_16' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 16> <RAM>
+ST_20 : Operation 89 [1/16] (6.07ns)   --->   "%L_2 = fdiv i32 %A_load_20, i32 %A_load" [LU.cpp:20]   --->   Operation 89 'fdiv' 'L_2' <Predicate = true> <Delay = 6.07> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 90 [1/1] (0.00ns)   --->   "%newret = insertvalue i224 <undef>, i32 %L_s" [LU.cpp:20]   --->   Operation 90 'insertvalue' 'newret' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 91 [1/1] (0.00ns)   --->   "%newret2 = insertvalue i224 %newret, i32 %L_1" [LU.cpp:20]   --->   Operation 91 'insertvalue' 'newret2' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 92 [1/1] (0.00ns)   --->   "%newret4 = insertvalue i224 %newret2, i32 %L_2" [LU.cpp:20]   --->   Operation 92 'insertvalue' 'newret4' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 93 [1/1] (0.00ns)   --->   "%newret6 = insertvalue i224 %newret4, i32 %A_load" [LU.cpp:20]   --->   Operation 93 'insertvalue' 'newret6' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 94 [1/1] (0.00ns)   --->   "%newret8 = insertvalue i224 %newret6, i32 %A_load_15" [LU.cpp:20]   --->   Operation 94 'insertvalue' 'newret8' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 95 [1/1] (0.00ns)   --->   "%newret10 = insertvalue i224 %newret8, i32 %A_load_16" [LU.cpp:20]   --->   Operation 95 'insertvalue' 'newret10' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 96 [1/1] (0.00ns)   --->   "%newret12 = insertvalue i224 %newret10, i32 %A_load_17" [LU.cpp:20]   --->   Operation 96 'insertvalue' 'newret12' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 97 [1/1] (0.00ns)   --->   "%ret_ln20 = ret i224 %newret12" [LU.cpp:20]   --->   Operation 97 'ret' 'ret_ln20' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 2.322ns
+The critical path consists of the following:
+	'getelementptr' operation 4 bit ('A_addr', LU.cpp:16) [2]  (0.000 ns)
+	'load' operation 32 bit ('A_load', LU.cpp:16) on array 'A' [9]  (2.322 ns)
+
+ <State 2>: 2.322ns
+The critical path consists of the following:
+	'load' operation 32 bit ('A_load', LU.cpp:16) on array 'A' [9]  (2.322 ns)
+
+ <State 3>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 4>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 5>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 6>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 7>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 8>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 9>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 10>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 11>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 12>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 13>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 14>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 15>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 16>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 17>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 18>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_s', LU.cpp:20) [14]  (6.075 ns)
+
+ <State 19>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_1', LU.cpp:20) [16]  (6.075 ns)
+
+ <State 20>: 6.075ns
+The critical path consists of the following:
+	'fdiv' operation 32 bit ('L_2', LU.cpp:20) [18]  (6.075 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
