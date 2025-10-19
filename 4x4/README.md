@@ -34,7 +34,7 @@ adj(A) is the transpose of the cofactor matrix
 
 ---
 
-## Comparison and Validation
+## Comparison and Validation (LU_salvage_from_Eigen.cpp)
 
 The output is from the [Matrix Inversion Computing Website](https://matrix.reshish.com/inverse-matrix/),  
 compared with the results from the **Eigen-inspired static 4x4 inverse** implementation in  
@@ -124,4 +124,5 @@ struct compute_inverse {
 };
 ````
 for matrix sizes above 4x4 this is the general implementation where in the Partial pivoting LU decpmpostion is used. (SIZE > 4)
+
 
