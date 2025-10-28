@@ -2,6 +2,8 @@
 
 Matrix_inversion/Vitis_HLS contains all the project files
 
+You require to read the following doc:- [Google doc for inversion and LUs piepline](https://docs.google.com/document/d/1A2RGIs5t9oxTaT-qp08fqaPF-ykvq457mIzrZnia0J0/edit?usp=sharing)
+
 The GaussJordan file contains
 
  - 'GaussJordanInverse.hpp' (the headder file that has the implemented functions).
