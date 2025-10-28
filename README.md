@@ -1,5 +1,7 @@
 # The Workflow Organisation.
 
+Matrix_inversion/Vitis_HLS contains all the project files
+
 The GaussJordan file contains
 
  - 'GaussJordanInverse.hpp' (the headder file that has the implemented functions).
