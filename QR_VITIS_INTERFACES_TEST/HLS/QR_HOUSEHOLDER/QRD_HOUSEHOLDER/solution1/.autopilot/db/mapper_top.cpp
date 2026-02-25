@@ -242,45 +242,585 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 using hls::sim::Byte;
-extern "C" void top(Byte<4>*, Byte<4>*, Byte<4>*, int, int, int);
-extern "C" void apatb_top_hw(volatile void * __xlx_apatb_param_A_DRAM, volatile void * __xlx_apatb_param_Q_DRAM, volatile void * __xlx_apatb_param_R_DRAM) {
+extern "C" void top(Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+extern "C" void apatb_top_hw(volatile void * __xlx_apatb_param_A_DRAM_0_0, volatile void * __xlx_apatb_param_A_DRAM_0_1, volatile void * __xlx_apatb_param_A_DRAM_0_2, volatile void * __xlx_apatb_param_A_DRAM_0_3, volatile void * __xlx_apatb_param_A_DRAM_1_0, volatile void * __xlx_apatb_param_A_DRAM_1_1, volatile void * __xlx_apatb_param_A_DRAM_1_2, volatile void * __xlx_apatb_param_A_DRAM_1_3, volatile void * __xlx_apatb_param_A_DRAM_2_0, volatile void * __xlx_apatb_param_A_DRAM_2_1, volatile void * __xlx_apatb_param_A_DRAM_2_2, volatile void * __xlx_apatb_param_A_DRAM_2_3, volatile void * __xlx_apatb_param_A_DRAM_3_0, volatile void * __xlx_apatb_param_A_DRAM_3_1, volatile void * __xlx_apatb_param_A_DRAM_3_2, volatile void * __xlx_apatb_param_A_DRAM_3_3, volatile void * __xlx_apatb_param_Q_DRAM_0_0, volatile void * __xlx_apatb_param_Q_DRAM_0_1, volatile void * __xlx_apatb_param_Q_DRAM_0_2, volatile void * __xlx_apatb_param_Q_DRAM_0_3, volatile void * __xlx_apatb_param_Q_DRAM_1_0, volatile void * __xlx_apatb_param_Q_DRAM_1_1, volatile void * __xlx_apatb_param_Q_DRAM_1_2, volatile void * __xlx_apatb_param_Q_DRAM_1_3, volatile void * __xlx_apatb_param_Q_DRAM_2_0, volatile void * __xlx_apatb_param_Q_DRAM_2_1, volatile void * __xlx_apatb_param_Q_DRAM_2_2, volatile void * __xlx_apatb_param_Q_DRAM_2_3, volatile void * __xlx_apatb_param_Q_DRAM_3_0, volatile void * __xlx_apatb_param_Q_DRAM_3_1, volatile void * __xlx_apatb_param_Q_DRAM_3_2, volatile void * __xlx_apatb_param_Q_DRAM_3_3, volatile void * __xlx_apatb_param_R_DRAM_0_0, volatile void * __xlx_apatb_param_R_DRAM_0_1, volatile void * __xlx_apatb_param_R_DRAM_0_2, volatile void * __xlx_apatb_param_R_DRAM_0_3, volatile void * __xlx_apatb_param_R_DRAM_1_0, volatile void * __xlx_apatb_param_R_DRAM_1_1, volatile void * __xlx_apatb_param_R_DRAM_1_2, volatile void * __xlx_apatb_param_R_DRAM_1_3, volatile void * __xlx_apatb_param_R_DRAM_2_0, volatile void * __xlx_apatb_param_R_DRAM_2_1, volatile void * __xlx_apatb_param_R_DRAM_2_2, volatile void * __xlx_apatb_param_R_DRAM_2_3, volatile void * __xlx_apatb_param_R_DRAM_3_0, volatile void * __xlx_apatb_param_R_DRAM_3_1, volatile void * __xlx_apatb_param_R_DRAM_3_2, volatile void * __xlx_apatb_param_R_DRAM_3_3) {
 using hls::sim::createStream;
-  // Collect __xlx_A_DRAM__tmp_vec
-std::vector<Byte<4>> __xlx_A_DRAM__tmp_vec;
-for (size_t i = 0; i < 16; ++i){
-__xlx_A_DRAM__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM)[i]);
+  // Collect __xlx_A_DRAM_0_0__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_0_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_0_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_0_0)[i]);
 }
-  int __xlx_size_param_A_DRAM = 16;
-  int __xlx_offset_param_A_DRAM = 0;
-  int __xlx_offset_byte_param_A_DRAM = 0*4;
-  // Collect __xlx_Q_DRAM__tmp_vec
-std::vector<Byte<4>> __xlx_Q_DRAM__tmp_vec;
-for (size_t i = 0; i < 16; ++i){
-__xlx_Q_DRAM__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM)[i]);
+  int __xlx_size_param_A_DRAM_0_0 = 1;
+  int __xlx_offset_param_A_DRAM_0_0 = 0;
+  int __xlx_offset_byte_param_A_DRAM_0_0 = 0*4;
+  // Collect __xlx_A_DRAM_0_1__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_0_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_0_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_0_1)[i]);
 }
-  int __xlx_size_param_Q_DRAM = 16;
-  int __xlx_offset_param_Q_DRAM = 0;
-  int __xlx_offset_byte_param_Q_DRAM = 0*4;
-  // Collect __xlx_R_DRAM__tmp_vec
-std::vector<Byte<4>> __xlx_R_DRAM__tmp_vec;
-for (size_t i = 0; i < 16; ++i){
-__xlx_R_DRAM__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM)[i]);
+  int __xlx_size_param_A_DRAM_0_1 = 1;
+  int __xlx_offset_param_A_DRAM_0_1 = 0;
+  int __xlx_offset_byte_param_A_DRAM_0_1 = 0*4;
+  // Collect __xlx_A_DRAM_0_2__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_0_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_0_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_0_2)[i]);
 }
-  int __xlx_size_param_R_DRAM = 16;
-  int __xlx_offset_param_R_DRAM = 0;
-  int __xlx_offset_byte_param_R_DRAM = 0*4;
+  int __xlx_size_param_A_DRAM_0_2 = 1;
+  int __xlx_offset_param_A_DRAM_0_2 = 0;
+  int __xlx_offset_byte_param_A_DRAM_0_2 = 0*4;
+  // Collect __xlx_A_DRAM_0_3__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_0_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_0_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_0_3)[i]);
+}
+  int __xlx_size_param_A_DRAM_0_3 = 1;
+  int __xlx_offset_param_A_DRAM_0_3 = 0;
+  int __xlx_offset_byte_param_A_DRAM_0_3 = 0*4;
+  // Collect __xlx_A_DRAM_1_0__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_1_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_1_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_1_0)[i]);
+}
+  int __xlx_size_param_A_DRAM_1_0 = 1;
+  int __xlx_offset_param_A_DRAM_1_0 = 0;
+  int __xlx_offset_byte_param_A_DRAM_1_0 = 0*4;
+  // Collect __xlx_A_DRAM_1_1__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_1_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_1_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_1_1)[i]);
+}
+  int __xlx_size_param_A_DRAM_1_1 = 1;
+  int __xlx_offset_param_A_DRAM_1_1 = 0;
+  int __xlx_offset_byte_param_A_DRAM_1_1 = 0*4;
+  // Collect __xlx_A_DRAM_1_2__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_1_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_1_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_1_2)[i]);
+}
+  int __xlx_size_param_A_DRAM_1_2 = 1;
+  int __xlx_offset_param_A_DRAM_1_2 = 0;
+  int __xlx_offset_byte_param_A_DRAM_1_2 = 0*4;
+  // Collect __xlx_A_DRAM_1_3__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_1_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_1_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_1_3)[i]);
+}
+  int __xlx_size_param_A_DRAM_1_3 = 1;
+  int __xlx_offset_param_A_DRAM_1_3 = 0;
+  int __xlx_offset_byte_param_A_DRAM_1_3 = 0*4;
+  // Collect __xlx_A_DRAM_2_0__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_2_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_2_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_2_0)[i]);
+}
+  int __xlx_size_param_A_DRAM_2_0 = 1;
+  int __xlx_offset_param_A_DRAM_2_0 = 0;
+  int __xlx_offset_byte_param_A_DRAM_2_0 = 0*4;
+  // Collect __xlx_A_DRAM_2_1__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_2_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_2_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_2_1)[i]);
+}
+  int __xlx_size_param_A_DRAM_2_1 = 1;
+  int __xlx_offset_param_A_DRAM_2_1 = 0;
+  int __xlx_offset_byte_param_A_DRAM_2_1 = 0*4;
+  // Collect __xlx_A_DRAM_2_2__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_2_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_2_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_2_2)[i]);
+}
+  int __xlx_size_param_A_DRAM_2_2 = 1;
+  int __xlx_offset_param_A_DRAM_2_2 = 0;
+  int __xlx_offset_byte_param_A_DRAM_2_2 = 0*4;
+  // Collect __xlx_A_DRAM_2_3__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_2_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_2_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_2_3)[i]);
+}
+  int __xlx_size_param_A_DRAM_2_3 = 1;
+  int __xlx_offset_param_A_DRAM_2_3 = 0;
+  int __xlx_offset_byte_param_A_DRAM_2_3 = 0*4;
+  // Collect __xlx_A_DRAM_3_0__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_3_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_3_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_3_0)[i]);
+}
+  int __xlx_size_param_A_DRAM_3_0 = 1;
+  int __xlx_offset_param_A_DRAM_3_0 = 0;
+  int __xlx_offset_byte_param_A_DRAM_3_0 = 0*4;
+  // Collect __xlx_A_DRAM_3_1__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_3_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_3_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_3_1)[i]);
+}
+  int __xlx_size_param_A_DRAM_3_1 = 1;
+  int __xlx_offset_param_A_DRAM_3_1 = 0;
+  int __xlx_offset_byte_param_A_DRAM_3_1 = 0*4;
+  // Collect __xlx_A_DRAM_3_2__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_3_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_3_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_3_2)[i]);
+}
+  int __xlx_size_param_A_DRAM_3_2 = 1;
+  int __xlx_offset_param_A_DRAM_3_2 = 0;
+  int __xlx_offset_byte_param_A_DRAM_3_2 = 0*4;
+  // Collect __xlx_A_DRAM_3_3__tmp_vec
+std::vector<Byte<4>> __xlx_A_DRAM_3_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_A_DRAM_3_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM_3_3)[i]);
+}
+  int __xlx_size_param_A_DRAM_3_3 = 1;
+  int __xlx_offset_param_A_DRAM_3_3 = 0;
+  int __xlx_offset_byte_param_A_DRAM_3_3 = 0*4;
+  // Collect __xlx_Q_DRAM_0_0__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_0_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_0_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_0_0)[i]);
+}
+  int __xlx_size_param_Q_DRAM_0_0 = 1;
+  int __xlx_offset_param_Q_DRAM_0_0 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_0_0 = 0*4;
+  // Collect __xlx_Q_DRAM_0_1__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_0_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_0_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_0_1)[i]);
+}
+  int __xlx_size_param_Q_DRAM_0_1 = 1;
+  int __xlx_offset_param_Q_DRAM_0_1 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_0_1 = 0*4;
+  // Collect __xlx_Q_DRAM_0_2__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_0_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_0_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_0_2)[i]);
+}
+  int __xlx_size_param_Q_DRAM_0_2 = 1;
+  int __xlx_offset_param_Q_DRAM_0_2 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_0_2 = 0*4;
+  // Collect __xlx_Q_DRAM_0_3__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_0_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_0_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_0_3)[i]);
+}
+  int __xlx_size_param_Q_DRAM_0_3 = 1;
+  int __xlx_offset_param_Q_DRAM_0_3 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_0_3 = 0*4;
+  // Collect __xlx_Q_DRAM_1_0__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_1_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_1_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_1_0)[i]);
+}
+  int __xlx_size_param_Q_DRAM_1_0 = 1;
+  int __xlx_offset_param_Q_DRAM_1_0 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_1_0 = 0*4;
+  // Collect __xlx_Q_DRAM_1_1__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_1_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_1_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_1_1)[i]);
+}
+  int __xlx_size_param_Q_DRAM_1_1 = 1;
+  int __xlx_offset_param_Q_DRAM_1_1 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_1_1 = 0*4;
+  // Collect __xlx_Q_DRAM_1_2__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_1_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_1_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_1_2)[i]);
+}
+  int __xlx_size_param_Q_DRAM_1_2 = 1;
+  int __xlx_offset_param_Q_DRAM_1_2 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_1_2 = 0*4;
+  // Collect __xlx_Q_DRAM_1_3__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_1_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_1_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_1_3)[i]);
+}
+  int __xlx_size_param_Q_DRAM_1_3 = 1;
+  int __xlx_offset_param_Q_DRAM_1_3 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_1_3 = 0*4;
+  // Collect __xlx_Q_DRAM_2_0__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_2_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_2_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_2_0)[i]);
+}
+  int __xlx_size_param_Q_DRAM_2_0 = 1;
+  int __xlx_offset_param_Q_DRAM_2_0 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_2_0 = 0*4;
+  // Collect __xlx_Q_DRAM_2_1__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_2_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_2_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_2_1)[i]);
+}
+  int __xlx_size_param_Q_DRAM_2_1 = 1;
+  int __xlx_offset_param_Q_DRAM_2_1 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_2_1 = 0*4;
+  // Collect __xlx_Q_DRAM_2_2__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_2_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_2_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_2_2)[i]);
+}
+  int __xlx_size_param_Q_DRAM_2_2 = 1;
+  int __xlx_offset_param_Q_DRAM_2_2 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_2_2 = 0*4;
+  // Collect __xlx_Q_DRAM_2_3__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_2_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_2_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_2_3)[i]);
+}
+  int __xlx_size_param_Q_DRAM_2_3 = 1;
+  int __xlx_offset_param_Q_DRAM_2_3 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_2_3 = 0*4;
+  // Collect __xlx_Q_DRAM_3_0__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_3_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_3_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_3_0)[i]);
+}
+  int __xlx_size_param_Q_DRAM_3_0 = 1;
+  int __xlx_offset_param_Q_DRAM_3_0 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_3_0 = 0*4;
+  // Collect __xlx_Q_DRAM_3_1__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_3_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_3_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_3_1)[i]);
+}
+  int __xlx_size_param_Q_DRAM_3_1 = 1;
+  int __xlx_offset_param_Q_DRAM_3_1 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_3_1 = 0*4;
+  // Collect __xlx_Q_DRAM_3_2__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_3_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_3_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_3_2)[i]);
+}
+  int __xlx_size_param_Q_DRAM_3_2 = 1;
+  int __xlx_offset_param_Q_DRAM_3_2 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_3_2 = 0*4;
+  // Collect __xlx_Q_DRAM_3_3__tmp_vec
+std::vector<Byte<4>> __xlx_Q_DRAM_3_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_Q_DRAM_3_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM_3_3)[i]);
+}
+  int __xlx_size_param_Q_DRAM_3_3 = 1;
+  int __xlx_offset_param_Q_DRAM_3_3 = 0;
+  int __xlx_offset_byte_param_Q_DRAM_3_3 = 0*4;
+  // Collect __xlx_R_DRAM_0_0__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_0_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_0_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_0_0)[i]);
+}
+  int __xlx_size_param_R_DRAM_0_0 = 1;
+  int __xlx_offset_param_R_DRAM_0_0 = 0;
+  int __xlx_offset_byte_param_R_DRAM_0_0 = 0*4;
+  // Collect __xlx_R_DRAM_0_1__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_0_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_0_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_0_1)[i]);
+}
+  int __xlx_size_param_R_DRAM_0_1 = 1;
+  int __xlx_offset_param_R_DRAM_0_1 = 0;
+  int __xlx_offset_byte_param_R_DRAM_0_1 = 0*4;
+  // Collect __xlx_R_DRAM_0_2__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_0_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_0_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_0_2)[i]);
+}
+  int __xlx_size_param_R_DRAM_0_2 = 1;
+  int __xlx_offset_param_R_DRAM_0_2 = 0;
+  int __xlx_offset_byte_param_R_DRAM_0_2 = 0*4;
+  // Collect __xlx_R_DRAM_0_3__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_0_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_0_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_0_3)[i]);
+}
+  int __xlx_size_param_R_DRAM_0_3 = 1;
+  int __xlx_offset_param_R_DRAM_0_3 = 0;
+  int __xlx_offset_byte_param_R_DRAM_0_3 = 0*4;
+  // Collect __xlx_R_DRAM_1_0__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_1_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_1_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_1_0)[i]);
+}
+  int __xlx_size_param_R_DRAM_1_0 = 1;
+  int __xlx_offset_param_R_DRAM_1_0 = 0;
+  int __xlx_offset_byte_param_R_DRAM_1_0 = 0*4;
+  // Collect __xlx_R_DRAM_1_1__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_1_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_1_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_1_1)[i]);
+}
+  int __xlx_size_param_R_DRAM_1_1 = 1;
+  int __xlx_offset_param_R_DRAM_1_1 = 0;
+  int __xlx_offset_byte_param_R_DRAM_1_1 = 0*4;
+  // Collect __xlx_R_DRAM_1_2__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_1_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_1_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_1_2)[i]);
+}
+  int __xlx_size_param_R_DRAM_1_2 = 1;
+  int __xlx_offset_param_R_DRAM_1_2 = 0;
+  int __xlx_offset_byte_param_R_DRAM_1_2 = 0*4;
+  // Collect __xlx_R_DRAM_1_3__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_1_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_1_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_1_3)[i]);
+}
+  int __xlx_size_param_R_DRAM_1_3 = 1;
+  int __xlx_offset_param_R_DRAM_1_3 = 0;
+  int __xlx_offset_byte_param_R_DRAM_1_3 = 0*4;
+  // Collect __xlx_R_DRAM_2_0__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_2_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_2_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_2_0)[i]);
+}
+  int __xlx_size_param_R_DRAM_2_0 = 1;
+  int __xlx_offset_param_R_DRAM_2_0 = 0;
+  int __xlx_offset_byte_param_R_DRAM_2_0 = 0*4;
+  // Collect __xlx_R_DRAM_2_1__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_2_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_2_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_2_1)[i]);
+}
+  int __xlx_size_param_R_DRAM_2_1 = 1;
+  int __xlx_offset_param_R_DRAM_2_1 = 0;
+  int __xlx_offset_byte_param_R_DRAM_2_1 = 0*4;
+  // Collect __xlx_R_DRAM_2_2__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_2_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_2_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_2_2)[i]);
+}
+  int __xlx_size_param_R_DRAM_2_2 = 1;
+  int __xlx_offset_param_R_DRAM_2_2 = 0;
+  int __xlx_offset_byte_param_R_DRAM_2_2 = 0*4;
+  // Collect __xlx_R_DRAM_2_3__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_2_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_2_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_2_3)[i]);
+}
+  int __xlx_size_param_R_DRAM_2_3 = 1;
+  int __xlx_offset_param_R_DRAM_2_3 = 0;
+  int __xlx_offset_byte_param_R_DRAM_2_3 = 0*4;
+  // Collect __xlx_R_DRAM_3_0__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_3_0__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_3_0__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_3_0)[i]);
+}
+  int __xlx_size_param_R_DRAM_3_0 = 1;
+  int __xlx_offset_param_R_DRAM_3_0 = 0;
+  int __xlx_offset_byte_param_R_DRAM_3_0 = 0*4;
+  // Collect __xlx_R_DRAM_3_1__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_3_1__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_3_1__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_3_1)[i]);
+}
+  int __xlx_size_param_R_DRAM_3_1 = 1;
+  int __xlx_offset_param_R_DRAM_3_1 = 0;
+  int __xlx_offset_byte_param_R_DRAM_3_1 = 0*4;
+  // Collect __xlx_R_DRAM_3_2__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_3_2__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_3_2__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_3_2)[i]);
+}
+  int __xlx_size_param_R_DRAM_3_2 = 1;
+  int __xlx_offset_param_R_DRAM_3_2 = 0;
+  int __xlx_offset_byte_param_R_DRAM_3_2 = 0*4;
+  // Collect __xlx_R_DRAM_3_3__tmp_vec
+std::vector<Byte<4>> __xlx_R_DRAM_3_3__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_R_DRAM_3_3__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM_3_3)[i]);
+}
+  int __xlx_size_param_R_DRAM_3_3 = 1;
+  int __xlx_offset_param_R_DRAM_3_3 = 0;
+  int __xlx_offset_byte_param_R_DRAM_3_3 = 0*4;
   // DUT call
-  top(__xlx_A_DRAM__tmp_vec.data(), __xlx_Q_DRAM__tmp_vec.data(), __xlx_R_DRAM__tmp_vec.data(), __xlx_offset_byte_param_A_DRAM, __xlx_offset_byte_param_Q_DRAM, __xlx_offset_byte_param_R_DRAM);
-// print __xlx_apatb_param_A_DRAM
-for (size_t i = 0; i < __xlx_size_param_A_DRAM; ++i) {
-((Byte<4>*)__xlx_apatb_param_A_DRAM)[i] = __xlx_A_DRAM__tmp_vec[__xlx_offset_param_A_DRAM+i];
+  top(__xlx_A_DRAM_0_0__tmp_vec.data(), __xlx_A_DRAM_0_1__tmp_vec.data(), __xlx_A_DRAM_0_2__tmp_vec.data(), __xlx_A_DRAM_0_3__tmp_vec.data(), __xlx_A_DRAM_1_0__tmp_vec.data(), __xlx_A_DRAM_1_1__tmp_vec.data(), __xlx_A_DRAM_1_2__tmp_vec.data(), __xlx_A_DRAM_1_3__tmp_vec.data(), __xlx_A_DRAM_2_0__tmp_vec.data(), __xlx_A_DRAM_2_1__tmp_vec.data(), __xlx_A_DRAM_2_2__tmp_vec.data(), __xlx_A_DRAM_2_3__tmp_vec.data(), __xlx_A_DRAM_3_0__tmp_vec.data(), __xlx_A_DRAM_3_1__tmp_vec.data(), __xlx_A_DRAM_3_2__tmp_vec.data(), __xlx_A_DRAM_3_3__tmp_vec.data(), __xlx_Q_DRAM_0_0__tmp_vec.data(), __xlx_Q_DRAM_0_1__tmp_vec.data(), __xlx_Q_DRAM_0_2__tmp_vec.data(), __xlx_Q_DRAM_0_3__tmp_vec.data(), __xlx_Q_DRAM_1_0__tmp_vec.data(), __xlx_Q_DRAM_1_1__tmp_vec.data(), __xlx_Q_DRAM_1_2__tmp_vec.data(), __xlx_Q_DRAM_1_3__tmp_vec.data(), __xlx_Q_DRAM_2_0__tmp_vec.data(), __xlx_Q_DRAM_2_1__tmp_vec.data(), __xlx_Q_DRAM_2_2__tmp_vec.data(), __xlx_Q_DRAM_2_3__tmp_vec.data(), __xlx_Q_DRAM_3_0__tmp_vec.data(), __xlx_Q_DRAM_3_1__tmp_vec.data(), __xlx_Q_DRAM_3_2__tmp_vec.data(), __xlx_Q_DRAM_3_3__tmp_vec.data(), __xlx_R_DRAM_0_0__tmp_vec.data(), __xlx_R_DRAM_0_1__tmp_vec.data(), __xlx_R_DRAM_0_2__tmp_vec.data(), __xlx_R_DRAM_0_3__tmp_vec.data(), __xlx_R_DRAM_1_0__tmp_vec.data(), __xlx_R_DRAM_1_1__tmp_vec.data(), __xlx_R_DRAM_1_2__tmp_vec.data(), __xlx_R_DRAM_1_3__tmp_vec.data(), __xlx_R_DRAM_2_0__tmp_vec.data(), __xlx_R_DRAM_2_1__tmp_vec.data(), __xlx_R_DRAM_2_2__tmp_vec.data(), __xlx_R_DRAM_2_3__tmp_vec.data(), __xlx_R_DRAM_3_0__tmp_vec.data(), __xlx_R_DRAM_3_1__tmp_vec.data(), __xlx_R_DRAM_3_2__tmp_vec.data(), __xlx_R_DRAM_3_3__tmp_vec.data(), __xlx_offset_byte_param_A_DRAM_0_0, __xlx_offset_byte_param_A_DRAM_0_1, __xlx_offset_byte_param_A_DRAM_0_2, __xlx_offset_byte_param_A_DRAM_0_3, __xlx_offset_byte_param_A_DRAM_1_0, __xlx_offset_byte_param_A_DRAM_1_1, __xlx_offset_byte_param_A_DRAM_1_2, __xlx_offset_byte_param_A_DRAM_1_3, __xlx_offset_byte_param_A_DRAM_2_0, __xlx_offset_byte_param_A_DRAM_2_1, __xlx_offset_byte_param_A_DRAM_2_2, __xlx_offset_byte_param_A_DRAM_2_3, __xlx_offset_byte_param_A_DRAM_3_0, __xlx_offset_byte_param_A_DRAM_3_1, __xlx_offset_byte_param_A_DRAM_3_2, __xlx_offset_byte_param_A_DRAM_3_3, __xlx_offset_byte_param_Q_DRAM_0_0, __xlx_offset_byte_param_Q_DRAM_0_1, __xlx_offset_byte_param_Q_DRAM_0_2, __xlx_offset_byte_param_Q_DRAM_0_3, __xlx_offset_byte_param_Q_DRAM_1_0, __xlx_offset_byte_param_Q_DRAM_1_1, __xlx_offset_byte_param_Q_DRAM_1_2, __xlx_offset_byte_param_Q_DRAM_1_3, __xlx_offset_byte_param_Q_DRAM_2_0, __xlx_offset_byte_param_Q_DRAM_2_1, __xlx_offset_byte_param_Q_DRAM_2_2, __xlx_offset_byte_param_Q_DRAM_2_3, __xlx_offset_byte_param_Q_DRAM_3_0, __xlx_offset_byte_param_Q_DRAM_3_1, __xlx_offset_byte_param_Q_DRAM_3_2, __xlx_offset_byte_param_Q_DRAM_3_3, __xlx_offset_byte_param_R_DRAM_0_0, __xlx_offset_byte_param_R_DRAM_0_1, __xlx_offset_byte_param_R_DRAM_0_2, __xlx_offset_byte_param_R_DRAM_0_3, __xlx_offset_byte_param_R_DRAM_1_0, __xlx_offset_byte_param_R_DRAM_1_1, __xlx_offset_byte_param_R_DRAM_1_2, __xlx_offset_byte_param_R_DRAM_1_3, __xlx_offset_byte_param_R_DRAM_2_0, __xlx_offset_byte_param_R_DRAM_2_1, __xlx_offset_byte_param_R_DRAM_2_2, __xlx_offset_byte_param_R_DRAM_2_3, __xlx_offset_byte_param_R_DRAM_3_0, __xlx_offset_byte_param_R_DRAM_3_1, __xlx_offset_byte_param_R_DRAM_3_2, __xlx_offset_byte_param_R_DRAM_3_3);
+// print __xlx_apatb_param_A_DRAM_0_0
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_0_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_0_0)[i] = __xlx_A_DRAM_0_0__tmp_vec[__xlx_offset_param_A_DRAM_0_0+i];
 }
-// print __xlx_apatb_param_Q_DRAM
-for (size_t i = 0; i < __xlx_size_param_Q_DRAM; ++i) {
-((Byte<4>*)__xlx_apatb_param_Q_DRAM)[i] = __xlx_Q_DRAM__tmp_vec[__xlx_offset_param_Q_DRAM+i];
+// print __xlx_apatb_param_A_DRAM_0_1
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_0_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_0_1)[i] = __xlx_A_DRAM_0_1__tmp_vec[__xlx_offset_param_A_DRAM_0_1+i];
 }
-// print __xlx_apatb_param_R_DRAM
-for (size_t i = 0; i < __xlx_size_param_R_DRAM; ++i) {
-((Byte<4>*)__xlx_apatb_param_R_DRAM)[i] = __xlx_R_DRAM__tmp_vec[__xlx_offset_param_R_DRAM+i];
+// print __xlx_apatb_param_A_DRAM_0_2
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_0_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_0_2)[i] = __xlx_A_DRAM_0_2__tmp_vec[__xlx_offset_param_A_DRAM_0_2+i];
+}
+// print __xlx_apatb_param_A_DRAM_0_3
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_0_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_0_3)[i] = __xlx_A_DRAM_0_3__tmp_vec[__xlx_offset_param_A_DRAM_0_3+i];
+}
+// print __xlx_apatb_param_A_DRAM_1_0
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_1_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_1_0)[i] = __xlx_A_DRAM_1_0__tmp_vec[__xlx_offset_param_A_DRAM_1_0+i];
+}
+// print __xlx_apatb_param_A_DRAM_1_1
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_1_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_1_1)[i] = __xlx_A_DRAM_1_1__tmp_vec[__xlx_offset_param_A_DRAM_1_1+i];
+}
+// print __xlx_apatb_param_A_DRAM_1_2
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_1_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_1_2)[i] = __xlx_A_DRAM_1_2__tmp_vec[__xlx_offset_param_A_DRAM_1_2+i];
+}
+// print __xlx_apatb_param_A_DRAM_1_3
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_1_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_1_3)[i] = __xlx_A_DRAM_1_3__tmp_vec[__xlx_offset_param_A_DRAM_1_3+i];
+}
+// print __xlx_apatb_param_A_DRAM_2_0
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_2_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_2_0)[i] = __xlx_A_DRAM_2_0__tmp_vec[__xlx_offset_param_A_DRAM_2_0+i];
+}
+// print __xlx_apatb_param_A_DRAM_2_1
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_2_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_2_1)[i] = __xlx_A_DRAM_2_1__tmp_vec[__xlx_offset_param_A_DRAM_2_1+i];
+}
+// print __xlx_apatb_param_A_DRAM_2_2
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_2_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_2_2)[i] = __xlx_A_DRAM_2_2__tmp_vec[__xlx_offset_param_A_DRAM_2_2+i];
+}
+// print __xlx_apatb_param_A_DRAM_2_3
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_2_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_2_3)[i] = __xlx_A_DRAM_2_3__tmp_vec[__xlx_offset_param_A_DRAM_2_3+i];
+}
+// print __xlx_apatb_param_A_DRAM_3_0
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_3_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_3_0)[i] = __xlx_A_DRAM_3_0__tmp_vec[__xlx_offset_param_A_DRAM_3_0+i];
+}
+// print __xlx_apatb_param_A_DRAM_3_1
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_3_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_3_1)[i] = __xlx_A_DRAM_3_1__tmp_vec[__xlx_offset_param_A_DRAM_3_1+i];
+}
+// print __xlx_apatb_param_A_DRAM_3_2
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_3_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_3_2)[i] = __xlx_A_DRAM_3_2__tmp_vec[__xlx_offset_param_A_DRAM_3_2+i];
+}
+// print __xlx_apatb_param_A_DRAM_3_3
+for (size_t i = 0; i < __xlx_size_param_A_DRAM_3_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_A_DRAM_3_3)[i] = __xlx_A_DRAM_3_3__tmp_vec[__xlx_offset_param_A_DRAM_3_3+i];
+}
+// print __xlx_apatb_param_Q_DRAM_0_0
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_0_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_0_0)[i] = __xlx_Q_DRAM_0_0__tmp_vec[__xlx_offset_param_Q_DRAM_0_0+i];
+}
+// print __xlx_apatb_param_Q_DRAM_0_1
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_0_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_0_1)[i] = __xlx_Q_DRAM_0_1__tmp_vec[__xlx_offset_param_Q_DRAM_0_1+i];
+}
+// print __xlx_apatb_param_Q_DRAM_0_2
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_0_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_0_2)[i] = __xlx_Q_DRAM_0_2__tmp_vec[__xlx_offset_param_Q_DRAM_0_2+i];
+}
+// print __xlx_apatb_param_Q_DRAM_0_3
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_0_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_0_3)[i] = __xlx_Q_DRAM_0_3__tmp_vec[__xlx_offset_param_Q_DRAM_0_3+i];
+}
+// print __xlx_apatb_param_Q_DRAM_1_0
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_1_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_1_0)[i] = __xlx_Q_DRAM_1_0__tmp_vec[__xlx_offset_param_Q_DRAM_1_0+i];
+}
+// print __xlx_apatb_param_Q_DRAM_1_1
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_1_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_1_1)[i] = __xlx_Q_DRAM_1_1__tmp_vec[__xlx_offset_param_Q_DRAM_1_1+i];
+}
+// print __xlx_apatb_param_Q_DRAM_1_2
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_1_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_1_2)[i] = __xlx_Q_DRAM_1_2__tmp_vec[__xlx_offset_param_Q_DRAM_1_2+i];
+}
+// print __xlx_apatb_param_Q_DRAM_1_3
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_1_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_1_3)[i] = __xlx_Q_DRAM_1_3__tmp_vec[__xlx_offset_param_Q_DRAM_1_3+i];
+}
+// print __xlx_apatb_param_Q_DRAM_2_0
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_2_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_2_0)[i] = __xlx_Q_DRAM_2_0__tmp_vec[__xlx_offset_param_Q_DRAM_2_0+i];
+}
+// print __xlx_apatb_param_Q_DRAM_2_1
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_2_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_2_1)[i] = __xlx_Q_DRAM_2_1__tmp_vec[__xlx_offset_param_Q_DRAM_2_1+i];
+}
+// print __xlx_apatb_param_Q_DRAM_2_2
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_2_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_2_2)[i] = __xlx_Q_DRAM_2_2__tmp_vec[__xlx_offset_param_Q_DRAM_2_2+i];
+}
+// print __xlx_apatb_param_Q_DRAM_2_3
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_2_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_2_3)[i] = __xlx_Q_DRAM_2_3__tmp_vec[__xlx_offset_param_Q_DRAM_2_3+i];
+}
+// print __xlx_apatb_param_Q_DRAM_3_0
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_3_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_3_0)[i] = __xlx_Q_DRAM_3_0__tmp_vec[__xlx_offset_param_Q_DRAM_3_0+i];
+}
+// print __xlx_apatb_param_Q_DRAM_3_1
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_3_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_3_1)[i] = __xlx_Q_DRAM_3_1__tmp_vec[__xlx_offset_param_Q_DRAM_3_1+i];
+}
+// print __xlx_apatb_param_Q_DRAM_3_2
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_3_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_3_2)[i] = __xlx_Q_DRAM_3_2__tmp_vec[__xlx_offset_param_Q_DRAM_3_2+i];
+}
+// print __xlx_apatb_param_Q_DRAM_3_3
+for (size_t i = 0; i < __xlx_size_param_Q_DRAM_3_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_Q_DRAM_3_3)[i] = __xlx_Q_DRAM_3_3__tmp_vec[__xlx_offset_param_Q_DRAM_3_3+i];
+}
+// print __xlx_apatb_param_R_DRAM_0_0
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_0_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_0_0)[i] = __xlx_R_DRAM_0_0__tmp_vec[__xlx_offset_param_R_DRAM_0_0+i];
+}
+// print __xlx_apatb_param_R_DRAM_0_1
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_0_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_0_1)[i] = __xlx_R_DRAM_0_1__tmp_vec[__xlx_offset_param_R_DRAM_0_1+i];
+}
+// print __xlx_apatb_param_R_DRAM_0_2
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_0_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_0_2)[i] = __xlx_R_DRAM_0_2__tmp_vec[__xlx_offset_param_R_DRAM_0_2+i];
+}
+// print __xlx_apatb_param_R_DRAM_0_3
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_0_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_0_3)[i] = __xlx_R_DRAM_0_3__tmp_vec[__xlx_offset_param_R_DRAM_0_3+i];
+}
+// print __xlx_apatb_param_R_DRAM_1_0
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_1_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_1_0)[i] = __xlx_R_DRAM_1_0__tmp_vec[__xlx_offset_param_R_DRAM_1_0+i];
+}
+// print __xlx_apatb_param_R_DRAM_1_1
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_1_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_1_1)[i] = __xlx_R_DRAM_1_1__tmp_vec[__xlx_offset_param_R_DRAM_1_1+i];
+}
+// print __xlx_apatb_param_R_DRAM_1_2
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_1_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_1_2)[i] = __xlx_R_DRAM_1_2__tmp_vec[__xlx_offset_param_R_DRAM_1_2+i];
+}
+// print __xlx_apatb_param_R_DRAM_1_3
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_1_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_1_3)[i] = __xlx_R_DRAM_1_3__tmp_vec[__xlx_offset_param_R_DRAM_1_3+i];
+}
+// print __xlx_apatb_param_R_DRAM_2_0
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_2_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_2_0)[i] = __xlx_R_DRAM_2_0__tmp_vec[__xlx_offset_param_R_DRAM_2_0+i];
+}
+// print __xlx_apatb_param_R_DRAM_2_1
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_2_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_2_1)[i] = __xlx_R_DRAM_2_1__tmp_vec[__xlx_offset_param_R_DRAM_2_1+i];
+}
+// print __xlx_apatb_param_R_DRAM_2_2
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_2_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_2_2)[i] = __xlx_R_DRAM_2_2__tmp_vec[__xlx_offset_param_R_DRAM_2_2+i];
+}
+// print __xlx_apatb_param_R_DRAM_2_3
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_2_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_2_3)[i] = __xlx_R_DRAM_2_3__tmp_vec[__xlx_offset_param_R_DRAM_2_3+i];
+}
+// print __xlx_apatb_param_R_DRAM_3_0
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_3_0; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_3_0)[i] = __xlx_R_DRAM_3_0__tmp_vec[__xlx_offset_param_R_DRAM_3_0+i];
+}
+// print __xlx_apatb_param_R_DRAM_3_1
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_3_1; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_3_1)[i] = __xlx_R_DRAM_3_1__tmp_vec[__xlx_offset_param_R_DRAM_3_1+i];
+}
+// print __xlx_apatb_param_R_DRAM_3_2
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_3_2; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_3_2)[i] = __xlx_R_DRAM_3_2__tmp_vec[__xlx_offset_param_R_DRAM_3_2+i];
+}
+// print __xlx_apatb_param_R_DRAM_3_3
+for (size_t i = 0; i < __xlx_size_param_R_DRAM_3_3; ++i) {
+((Byte<4>*)__xlx_apatb_param_R_DRAM_3_3)[i] = __xlx_R_DRAM_3_3__tmp_vec[__xlx_offset_param_R_DRAM_3_3+i];
 }
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="fns.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\NIELIT_FINAL_YEAR_PROJECT\HLS\fns.cpp"/>
-    <originFiles name="top.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\NIELIT_FINAL_YEAR_PROJECT\HLS\top.cpp"/>
-    <originFiles name="top.hpp" path="C:\Users\varad\OneDrive\Documents\GitHub\NIELIT_FINAL_YEAR_PROJECT\HLS\top.hpp"/>
+    <originFiles name="fns.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp"/>
+    <originFiles name="top.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\top.cpp"/>
+    <originFiles name="top.hpp" path="C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\top.hpp"/>
+    <originFiles name="top_tb.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\top_tb.cpp"/>
   </source>
   <testbench>
-    <originFiles name="top_tb.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\NIELIT_FINAL_YEAR_PROJECT\HLS\top_tb.cpp"/>
+    <originFiles name="top_tb.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\top_tb.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

@@ -3,10 +3,10 @@
         "name": "top_Pipeline_WRITE_BACK",
         "file": "..\/top.cpp",
         "fileloc": "67",
-        "instructions": "80",
-        "total_instructions": "80",
+        "instructions": "376",
+        "total_instructions": "376",
         "calls": "",
-        "basicblocks": "4",
+        "basicblocks": "9",
         "loads": {
             "L": "1"
         },
@@ -15,6 +15,18 @@
         },
         "loops": {
             "L": "1"
+        }
+    },
+    "0": {
+        "name": "top",
+        "file": "top.cpp",
+        "fileloc": "3",
+        "instructions": "474",
+        "total_instructions": "1306",
+        "calls": "3 2 1",
+        "basicblocks": "1",
+        "loads": {
+            "L": "64"
         }
     },
     "2": {
@@ -35,24 +47,12 @@
             "L": "1"
         }
     },
-    "0": {
-        "name": "top",
-        "file": "top.cpp",
-        "fileloc": "3",
-        "instructions": "167",
-        "total_instructions": "696",
-        "calls": "3 2 1",
-        "basicblocks": "1",
-        "loads": {
-            "L": "64"
-        }
-    },
     "3": {
         "name": "top_Pipeline_READ_INIT",
         "file": "..\/top.cpp",
         "fileloc": "27",
-        "instructions": "203",
-        "total_instructions": "203",
+        "instructions": "210",
+        "total_instructions": "210",
         "calls": "",
         "basicblocks": "44",
         "loads": {

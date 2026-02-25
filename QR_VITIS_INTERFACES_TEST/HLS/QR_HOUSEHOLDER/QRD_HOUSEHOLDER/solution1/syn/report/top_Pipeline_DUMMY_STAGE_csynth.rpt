@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'top_Pipeline_DUMMY_STAGE'
 ================================================================
-* Date:           Wed Feb 25 16:18:14 2026
+* Date:           Wed Feb 25 17:08:29 2026
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        QRD_HOUSEHOLDER
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    |ap_clk  |  10.00 ns|  7.256 ns|     1.25 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -73,12 +73,12 @@
     +--------------------+----------------+---------+----+---+----+-----+
     |      Instance      |     Module     | BRAM_18K| DSP| FF| LUT| URAM|
     +--------------------+----------------+---------+----+---+----+-----+
-    |mux_4_2_32_1_1_U39  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
-    |mux_4_2_32_1_1_U40  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
-    |mux_4_2_32_1_1_U41  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
-    |mux_4_2_32_1_1_U42  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
-    |mux_4_2_32_1_1_U43  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
-    |mux_4_2_32_1_1_U44  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
+    |mux_4_2_32_1_1_U58  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
+    |mux_4_2_32_1_1_U59  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
+    |mux_4_2_32_1_1_U60  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
+    |mux_4_2_32_1_1_U61  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
+    |mux_4_2_32_1_1_U62  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
+    |mux_4_2_32_1_1_U63  |mux_4_2_32_1_1  |        0|   0|  0|  20|    0|
     +--------------------+----------------+---------+----+---+----+-----+
     |Total               |                |        0|   0|  0| 120|    0|
     +--------------------+----------------+---------+----+---+----+-----+
@@ -123,8 +123,8 @@
     |ap_done_int              |   9|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
     |ap_sig_allocacmp_i       |   9|          2|    3|          6|
-    |empty_55_fu_232          |   9|          2|   32|         64|
-    |empty_60_fu_252          |   9|          2|   32|         64|
+    |empty_157_fu_216         |   9|          2|   32|         64|
+    |empty_158_fu_220         |   9|          2|   32|         64|
     |i_1_fu_172               |   9|          2|    3|          6|
     +-------------------------+----+-----------+-----+-----------+
     |Total                    |  54|         12|   72|        144|
@@ -145,37 +145,37 @@
     |ap_loop_exit_ready_pp0_iter2_reg  |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter3_reg  |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter4_reg  |   1|   0|    1|          0|
-    |empty_42_fu_180                   |  32|   0|   32|          0|
-    |empty_43_fu_184                   |  32|   0|   32|          0|
-    |empty_44_fu_188                   |  32|   0|   32|          0|
-    |empty_45_fu_192                   |  32|   0|   32|          0|
-    |empty_46_fu_196                   |  32|   0|   32|          0|
-    |empty_47_fu_200                   |  32|   0|   32|          0|
-    |empty_48_fu_204                   |  32|   0|   32|          0|
-    |empty_49_fu_208                   |  32|   0|   32|          0|
-    |empty_50_fu_212                   |  32|   0|   32|          0|
-    |empty_51_fu_216                   |  32|   0|   32|          0|
-    |empty_52_fu_220                   |  32|   0|   32|          0|
-    |empty_53_fu_224                   |  32|   0|   32|          0|
-    |empty_54_fu_228                   |  32|   0|   32|          0|
-    |empty_55_fu_232                   |  32|   0|   32|          0|
-    |empty_56_fu_236                   |  32|   0|   32|          0|
-    |empty_57_fu_240                   |  32|   0|   32|          0|
-    |empty_58_fu_244                   |  32|   0|   32|          0|
-    |empty_59_fu_248                   |  32|   0|   32|          0|
-    |empty_60_fu_252                   |  32|   0|   32|          0|
-    |empty_61_fu_256                   |  32|   0|   32|          0|
-    |empty_62_fu_260                   |  32|   0|   32|          0|
-    |empty_63_fu_264                   |  32|   0|   32|          0|
-    |empty_64_fu_268                   |  32|   0|   32|          0|
-    |empty_65_fu_272                   |  32|   0|   32|          0|
-    |empty_66_fu_276                   |  32|   0|   32|          0|
-    |empty_67_fu_280                   |  32|   0|   32|          0|
-    |empty_68_fu_284                   |  32|   0|   32|          0|
-    |empty_69_fu_288                   |  32|   0|   32|          0|
-    |empty_70_fu_292                   |  32|   0|   32|          0|
-    |empty_71_fu_296                   |  32|   0|   32|          0|
-    |empty_72_fu_300                   |  32|   0|   32|          0|
+    |empty_148_fu_180                  |  32|   0|   32|          0|
+    |empty_149_fu_184                  |  32|   0|   32|          0|
+    |empty_150_fu_188                  |  32|   0|   32|          0|
+    |empty_151_fu_192                  |  32|   0|   32|          0|
+    |empty_152_fu_196                  |  32|   0|   32|          0|
+    |empty_153_fu_200                  |  32|   0|   32|          0|
+    |empty_154_fu_204                  |  32|   0|   32|          0|
+    |empty_155_fu_208                  |  32|   0|   32|          0|
+    |empty_156_fu_212                  |  32|   0|   32|          0|
+    |empty_157_fu_216                  |  32|   0|   32|          0|
+    |empty_158_fu_220                  |  32|   0|   32|          0|
+    |empty_159_fu_224                  |  32|   0|   32|          0|
+    |empty_160_fu_228                  |  32|   0|   32|          0|
+    |empty_161_fu_232                  |  32|   0|   32|          0|
+    |empty_162_fu_236                  |  32|   0|   32|          0|
+    |empty_163_fu_240                  |  32|   0|   32|          0|
+    |empty_164_fu_244                  |  32|   0|   32|          0|
+    |empty_165_fu_248                  |  32|   0|   32|          0|
+    |empty_166_fu_252                  |  32|   0|   32|          0|
+    |empty_167_fu_256                  |  32|   0|   32|          0|
+    |empty_168_fu_260                  |  32|   0|   32|          0|
+    |empty_169_fu_264                  |  32|   0|   32|          0|
+    |empty_170_fu_268                  |  32|   0|   32|          0|
+    |empty_171_fu_272                  |  32|   0|   32|          0|
+    |empty_172_fu_276                  |  32|   0|   32|          0|
+    |empty_173_fu_280                  |  32|   0|   32|          0|
+    |empty_174_fu_284                  |  32|   0|   32|          0|
+    |empty_175_fu_288                  |  32|   0|   32|          0|
+    |empty_176_fu_292                  |  32|   0|   32|          0|
+    |empty_177_fu_296                  |  32|   0|   32|          0|
+    |empty_178_fu_300                  |  32|   0|   32|          0|
     |empty_fu_176                      |  32|   0|   32|          0|
     |i_1_fu_172                        |   3|   0|    3|          0|
     |icmp_ln51_reg_1444                |   1|   0|    1|          0|
@@ -196,132 +196,132 @@
 == Interface
 ================================================================
 * Summary: 
-+---------------------+-----+-----+------------+--------------------------+--------------+
-|      RTL Ports      | Dir | Bits|  Protocol  |       Source Object      |    C Type    |
-+---------------------+-----+-----+------------+--------------------------+--------------+
-|ap_clk               |   in|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|ap_rst               |   in|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|ap_start             |   in|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|ap_done              |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|ap_idle              |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|ap_ready             |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_526_p_din0    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_526_p_din1    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_526_p_opcode  |  out|    2|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_526_p_dout0   |   in|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_526_p_ce      |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_531_p_din0    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_531_p_din1    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_531_p_opcode  |  out|    2|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_531_p_dout0   |   in|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_531_p_ce      |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_536_p_din0    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_536_p_din1    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_536_p_opcode  |  out|    2|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_536_p_dout0   |   in|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_536_p_ce      |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_541_p_din0    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_541_p_din1    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_541_p_opcode  |  out|    2|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_541_p_dout0   |   in|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|grp_fu_541_p_ce      |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
-|Q_out_3_7            |   in|   32|     ap_none|                 Q_out_3_7|        scalar|
-|Q_out_2_6            |   in|   32|     ap_none|                 Q_out_2_6|        scalar|
-|p_reload83           |   in|   32|     ap_none|                p_reload83|        scalar|
-|p_reload82           |   in|   32|     ap_none|                p_reload82|        scalar|
-|p_reload81           |   in|   32|     ap_none|                p_reload81|        scalar|
-|p_reload80           |   in|   32|     ap_none|                p_reload80|        scalar|
-|Q_out_1_5            |   in|   32|     ap_none|                 Q_out_1_5|        scalar|
-|p_reload87           |   in|   32|     ap_none|                p_reload87|        scalar|
-|p_reload86           |   in|   32|     ap_none|                p_reload86|        scalar|
-|p_reload85           |   in|   32|     ap_none|                p_reload85|        scalar|
-|p_reload84           |   in|   32|     ap_none|                p_reload84|        scalar|
-|Q_out_0_4            |   in|   32|     ap_none|                 Q_out_0_4|        scalar|
-|p_reload91           |   in|   32|     ap_none|                p_reload91|        scalar|
-|p_reload90           |   in|   32|     ap_none|                p_reload90|        scalar|
-|p_reload89           |   in|   32|     ap_none|                p_reload89|        scalar|
-|p_reload88           |   in|   32|     ap_none|                p_reload88|        scalar|
-|p_reload95           |   in|   32|     ap_none|                p_reload95|        scalar|
-|p_reload94           |   in|   32|     ap_none|                p_reload94|        scalar|
-|p_reload93           |   in|   32|     ap_none|                p_reload93|        scalar|
-|p_reload92           |   in|   32|     ap_none|                p_reload92|        scalar|
-|Q_1_load35_reload    |   in|   32|     ap_none|         Q_1_load35_reload|        scalar|
-|Q_3_load31_reload    |   in|   32|     ap_none|         Q_3_load31_reload|        scalar|
-|Q_2_load39_reload    |   in|   32|     ap_none|         Q_2_load39_reload|        scalar|
-|p_reload76           |   in|   32|     ap_none|                p_reload76|        scalar|
-|Q_1_1_load_reload    |   in|   32|     ap_none|         Q_1_1_load_reload|        scalar|
-|p_reload75           |   in|   32|     ap_none|                p_reload75|        scalar|
-|p_reload             |   in|   32|     ap_none|                  p_reload|        scalar|
-|p_reload79           |   in|   32|     ap_none|                p_reload79|        scalar|
-|p_reload78           |   in|   32|     ap_none|                p_reload78|        scalar|
-|Q_2_2_load_reload    |   in|   32|     ap_none|         Q_2_2_load_reload|        scalar|
-|p_reload77           |   in|   32|     ap_none|                p_reload77|        scalar|
-|Q_0_3_load23_reload  |   in|   32|     ap_none|       Q_0_3_load23_reload|        scalar|
-|Q_2_3_load19_reload  |   in|   32|     ap_none|       Q_2_3_load19_reload|        scalar|
-|Q_1_3_load27_reload  |   in|   32|     ap_none|       Q_1_3_load27_reload|        scalar|
-|p_out                |  out|   32|      ap_vld|                     p_out|       pointer|
-|p_out_ap_vld         |  out|    1|      ap_vld|                     p_out|       pointer|
-|p_out1               |  out|   32|      ap_vld|                    p_out1|       pointer|
-|p_out1_ap_vld        |  out|    1|      ap_vld|                    p_out1|       pointer|
-|p_out2               |  out|   32|      ap_vld|                    p_out2|       pointer|
-|p_out2_ap_vld        |  out|    1|      ap_vld|                    p_out2|       pointer|
-|p_out3               |  out|   32|      ap_vld|                    p_out3|       pointer|
-|p_out3_ap_vld        |  out|    1|      ap_vld|                    p_out3|       pointer|
-|p_out4               |  out|   32|      ap_vld|                    p_out4|       pointer|
-|p_out4_ap_vld        |  out|    1|      ap_vld|                    p_out4|       pointer|
-|p_out5               |  out|   32|      ap_vld|                    p_out5|       pointer|
-|p_out5_ap_vld        |  out|    1|      ap_vld|                    p_out5|       pointer|
-|p_out6               |  out|   32|      ap_vld|                    p_out6|       pointer|
-|p_out6_ap_vld        |  out|    1|      ap_vld|                    p_out6|       pointer|
-|p_out7               |  out|   32|      ap_vld|                    p_out7|       pointer|
-|p_out7_ap_vld        |  out|    1|      ap_vld|                    p_out7|       pointer|
-|p_out8               |  out|   32|      ap_vld|                    p_out8|       pointer|
-|p_out8_ap_vld        |  out|    1|      ap_vld|                    p_out8|       pointer|
-|p_out9               |  out|   32|      ap_vld|                    p_out9|       pointer|
-|p_out9_ap_vld        |  out|    1|      ap_vld|                    p_out9|       pointer|
-|p_out10              |  out|   32|      ap_vld|                   p_out10|       pointer|
-|p_out10_ap_vld       |  out|    1|      ap_vld|                   p_out10|       pointer|
-|p_out11              |  out|   32|      ap_vld|                   p_out11|       pointer|
-|p_out11_ap_vld       |  out|    1|      ap_vld|                   p_out11|       pointer|
-|p_out12              |  out|   32|      ap_vld|                   p_out12|       pointer|
-|p_out12_ap_vld       |  out|    1|      ap_vld|                   p_out12|       pointer|
-|p_out13              |  out|   32|      ap_vld|                   p_out13|       pointer|
-|p_out13_ap_vld       |  out|    1|      ap_vld|                   p_out13|       pointer|
-|p_out14              |  out|   32|      ap_vld|                   p_out14|       pointer|
-|p_out14_ap_vld       |  out|    1|      ap_vld|                   p_out14|       pointer|
-|p_out15              |  out|   32|      ap_vld|                   p_out15|       pointer|
-|p_out15_ap_vld       |  out|    1|      ap_vld|                   p_out15|       pointer|
-|p_out16              |  out|   32|      ap_vld|                   p_out16|       pointer|
-|p_out16_ap_vld       |  out|    1|      ap_vld|                   p_out16|       pointer|
-|p_out17              |  out|   32|      ap_vld|                   p_out17|       pointer|
-|p_out17_ap_vld       |  out|    1|      ap_vld|                   p_out17|       pointer|
-|p_out18              |  out|   32|      ap_vld|                   p_out18|       pointer|
-|p_out18_ap_vld       |  out|    1|      ap_vld|                   p_out18|       pointer|
-|p_out19              |  out|   32|      ap_vld|                   p_out19|       pointer|
-|p_out19_ap_vld       |  out|    1|      ap_vld|                   p_out19|       pointer|
-|p_out20              |  out|   32|      ap_vld|                   p_out20|       pointer|
-|p_out20_ap_vld       |  out|    1|      ap_vld|                   p_out20|       pointer|
-|p_out21              |  out|   32|      ap_vld|                   p_out21|       pointer|
-|p_out21_ap_vld       |  out|    1|      ap_vld|                   p_out21|       pointer|
-|p_out22              |  out|   32|      ap_vld|                   p_out22|       pointer|
-|p_out22_ap_vld       |  out|    1|      ap_vld|                   p_out22|       pointer|
-|p_out23              |  out|   32|      ap_vld|                   p_out23|       pointer|
-|p_out23_ap_vld       |  out|    1|      ap_vld|                   p_out23|       pointer|
-|p_out24              |  out|   32|      ap_vld|                   p_out24|       pointer|
-|p_out24_ap_vld       |  out|    1|      ap_vld|                   p_out24|       pointer|
-|p_out25              |  out|   32|      ap_vld|                   p_out25|       pointer|
-|p_out25_ap_vld       |  out|    1|      ap_vld|                   p_out25|       pointer|
-|p_out26              |  out|   32|      ap_vld|                   p_out26|       pointer|
-|p_out26_ap_vld       |  out|    1|      ap_vld|                   p_out26|       pointer|
-|p_out27              |  out|   32|      ap_vld|                   p_out27|       pointer|
-|p_out27_ap_vld       |  out|    1|      ap_vld|                   p_out27|       pointer|
-|p_out28              |  out|   32|      ap_vld|                   p_out28|       pointer|
-|p_out28_ap_vld       |  out|    1|      ap_vld|                   p_out28|       pointer|
-|p_out29              |  out|   32|      ap_vld|                   p_out29|       pointer|
-|p_out29_ap_vld       |  out|    1|      ap_vld|                   p_out29|       pointer|
-|p_out30              |  out|   32|      ap_vld|                   p_out30|       pointer|
-|p_out30_ap_vld       |  out|    1|      ap_vld|                   p_out30|       pointer|
-|p_out31              |  out|   32|      ap_vld|                   p_out31|       pointer|
-|p_out31_ap_vld       |  out|    1|      ap_vld|                   p_out31|       pointer|
-+---------------------+-----+-----+------------+--------------------------+--------------+
++----------------------+-----+-----+------------+--------------------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  |       Source Object      |    C Type    |
++----------------------+-----+-----+------------+--------------------------+--------------+
+|ap_clk                |   in|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|ap_rst                |   in|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|ap_start              |   in|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|ap_done               |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|ap_idle               |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|ap_ready              |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1426_p_din0    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1426_p_din1    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1426_p_opcode  |  out|    2|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1426_p_dout0   |   in|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1426_p_ce      |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1431_p_din0    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1431_p_din1    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1431_p_opcode  |  out|    2|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1431_p_dout0   |   in|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1431_p_ce      |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1436_p_din0    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1436_p_din1    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1436_p_opcode  |  out|    2|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1436_p_dout0   |   in|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1436_p_ce      |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1441_p_din0    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1441_p_din1    |  out|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1441_p_opcode  |  out|    2|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1441_p_dout0   |   in|   32|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|grp_fu_1441_p_ce      |  out|    1|  ap_ctrl_hs|  top_Pipeline_DUMMY_STAGE|  return value|
+|Q_out_3_7             |   in|   32|     ap_none|                 Q_out_3_7|        scalar|
+|Q_out_2_6             |   in|   32|     ap_none|                 Q_out_2_6|        scalar|
+|p_reload83            |   in|   32|     ap_none|                p_reload83|        scalar|
+|p_reload82            |   in|   32|     ap_none|                p_reload82|        scalar|
+|p_reload81            |   in|   32|     ap_none|                p_reload81|        scalar|
+|p_reload80            |   in|   32|     ap_none|                p_reload80|        scalar|
+|Q_out_1_5             |   in|   32|     ap_none|                 Q_out_1_5|        scalar|
+|p_reload87            |   in|   32|     ap_none|                p_reload87|        scalar|
+|p_reload86            |   in|   32|     ap_none|                p_reload86|        scalar|
+|p_reload85            |   in|   32|     ap_none|                p_reload85|        scalar|
+|p_reload84            |   in|   32|     ap_none|                p_reload84|        scalar|
+|Q_out_0_4             |   in|   32|     ap_none|                 Q_out_0_4|        scalar|
+|p_reload91            |   in|   32|     ap_none|                p_reload91|        scalar|
+|p_reload90            |   in|   32|     ap_none|                p_reload90|        scalar|
+|p_reload89            |   in|   32|     ap_none|                p_reload89|        scalar|
+|p_reload88            |   in|   32|     ap_none|                p_reload88|        scalar|
+|p_reload95            |   in|   32|     ap_none|                p_reload95|        scalar|
+|p_reload94            |   in|   32|     ap_none|                p_reload94|        scalar|
+|p_reload93            |   in|   32|     ap_none|                p_reload93|        scalar|
+|p_reload92            |   in|   32|     ap_none|                p_reload92|        scalar|
+|Q_1_load35_reload     |   in|   32|     ap_none|         Q_1_load35_reload|        scalar|
+|Q_3_load31_reload     |   in|   32|     ap_none|         Q_3_load31_reload|        scalar|
+|Q_2_load39_reload     |   in|   32|     ap_none|         Q_2_load39_reload|        scalar|
+|p_reload76            |   in|   32|     ap_none|                p_reload76|        scalar|
+|Q_1_1_load_reload     |   in|   32|     ap_none|         Q_1_1_load_reload|        scalar|
+|p_reload75            |   in|   32|     ap_none|                p_reload75|        scalar|
+|p_reload              |   in|   32|     ap_none|                  p_reload|        scalar|
+|p_reload79            |   in|   32|     ap_none|                p_reload79|        scalar|
+|p_reload78            |   in|   32|     ap_none|                p_reload78|        scalar|
+|Q_2_2_load_reload     |   in|   32|     ap_none|         Q_2_2_load_reload|        scalar|
+|p_reload77            |   in|   32|     ap_none|                p_reload77|        scalar|
+|Q_0_3_load23_reload   |   in|   32|     ap_none|       Q_0_3_load23_reload|        scalar|
+|Q_2_3_load19_reload   |   in|   32|     ap_none|       Q_2_3_load19_reload|        scalar|
+|Q_1_3_load27_reload   |   in|   32|     ap_none|       Q_1_3_load27_reload|        scalar|
+|p_out                 |  out|   32|      ap_vld|                     p_out|       pointer|
+|p_out_ap_vld          |  out|    1|      ap_vld|                     p_out|       pointer|
+|p_out1                |  out|   32|      ap_vld|                    p_out1|       pointer|
+|p_out1_ap_vld         |  out|    1|      ap_vld|                    p_out1|       pointer|
+|p_out2                |  out|   32|      ap_vld|                    p_out2|       pointer|
+|p_out2_ap_vld         |  out|    1|      ap_vld|                    p_out2|       pointer|
+|p_out3                |  out|   32|      ap_vld|                    p_out3|       pointer|
+|p_out3_ap_vld         |  out|    1|      ap_vld|                    p_out3|       pointer|
+|p_out4                |  out|   32|      ap_vld|                    p_out4|       pointer|
+|p_out4_ap_vld         |  out|    1|      ap_vld|                    p_out4|       pointer|
+|p_out5                |  out|   32|      ap_vld|                    p_out5|       pointer|
+|p_out5_ap_vld         |  out|    1|      ap_vld|                    p_out5|       pointer|
+|p_out6                |  out|   32|      ap_vld|                    p_out6|       pointer|
+|p_out6_ap_vld         |  out|    1|      ap_vld|                    p_out6|       pointer|
+|p_out7                |  out|   32|      ap_vld|                    p_out7|       pointer|
+|p_out7_ap_vld         |  out|    1|      ap_vld|                    p_out7|       pointer|
+|p_out8                |  out|   32|      ap_vld|                    p_out8|       pointer|
+|p_out8_ap_vld         |  out|    1|      ap_vld|                    p_out8|       pointer|
+|p_out9                |  out|   32|      ap_vld|                    p_out9|       pointer|
+|p_out9_ap_vld         |  out|    1|      ap_vld|                    p_out9|       pointer|
+|p_out10               |  out|   32|      ap_vld|                   p_out10|       pointer|
+|p_out10_ap_vld        |  out|    1|      ap_vld|                   p_out10|       pointer|
+|p_out11               |  out|   32|      ap_vld|                   p_out11|       pointer|
+|p_out11_ap_vld        |  out|    1|      ap_vld|                   p_out11|       pointer|
+|p_out12               |  out|   32|      ap_vld|                   p_out12|       pointer|
+|p_out12_ap_vld        |  out|    1|      ap_vld|                   p_out12|       pointer|
+|p_out13               |  out|   32|      ap_vld|                   p_out13|       pointer|
+|p_out13_ap_vld        |  out|    1|      ap_vld|                   p_out13|       pointer|
+|p_out14               |  out|   32|      ap_vld|                   p_out14|       pointer|
+|p_out14_ap_vld        |  out|    1|      ap_vld|                   p_out14|       pointer|
+|p_out15               |  out|   32|      ap_vld|                   p_out15|       pointer|
+|p_out15_ap_vld        |  out|    1|      ap_vld|                   p_out15|       pointer|
+|p_out16               |  out|   32|      ap_vld|                   p_out16|       pointer|
+|p_out16_ap_vld        |  out|    1|      ap_vld|                   p_out16|       pointer|
+|p_out17               |  out|   32|      ap_vld|                   p_out17|       pointer|
+|p_out17_ap_vld        |  out|    1|      ap_vld|                   p_out17|       pointer|
+|p_out18               |  out|   32|      ap_vld|                   p_out18|       pointer|
+|p_out18_ap_vld        |  out|    1|      ap_vld|                   p_out18|       pointer|
+|p_out19               |  out|   32|      ap_vld|                   p_out19|       pointer|
+|p_out19_ap_vld        |  out|    1|      ap_vld|                   p_out19|       pointer|
+|p_out20               |  out|   32|      ap_vld|                   p_out20|       pointer|
+|p_out20_ap_vld        |  out|    1|      ap_vld|                   p_out20|       pointer|
+|p_out21               |  out|   32|      ap_vld|                   p_out21|       pointer|
+|p_out21_ap_vld        |  out|    1|      ap_vld|                   p_out21|       pointer|
+|p_out22               |  out|   32|      ap_vld|                   p_out22|       pointer|
+|p_out22_ap_vld        |  out|    1|      ap_vld|                   p_out22|       pointer|
+|p_out23               |  out|   32|      ap_vld|                   p_out23|       pointer|
+|p_out23_ap_vld        |  out|    1|      ap_vld|                   p_out23|       pointer|
+|p_out24               |  out|   32|      ap_vld|                   p_out24|       pointer|
+|p_out24_ap_vld        |  out|    1|      ap_vld|                   p_out24|       pointer|
+|p_out25               |  out|   32|      ap_vld|                   p_out25|       pointer|
+|p_out25_ap_vld        |  out|    1|      ap_vld|                   p_out25|       pointer|
+|p_out26               |  out|   32|      ap_vld|                   p_out26|       pointer|
+|p_out26_ap_vld        |  out|    1|      ap_vld|                   p_out26|       pointer|
+|p_out27               |  out|   32|      ap_vld|                   p_out27|       pointer|
+|p_out27_ap_vld        |  out|    1|      ap_vld|                   p_out27|       pointer|
+|p_out28               |  out|   32|      ap_vld|                   p_out28|       pointer|
+|p_out28_ap_vld        |  out|    1|      ap_vld|                   p_out28|       pointer|
+|p_out29               |  out|   32|      ap_vld|                   p_out29|       pointer|
+|p_out29_ap_vld        |  out|    1|      ap_vld|                   p_out29|       pointer|
+|p_out30               |  out|   32|      ap_vld|                   p_out30|       pointer|
+|p_out30_ap_vld        |  out|    1|      ap_vld|                   p_out30|       pointer|
+|p_out31               |  out|   32|      ap_vld|                   p_out31|       pointer|
+|p_out31_ap_vld        |  out|    1|      ap_vld|                   p_out31|       pointer|
++----------------------+-----+-----+------------+--------------------------+--------------+
 

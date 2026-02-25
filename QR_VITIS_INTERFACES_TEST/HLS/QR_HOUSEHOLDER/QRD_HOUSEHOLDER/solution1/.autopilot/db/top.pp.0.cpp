@@ -27086,19 +27086,23 @@ __attribute__((sdx_kernel("top", 0))) void top(
     FIX_TYPE R_DRAM[4][4]
 )
 {
-#line 19 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/csynth.tcl"
+#line 21 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=top
 # 8 "../top.cpp"
 
-#pragma HLS INTERFACE mode=m_axi port=A_DRAM depth=1 offset=slave bundle=gmem0
-#pragma HLS INTERFACE mode=m_axi port=Q_DRAM depth=1 offset=slave bundle=gmem1
-#pragma HLS INTERFACE mode=m_axi port=R_DRAM depth=1 offset=slave bundle=gmem2
+#line 7 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/directives.tcl"
+#pragma HLSDIRECTIVE TOP name=top
+# 8 "../top.cpp"
+
+#pragma HLS INTERFACE mode=m_axi port=A_DRAM depth=4*4 offset=slave bundle=memA
+#pragma HLS INTERFACE mode=m_axi port=Q_DRAM depth=4*4 offset=slave bundle=memQ
+#pragma HLS INTERFACE mode=m_axi port=R_DRAM depth=4*4 offset=slave bundle=memR
 
 #pragma HLS interface s_axilite port=return
 
-
-
-
+#pragma HLS ARRAY_PARTITION variable=A_DRAM dim=0 type=complete
+#pragma HLS ARRAY_PARTITION variable=Q_DRAM dim=0 type=complete
+#pragma HLS ARRAY_PARTITION variable=R_DRAM dim=0 type=complete
 
 
  FIX_TYPE A[4][4];

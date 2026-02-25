@@ -76,60 +76,915 @@ void XTop_DisableAutoRestart(XTop *InstancePtr) {
     XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_AP_CTRL, 0);
 }
 
-void XTop_Set_A_DRAM(XTop *InstancePtr, u64 Data) {
+void XTop_Set_A_DRAM_0_0(XTop *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_DATA, (u32)(Data));
-    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_DATA + 4, (u32)(Data >> 32));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_0_DATA + 4, (u32)(Data >> 32));
 }
 
-u64 XTop_Get_A_DRAM(XTop *InstancePtr) {
+u64 XTop_Get_A_DRAM_0_0(XTop *InstancePtr) {
     u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_DATA);
-    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_DATA + 4) << 32;
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_0_DATA + 4) << 32;
     return Data;
 }
 
-void XTop_Set_Q_DRAM(XTop *InstancePtr, u64 Data) {
+void XTop_Set_A_DRAM_0_1(XTop *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_DATA, (u32)(Data));
-    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_DATA + 4, (u32)(Data >> 32));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_1_DATA + 4, (u32)(Data >> 32));
 }
 
-u64 XTop_Get_Q_DRAM(XTop *InstancePtr) {
+u64 XTop_Get_A_DRAM_0_1(XTop *InstancePtr) {
     u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_DATA);
-    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_DATA + 4) << 32;
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_1_DATA + 4) << 32;
     return Data;
 }
 
-void XTop_Set_R_DRAM(XTop *InstancePtr, u64 Data) {
+void XTop_Set_A_DRAM_0_2(XTop *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_DATA, (u32)(Data));
-    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_DATA + 4, (u32)(Data >> 32));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_2_DATA + 4, (u32)(Data >> 32));
 }
 
-u64 XTop_Get_R_DRAM(XTop *InstancePtr) {
+u64 XTop_Get_A_DRAM_0_2(XTop *InstancePtr) {
     u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_DATA);
-    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_DATA + 4) << 32;
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_0_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_0_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_0_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_1_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_1_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_1_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_1_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_1_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_1_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_1_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_1_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_1_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_2_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_2_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_2_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_2_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_2_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_2_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_2_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_2_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_2_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_3_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_3_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_3_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_3_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_3_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_3_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_A_DRAM_3_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_A_DRAM_3_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_A_DRAM_3_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_0_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_0_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_0_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_0_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_0_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_0_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_0_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_0_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_0_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_1_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_1_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_1_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_1_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_1_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_1_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_1_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_1_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_1_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_2_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_2_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_2_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_2_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_2_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_2_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_2_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_2_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_2_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_3_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_3_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_3_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_3_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_3_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_3_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_Q_DRAM_3_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_Q_DRAM_3_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_Q_DRAM_3_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_0_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_0_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_0_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_0_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_0_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_0_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_0_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_0_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_0_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_1_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_1_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_1_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_1_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_1_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_1_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_1_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_1_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_1_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_2_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_2_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_2_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_2_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_2_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_2_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_2_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_2_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_2_3_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_3_0(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_0_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_0_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_3_0(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_0_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_0_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_3_1(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_1_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_1_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_3_1(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_1_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_1_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_3_2(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_2_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_3_2(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_2_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_2_DATA + 4) << 32;
+    return Data;
+}
+
+void XTop_Set_R_DRAM_3_3(XTop *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_3_DATA, (u32)(Data));
+    XTop_WriteReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_3_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_Get_R_DRAM_3_3(XTop *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_3_DATA);
+    Data += (u64)XTop_ReadReg(InstancePtr->Control_BaseAddress, XTOP_CONTROL_ADDR_R_DRAM_3_3_DATA + 4) << 32;
     return Data;
 }
 

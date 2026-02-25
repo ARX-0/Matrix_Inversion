@@ -9,14 +9,16 @@ set_top top
 add_files ../fns.cpp
 add_files ../top.cpp
 add_files ../top.hpp
+add_files ../top_tb.cpp
 add_files -tb ../top_tb.cpp -cflags "-Wno-unknown-pragmas"
 open_solution "solution1" -flow_target vivado
 set_part {xc7z020-clg400-1}
 create_clock -period 10 -name default
 config_cosim -tool xsim -trace_level all
-config_export -format ip_catalog -output C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/HLS_IPs -rtl verilog
-#source "./QRD_HOUSEHOLDER/solution1/directives.tcl"
+config_export -format ip_catalog -output C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/IPs -rtl verilog
+set_clock_uncertainty 1.25
+source "./QRD_HOUSEHOLDER/solution1/directives.tcl"
 csim_design
 csynth_design
 cosim_design -trace_level all
-export_design -rtl verilog -format ip_catalog -output C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/HLS_IPs
+export_design -rtl verilog -format ip_catalog -output C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/IPs

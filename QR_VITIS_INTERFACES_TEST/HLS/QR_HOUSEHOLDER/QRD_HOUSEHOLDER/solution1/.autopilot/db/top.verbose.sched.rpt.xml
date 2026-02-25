@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top'" level="0">
-<item name = "Date">Wed Feb 25 16:18:13 2026
+<item name = "Date">Wed Feb 25 17:08:28 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">QRD_HOUSEHOLDER</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 8.750 ns, 1.25 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">70, 70, 0.700 us, 0.700 us, 71, 71, no</column>
+<column name="">48, 48, 0.480 us, 0.480 us, 49, 49, no</column>
 </table>
 </item>
 <item name = "Detail">

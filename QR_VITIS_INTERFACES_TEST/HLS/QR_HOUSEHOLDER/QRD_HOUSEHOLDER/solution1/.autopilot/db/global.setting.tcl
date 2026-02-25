@@ -42,8 +42,8 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7z020:-clg400:-1
-set SourceFiles {sc {} c {../../../fns.cpp ../../../top.cpp}}
-set SourceFlags {sc {} c {{} {}}}
+set SourceFiles {sc {} c {../../../fns.cpp ../../../top.cpp ../../../top_tb.cpp}}
+set SourceFlags {sc {} c {{} {} {}}}
 set DirectiveFile {}
 set TBFiles {verilog ../../../top_tb.cpp bc ../../../top_tb.cpp vhdl ../../../top_tb.cpp sc ../../../top_tb.cpp cas ../../../top_tb.cpp c {}}
 set SpecLanguage C

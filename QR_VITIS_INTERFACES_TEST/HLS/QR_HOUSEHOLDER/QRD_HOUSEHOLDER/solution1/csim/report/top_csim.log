@@ -1,5 +1,7 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../top_tb.cpp in debug mode
+   Compiling ../../../../../fns.cpp in debug mode
    Compiling ../../../../../top.cpp in debug mode
    Generating csim.exe
 Initializing Input Matrix A...

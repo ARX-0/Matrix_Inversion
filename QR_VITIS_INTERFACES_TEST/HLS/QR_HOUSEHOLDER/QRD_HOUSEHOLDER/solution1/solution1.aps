@@ -8,7 +8,7 @@
     <synthesis askAgain="true"/>
     <config>
         <config_cosim tool="xsim" trace_level="all"/>
-        <config_export format="ip_catalog" output="C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/HLS_IPs" rtl="verilog"/>
+        <config_export format="ip_catalog" output="C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/IPs" rtl="verilog"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf boardInfo="pynq-z2 (xc7z020clg400-1) " hideTrivialOp="true" isBasedOnBoard="true" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
@@ -41,7 +41,7 @@
             </RTLs>
         </UIAutoSimConf>
     </UIConfigurations>
-    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" output="C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/HLS_IPs" rtl="verilog" rtlButton="true" rtlCombo="verilog">
+    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" output="C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/Vitis_HLS/IPs" rtl="verilog" rtlButton="true" rtlCombo="verilog">
         <Format formatName="ip_catalog"/>
         <Format formatName="sysgen"/>
         <Format formatName="sysgen_ise"/>
@@ -70,7 +70,7 @@
         <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
     </libraryList>
     <clockList>
-        <clock name="default" default="false" period="10"/>
+        <clock default="false" name="default" uncertainty="1.25" period="10"/>
     </clockList>
 </solution>
 

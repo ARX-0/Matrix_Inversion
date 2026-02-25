@@ -8,6 +8,7 @@
         <file name="../fns.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="../top.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="../top.hpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="../top_tb.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="../../../top_tb.cpp" sc="0" tb="1" cflags="-Wno-unknown-pragmas" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">

@@ -4,7 +4,7 @@
     "calls": "",
     "file": "top.cpp",
     "fileloc": 3,
-    "instructions": 168,
+    "instructions": 171,
     "loads": {
       "L": 5,
       "T": 1
@@ -14,6 +14,6 @@
       "L": 6,
       "T": 2
     },
-    "total_instructions": 168
+    "total_instructions": 171
   }
 }

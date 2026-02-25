@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top_Pipeline_DUMMY_STAGE'" level="0">
-<item name = "Date">Wed Feb 25 16:18:14 2026
+<item name = "Date">Wed Feb 25 17:08:29 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">QRD_HOUSEHOLDER</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.256 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.256 ns, 1.25 ns</column>
 </table>
 </item>
 </section>
@@ -62,12 +62,12 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mux_4_2_32_1_1_U39">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
-<column name="mux_4_2_32_1_1_U40">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
-<column name="mux_4_2_32_1_1_U41">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
-<column name="mux_4_2_32_1_1_U42">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
-<column name="mux_4_2_32_1_1_U43">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
-<column name="mux_4_2_32_1_1_U44">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_4_2_32_1_1_U58">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_4_2_32_1_1_U59">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_4_2_32_1_1_U60">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_4_2_32_1_1_U61">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_4_2_32_1_1_U62">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
+<column name="mux_4_2_32_1_1_U63">mux_4_2_32_1_1, 0, 0, 0, 20, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -107,8 +107,8 @@
 <column name="ap_done_int">9, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
 <column name="ap_sig_allocacmp_i">9, 2, 3, 6</column>
-<column name="empty_55_fu_232">9, 2, 32, 64</column>
-<column name="empty_60_fu_252">9, 2, 32, 64</column>
+<column name="empty_157_fu_216">9, 2, 32, 64</column>
+<column name="empty_158_fu_220">9, 2, 32, 64</column>
 <column name="i_1_fu_172">9, 2, 3, 6</column>
 </table>
 </item>
@@ -125,37 +125,37 @@
 <column name="ap_loop_exit_ready_pp0_iter2_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter3_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter4_reg">1, 0, 1, 0</column>
-<column name="empty_42_fu_180">32, 0, 32, 0</column>
-<column name="empty_43_fu_184">32, 0, 32, 0</column>
-<column name="empty_44_fu_188">32, 0, 32, 0</column>
-<column name="empty_45_fu_192">32, 0, 32, 0</column>
-<column name="empty_46_fu_196">32, 0, 32, 0</column>
-<column name="empty_47_fu_200">32, 0, 32, 0</column>
-<column name="empty_48_fu_204">32, 0, 32, 0</column>
-<column name="empty_49_fu_208">32, 0, 32, 0</column>
-<column name="empty_50_fu_212">32, 0, 32, 0</column>
-<column name="empty_51_fu_216">32, 0, 32, 0</column>
-<column name="empty_52_fu_220">32, 0, 32, 0</column>
-<column name="empty_53_fu_224">32, 0, 32, 0</column>
-<column name="empty_54_fu_228">32, 0, 32, 0</column>
-<column name="empty_55_fu_232">32, 0, 32, 0</column>
-<column name="empty_56_fu_236">32, 0, 32, 0</column>
-<column name="empty_57_fu_240">32, 0, 32, 0</column>
-<column name="empty_58_fu_244">32, 0, 32, 0</column>
-<column name="empty_59_fu_248">32, 0, 32, 0</column>
-<column name="empty_60_fu_252">32, 0, 32, 0</column>
-<column name="empty_61_fu_256">32, 0, 32, 0</column>
-<column name="empty_62_fu_260">32, 0, 32, 0</column>
-<column name="empty_63_fu_264">32, 0, 32, 0</column>
-<column name="empty_64_fu_268">32, 0, 32, 0</column>
-<column name="empty_65_fu_272">32, 0, 32, 0</column>
-<column name="empty_66_fu_276">32, 0, 32, 0</column>
-<column name="empty_67_fu_280">32, 0, 32, 0</column>
-<column name="empty_68_fu_284">32, 0, 32, 0</column>
-<column name="empty_69_fu_288">32, 0, 32, 0</column>
-<column name="empty_70_fu_292">32, 0, 32, 0</column>
-<column name="empty_71_fu_296">32, 0, 32, 0</column>
-<column name="empty_72_fu_300">32, 0, 32, 0</column>
+<column name="empty_148_fu_180">32, 0, 32, 0</column>
+<column name="empty_149_fu_184">32, 0, 32, 0</column>
+<column name="empty_150_fu_188">32, 0, 32, 0</column>
+<column name="empty_151_fu_192">32, 0, 32, 0</column>
+<column name="empty_152_fu_196">32, 0, 32, 0</column>
+<column name="empty_153_fu_200">32, 0, 32, 0</column>
+<column name="empty_154_fu_204">32, 0, 32, 0</column>
+<column name="empty_155_fu_208">32, 0, 32, 0</column>
+<column name="empty_156_fu_212">32, 0, 32, 0</column>
+<column name="empty_157_fu_216">32, 0, 32, 0</column>
+<column name="empty_158_fu_220">32, 0, 32, 0</column>
+<column name="empty_159_fu_224">32, 0, 32, 0</column>
+<column name="empty_160_fu_228">32, 0, 32, 0</column>
+<column name="empty_161_fu_232">32, 0, 32, 0</column>
+<column name="empty_162_fu_236">32, 0, 32, 0</column>
+<column name="empty_163_fu_240">32, 0, 32, 0</column>
+<column name="empty_164_fu_244">32, 0, 32, 0</column>
+<column name="empty_165_fu_248">32, 0, 32, 0</column>
+<column name="empty_166_fu_252">32, 0, 32, 0</column>
+<column name="empty_167_fu_256">32, 0, 32, 0</column>
+<column name="empty_168_fu_260">32, 0, 32, 0</column>
+<column name="empty_169_fu_264">32, 0, 32, 0</column>
+<column name="empty_170_fu_268">32, 0, 32, 0</column>
+<column name="empty_171_fu_272">32, 0, 32, 0</column>
+<column name="empty_172_fu_276">32, 0, 32, 0</column>
+<column name="empty_173_fu_280">32, 0, 32, 0</column>
+<column name="empty_174_fu_284">32, 0, 32, 0</column>
+<column name="empty_175_fu_288">32, 0, 32, 0</column>
+<column name="empty_176_fu_292">32, 0, 32, 0</column>
+<column name="empty_177_fu_296">32, 0, 32, 0</column>
+<column name="empty_178_fu_300">32, 0, 32, 0</column>
 <column name="empty_fu_176">32, 0, 32, 0</column>
 <column name="i_1_fu_172">3, 0, 3, 0</column>
 <column name="icmp_ln51_reg_1444">1, 0, 1, 0</column>
@@ -181,26 +181,26 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_526_p_din0">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_526_p_din1">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_526_p_opcode">out, 2, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_526_p_dout0">in, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_526_p_ce">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_531_p_din0">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_531_p_din1">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_531_p_opcode">out, 2, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_531_p_dout0">in, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_531_p_ce">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_536_p_din0">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_536_p_din1">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_536_p_opcode">out, 2, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_536_p_dout0">in, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_536_p_ce">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_541_p_din0">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_541_p_din1">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_541_p_opcode">out, 2, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_541_p_dout0">in, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
-<column name="grp_fu_541_p_ce">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1426_p_din0">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1426_p_din1">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1426_p_opcode">out, 2, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1426_p_dout0">in, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1426_p_ce">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1431_p_din0">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1431_p_din1">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1431_p_opcode">out, 2, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1431_p_dout0">in, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1431_p_ce">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1436_p_din0">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1436_p_din1">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1436_p_opcode">out, 2, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1436_p_dout0">in, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1436_p_ce">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1441_p_din0">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1441_p_din1">out, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1441_p_opcode">out, 2, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1441_p_dout0">in, 32, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
+<column name="grp_fu_1441_p_ce">out, 1, ap_ctrl_hs, top_Pipeline_DUMMY_STAGE, return value</column>
 <column name="Q_out_3_7">in, 32, ap_none, Q_out_3_7, scalar</column>
 <column name="Q_out_2_6">in, 32, ap_none, Q_out_2_6, scalar</column>
 <column name="p_reload83">in, 32, ap_none, p_reload83, scalar</column>
