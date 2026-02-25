@@ -1,0 +1,33 @@
+
+
+set RtlHierarchyInfo {[
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST"},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_READ_INIT_fu_375"},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_READ_INIT_fu_375.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_DUMMY_STAGE_fu_414"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_DUMMY_STAGE_fu_414.mux_4_2_32_1_1_U39"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_DUMMY_STAGE_fu_414.mux_4_2_32_1_1_U40"},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_DUMMY_STAGE_fu_414.mux_4_2_32_1_1_U41"},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_DUMMY_STAGE_fu_414.mux_4_2_32_1_1_U42"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_DUMMY_STAGE_fu_414.mux_4_2_32_1_1_U43"},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_DUMMY_STAGE_fu_414.mux_4_2_32_1_1_U44"},
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_DUMMY_STAGE_fu_414.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484"},
+	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484.mux_4_2_32_1_1_U112"},
+	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484.mux_4_2_32_1_1_U113"},
+	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484.mux_4_2_32_1_1_U114"},
+	{"ID" : "15", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484.mux_4_2_32_1_1_U115"},
+	{"ID" : "16", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484.mux_4_2_32_1_1_U116"},
+	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484.mux_4_2_32_1_1_U117"},
+	{"ID" : "18", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484.mux_4_2_32_1_1_U118"},
+	{"ID" : "19", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484.mux_4_2_32_1_1_U119"},
+	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_top_Pipeline_WRITE_BACK_fu_484.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U"},
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem0_m_axi_U"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem1_m_axi_U"},
+	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem2_m_axi_U"},
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_U156"},
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_U157"},
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_U158"},
+	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_U159"}]}
+set DependenceCheckSize 0

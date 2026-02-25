@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="fns.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\NIELIT_FINAL_YEAR_PROJECT\HLS\fns.cpp"/>
+    <originFiles name="top.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\NIELIT_FINAL_YEAR_PROJECT\HLS\top.cpp"/>
+    <originFiles name="top.hpp" path="C:\Users\varad\OneDrive\Documents\GitHub\NIELIT_FINAL_YEAR_PROJECT\HLS\top.hpp"/>
+  </source>
+  <testbench>
+    <originFiles name="top_tb.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\NIELIT_FINAL_YEAR_PROJECT\HLS\top_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
