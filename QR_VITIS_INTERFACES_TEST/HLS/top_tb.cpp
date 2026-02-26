@@ -1,5 +1,51 @@
 #include <iostream>
+#include <cmath>
 #include "top.hpp"
+
+#define TOL 1e-3
+#define NUM_TESTS 10
+
+// ================= Utility Functions =================
+
+void print_matrix(const char* name, FIX_TYPE M[N][N])
+{
+    std::cout << name << ":\n";
+    for(int i=0;i<N;i++){
+        for(int j=0;j<N;j++)
+            std::cout << M[i][j] << " ";
+        std::cout << "\n";
+    }
+    std::cout << "\n";
+}
+
+void matmul(FIX_TYPE A[N][N], FIX_TYPE B[N][N], FIX_TYPE C[N][N])
+{
+    for(int i=0;i<N;i++)
+        for(int j=0;j<N;j++)
+        {
+            C[i][j] = 0;
+            for(int k=0;k<N;k++)
+                C[i][j] += A[i][k] * B[k][j];
+        }
+}
+
+void transpose(FIX_TYPE A[N][N], FIX_TYPE AT[N][N])
+{
+    for(int i=0;i<N;i++)
+        for(int j=0;j<N;j++)
+            AT[j][i] = A[i][j];
+}
+
+bool is_upper_triangular(FIX_TYPE R[N][N])
+{
+    for(int i=1;i<N;i++)
+        for(int j=0;j<i;j++)
+            if(fabs(R[i][j]) > TOL)
+                return false;
+    return true;
+}
+
+// ================= MAIN =================
 
 int main()
 {
@@ -7,52 +53,70 @@ int main()
     FIX_TYPE Q[N][N];
     FIX_TYPE R[N][N];
 
-    std::cout << "Initializing Input Matrix A...\n";
+    FIX_TYPE QR[N][N];
+    FIX_TYPE QT[N][N];
+    FIX_TYPE QTQ[N][N];
 
-    // Initialize A with deterministic values
-    for(int i = 0; i < N; i++)
+    for(int test = 0; test < NUM_TESTS; test++)
     {
-        for(int j = 0; j < N; j++)
-        {
-            A[i][j] = FIX_TYPE(i * N + j);
-        }
-    }
+        std::cout << "=====================================\n";
+        std::cout << "Running Test #" << test << "\n";
 
-    // Call HLS top function
-    top(A, Q, R);
+        // Generate different matrices
+        for(int i=0;i<N;i++)
+            for(int j=0;j<N;j++)
+            	A[i][j] = (i*7 + j*11 + test*3) % 17 + 1;
 
-    bool pass = true;
+        top_1(A, Q, R);
 
-    std::cout << "Verifying results...\n";
+        matmul(Q, R, QR);
 
-    for(int i = 0; i < N; i++)
-    {
-        for(int j = 0; j < N; j++)
-        {
-            FIX_TYPE expectedR = FIX_TYPE(i * N + j) + FIX_TYPE(1.0f);
+        bool pass_qr = true;
+        for(int i=0;i<N;i++)
+            for(int j=0;j<N;j++)
+                if(fabs(QR[i][j] - A[i][j]) > TOL * fabs(A[i][j] + 1))
+                    pass_qr = false;
 
-            FIX_TYPE expectedQ;
-            if(i == j)
-                expectedQ = FIX_TYPE(2.0f);
-            else
-                expectedQ = FIX_TYPE(0.0f);
+        transpose(Q, QT);
+        matmul(QT, Q, QTQ);
 
-            if( (R[i][j] != expectedR) || (Q[i][j] != expectedQ) )
+        bool pass_ortho = true;
+        for(int i=0;i<N;i++)
+            for(int j=0;j<N;j++)
             {
-                pass = false;
-                std::cout << "Mismatch at (" << i << "," << j << ")\n";
-                std::cout << "Expected R: " << (float)expectedR
-                          << " Got: " << (float)R[i][j] << "\n";
-                std::cout << "Expected Q: " << (float)expectedQ
-                          << " Got: " << (float)Q[i][j] << "\n";
+                if(i==j)
+                {
+                    if(fabs(QTQ[i][j] - 1.0) > TOL)
+                        pass_ortho = false;
+                }
+                else
+                {
+                    if(fabs(QTQ[i][j]) > TOL)
+                        pass_ortho = false;
+                }
             }
+
+        bool pass_tri = is_upper_triangular(R);
+
+        if(pass_qr && pass_ortho && pass_tri)
+        {
+            std::cout << "TEST PASSED\n\n";
+            print_matrix("Input A", A);
+            print_matrix("Output Q", Q);
+            print_matrix("Output R", R);
+        }
+        else
+        {
+            std::cout << "TEST FAILED\n\n";
+            print_matrix("Input A", A);
+            print_matrix("Output Q", Q);
+            print_matrix("Output R", R);
+            return 1;
         }
     }
 
-    if(pass)
-        std::cout << "\nTEST PASSED\n";
-    else
-        std::cout << "\n TEST FAILED\n";
+    std::cout << "=====================================\n";
+    std::cout << "ALL TESTS PASSED\n";
 
-    return pass ? 0 : 1;
+    return 0;
 }

@@ -5,17 +5,13 @@
       <synLog/>
       <simLog/>
       <mgLog/>
-      <packageLog>
-        <logs message="ERROR: [HLS 200-2014] Failed to generated HBM driver object file hbm_helper_aarch64.o" projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-02-25T17:11:18.191+0530"/>
-      </packageLog>
+      <packageLog/>
       <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-02-25T17:08:31.646+0530" type="Warning"/>
-      </synLog>
+      <synLog/>
       <simLog/>
       <mgLog/>
       <packageLog/>

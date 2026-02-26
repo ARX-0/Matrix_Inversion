@@ -8,7 +8,7 @@
 
 typedef float FIX_TYPE;
 
-void top(
+void top_1(
     FIX_TYPE A_DRAM[N][N],
     FIX_TYPE Q_DRAM[N][N],
     FIX_TYPE R_DRAM[N][N]

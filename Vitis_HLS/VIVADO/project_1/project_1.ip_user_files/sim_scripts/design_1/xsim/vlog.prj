@@ -1,0 +1,27 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" --include "../../../../project_1.gen/sources_1/bd/design_1/ip/design_1_top_0_0/drivers/top_v1_0/src" --include "../../../../project_1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../project_1.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_control_s_axi.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_fadd_32ns_32ns_32_5_full_dsp_1.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_flow_control_loop_pipe_sequential_init.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_gmem0_m_axi.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_gmem1_m_axi.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_gmem2_m_axi.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_mux_4_2_32_1_1.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_top_Pipeline_DUMMY_STAGE.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_top_Pipeline_READ_INIT.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top_top_Pipeline_WRITE_BACK.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/verilog/top.v" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/89c9/hdl/ip/top_fadd_32ns_32ns_32_5_full_dsp_1_ip.v" \
+"../../../bd/design_1/ip/design_1_top_0_0/sim/design_1_top_0_0.v" \
+"../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ip/design_1_auto_us_df_0/sim/design_1_auto_us_df_0.v" \
+"../../../bd/design_1/ip/design_1_auto_us_df_1/sim/design_1_auto_us_df_1.v" \
+"../../../bd/design_1/ip/design_1_auto_us_df_2/sim/design_1_auto_us_df_2.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+"../../../bd/design_1/sim/design_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
