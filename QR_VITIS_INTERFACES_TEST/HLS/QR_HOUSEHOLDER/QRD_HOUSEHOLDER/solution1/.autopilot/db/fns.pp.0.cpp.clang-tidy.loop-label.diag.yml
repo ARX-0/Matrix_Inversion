@@ -1302,111 +1302,57 @@ Diagnostics:
         Length:          0
         ReplacementText: 'VITIS_LOOP_169_3: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_28_1:  '
-    FileOffset:      28
+    Message:         'Added loop label VITIS_LOOP_26_1:  '
+    FileOffset:      26
     FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
     Replacements:    
       - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1679313
+        Offset:          1678937
         Length:          0
-        ReplacementText: 'VITIS_LOOP_28_1: '
+        ReplacementText: 'VITIS_LOOP_26_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_43_2:  '
-    FileOffset:      43
+    Message:         'Added loop label VITIS_LOOP_58_2:  '
+    FileOffset:      58
     FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
     Replacements:    
       - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1679605
+        Offset:          1679651
         Length:          0
-        ReplacementText: 'VITIS_LOOP_43_2: '
+        ReplacementText: 'VITIS_LOOP_58_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_57_3:  '
-    FileOffset:      57
+    Message:         'Added loop label VITIS_LOOP_79_3:  '
+    FileOffset:      79
     FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
     Replacements:    
       - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1679893
+        Offset:          1680143
         Length:          0
-        ReplacementText: 'VITIS_LOOP_57_3: '
+        ReplacementText: 'VITIS_LOOP_79_3: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_69_4:  '
-    FileOffset:      69
+    Message:         'Added loop label VITIS_LOOP_86_4:  '
+    FileOffset:      86
     FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
     Replacements:    
       - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1680144
+        Offset:          1680254
         Length:          0
-        ReplacementText: 'VITIS_LOOP_69_4: '
+        ReplacementText: 'VITIS_LOOP_86_4: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_74_5:  '
-    FileOffset:      74
-    FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
-    Replacements:    
-      - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1680252
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_74_5: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_78_6:  '
-    FileOffset:      78
-    FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
-    Replacements:    
-      - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1680323
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_78_6: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_82_7:  '
-    FileOffset:      82
-    FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
-    Replacements:    
-      - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1680403
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_82_7: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_85_8:  '
-    FileOffset:      85
-    FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
-    Replacements:    
-      - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1680482
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_85_8: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_90_9:  '
-    FileOffset:      90
-    FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
-    Replacements:    
-      - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1680572
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_90_9: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_94_10:  '
-    FileOffset:      94
-    FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
-    Replacements:    
-      - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1680652
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_94_10: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_97_11:  '
-    FileOffset:      97
-    FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
-    Replacements:    
-      - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1680731
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_97_11: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_106_12:  '
+    Message:         'Added loop label VITIS_LOOP_106_5:  '
     FileOffset:      106
     FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
     Replacements:    
       - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
-        Offset:          1680876
+        Offset:          1680758
         Length:          0
-        ReplacementText: 'VITIS_LOOP_106_12: '
+        ReplacementText: 'VITIS_LOOP_106_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_130_6:  '
+    FileOffset:      130
+    FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\fns.cpp'
+    Replacements:    
+      - FilePath:        'C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp'
+        Offset:          1681318
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_130_6: '
 ...

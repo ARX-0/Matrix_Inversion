@@ -5,10 +5,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // 
 // ==============================================================
-# 1 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top_tb.cpp"
+# 1 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top_tb.cpp"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top_tb.cpp"
+# 1 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top_tb.cpp"
 # 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/iostream" 1 3
 # 36 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/iostream" 3
        
@@ -25512,1060 +25512,7 @@ namespace std
 
 
 }
-# 2 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top_tb.cpp" 2
-# 1 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top.hpp" 1
-
-
-
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/include/ap_float.h" 1
-
-
-
-
-
-
-
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 1
-# 41 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h" 1
-# 54 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
-
-# 54 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
-enum ap_q_mode {
-  AP_RND,
-  AP_RND_ZERO,
-  AP_RND_MIN_INF,
-  AP_RND_INF,
-  AP_RND_CONV,
-  AP_TRN,
-  AP_TRN_ZERO,
-};
-# 76 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
-enum ap_o_mode {
-  AP_SAT,
-  AP_SAT_ZERO,
-  AP_SAT_SYM,
-  AP_WRAP,
-  AP_WRAP_SM,
-};
-# 133 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
-template <int _AP_W, bool _AP_S>
-struct ap_int_base;
-
-template <int _AP_W>
-struct ap_int;
-
-template <int _AP_W>
-struct ap_uint;
-
-template <int _AP_W, bool _AP_S>
-struct ap_range_ref;
-
-template <int _AP_W, bool _AP_S>
-struct ap_bit_ref;
-
-template <int _AP_W1, typename _AP_T1, int _AP_W2, typename _AP_T2>
-struct ap_concat_ref;
-
-template <int _AP_W, int _AP_I, bool _AP_S = true, ap_q_mode _AP_Q = AP_TRN,
-          ap_o_mode _AP_O = AP_WRAP, int _AP_N = 0>
-struct ap_fixed_base;
-
-template <int _AP_W, int _AP_I, ap_q_mode _AP_Q = AP_TRN,
-          ap_o_mode _AP_O = AP_WRAP, int _AP_N = 0>
-struct ap_fixed;
-
-template <int _AP_W, int _AP_I, ap_q_mode _AP_Q = AP_TRN,
-          ap_o_mode _AP_O = AP_WRAP, int _AP_N = 0>
-struct ap_ufixed;
-
-template <int _AP_W, int _AP_I, bool _AP_S, ap_q_mode _AP_Q, ap_o_mode _AP_O,
-          int _AP_N>
-struct af_range_ref;
-
-template <int _AP_W, int _AP_I, bool _AP_S, ap_q_mode _AP_Q, ap_o_mode _AP_O,
-          int _AP_N>
-struct af_bit_ref;
-
-
-enum BaseMode { AP_BIN = 2, AP_OCT = 8, AP_DEC = 10, AP_HEX = 16 };
-# 187 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
-typedef signed long long ap_slong;
-typedef unsigned long long ap_ulong;
-
-
-enum {
-  _AP_SIZE_char = 8,
-  _AP_SIZE_short = sizeof(short) * 8,
-  _AP_SIZE_int = sizeof(int) * 8,
-  _AP_SIZE_long = sizeof(long) * 8,
-  _AP_SIZE_ap_slong = sizeof(ap_slong) * 8
-};
-# 42 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
-# 50 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/assert.h" 1 3
-# 18 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/assert.h" 3
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 1 3
-# 37 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 3
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cstdlib" 1 3
-# 39 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cstdlib" 3
-       
-# 40 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cstdlib" 3
-# 38 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 2 3
-
-
-# 39 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 3
-using std::abort;
-using std::atexit;
-using std::exit;
-# 52 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 3
-using std::div_t;
-using std::ldiv_t;
-
-using std::abs;
-using std::atof;
-using std::atoi;
-using std::atol;
-using std::bsearch;
-using std::calloc;
-using std::div;
-using std::free;
-using std::getenv;
-using std::labs;
-using std::ldiv;
-using std::malloc;
-
-using std::mblen;
-using std::mbstowcs;
-using std::mbtowc;
-
-using std::qsort;
-using std::rand;
-using std::realloc;
-using std::srand;
-using std::strtod;
-using std::strtol;
-using std::strtoul;
-using std::system;
-
-using std::wcstombs;
-using std::wctomb;
-# 19 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/assert.h" 2 3
-
-
-
-extern "C" {
-# 46 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/assert.h" 3
-extern void __attribute__((__cdecl__))
-_wassert(const wchar_t *_Message,const wchar_t *_File,unsigned _Line);
-extern void __attribute__((__cdecl__))
-_assert (const char *_Message, const char *_File, unsigned _Line);
-
-
-}
-# 51 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
-# 66 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 1 3
-# 67 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
-# 158 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 1 3
-# 36 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-       
-# 37 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-
-
-
-
-namespace std
-{
-
-namespace __cxx11 {
-# 64 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-  template<typename _CharT, typename _Traits, typename _Alloc>
-    class basic_stringbuf : public basic_streambuf<_CharT, _Traits>
-    {
-      struct __xfer_bufptrs;
-    public:
-
-      typedef _CharT char_type;
-      typedef _Traits traits_type;
-
-
-      typedef _Alloc allocator_type;
-      typedef typename traits_type::int_type int_type;
-      typedef typename traits_type::pos_type pos_type;
-      typedef typename traits_type::off_type off_type;
-
-      typedef basic_streambuf<char_type, traits_type> __streambuf_type;
-      typedef basic_string<char_type, _Traits, _Alloc> __string_type;
-      typedef typename __string_type::size_type __size_type;
-
-    protected:
-
-      ios_base::openmode _M_mode;
-
-
-      __string_type _M_string;
-
-    public:
-# 99 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      explicit
-      basic_stringbuf(ios_base::openmode __mode = ios_base::in | ios_base::out)
-      : __streambuf_type(), _M_mode(__mode), _M_string()
-      { }
-# 112 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      explicit
-      basic_stringbuf(const __string_type& __str,
-        ios_base::openmode __mode = ios_base::in | ios_base::out)
-      : __streambuf_type(), _M_mode(), _M_string(__str.data(), __str.size())
-      { _M_stringbuf_init(__mode); }
-
-
-      basic_stringbuf(const basic_stringbuf&) = delete;
-
-      basic_stringbuf(basic_stringbuf&& __rhs)
-      : basic_stringbuf(std::move(__rhs), __xfer_bufptrs(__rhs, this))
-      { __rhs._M_sync(const_cast<char_type*>(__rhs._M_string.data()), 0, 0); }
-
-
-
-      basic_stringbuf&
-      operator=(const basic_stringbuf&) = delete;
-
-      basic_stringbuf&
-      operator=(basic_stringbuf&& __rhs)
-      {
- __xfer_bufptrs __st{__rhs, this};
- const __streambuf_type& __base = __rhs;
- __streambuf_type::operator=(__base);
- this->pubimbue(__rhs.getloc());
- _M_mode = __rhs._M_mode;
- _M_string = std::move(__rhs._M_string);
- __rhs._M_sync(const_cast<char_type*>(__rhs._M_string.data()), 0, 0);
- return *this;
-      }
-
-      void
-      swap(basic_stringbuf& __rhs)
-      {
- __xfer_bufptrs __l_st{*this, std::__addressof(__rhs)};
- __xfer_bufptrs __r_st{__rhs, this};
- __streambuf_type& __base = __rhs;
- __streambuf_type::swap(__base);
- __rhs.pubimbue(this->pubimbue(__rhs.getloc()));
- std::swap(_M_mode, __rhs._M_mode);
- std::swap(_M_string, __rhs._M_string);
-      }
-# 165 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      __string_type
-      str() const
-      {
- __string_type __ret;
- if (this->pptr())
-   {
-
-     if (this->pptr() > this->egptr())
-       __ret = __string_type(this->pbase(), this->pptr());
-     else
-        __ret = __string_type(this->pbase(), this->egptr());
-   }
- else
-   __ret = _M_string;
- return __ret;
-      }
-# 189 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      void
-      str(const __string_type& __s)
-      {
-
-
- _M_string.assign(__s.data(), __s.size());
- _M_stringbuf_init(_M_mode);
-      }
-
-    protected:
-
-      void
-      _M_stringbuf_init(ios_base::openmode __mode)
-      {
- _M_mode = __mode;
- __size_type __len = 0;
- if (_M_mode & (ios_base::ate | ios_base::app))
-   __len = _M_string.size();
- _M_sync(const_cast<char_type*>(_M_string.data()), 0, __len);
-      }
-
-      virtual streamsize
-      showmanyc()
-      {
- streamsize __ret = -1;
- if (_M_mode & ios_base::in)
-   {
-     _M_update_egptr();
-     __ret = this->egptr() - this->gptr();
-   }
- return __ret;
-      }
-
-      virtual int_type
-      underflow();
-
-      virtual int_type
-      pbackfail(int_type __c = traits_type::eof());
-
-      virtual int_type
-      overflow(int_type __c = traits_type::eof());
-# 242 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      virtual __streambuf_type*
-      setbuf(char_type* __s, streamsize __n)
-      {
- if (__s && __n >= 0)
-   {
-
-
-
-
-
-
-     _M_string.clear();
-
-
-     _M_sync(__s, __n, 0);
-   }
- return this;
-      }
-
-      virtual pos_type
-      seekoff(off_type __off, ios_base::seekdir __way,
-       ios_base::openmode __mode = ios_base::in | ios_base::out);
-
-      virtual pos_type
-      seekpos(pos_type __sp,
-       ios_base::openmode __mode = ios_base::in | ios_base::out);
-
-
-
-
-      void
-      _M_sync(char_type* __base, __size_type __i, __size_type __o);
-
-
-
-      void
-      _M_update_egptr()
-      {
- const bool __testin = _M_mode & ios_base::in;
- if (this->pptr() && this->pptr() > this->egptr())
-   {
-     if (__testin)
-       this->setg(this->eback(), this->gptr(), this->pptr());
-     else
-       this->setg(this->pptr(), this->pptr(), this->pptr());
-   }
-      }
-
-
-
-      void
-      _M_pbump(char_type* __pbeg, char_type* __pend, off_type __off);
-
-    private:
-
-
-
-
-      struct __xfer_bufptrs
-      {
- __xfer_bufptrs(const basic_stringbuf& __from, basic_stringbuf* __to)
- : _M_to{__to}, _M_goff{-1, -1, -1}, _M_poff{-1, -1, -1}
- {
-   const _CharT* __str = __from._M_string.data();
-   if (__from.eback())
-     {
-     _M_goff[0] = __from.eback() - __str;
-     _M_goff[1] = __from.gptr() - __str;
-     _M_goff[2] = __from.egptr() - __str;
-     }
-   if (__from.pbase())
-     {
-       _M_poff[0] = __from.pbase() - __str;
-       _M_poff[1] = __from.pptr() - __from.pbase();
-       _M_poff[2] = __from.epptr() - __str;
-     }
- }
-
- ~__xfer_bufptrs()
- {
-   char_type* __str = const_cast<char_type*>(_M_to->_M_string.data());
-   if (_M_goff[0] != -1)
-     _M_to->setg(__str+_M_goff[0], __str+_M_goff[1], __str+_M_goff[2]);
-   if (_M_poff[0] != -1)
-     _M_to->_M_pbump(__str+_M_poff[0], __str+_M_poff[2], _M_poff[1]);
- }
-
- basic_stringbuf* _M_to;
- off_type _M_goff[3];
- off_type _M_poff[3];
-      };
-# 343 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      basic_stringbuf(basic_stringbuf&& __rhs, __xfer_bufptrs&&)
-      : __streambuf_type(static_cast<const __streambuf_type&>(__rhs)),
-      _M_mode(__rhs._M_mode), _M_string(std::move(__rhs._M_string))
-      { }
-
-    };
-# 366 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-  template<typename _CharT, typename _Traits, typename _Alloc>
-    class basic_istringstream : public basic_istream<_CharT, _Traits>
-    {
-    public:
-
-      typedef _CharT char_type;
-      typedef _Traits traits_type;
-
-
-      typedef _Alloc allocator_type;
-      typedef typename traits_type::int_type int_type;
-      typedef typename traits_type::pos_type pos_type;
-      typedef typename traits_type::off_type off_type;
-
-
-      typedef basic_string<_CharT, _Traits, _Alloc> __string_type;
-      typedef basic_stringbuf<_CharT, _Traits, _Alloc> __stringbuf_type;
-      typedef basic_istream<char_type, traits_type> __istream_type;
-
-    private:
-      __stringbuf_type _M_stringbuf;
-
-    public:
-# 402 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      explicit
-      basic_istringstream(ios_base::openmode __mode = ios_base::in)
-      : __istream_type(), _M_stringbuf(__mode | ios_base::in)
-      { this->init(&_M_stringbuf); }
-# 420 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      explicit
-      basic_istringstream(const __string_type& __str,
-     ios_base::openmode __mode = ios_base::in)
-      : __istream_type(), _M_stringbuf(__str, __mode | ios_base::in)
-      { this->init(&_M_stringbuf); }
-
-
-
-
-
-
-
-      ~basic_istringstream()
-      { }
-
-
-      basic_istringstream(const basic_istringstream&) = delete;
-
-      basic_istringstream(basic_istringstream&& __rhs)
-      : __istream_type(std::move(__rhs)),
-      _M_stringbuf(std::move(__rhs._M_stringbuf))
-      { __istream_type::set_rdbuf(&_M_stringbuf); }
-
-
-
-      basic_istringstream&
-      operator=(const basic_istringstream&) = delete;
-
-      basic_istringstream&
-      operator=(basic_istringstream&& __rhs)
-      {
- __istream_type::operator=(std::move(__rhs));
- _M_stringbuf = std::move(__rhs._M_stringbuf);
- return *this;
-      }
-
-      void
-      swap(basic_istringstream& __rhs)
-      {
- __istream_type::swap(__rhs);
- _M_stringbuf.swap(__rhs._M_stringbuf);
-      }
-# 471 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      __stringbuf_type*
-      rdbuf() const
-      { return const_cast<__stringbuf_type*>(&_M_stringbuf); }
-
-
-
-
-
-      __string_type
-      str() const
-      { return _M_stringbuf.str(); }
-
-
-
-
-
-
-
-      void
-      str(const __string_type& __s)
-      { _M_stringbuf.str(__s); }
-    };
-# 510 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-  template <typename _CharT, typename _Traits, typename _Alloc>
-    class basic_ostringstream : public basic_ostream<_CharT, _Traits>
-    {
-    public:
-
-      typedef _CharT char_type;
-      typedef _Traits traits_type;
-
-
-      typedef _Alloc allocator_type;
-      typedef typename traits_type::int_type int_type;
-      typedef typename traits_type::pos_type pos_type;
-      typedef typename traits_type::off_type off_type;
-
-
-      typedef basic_string<_CharT, _Traits, _Alloc> __string_type;
-      typedef basic_stringbuf<_CharT, _Traits, _Alloc> __stringbuf_type;
-      typedef basic_ostream<char_type, traits_type> __ostream_type;
-
-    private:
-      __stringbuf_type _M_stringbuf;
-
-    public:
-# 546 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      explicit
-      basic_ostringstream(ios_base::openmode __mode = ios_base::out)
-      : __ostream_type(), _M_stringbuf(__mode | ios_base::out)
-      { this->init(&_M_stringbuf); }
-# 564 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      explicit
-      basic_ostringstream(const __string_type& __str,
-     ios_base::openmode __mode = ios_base::out)
-      : __ostream_type(), _M_stringbuf(__str, __mode | ios_base::out)
-      { this->init(&_M_stringbuf); }
-
-
-
-
-
-
-
-      ~basic_ostringstream()
-      { }
-
-
-      basic_ostringstream(const basic_ostringstream&) = delete;
-
-      basic_ostringstream(basic_ostringstream&& __rhs)
-      : __ostream_type(std::move(__rhs)),
-      _M_stringbuf(std::move(__rhs._M_stringbuf))
-      { __ostream_type::set_rdbuf(&_M_stringbuf); }
-
-
-
-      basic_ostringstream&
-      operator=(const basic_ostringstream&) = delete;
-
-      basic_ostringstream&
-      operator=(basic_ostringstream&& __rhs)
-      {
- __ostream_type::operator=(std::move(__rhs));
- _M_stringbuf = std::move(__rhs._M_stringbuf);
- return *this;
-      }
-
-      void
-      swap(basic_ostringstream& __rhs)
-      {
- __ostream_type::swap(__rhs);
- _M_stringbuf.swap(__rhs._M_stringbuf);
-      }
-# 615 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      __stringbuf_type*
-      rdbuf() const
-      { return const_cast<__stringbuf_type*>(&_M_stringbuf); }
-
-
-
-
-
-      __string_type
-      str() const
-      { return _M_stringbuf.str(); }
-
-
-
-
-
-
-
-      void
-      str(const __string_type& __s)
-      { _M_stringbuf.str(__s); }
-    };
-# 654 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-  template <typename _CharT, typename _Traits, typename _Alloc>
-    class basic_stringstream : public basic_iostream<_CharT, _Traits>
-    {
-    public:
-
-      typedef _CharT char_type;
-      typedef _Traits traits_type;
-
-
-      typedef _Alloc allocator_type;
-      typedef typename traits_type::int_type int_type;
-      typedef typename traits_type::pos_type pos_type;
-      typedef typename traits_type::off_type off_type;
-
-
-      typedef basic_string<_CharT, _Traits, _Alloc> __string_type;
-      typedef basic_stringbuf<_CharT, _Traits, _Alloc> __stringbuf_type;
-      typedef basic_iostream<char_type, traits_type> __iostream_type;
-
-    private:
-      __stringbuf_type _M_stringbuf;
-
-    public:
-# 689 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      explicit
-      basic_stringstream(ios_base::openmode __m = ios_base::out | ios_base::in)
-      : __iostream_type(), _M_stringbuf(__m)
-      { this->init(&_M_stringbuf); }
-# 705 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      explicit
-      basic_stringstream(const __string_type& __str,
-    ios_base::openmode __m = ios_base::out | ios_base::in)
-      : __iostream_type(), _M_stringbuf(__str, __m)
-      { this->init(&_M_stringbuf); }
-
-
-
-
-
-
-
-      ~basic_stringstream()
-      { }
-
-
-      basic_stringstream(const basic_stringstream&) = delete;
-
-      basic_stringstream(basic_stringstream&& __rhs)
-      : __iostream_type(std::move(__rhs)),
-      _M_stringbuf(std::move(__rhs._M_stringbuf))
-      { __iostream_type::set_rdbuf(&_M_stringbuf); }
-
-
-
-      basic_stringstream&
-      operator=(const basic_stringstream&) = delete;
-
-      basic_stringstream&
-      operator=(basic_stringstream&& __rhs)
-      {
- __iostream_type::operator=(std::move(__rhs));
- _M_stringbuf = std::move(__rhs._M_stringbuf);
- return *this;
-      }
-
-      void
-      swap(basic_stringstream& __rhs)
-      {
- __iostream_type::swap(__rhs);
- _M_stringbuf.swap(__rhs._M_stringbuf);
-      }
-# 756 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
-      __stringbuf_type*
-      rdbuf() const
-      { return const_cast<__stringbuf_type*>(&_M_stringbuf); }
-
-
-
-
-
-      __string_type
-      str() const
-      { return _M_stringbuf.str(); }
-
-
-
-
-
-
-
-      void
-      str(const __string_type& __s)
-      { _M_stringbuf.str(__s); }
-    };
-
-
-
-  template <class _CharT, class _Traits, class _Allocator>
-    inline void
-    swap(basic_stringbuf<_CharT, _Traits, _Allocator>& __x,
-  basic_stringbuf<_CharT, _Traits, _Allocator>& __y)
-    { __x.swap(__y); }
-
-
-  template <class _CharT, class _Traits, class _Allocator>
-    inline void
-    swap(basic_istringstream<_CharT, _Traits, _Allocator>& __x,
-  basic_istringstream<_CharT, _Traits, _Allocator>& __y)
-    { __x.swap(__y); }
-
-
-  template <class _CharT, class _Traits, class _Allocator>
-    inline void
-    swap(basic_ostringstream<_CharT, _Traits, _Allocator>& __x,
-  basic_ostringstream<_CharT, _Traits, _Allocator>& __y)
-    { __x.swap(__y); }
-
-
-  template <class _CharT, class _Traits, class _Allocator>
-    inline void
-    swap(basic_stringstream<_CharT, _Traits, _Allocator>& __x,
-  basic_stringstream<_CharT, _Traits, _Allocator>& __y)
-    { __x.swap(__y); }
-
-
-}
-
-}
-
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/bits/sstream.tcc" 1 3
-# 37 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/bits/sstream.tcc" 3
-       
-# 38 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/bits/sstream.tcc" 3
-
-namespace std
-{
-
-
-  template <class _CharT, class _Traits, class _Alloc>
-    typename basic_stringbuf<_CharT, _Traits, _Alloc>::int_type
-    basic_stringbuf<_CharT, _Traits, _Alloc>::
-    pbackfail(int_type __c)
-    {
-      int_type __ret = traits_type::eof();
-      if (this->eback() < this->gptr())
- {
-
-
-   const bool __testeof = traits_type::eq_int_type(__c, __ret);
-   if (!__testeof)
-     {
-       const bool __testeq = traits_type::eq(traits_type::
-          to_char_type(__c),
-          this->gptr()[-1]);
-       const bool __testout = this->_M_mode & ios_base::out;
-       if (__testeq || __testout)
-  {
-    this->gbump(-1);
-    if (!__testeq)
-      *this->gptr() = traits_type::to_char_type(__c);
-    __ret = __c;
-  }
-     }
-   else
-     {
-       this->gbump(-1);
-       __ret = traits_type::not_eof(__c);
-     }
- }
-      return __ret;
-    }
-
-  template <class _CharT, class _Traits, class _Alloc>
-    typename basic_stringbuf<_CharT, _Traits, _Alloc>::int_type
-    basic_stringbuf<_CharT, _Traits, _Alloc>::
-    overflow(int_type __c)
-    {
-      const bool __testout = this->_M_mode & ios_base::out;
-      if (__builtin_expect(!__testout, false))
- return traits_type::eof();
-
-      const bool __testeof = traits_type::eq_int_type(__c, traits_type::eof());
-      if (__builtin_expect(__testeof, false))
- return traits_type::not_eof(__c);
-
-      const __size_type __capacity = _M_string.capacity();
-      const __size_type __max_size = _M_string.max_size();
-      const bool __testput = this->pptr() < this->epptr();
-      if (__builtin_expect(!__testput && __capacity == __max_size, false))
- return traits_type::eof();
-
-
-
-      const char_type __conv = traits_type::to_char_type(__c);
-      if (!__testput)
- {
-# 110 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/bits/sstream.tcc" 3
-   const __size_type __opt_len = std::max(__size_type(2 * __capacity),
-       __size_type(512));
-   const __size_type __len = std::min(__opt_len, __max_size);
-   __string_type __tmp;
-   __tmp.reserve(__len);
-   if (this->pbase())
-     __tmp.assign(this->pbase(), this->epptr() - this->pbase());
-   __tmp.push_back(__conv);
-   _M_string.swap(__tmp);
-   _M_sync(const_cast<char_type*>(_M_string.data()),
-    this->gptr() - this->eback(), this->pptr() - this->pbase());
- }
-      else
- *this->pptr() = __conv;
-      this->pbump(1);
-      return __c;
-    }
-
-  template <class _CharT, class _Traits, class _Alloc>
-    typename basic_stringbuf<_CharT, _Traits, _Alloc>::int_type
-    basic_stringbuf<_CharT, _Traits, _Alloc>::
-    underflow()
-    {
-      int_type __ret = traits_type::eof();
-      const bool __testin = this->_M_mode & ios_base::in;
-      if (__testin)
- {
-
-   _M_update_egptr();
-
-   if (this->gptr() < this->egptr())
-     __ret = traits_type::to_int_type(*this->gptr());
- }
-      return __ret;
-    }
-
-  template <class _CharT, class _Traits, class _Alloc>
-    typename basic_stringbuf<_CharT, _Traits, _Alloc>::pos_type
-    basic_stringbuf<_CharT, _Traits, _Alloc>::
-    seekoff(off_type __off, ios_base::seekdir __way, ios_base::openmode __mode)
-    {
-      pos_type __ret = pos_type(off_type(-1));
-      bool __testin = (ios_base::in & this->_M_mode & __mode) != 0;
-      bool __testout = (ios_base::out & this->_M_mode & __mode) != 0;
-      const bool __testboth = __testin && __testout && __way != ios_base::cur;
-      __testin &= !(__mode & ios_base::out);
-      __testout &= !(__mode & ios_base::in);
-
-
-
-      const char_type* __beg = __testin ? this->eback() : this->pbase();
-      if ((__beg || !__off) && (__testin || __testout || __testboth))
- {
-   _M_update_egptr();
-
-   off_type __newoffi = __off;
-   off_type __newoffo = __newoffi;
-   if (__way == ios_base::cur)
-     {
-       __newoffi += this->gptr() - __beg;
-       __newoffo += this->pptr() - __beg;
-     }
-   else if (__way == ios_base::end)
-     __newoffo = __newoffi += this->egptr() - __beg;
-
-   if ((__testin || __testboth)
-       && __newoffi >= 0
-       && this->egptr() - __beg >= __newoffi)
-     {
-       this->setg(this->eback(), this->eback() + __newoffi,
-    this->egptr());
-       __ret = pos_type(__newoffi);
-     }
-   if ((__testout || __testboth)
-       && __newoffo >= 0
-       && this->egptr() - __beg >= __newoffo)
-     {
-       _M_pbump(this->pbase(), this->epptr(), __newoffo);
-       __ret = pos_type(__newoffo);
-     }
- }
-      return __ret;
-    }
-
-  template <class _CharT, class _Traits, class _Alloc>
-    typename basic_stringbuf<_CharT, _Traits, _Alloc>::pos_type
-    basic_stringbuf<_CharT, _Traits, _Alloc>::
-    seekpos(pos_type __sp, ios_base::openmode __mode)
-    {
-      pos_type __ret = pos_type(off_type(-1));
-      const bool __testin = (ios_base::in & this->_M_mode & __mode) != 0;
-      const bool __testout = (ios_base::out & this->_M_mode & __mode) != 0;
-
-      const char_type* __beg = __testin ? this->eback() : this->pbase();
-      if ((__beg || !off_type(__sp)) && (__testin || __testout))
- {
-   _M_update_egptr();
-
-   const off_type __pos(__sp);
-   const bool __testpos = (0 <= __pos
-      && __pos <= this->egptr() - __beg);
-   if (__testpos)
-     {
-       if (__testin)
-  this->setg(this->eback(), this->eback() + __pos,
-      this->egptr());
-       if (__testout)
-  _M_pbump(this->pbase(), this->epptr(), __pos);
-       __ret = __sp;
-     }
- }
-      return __ret;
-    }
-
-  template <class _CharT, class _Traits, class _Alloc>
-    void
-    basic_stringbuf<_CharT, _Traits, _Alloc>::
-    _M_sync(char_type* __base, __size_type __i, __size_type __o)
-    {
-      const bool __testin = _M_mode & ios_base::in;
-      const bool __testout = _M_mode & ios_base::out;
-      char_type* __endg = __base + _M_string.size();
-      char_type* __endp = __base + _M_string.capacity();
-
-      if (__base != _M_string.data())
- {
-
-   __endg += __i;
-   __i = 0;
-   __endp = __endg;
- }
-
-      if (__testin)
- this->setg(__base, __base + __i, __endg);
-      if (__testout)
- {
-   _M_pbump(__base, __endp, __o);
-
-
-
-   if (!__testin)
-     this->setg(__endg, __endg, __endg);
- }
-    }
-
-  template <class _CharT, class _Traits, class _Alloc>
-    void
-    basic_stringbuf<_CharT, _Traits, _Alloc>::
-    _M_pbump(char_type* __pbeg, char_type* __pend, off_type __off)
-    {
-      this->setp(__pbeg, __pend);
-      while (__off > __gnu_cxx::__numeric_traits<int>::__max)
- {
-   this->pbump(__gnu_cxx::__numeric_traits<int>::__max);
-   __off -= __gnu_cxx::__numeric_traits<int>::__max;
- }
-      this->pbump(__off);
-    }
-
-
-
-
-  extern template class basic_stringbuf<char>;
-  extern template class basic_istringstream<char>;
-  extern template class basic_ostringstream<char>;
-  extern template class basic_stringstream<char>;
-
-
-  extern template class basic_stringbuf<wchar_t>;
-  extern template class basic_istringstream<wchar_t>;
-  extern template class basic_ostringstream<wchar_t>;
-  extern template class basic_stringstream<wchar_t>;
-
-
-
-
-}
-# 814 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 2 3
-# 159 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
-
-
-
-
-
-
-# 164 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
-enum { CHAR_IS_SIGNED = (char)-1 < 0 };
-
-
-namespace _ap_type {
-template <typename _Tp>
-struct is_signed {
-  static const bool value = _Tp(-1) < _Tp(1);
-};
-
-template <typename _Tp>
-struct is_integral {
-  static const bool value = false;
-};
-
-
-
-
-
-template <> struct is_integral<bool> { static const bool value = true; };
-template <> struct is_integral<char> { static const bool value = true; };
-template <> struct is_integral<signed char> { static const bool value = true; };
-template <> struct is_integral<unsigned char> { static const bool value = true; };
-template <> struct is_integral<short> { static const bool value = true; };
-template <> struct is_integral<unsigned short> { static const bool value = true; };
-template <> struct is_integral<int> { static const bool value = true; };
-template <> struct is_integral<unsigned int> { static const bool value = true; };
-template <> struct is_integral<long> { static const bool value = true; };
-template <> struct is_integral<unsigned long> { static const bool value = true; };
-template <> struct is_integral<ap_slong> { static const bool value = true; };
-template <> struct is_integral<ap_ulong> { static const bool value = true; };
-
-
-template <bool, typename _Tp = void>
-struct enable_if {};
-
-template <typename _Tp>
-struct enable_if<true, _Tp> {
-  typedef _Tp type;
-};
-
-template <typename _Tp>
-struct remove_const {
-  typedef _Tp type;
-};
-
-template <typename _Tp>
-struct remove_const<_Tp const> {
-  typedef _Tp type;
-};
-}
-# 587 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
-static inline unsigned char guess_radix(const char* s) {
-  unsigned char rd = 10;
-  const char* p = s;
-
-  if (p[0] == '-' || p[0] == '+') ++p;
-
-  if (p[0] == '0') {
-    if (p[1] == 'b' || p[1] == 'B') {
-      rd = 2;
-    } else if (p[1] == 'o' || p[1] == 'O') {
-      rd = 8;
-    } else if (p[1] == 'x' || p[1] == 'X') {
-      rd = 16;
-    } else if (p[1] == 'd' || p[1] == 'D') {
-      rd = 10;
-    }
-  }
-  return rd;
-}
-# 615 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
-class half;
-
-
-
-
-
-
+# 2 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top_tb.cpp" 2
 # 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cmath" 1 3
 # 39 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cmath" 3
        
@@ -26583,8 +25530,6 @@ class half;
 
 
 
-
-# 16 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/math.h" 3
 struct _exception;
 
 #pragma pack(push,_CRT_PACKING)
@@ -28515,9 +27460,1065 @@ namespace std
 }
 # 1797 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cmath" 3
 }
-# 623 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
-# 653 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
+# 3 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top_tb.cpp" 2
+# 1 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top.hpp" 1
 
+
+
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/include/ap_float.h" 1
+
+
+
+
+
+
+
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 1
+# 41 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h" 1
+# 54 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
+
+# 54 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
+enum ap_q_mode {
+  AP_RND,
+  AP_RND_ZERO,
+  AP_RND_MIN_INF,
+  AP_RND_INF,
+  AP_RND_CONV,
+  AP_TRN,
+  AP_TRN_ZERO,
+};
+# 76 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
+enum ap_o_mode {
+  AP_SAT,
+  AP_SAT_ZERO,
+  AP_SAT_SYM,
+  AP_WRAP,
+  AP_WRAP_SM,
+};
+# 133 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
+template <int _AP_W, bool _AP_S>
+struct ap_int_base;
+
+template <int _AP_W>
+struct ap_int;
+
+template <int _AP_W>
+struct ap_uint;
+
+template <int _AP_W, bool _AP_S>
+struct ap_range_ref;
+
+template <int _AP_W, bool _AP_S>
+struct ap_bit_ref;
+
+template <int _AP_W1, typename _AP_T1, int _AP_W2, typename _AP_T2>
+struct ap_concat_ref;
+
+template <int _AP_W, int _AP_I, bool _AP_S = true, ap_q_mode _AP_Q = AP_TRN,
+          ap_o_mode _AP_O = AP_WRAP, int _AP_N = 0>
+struct ap_fixed_base;
+
+template <int _AP_W, int _AP_I, ap_q_mode _AP_Q = AP_TRN,
+          ap_o_mode _AP_O = AP_WRAP, int _AP_N = 0>
+struct ap_fixed;
+
+template <int _AP_W, int _AP_I, ap_q_mode _AP_Q = AP_TRN,
+          ap_o_mode _AP_O = AP_WRAP, int _AP_N = 0>
+struct ap_ufixed;
+
+template <int _AP_W, int _AP_I, bool _AP_S, ap_q_mode _AP_Q, ap_o_mode _AP_O,
+          int _AP_N>
+struct af_range_ref;
+
+template <int _AP_W, int _AP_I, bool _AP_S, ap_q_mode _AP_Q, ap_o_mode _AP_O,
+          int _AP_N>
+struct af_bit_ref;
+
+
+enum BaseMode { AP_BIN = 2, AP_OCT = 8, AP_DEC = 10, AP_HEX = 16 };
+# 187 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_decl.h"
+typedef signed long long ap_slong;
+typedef unsigned long long ap_ulong;
+
+
+enum {
+  _AP_SIZE_char = 8,
+  _AP_SIZE_short = sizeof(short) * 8,
+  _AP_SIZE_int = sizeof(int) * 8,
+  _AP_SIZE_long = sizeof(long) * 8,
+  _AP_SIZE_ap_slong = sizeof(ap_slong) * 8
+};
+# 42 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
+# 50 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/assert.h" 1 3
+# 18 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/assert.h" 3
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 1 3
+# 37 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 3
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cstdlib" 1 3
+# 39 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cstdlib" 3
+       
+# 40 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cstdlib" 3
+# 38 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 2 3
+
+
+# 39 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 3
+using std::abort;
+using std::atexit;
+using std::exit;
+# 52 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 3
+using std::div_t;
+using std::ldiv_t;
+
+using std::abs;
+using std::atof;
+using std::atoi;
+using std::atol;
+using std::bsearch;
+using std::calloc;
+using std::div;
+using std::free;
+using std::getenv;
+using std::labs;
+using std::ldiv;
+using std::malloc;
+
+using std::mblen;
+using std::mbstowcs;
+using std::mbtowc;
+
+using std::qsort;
+using std::rand;
+using std::realloc;
+using std::srand;
+using std::strtod;
+using std::strtol;
+using std::strtoul;
+using std::system;
+
+using std::wcstombs;
+using std::wctomb;
+# 19 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/assert.h" 2 3
+
+
+
+extern "C" {
+# 46 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/x86_64-w64-mingw32/include/assert.h" 3
+extern void __attribute__((__cdecl__))
+_wassert(const wchar_t *_Message,const wchar_t *_File,unsigned _Line);
+extern void __attribute__((__cdecl__))
+_assert (const char *_Message, const char *_File, unsigned _Line);
+
+
+}
+# 51 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
+# 66 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/stdlib.h" 1 3
+# 67 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
+# 158 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 1 3
+# 36 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+       
+# 37 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+
+
+
+
+namespace std
+{
+
+namespace __cxx11 {
+# 64 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+  template<typename _CharT, typename _Traits, typename _Alloc>
+    class basic_stringbuf : public basic_streambuf<_CharT, _Traits>
+    {
+      struct __xfer_bufptrs;
+    public:
+
+      typedef _CharT char_type;
+      typedef _Traits traits_type;
+
+
+      typedef _Alloc allocator_type;
+      typedef typename traits_type::int_type int_type;
+      typedef typename traits_type::pos_type pos_type;
+      typedef typename traits_type::off_type off_type;
+
+      typedef basic_streambuf<char_type, traits_type> __streambuf_type;
+      typedef basic_string<char_type, _Traits, _Alloc> __string_type;
+      typedef typename __string_type::size_type __size_type;
+
+    protected:
+
+      ios_base::openmode _M_mode;
+
+
+      __string_type _M_string;
+
+    public:
+# 99 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      explicit
+      basic_stringbuf(ios_base::openmode __mode = ios_base::in | ios_base::out)
+      : __streambuf_type(), _M_mode(__mode), _M_string()
+      { }
+# 112 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      explicit
+      basic_stringbuf(const __string_type& __str,
+        ios_base::openmode __mode = ios_base::in | ios_base::out)
+      : __streambuf_type(), _M_mode(), _M_string(__str.data(), __str.size())
+      { _M_stringbuf_init(__mode); }
+
+
+      basic_stringbuf(const basic_stringbuf&) = delete;
+
+      basic_stringbuf(basic_stringbuf&& __rhs)
+      : basic_stringbuf(std::move(__rhs), __xfer_bufptrs(__rhs, this))
+      { __rhs._M_sync(const_cast<char_type*>(__rhs._M_string.data()), 0, 0); }
+
+
+
+      basic_stringbuf&
+      operator=(const basic_stringbuf&) = delete;
+
+      basic_stringbuf&
+      operator=(basic_stringbuf&& __rhs)
+      {
+ __xfer_bufptrs __st{__rhs, this};
+ const __streambuf_type& __base = __rhs;
+ __streambuf_type::operator=(__base);
+ this->pubimbue(__rhs.getloc());
+ _M_mode = __rhs._M_mode;
+ _M_string = std::move(__rhs._M_string);
+ __rhs._M_sync(const_cast<char_type*>(__rhs._M_string.data()), 0, 0);
+ return *this;
+      }
+
+      void
+      swap(basic_stringbuf& __rhs)
+      {
+ __xfer_bufptrs __l_st{*this, std::__addressof(__rhs)};
+ __xfer_bufptrs __r_st{__rhs, this};
+ __streambuf_type& __base = __rhs;
+ __streambuf_type::swap(__base);
+ __rhs.pubimbue(this->pubimbue(__rhs.getloc()));
+ std::swap(_M_mode, __rhs._M_mode);
+ std::swap(_M_string, __rhs._M_string);
+      }
+# 165 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      __string_type
+      str() const
+      {
+ __string_type __ret;
+ if (this->pptr())
+   {
+
+     if (this->pptr() > this->egptr())
+       __ret = __string_type(this->pbase(), this->pptr());
+     else
+        __ret = __string_type(this->pbase(), this->egptr());
+   }
+ else
+   __ret = _M_string;
+ return __ret;
+      }
+# 189 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      void
+      str(const __string_type& __s)
+      {
+
+
+ _M_string.assign(__s.data(), __s.size());
+ _M_stringbuf_init(_M_mode);
+      }
+
+    protected:
+
+      void
+      _M_stringbuf_init(ios_base::openmode __mode)
+      {
+ _M_mode = __mode;
+ __size_type __len = 0;
+ if (_M_mode & (ios_base::ate | ios_base::app))
+   __len = _M_string.size();
+ _M_sync(const_cast<char_type*>(_M_string.data()), 0, __len);
+      }
+
+      virtual streamsize
+      showmanyc()
+      {
+ streamsize __ret = -1;
+ if (_M_mode & ios_base::in)
+   {
+     _M_update_egptr();
+     __ret = this->egptr() - this->gptr();
+   }
+ return __ret;
+      }
+
+      virtual int_type
+      underflow();
+
+      virtual int_type
+      pbackfail(int_type __c = traits_type::eof());
+
+      virtual int_type
+      overflow(int_type __c = traits_type::eof());
+# 242 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      virtual __streambuf_type*
+      setbuf(char_type* __s, streamsize __n)
+      {
+ if (__s && __n >= 0)
+   {
+
+
+
+
+
+
+     _M_string.clear();
+
+
+     _M_sync(__s, __n, 0);
+   }
+ return this;
+      }
+
+      virtual pos_type
+      seekoff(off_type __off, ios_base::seekdir __way,
+       ios_base::openmode __mode = ios_base::in | ios_base::out);
+
+      virtual pos_type
+      seekpos(pos_type __sp,
+       ios_base::openmode __mode = ios_base::in | ios_base::out);
+
+
+
+
+      void
+      _M_sync(char_type* __base, __size_type __i, __size_type __o);
+
+
+
+      void
+      _M_update_egptr()
+      {
+ const bool __testin = _M_mode & ios_base::in;
+ if (this->pptr() && this->pptr() > this->egptr())
+   {
+     if (__testin)
+       this->setg(this->eback(), this->gptr(), this->pptr());
+     else
+       this->setg(this->pptr(), this->pptr(), this->pptr());
+   }
+      }
+
+
+
+      void
+      _M_pbump(char_type* __pbeg, char_type* __pend, off_type __off);
+
+    private:
+
+
+
+
+      struct __xfer_bufptrs
+      {
+ __xfer_bufptrs(const basic_stringbuf& __from, basic_stringbuf* __to)
+ : _M_to{__to}, _M_goff{-1, -1, -1}, _M_poff{-1, -1, -1}
+ {
+   const _CharT* __str = __from._M_string.data();
+   if (__from.eback())
+     {
+     _M_goff[0] = __from.eback() - __str;
+     _M_goff[1] = __from.gptr() - __str;
+     _M_goff[2] = __from.egptr() - __str;
+     }
+   if (__from.pbase())
+     {
+       _M_poff[0] = __from.pbase() - __str;
+       _M_poff[1] = __from.pptr() - __from.pbase();
+       _M_poff[2] = __from.epptr() - __str;
+     }
+ }
+
+ ~__xfer_bufptrs()
+ {
+   char_type* __str = const_cast<char_type*>(_M_to->_M_string.data());
+   if (_M_goff[0] != -1)
+     _M_to->setg(__str+_M_goff[0], __str+_M_goff[1], __str+_M_goff[2]);
+   if (_M_poff[0] != -1)
+     _M_to->_M_pbump(__str+_M_poff[0], __str+_M_poff[2], _M_poff[1]);
+ }
+
+ basic_stringbuf* _M_to;
+ off_type _M_goff[3];
+ off_type _M_poff[3];
+      };
+# 343 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      basic_stringbuf(basic_stringbuf&& __rhs, __xfer_bufptrs&&)
+      : __streambuf_type(static_cast<const __streambuf_type&>(__rhs)),
+      _M_mode(__rhs._M_mode), _M_string(std::move(__rhs._M_string))
+      { }
+
+    };
+# 366 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+  template<typename _CharT, typename _Traits, typename _Alloc>
+    class basic_istringstream : public basic_istream<_CharT, _Traits>
+    {
+    public:
+
+      typedef _CharT char_type;
+      typedef _Traits traits_type;
+
+
+      typedef _Alloc allocator_type;
+      typedef typename traits_type::int_type int_type;
+      typedef typename traits_type::pos_type pos_type;
+      typedef typename traits_type::off_type off_type;
+
+
+      typedef basic_string<_CharT, _Traits, _Alloc> __string_type;
+      typedef basic_stringbuf<_CharT, _Traits, _Alloc> __stringbuf_type;
+      typedef basic_istream<char_type, traits_type> __istream_type;
+
+    private:
+      __stringbuf_type _M_stringbuf;
+
+    public:
+# 402 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      explicit
+      basic_istringstream(ios_base::openmode __mode = ios_base::in)
+      : __istream_type(), _M_stringbuf(__mode | ios_base::in)
+      { this->init(&_M_stringbuf); }
+# 420 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      explicit
+      basic_istringstream(const __string_type& __str,
+     ios_base::openmode __mode = ios_base::in)
+      : __istream_type(), _M_stringbuf(__str, __mode | ios_base::in)
+      { this->init(&_M_stringbuf); }
+
+
+
+
+
+
+
+      ~basic_istringstream()
+      { }
+
+
+      basic_istringstream(const basic_istringstream&) = delete;
+
+      basic_istringstream(basic_istringstream&& __rhs)
+      : __istream_type(std::move(__rhs)),
+      _M_stringbuf(std::move(__rhs._M_stringbuf))
+      { __istream_type::set_rdbuf(&_M_stringbuf); }
+
+
+
+      basic_istringstream&
+      operator=(const basic_istringstream&) = delete;
+
+      basic_istringstream&
+      operator=(basic_istringstream&& __rhs)
+      {
+ __istream_type::operator=(std::move(__rhs));
+ _M_stringbuf = std::move(__rhs._M_stringbuf);
+ return *this;
+      }
+
+      void
+      swap(basic_istringstream& __rhs)
+      {
+ __istream_type::swap(__rhs);
+ _M_stringbuf.swap(__rhs._M_stringbuf);
+      }
+# 471 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      __stringbuf_type*
+      rdbuf() const
+      { return const_cast<__stringbuf_type*>(&_M_stringbuf); }
+
+
+
+
+
+      __string_type
+      str() const
+      { return _M_stringbuf.str(); }
+
+
+
+
+
+
+
+      void
+      str(const __string_type& __s)
+      { _M_stringbuf.str(__s); }
+    };
+# 510 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+  template <typename _CharT, typename _Traits, typename _Alloc>
+    class basic_ostringstream : public basic_ostream<_CharT, _Traits>
+    {
+    public:
+
+      typedef _CharT char_type;
+      typedef _Traits traits_type;
+
+
+      typedef _Alloc allocator_type;
+      typedef typename traits_type::int_type int_type;
+      typedef typename traits_type::pos_type pos_type;
+      typedef typename traits_type::off_type off_type;
+
+
+      typedef basic_string<_CharT, _Traits, _Alloc> __string_type;
+      typedef basic_stringbuf<_CharT, _Traits, _Alloc> __stringbuf_type;
+      typedef basic_ostream<char_type, traits_type> __ostream_type;
+
+    private:
+      __stringbuf_type _M_stringbuf;
+
+    public:
+# 546 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      explicit
+      basic_ostringstream(ios_base::openmode __mode = ios_base::out)
+      : __ostream_type(), _M_stringbuf(__mode | ios_base::out)
+      { this->init(&_M_stringbuf); }
+# 564 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      explicit
+      basic_ostringstream(const __string_type& __str,
+     ios_base::openmode __mode = ios_base::out)
+      : __ostream_type(), _M_stringbuf(__str, __mode | ios_base::out)
+      { this->init(&_M_stringbuf); }
+
+
+
+
+
+
+
+      ~basic_ostringstream()
+      { }
+
+
+      basic_ostringstream(const basic_ostringstream&) = delete;
+
+      basic_ostringstream(basic_ostringstream&& __rhs)
+      : __ostream_type(std::move(__rhs)),
+      _M_stringbuf(std::move(__rhs._M_stringbuf))
+      { __ostream_type::set_rdbuf(&_M_stringbuf); }
+
+
+
+      basic_ostringstream&
+      operator=(const basic_ostringstream&) = delete;
+
+      basic_ostringstream&
+      operator=(basic_ostringstream&& __rhs)
+      {
+ __ostream_type::operator=(std::move(__rhs));
+ _M_stringbuf = std::move(__rhs._M_stringbuf);
+ return *this;
+      }
+
+      void
+      swap(basic_ostringstream& __rhs)
+      {
+ __ostream_type::swap(__rhs);
+ _M_stringbuf.swap(__rhs._M_stringbuf);
+      }
+# 615 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      __stringbuf_type*
+      rdbuf() const
+      { return const_cast<__stringbuf_type*>(&_M_stringbuf); }
+
+
+
+
+
+      __string_type
+      str() const
+      { return _M_stringbuf.str(); }
+
+
+
+
+
+
+
+      void
+      str(const __string_type& __s)
+      { _M_stringbuf.str(__s); }
+    };
+# 654 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+  template <typename _CharT, typename _Traits, typename _Alloc>
+    class basic_stringstream : public basic_iostream<_CharT, _Traits>
+    {
+    public:
+
+      typedef _CharT char_type;
+      typedef _Traits traits_type;
+
+
+      typedef _Alloc allocator_type;
+      typedef typename traits_type::int_type int_type;
+      typedef typename traits_type::pos_type pos_type;
+      typedef typename traits_type::off_type off_type;
+
+
+      typedef basic_string<_CharT, _Traits, _Alloc> __string_type;
+      typedef basic_stringbuf<_CharT, _Traits, _Alloc> __stringbuf_type;
+      typedef basic_iostream<char_type, traits_type> __iostream_type;
+
+    private:
+      __stringbuf_type _M_stringbuf;
+
+    public:
+# 689 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      explicit
+      basic_stringstream(ios_base::openmode __m = ios_base::out | ios_base::in)
+      : __iostream_type(), _M_stringbuf(__m)
+      { this->init(&_M_stringbuf); }
+# 705 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      explicit
+      basic_stringstream(const __string_type& __str,
+    ios_base::openmode __m = ios_base::out | ios_base::in)
+      : __iostream_type(), _M_stringbuf(__str, __m)
+      { this->init(&_M_stringbuf); }
+
+
+
+
+
+
+
+      ~basic_stringstream()
+      { }
+
+
+      basic_stringstream(const basic_stringstream&) = delete;
+
+      basic_stringstream(basic_stringstream&& __rhs)
+      : __iostream_type(std::move(__rhs)),
+      _M_stringbuf(std::move(__rhs._M_stringbuf))
+      { __iostream_type::set_rdbuf(&_M_stringbuf); }
+
+
+
+      basic_stringstream&
+      operator=(const basic_stringstream&) = delete;
+
+      basic_stringstream&
+      operator=(basic_stringstream&& __rhs)
+      {
+ __iostream_type::operator=(std::move(__rhs));
+ _M_stringbuf = std::move(__rhs._M_stringbuf);
+ return *this;
+      }
+
+      void
+      swap(basic_stringstream& __rhs)
+      {
+ __iostream_type::swap(__rhs);
+ _M_stringbuf.swap(__rhs._M_stringbuf);
+      }
+# 756 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 3
+      __stringbuf_type*
+      rdbuf() const
+      { return const_cast<__stringbuf_type*>(&_M_stringbuf); }
+
+
+
+
+
+      __string_type
+      str() const
+      { return _M_stringbuf.str(); }
+
+
+
+
+
+
+
+      void
+      str(const __string_type& __s)
+      { _M_stringbuf.str(__s); }
+    };
+
+
+
+  template <class _CharT, class _Traits, class _Allocator>
+    inline void
+    swap(basic_stringbuf<_CharT, _Traits, _Allocator>& __x,
+  basic_stringbuf<_CharT, _Traits, _Allocator>& __y)
+    { __x.swap(__y); }
+
+
+  template <class _CharT, class _Traits, class _Allocator>
+    inline void
+    swap(basic_istringstream<_CharT, _Traits, _Allocator>& __x,
+  basic_istringstream<_CharT, _Traits, _Allocator>& __y)
+    { __x.swap(__y); }
+
+
+  template <class _CharT, class _Traits, class _Allocator>
+    inline void
+    swap(basic_ostringstream<_CharT, _Traits, _Allocator>& __x,
+  basic_ostringstream<_CharT, _Traits, _Allocator>& __y)
+    { __x.swap(__y); }
+
+
+  template <class _CharT, class _Traits, class _Allocator>
+    inline void
+    swap(basic_stringstream<_CharT, _Traits, _Allocator>& __x,
+  basic_stringstream<_CharT, _Traits, _Allocator>& __y)
+    { __x.swap(__y); }
+
+
+}
+
+}
+
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/bits/sstream.tcc" 1 3
+# 37 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/bits/sstream.tcc" 3
+       
+# 38 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/bits/sstream.tcc" 3
+
+namespace std
+{
+
+
+  template <class _CharT, class _Traits, class _Alloc>
+    typename basic_stringbuf<_CharT, _Traits, _Alloc>::int_type
+    basic_stringbuf<_CharT, _Traits, _Alloc>::
+    pbackfail(int_type __c)
+    {
+      int_type __ret = traits_type::eof();
+      if (this->eback() < this->gptr())
+ {
+
+
+   const bool __testeof = traits_type::eq_int_type(__c, __ret);
+   if (!__testeof)
+     {
+       const bool __testeq = traits_type::eq(traits_type::
+          to_char_type(__c),
+          this->gptr()[-1]);
+       const bool __testout = this->_M_mode & ios_base::out;
+       if (__testeq || __testout)
+  {
+    this->gbump(-1);
+    if (!__testeq)
+      *this->gptr() = traits_type::to_char_type(__c);
+    __ret = __c;
+  }
+     }
+   else
+     {
+       this->gbump(-1);
+       __ret = traits_type::not_eof(__c);
+     }
+ }
+      return __ret;
+    }
+
+  template <class _CharT, class _Traits, class _Alloc>
+    typename basic_stringbuf<_CharT, _Traits, _Alloc>::int_type
+    basic_stringbuf<_CharT, _Traits, _Alloc>::
+    overflow(int_type __c)
+    {
+      const bool __testout = this->_M_mode & ios_base::out;
+      if (__builtin_expect(!__testout, false))
+ return traits_type::eof();
+
+      const bool __testeof = traits_type::eq_int_type(__c, traits_type::eof());
+      if (__builtin_expect(__testeof, false))
+ return traits_type::not_eof(__c);
+
+      const __size_type __capacity = _M_string.capacity();
+      const __size_type __max_size = _M_string.max_size();
+      const bool __testput = this->pptr() < this->epptr();
+      if (__builtin_expect(!__testput && __capacity == __max_size, false))
+ return traits_type::eof();
+
+
+
+      const char_type __conv = traits_type::to_char_type(__c);
+      if (!__testput)
+ {
+# 110 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/bits/sstream.tcc" 3
+   const __size_type __opt_len = std::max(__size_type(2 * __capacity),
+       __size_type(512));
+   const __size_type __len = std::min(__opt_len, __max_size);
+   __string_type __tmp;
+   __tmp.reserve(__len);
+   if (this->pbase())
+     __tmp.assign(this->pbase(), this->epptr() - this->pbase());
+   __tmp.push_back(__conv);
+   _M_string.swap(__tmp);
+   _M_sync(const_cast<char_type*>(_M_string.data()),
+    this->gptr() - this->eback(), this->pptr() - this->pbase());
+ }
+      else
+ *this->pptr() = __conv;
+      this->pbump(1);
+      return __c;
+    }
+
+  template <class _CharT, class _Traits, class _Alloc>
+    typename basic_stringbuf<_CharT, _Traits, _Alloc>::int_type
+    basic_stringbuf<_CharT, _Traits, _Alloc>::
+    underflow()
+    {
+      int_type __ret = traits_type::eof();
+      const bool __testin = this->_M_mode & ios_base::in;
+      if (__testin)
+ {
+
+   _M_update_egptr();
+
+   if (this->gptr() < this->egptr())
+     __ret = traits_type::to_int_type(*this->gptr());
+ }
+      return __ret;
+    }
+
+  template <class _CharT, class _Traits, class _Alloc>
+    typename basic_stringbuf<_CharT, _Traits, _Alloc>::pos_type
+    basic_stringbuf<_CharT, _Traits, _Alloc>::
+    seekoff(off_type __off, ios_base::seekdir __way, ios_base::openmode __mode)
+    {
+      pos_type __ret = pos_type(off_type(-1));
+      bool __testin = (ios_base::in & this->_M_mode & __mode) != 0;
+      bool __testout = (ios_base::out & this->_M_mode & __mode) != 0;
+      const bool __testboth = __testin && __testout && __way != ios_base::cur;
+      __testin &= !(__mode & ios_base::out);
+      __testout &= !(__mode & ios_base::in);
+
+
+
+      const char_type* __beg = __testin ? this->eback() : this->pbase();
+      if ((__beg || !__off) && (__testin || __testout || __testboth))
+ {
+   _M_update_egptr();
+
+   off_type __newoffi = __off;
+   off_type __newoffo = __newoffi;
+   if (__way == ios_base::cur)
+     {
+       __newoffi += this->gptr() - __beg;
+       __newoffo += this->pptr() - __beg;
+     }
+   else if (__way == ios_base::end)
+     __newoffo = __newoffi += this->egptr() - __beg;
+
+   if ((__testin || __testboth)
+       && __newoffi >= 0
+       && this->egptr() - __beg >= __newoffi)
+     {
+       this->setg(this->eback(), this->eback() + __newoffi,
+    this->egptr());
+       __ret = pos_type(__newoffi);
+     }
+   if ((__testout || __testboth)
+       && __newoffo >= 0
+       && this->egptr() - __beg >= __newoffo)
+     {
+       _M_pbump(this->pbase(), this->epptr(), __newoffo);
+       __ret = pos_type(__newoffo);
+     }
+ }
+      return __ret;
+    }
+
+  template <class _CharT, class _Traits, class _Alloc>
+    typename basic_stringbuf<_CharT, _Traits, _Alloc>::pos_type
+    basic_stringbuf<_CharT, _Traits, _Alloc>::
+    seekpos(pos_type __sp, ios_base::openmode __mode)
+    {
+      pos_type __ret = pos_type(off_type(-1));
+      const bool __testin = (ios_base::in & this->_M_mode & __mode) != 0;
+      const bool __testout = (ios_base::out & this->_M_mode & __mode) != 0;
+
+      const char_type* __beg = __testin ? this->eback() : this->pbase();
+      if ((__beg || !off_type(__sp)) && (__testin || __testout))
+ {
+   _M_update_egptr();
+
+   const off_type __pos(__sp);
+   const bool __testpos = (0 <= __pos
+      && __pos <= this->egptr() - __beg);
+   if (__testpos)
+     {
+       if (__testin)
+  this->setg(this->eback(), this->eback() + __pos,
+      this->egptr());
+       if (__testout)
+  _M_pbump(this->pbase(), this->epptr(), __pos);
+       __ret = __sp;
+     }
+ }
+      return __ret;
+    }
+
+  template <class _CharT, class _Traits, class _Alloc>
+    void
+    basic_stringbuf<_CharT, _Traits, _Alloc>::
+    _M_sync(char_type* __base, __size_type __i, __size_type __o)
+    {
+      const bool __testin = _M_mode & ios_base::in;
+      const bool __testout = _M_mode & ios_base::out;
+      char_type* __endg = __base + _M_string.size();
+      char_type* __endp = __base + _M_string.capacity();
+
+      if (__base != _M_string.data())
+ {
+
+   __endg += __i;
+   __i = 0;
+   __endp = __endg;
+ }
+
+      if (__testin)
+ this->setg(__base, __base + __i, __endg);
+      if (__testout)
+ {
+   _M_pbump(__base, __endp, __o);
+
+
+
+   if (!__testin)
+     this->setg(__endg, __endg, __endg);
+ }
+    }
+
+  template <class _CharT, class _Traits, class _Alloc>
+    void
+    basic_stringbuf<_CharT, _Traits, _Alloc>::
+    _M_pbump(char_type* __pbeg, char_type* __pend, off_type __off)
+    {
+      this->setp(__pbeg, __pend);
+      while (__off > __gnu_cxx::__numeric_traits<int>::__max)
+ {
+   this->pbump(__gnu_cxx::__numeric_traits<int>::__max);
+   __off -= __gnu_cxx::__numeric_traits<int>::__max;
+ }
+      this->pbump(__off);
+    }
+
+
+
+
+  extern template class basic_stringbuf<char>;
+  extern template class basic_istringstream<char>;
+  extern template class basic_ostringstream<char>;
+  extern template class basic_stringstream<char>;
+
+
+  extern template class basic_stringbuf<wchar_t>;
+  extern template class basic_istringstream<wchar_t>;
+  extern template class basic_ostringstream<wchar_t>;
+  extern template class basic_stringstream<wchar_t>;
+
+
+
+
+}
+# 814 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/sstream" 2 3
+# 159 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
+
+
+
+
+
+
+# 164 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
+enum { CHAR_IS_SIGNED = (char)-1 < 0 };
+
+
+namespace _ap_type {
+template <typename _Tp>
+struct is_signed {
+  static const bool value = _Tp(-1) < _Tp(1);
+};
+
+template <typename _Tp>
+struct is_integral {
+  static const bool value = false;
+};
+
+
+
+
+
+template <> struct is_integral<bool> { static const bool value = true; };
+template <> struct is_integral<char> { static const bool value = true; };
+template <> struct is_integral<signed char> { static const bool value = true; };
+template <> struct is_integral<unsigned char> { static const bool value = true; };
+template <> struct is_integral<short> { static const bool value = true; };
+template <> struct is_integral<unsigned short> { static const bool value = true; };
+template <> struct is_integral<int> { static const bool value = true; };
+template <> struct is_integral<unsigned int> { static const bool value = true; };
+template <> struct is_integral<long> { static const bool value = true; };
+template <> struct is_integral<unsigned long> { static const bool value = true; };
+template <> struct is_integral<ap_slong> { static const bool value = true; };
+template <> struct is_integral<ap_ulong> { static const bool value = true; };
+
+
+template <bool, typename _Tp = void>
+struct enable_if {};
+
+template <typename _Tp>
+struct enable_if<true, _Tp> {
+  typedef _Tp type;
+};
+
+template <typename _Tp>
+struct remove_const {
+  typedef _Tp type;
+};
+
+template <typename _Tp>
+struct remove_const<_Tp const> {
+  typedef _Tp type;
+};
+}
+# 587 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
+static inline unsigned char guess_radix(const char* s) {
+  unsigned char rd = 10;
+  const char* p = s;
+
+  if (p[0] == '-' || p[0] == '+') ++p;
+
+  if (p[0] == '0') {
+    if (p[1] == 'b' || p[1] == 'B') {
+      rd = 2;
+    } else if (p[1] == 'o' || p[1] == 'O') {
+      rd = 8;
+    } else if (p[1] == 'x' || p[1] == 'X') {
+      rd = 16;
+    } else if (p[1] == 'd' || p[1] == 'D') {
+      rd = 10;
+    }
+  }
+  return rd;
+}
+# 615 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
+class half;
+
+
+
+
+
+
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cmath" 1 3
+# 39 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cmath" 3
+       
+# 40 "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/include/c++/6.2.0/cmath" 3
+# 623 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h" 2
 # 653 "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h"
 template <int _AP_W, bool _AP_S, bool _AP_C = _AP_W <= 64>
 class ap_private;
@@ -72525,7 +72526,7 @@ struct numeric_limits<ap_float<W, E>> {
   }
 };
 }
-# 5 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top.hpp" 2
+# 5 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top.hpp" 2
 
 
 
@@ -72537,82 +72538,145 @@ typedef float FIX_TYPE;
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_top_sw(float (*)[4], float (*)[4], float (*)[4]);
+void apatb_top_1_sw(float (*)[4], float (*)[4], float (*)[4]);
 #endif
-# 11 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top.hpp"
-void top(
+# 11 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top.hpp"
+void top_1(
     FIX_TYPE A_DRAM[4][4],
     FIX_TYPE Q_DRAM[4][4],
     FIX_TYPE R_DRAM[4][4]
 );
-# 3 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top_tb.cpp" 2
+# 4 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top_tb.cpp" 2
+
+
+
+
+
+
+void print_matrix(const char* name, FIX_TYPE M[4][4])
+{
+    std::cout << name << ":\n";
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++)
+            std::cout << M[i][j] << " ";
+        std::cout << "\n";
+    }
+    std::cout << "\n";
+}
+
+void matmul(FIX_TYPE A[4][4], FIX_TYPE B[4][4], FIX_TYPE C[4][4])
+{
+    for(int i=0;i<4;i++)
+        for(int j=0;j<4;j++)
+        {
+            C[i][j] = 0;
+            for(int k=0;k<4;k++)
+                C[i][j] += A[i][k] * B[k][j];
+        }
+}
+
+void transpose(FIX_TYPE A[4][4], FIX_TYPE AT[4][4])
+{
+    for(int i=0;i<4;i++)
+        for(int j=0;j<4;j++)
+            AT[j][i] = A[i][j];
+}
+
+bool is_upper_triangular(FIX_TYPE R[4][4])
+{
+    for(int i=1;i<4;i++)
+        for(int j=0;j<i;j++)
+            if(fabs(R[i][j]) > 1e-3)
+                return false;
+    return true;
+}
+
+
 
 
 #ifndef HLS_FASTSIM
-# 4 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top_tb.cpp"
+# 50 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top_tb.cpp"
 int main()
 {
     FIX_TYPE A[4][4];
     FIX_TYPE Q[4][4];
     FIX_TYPE R[4][4];
 
-    std::cout << "Initializing Input Matrix A...\n";
+    FIX_TYPE QR[4][4];
+    FIX_TYPE QT[4][4];
+    FIX_TYPE QTQ[4][4];
 
-
-    for(int i = 0; i < 4; i++)
+    for(int test = 0; test < 30; test++)
     {
-        for(int j = 0; j < 4; j++)
-        {
-            A[i][j] = FIX_TYPE(i * 4 + j);
-        }
-    }
+        std::cout << "=====================================\n";
+        std::cout << "Running Test #" << test << "\n";
 
 
-    
+        for(int i=0;i<4;i++)
+            for(int j=0;j<4;j++)
+             A[i][j] = (i*7 + j*11 + test*3) % 17 + 1;
+
+        
 #ifndef HLS_FASTSIM
-#define top apatb_top_sw
+#define top_1 apatb_top_1_sw
 #endif
-# 22 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top_tb.cpp"
-top(A, Q, R);
-#undef top
-# 22 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top_tb.cpp"
+# 70 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top_tb.cpp"
+top_1(A, Q, R);
+#undef top_1
+# 70 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top_tb.cpp"
 
 
-    bool pass = true;
+        matmul(Q, R, QR);
 
-    std::cout << "Verifying results...\n";
+        bool pass_qr = true;
+        for(int i=0;i<4;i++)
+            for(int j=0;j<4;j++)
+                if(fabs(QR[i][j] - A[i][j]) > 1e-3 * fabs(A[i][j] + 1))
+                    pass_qr = false;
 
-    for(int i = 0; i < 4; i++)
-    {
-        for(int j = 0; j < 4; j++)
-        {
-            FIX_TYPE expectedR = FIX_TYPE(i * 4 + j) + FIX_TYPE(1.0f);
+        transpose(Q, QT);
+        matmul(QT, Q, QTQ);
 
-            FIX_TYPE expectedQ;
-            if(i == j)
-                expectedQ = FIX_TYPE(2.0f);
-            else
-                expectedQ = FIX_TYPE(0.0f);
-
-            if( (R[i][j] != expectedR) || (Q[i][j] != expectedQ) )
+        bool pass_ortho = true;
+        for(int i=0;i<4;i++)
+            for(int j=0;j<4;j++)
             {
-                pass = false;
-                std::cout << "Mismatch at (" << i << "," << j << ")\n";
-                std::cout << "Expected R: " << (float)expectedR
-                          << " Got: " << (float)R[i][j] << "\n";
-                std::cout << "Expected Q: " << (float)expectedQ
-                          << " Got: " << (float)Q[i][j] << "\n";
+                if(i==j)
+                {
+                    if(fabs(QTQ[i][j] - 1.0) > 1e-3)
+                        pass_ortho = false;
+                }
+                else
+                {
+                    if(fabs(QTQ[i][j]) > 1e-3)
+                        pass_ortho = false;
+                }
             }
+
+        bool pass_tri = is_upper_triangular(R);
+
+        if(pass_qr && pass_ortho && pass_tri)
+        {
+            std::cout << "TEST PASSED\n\n";
+            print_matrix("Input A", A);
+            print_matrix("Output Q", Q);
+            print_matrix("Output R", R);
+        }
+        else
+        {
+            std::cout << "TEST FAILED\n\n";
+            print_matrix("Input A", A);
+            print_matrix("Output Q", Q);
+            print_matrix("Output R", R);
+            return 1;
         }
     }
 
-    if(pass)
-        std::cout << "\nTEST PASSED\n";
-    else
-        std::cout << "\n TEST FAILED\n";
+    std::cout << "=====================================\n";
+    std::cout << "ALL TESTS PASSED\n";
 
-    return pass ? 0 : 1;
+    return 0;
 }
 #endif
-# 58 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top_tb.cpp"
+# 122 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top_tb.cpp"
 

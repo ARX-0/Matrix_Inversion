@@ -1,7 +1,7 @@
 [
   {
     "functionLabel": "",
-    "functionName": "top_1",
+    "functionName": "top",
     "id": 0,
     "ifcond": "",
     "insert_position": "",
@@ -11,7 +11,28 @@
       "option": [
         {
           "name": "name",
-          "value": "top_1"
+          "value": "top"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/directives.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "top",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "top"
         }
       ]
     },

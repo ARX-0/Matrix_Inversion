@@ -3,19 +3,23 @@
   <errorLogs>
     <logs>
       <synLog/>
-      <simLog/>
-      <mgLog/>
-      <packageLog/>
-      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
-      <simLog/>
-      <mgLog/>
-      <packageLog/>
-      <csimLog/>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:26.209+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_BREADY' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.880+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWUSER' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.867+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWREGION' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.836+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWQOS' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.817+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWPROT' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.790+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWCACHE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.753+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWLOCK' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.667+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWBURST' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.587+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWSIZE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.464+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWLEN' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.375+0530" type="Warning"/>
+      </synLog>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

@@ -726,63 +726,33 @@ C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TE
        ^~~
        VITIS_LOOP_169_3: 
 C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:24228:8: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27112:9: warning: Added loop label VITIS_LOOP_28_1:   [xilinx-label-all-loops]
-        for(int j = 0; j < 4; j++)
-        ^~~
-        VITIS_LOOP_28_1: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27112:9: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27127:9: warning: Added loop label VITIS_LOOP_43_2:   [xilinx-label-all-loops]
-        for(int i = k; i < 4; i++)
-        ^~~
-        VITIS_LOOP_43_2: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27127:9: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27141:2: warning: Added loop label VITIS_LOOP_57_3:   [xilinx-label-all-loops]
- for(int i = 0; i < 4; i++)
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27106:2: warning: Added loop label VITIS_LOOP_26_1:   [xilinx-label-all-loops]
+ for(int j=0;j<4;j++){
  ^~~
- VITIS_LOOP_57_3: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27141:2: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27153:9: warning: Added loop label VITIS_LOOP_69_4:   [xilinx-label-all-loops]
-        for(int i = k; i < 4; i++)
+ VITIS_LOOP_26_1: 
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27106:2: note: FIX-IT applied suggested code changes
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27138:2: warning: Added loop label VITIS_LOOP_58_2:   [xilinx-label-all-loops]
+ for(int i=0;i<4;i++){
+ ^~~
+ VITIS_LOOP_58_2: 
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27138:2: note: FIX-IT applied suggested code changes
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27159:9: warning: Added loop label VITIS_LOOP_79_3:   [xilinx-label-all-loops]
+        for(int i=0;i<4;i++){
         ^~~
-        VITIS_LOOP_69_4: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27153:9: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27158:9: warning: Added loop label VITIS_LOOP_74_5:   [xilinx-label-all-loops]
-        for(int i = k; i < 4; i++)
+        VITIS_LOOP_79_3: 
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27159:9: note: FIX-IT applied suggested code changes
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27166:9: warning: Added loop label VITIS_LOOP_86_4:   [xilinx-label-all-loops]
+        for(int j=k;j<4;j++)
         ^~~
-        VITIS_LOOP_74_5: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27158:9: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27162:9: warning: Added loop label VITIS_LOOP_78_6:   [xilinx-label-all-loops]
-        for(int j = k; j < 4; j++)
+        VITIS_LOOP_86_4: 
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27166:9: note: FIX-IT applied suggested code changes
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27186:9: warning: Added loop label VITIS_LOOP_106_5:   [xilinx-label-all-loops]
+        for(int j=0;j<4;j++)
         ^~~
-        VITIS_LOOP_78_6: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27162:9: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27166:13: warning: Added loop label VITIS_LOOP_82_7:   [xilinx-label-all-loops]
-            for(int i = k; i < 4; i++)
-            ^~~
-            VITIS_LOOP_82_7: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27166:13: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27169:13: warning: Added loop label VITIS_LOOP_85_8:   [xilinx-label-all-loops]
-            for(int i = k; i < 4; i++)
-            ^~~
-            VITIS_LOOP_85_8: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27169:13: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27174:9: warning: Added loop label VITIS_LOOP_90_9:   [xilinx-label-all-loops]
-        for(int j = 0; j < 4; j++)
-        ^~~
-        VITIS_LOOP_90_9: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27174:9: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27178:13: warning: Added loop label VITIS_LOOP_94_10:   [xilinx-label-all-loops]
-            for(int i = k; i < 4; i++)
-            ^~~
-            VITIS_LOOP_94_10: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27178:13: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27181:13: warning: Added loop label VITIS_LOOP_97_11:   [xilinx-label-all-loops]
-            for(int i = k; i < 4; i++)
-            ^~~
-            VITIS_LOOP_97_11: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27181:13: note: FIX-IT applied suggested code changes
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27190:9: warning: Added loop label VITIS_LOOP_106_12:   [xilinx-label-all-loops]
-        for(int j = 0; j < 4; j++)
-        ^~~
-        VITIS_LOOP_106_12: 
-C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27190:9: note: FIX-IT applied suggested code changes
+        VITIS_LOOP_106_5: 
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27186:9: note: FIX-IT applied suggested code changes
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27210:2: warning: Added loop label VITIS_LOOP_130_6:   [xilinx-label-all-loops]
+ for(int j=0;j<4;j++){
+ ^~~
+ VITIS_LOOP_130_6: 
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\QRD_HOUSEHOLDER\solution1\.autopilot\db\fns.pp.0.cpp:27210:2: note: FIX-IT applied suggested code changes

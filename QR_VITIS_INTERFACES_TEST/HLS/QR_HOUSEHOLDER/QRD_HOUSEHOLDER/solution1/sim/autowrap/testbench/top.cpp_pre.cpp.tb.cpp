@@ -5,11 +5,11 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // 
 // ==============================================================
-# 1 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top.cpp"
+# 1 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top.cpp"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top.cpp"
-# 1 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top.hpp" 1
+# 1 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top.cpp"
+# 1 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top.hpp" 1
 
 
 
@@ -72513,19 +72513,19 @@ struct numeric_limits<ap_float<W, E>> {
   }
 };
 }
-# 5 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top.hpp" 2
+# 5 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top.hpp" 2
 
 
 
 
 typedef float FIX_TYPE;
 
-void top(
+void top_1(
     FIX_TYPE A_DRAM[4][4],
     FIX_TYPE Q_DRAM[4][4],
     FIX_TYPE R_DRAM[4][4]
 );
-# 2 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top.cpp" 2
+# 2 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/top.cpp" 2
 
 void top(
     FIX_TYPE A_DRAM[4][4],
@@ -72533,15 +72533,15 @@ void top(
     FIX_TYPE R_DRAM[4][4]
 )
 {
-#pragma HLS INTERFACE mode=m_axi port=A_DRAM depth=N*N offset=slave bundle=gmem0
-#pragma HLS INTERFACE mode=m_axi port=Q_DRAM depth=N*N offset=slave bundle=gmem1
-#pragma HLS INTERFACE mode=m_axi port=R_DRAM depth=N*N offset=slave bundle=gmem2
+#pragma HLS INTERFACE mode=m_axi port=A_DRAM depth=N*N offset=slave bundle=memA
+#pragma HLS INTERFACE mode=m_axi port=Q_DRAM depth=N*N offset=slave bundle=memQ
+#pragma HLS INTERFACE mode=m_axi port=R_DRAM depth=N*N offset=slave bundle=memR
 
 #pragma HLS interface s_axilite port=return
 
-#pragma HLS ARRAY_PARTITION variable=A_DRAM dim=2 type=complete
-#pragma HLS ARRAY_PARTITION variable=Q_DRAM dim=2 type=complete
-#pragma HLS ARRAY_PARTITION variable=R_DRAM dim=2 type=complete
+
+
+
 
 
  FIX_TYPE A[4][4];
@@ -72564,7 +72564,6 @@ int max_dim = 4;
 
 READ_INIT:
 for(int i = 0 ;i<max_dim;i++){
-#pragma HLS PIPELINE II = 1
  for(int j = 0 ;j<max_dim;j++){
 
   tmp = A_DRAM[i][j];
@@ -72592,7 +72591,7 @@ for(int i=0; i<4; i++){
 
 WRITE_BACK:
     for(int i = 0; i < 4; i++)
-#pragma HLS PIPELINE II=1
+
     {
         for(int j = 0; j < 4; j++)
         {
@@ -72601,30 +72600,3 @@ WRITE_BACK:
         }
     }
 }
-#ifndef HLS_FASTSIM
-#ifdef __cplusplus
-extern "C"
-#endif
-void apatb_top_ir(float (*)[4], float (*)[4], float (*)[4]);
-#ifdef __cplusplus
-extern "C"
-#endif
-void top_hw_stub(float (*A_DRAM)[4], float (*Q_DRAM)[4], float (*R_DRAM)[4]){
-top(A_DRAM, Q_DRAM, R_DRAM);
-return ;
-}
-#ifdef __cplusplus
-extern "C"
-#endif
-void refine_signal_handler();
-#ifdef __cplusplus
-extern "C"
-#endif
-void apatb_top_sw(float (*A_DRAM)[4], float (*Q_DRAM)[4], float (*R_DRAM)[4]){
-refine_signal_handler();
-apatb_top_ir(A_DRAM, Q_DRAM, R_DRAM);
-return ;
-}
-#endif
-# 76 "C:/Users/varad/OneDrive/Documents/GitHub/NIELIT_FINAL_YEAR_PROJECT/HLS/top.cpp"
-

@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" name="QRD_HOUSEHOLDER" top="top_1" projectType="C/C++">
+<project xmlns="com.autoesl.autopilot.project" name="QRD_HOUSEHOLDER" top="top" projectType="C/C++">
     <includePaths/>
     <libraryPaths/>
     <Simulation>

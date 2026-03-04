@@ -3,7 +3,7 @@
 #include "top.hpp"
 
 #define TOL 1e-3
-#define NUM_TESTS 10
+#define NUM_TESTS 30
 
 // ================= Utility Functions =================
 
@@ -67,7 +67,7 @@ int main()
             for(int j=0;j<N;j++)
             	A[i][j] = (i*7 + j*11 + test*3) % 17 + 1;
 
-        top_1(A, Q, R);
+        top(A, Q, R);
 
         matmul(Q, R, QR);
 

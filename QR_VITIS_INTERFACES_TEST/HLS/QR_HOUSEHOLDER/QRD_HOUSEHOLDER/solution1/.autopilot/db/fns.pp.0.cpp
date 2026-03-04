@@ -27073,7 +27073,7 @@ struct numeric_limits<ap_float<W, E>> {
 
 typedef float FIX_TYPE;
 
-__attribute__((sdx_kernel("top_1", 0))) void top_1(
+void top(
     FIX_TYPE A_DRAM[4][4],
     FIX_TYPE Q_DRAM[4][4],
     FIX_TYPE R_DRAM[4][4]
@@ -27081,66 +27081,63 @@ __attribute__((sdx_kernel("top_1", 0))) void top_1(
 # 2 "../fns.cpp" 2
 
 
-__attribute__((sdx_kernel("top_1", 0))) void top_1(
+void top_1(
     FIX_TYPE A_DRAM[4][4],
     FIX_TYPE Q_DRAM[4][4],
     FIX_TYPE R_DRAM[4][4]
 )
 {
-#line 21 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/csynth.tcl"
-#pragma HLSDIRECTIVE TOP name=top_1
-# 9 "../fns.cpp"
-
-#pragma HLS INTERFACE mode=m_axi port=A_DRAM depth=4*4 offset=slave bundle=memA
-#pragma HLS INTERFACE mode=m_axi port=Q_DRAM depth=4*4 offset=slave bundle=memQ
-#pragma HLS INTERFACE mode=m_axi port=R_DRAM depth=4*4 offset=slave bundle=memR
+#pragma HLS INTERFACE m_axi port=A_DRAM depth=4*4 offset=slave bundle=memA
+#pragma HLS INTERFACE m_axi port=Q_DRAM depth=4*4 offset=slave bundle=memQ
+#pragma HLS INTERFACE m_axi port=R_DRAM depth=4*4 offset=slave bundle=memR
 #pragma HLS INTERFACE s_axilite port=return
 
 
- FIX_TYPE A[4][4];
+ FIX_TYPE R[4][4];
     FIX_TYPE Q[4][4];
-    FIX_TYPE R[4][4];
 
-#pragma HLS ARRAY_PARTITION variable=A dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=R dim=1 complete
 #pragma HLS ARRAY_PARTITION variable=Q dim=2 complete
-#pragma HLS ARRAY_PARTITION variable=R dim=2 complete
 
 
 READ_INIT:
-    for(int i = 0; i < 4; i++)
-    {
-        VITIS_LOOP_28_1: for(int j = 0; j < 4; j++)
-        { FIX_TYPE tmp = A_DRAM[i][j];
-            A[i][j] = tmp;
+    for(int i=0;i<4;i++){
+#pragma HLS UNROLL
+ VITIS_LOOP_26_1: for(int j=0;j<4;j++){
+#pragma HLS UNROLL
+ FIX_TYPE tmp = A_DRAM[i][j];
             R[i][j] = tmp;
-            Q[i][j] = (i == j) ? FIX_TYPE(1.0f) : FIX_TYPE(0.0f);
+            Q[i][j] = (i==j)? FIX_TYPE(1.0f): FIX_TYPE(0.0f);
         }
     }
 
 
 QR_MAIN:
-    for(int k = 0; k < 4 -1; k++)
+    for(int k=0;k<4 -1;k++)
     {
-        FIX_TYPE norm_x = 0;
 
 
-        VITIS_LOOP_43_2: for(int i = k; i < 4; i++)
-            norm_x += R[i][k] * R[i][k];
+        FIX_TYPE sum0 = 0, sum1 = 0, sum2 = 0, sum3 = 0;
 
+        if(k <= 0) sum0 = R[0][k]*R[0][k];
+        if(k <= 1) sum1 = R[1][k]*R[1][k];
+        if(k <= 2) sum2 = R[2][k]*R[2][k];
+        if(k <= 3) sum3 = R[3][k]*R[3][k];
+
+        FIX_TYPE norm_x = sum0 + sum1 + sum2 + sum3;
         norm_x = hls::sqrt(norm_x);
 
-        if(norm_x == 0)
-            continue;
+        if(norm_x == 0) continue;
 
         FIX_TYPE alpha = (R[k][k] >= 0) ? -norm_x : norm_x;
+
 
         FIX_TYPE v[4];
 #pragma HLS ARRAY_PARTITION variable=v complete
 
-
- VITIS_LOOP_57_3: for(int i = 0; i < 4; i++)
-        {
-            if(i < k)
+ VITIS_LOOP_58_2: for(int i=0;i<4;i++){
+#pragma HLS UNROLL
+ if(i < k)
                 v[i] = 0;
             else if(i == k)
                 v[i] = R[i][k] - alpha;
@@ -27149,47 +27146,70 @@ QR_MAIN:
         }
 
 
-        FIX_TYPE norm_v = 0;
-        VITIS_LOOP_69_4: for(int i = k; i < 4; i++)
-            norm_v += v[i] * v[i];
+        FIX_TYPE sv0=0, sv1=0, sv2=0, sv3=0;
 
+        if(k <= 0) sv0 = v[0]*v[0];
+        if(k <= 1) sv1 = v[1]*v[1];
+        if(k <= 2) sv2 = v[2]*v[2];
+        if(k <= 3) sv3 = v[3]*v[3];
+
+        FIX_TYPE norm_v = sv0 + sv1 + sv2 + sv3;
         norm_v = hls::sqrt(norm_v);
 
-        VITIS_LOOP_74_5: for(int i = k; i < 4; i++)
-            v[i] = v[i] / norm_v;
-
-
-        VITIS_LOOP_78_6: for(int j = k; j < 4; j++)
-        {
-            FIX_TYPE dot = 0;
-
-            VITIS_LOOP_82_7: for(int i = k; i < 4; i++)
-                dot += v[i] * R[i][j];
-
-            VITIS_LOOP_85_8: for(int i = k; i < 4; i++)
-                R[i][j] -= 2 * v[i] * dot;
+        VITIS_LOOP_79_3: for(int i=0;i<4;i++){
+#pragma HLS UNROLL
+ if(i >= k)
+                v[i] = v[i] / norm_v;
         }
 
 
-        VITIS_LOOP_90_9: for(int j = 0; j < 4; j++)
+        VITIS_LOOP_86_4: for(int j=k;j<4;j++)
         {
-            FIX_TYPE dot = 0;
+#pragma HLS PIPELINE II=1
 
-            VITIS_LOOP_94_10: for(int i = k; i < 4; i++)
-                dot += v[i] * Q[j][i];
+ FIX_TYPE d0=0,d1=0,d2=0,d3=0;
 
-            VITIS_LOOP_97_11: for(int i = k; i < 4; i++)
-                Q[j][i] -= 2 * dot * v[i];
+            if(k <= 0) d0 = v[0]*R[0][j];
+            if(k <= 1) d1 = v[1]*R[1][j];
+            if(k <= 2) d2 = v[2]*R[2][j];
+            if(k <= 3) d3 = v[3]*R[3][j];
+
+            FIX_TYPE dot = d0+d1+d2+d3;
+
+            if(k <= 0) R[0][j] -= 2*v[0]*dot;
+            if(k <= 1) R[1][j] -= 2*v[1]*dot;
+            if(k <= 2) R[2][j] -= 2*v[2]*dot;
+            if(k <= 3) R[3][j] -= 2*v[3]*dot;
+        }
+
+
+        VITIS_LOOP_106_5: for(int j=0;j<4;j++)
+        {
+#pragma HLS PIPELINE II=1
+
+ FIX_TYPE q0=0,q1=0,q2=0,q3=0;
+
+            if(k <= 0) q0 = v[0]*Q[j][0];
+            if(k <= 1) q1 = v[1]*Q[j][1];
+            if(k <= 2) q2 = v[2]*Q[j][2];
+            if(k <= 3) q3 = v[3]*Q[j][3];
+
+            FIX_TYPE dot = q0+q1+q2+q3;
+
+            if(k <= 0) Q[j][0] -= 2*dot*v[0];
+            if(k <= 1) Q[j][1] -= 2*dot*v[1];
+            if(k <= 2) Q[j][2] -= 2*dot*v[2];
+            if(k <= 3) Q[j][3] -= 2*dot*v[3];
         }
     }
 
 
 WRITE_BACK:
-    for(int i = 0; i < 4; i++)
-    {
-        VITIS_LOOP_106_12: for(int j = 0; j < 4; j++)
-        {
-            Q_DRAM[i][j] = Q[i][j];
+    for(int i=0;i<4;i++){
+#pragma HLS UNROLL
+ VITIS_LOOP_130_6: for(int j=0;j<4;j++){
+#pragma HLS UNROLL
+ Q_DRAM[i][j] = Q[i][j];
             R_DRAM[i][j] = R[i][j];
         }
     }
