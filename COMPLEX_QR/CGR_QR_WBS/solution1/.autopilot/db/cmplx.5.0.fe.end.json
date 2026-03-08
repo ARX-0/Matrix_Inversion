@@ -1,0 +1,128 @@
+{
+    "1": {
+        "name": "top_Pipeline_VITIS_LOOP_190_8_VITIS_LOOP_192_9",
+        "file": "top_cmplx.cpp",
+        "fileloc": "190",
+        "instructions": "71",
+        "total_instructions": "71",
+        "calls": "",
+        "basicblocks": "9",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "14"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "top_Pipeline_WRITE_Q_VITIS_LOOP_206_10",
+        "file": "top_cmplx.cpp",
+        "fileloc": "204",
+        "instructions": "118",
+        "total_instructions": "118",
+        "calls": "",
+        "basicblocks": "6",
+        "loads": {
+            "L": "19"
+        },
+        "stores": {
+            "L": "14"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "top_Pipeline_WRITE_R_VITIS_LOOP_216_11",
+        "file": "top_cmplx.cpp",
+        "fileloc": "214",
+        "instructions": "119",
+        "total_instructions": "119",
+        "calls": "",
+        "basicblocks": "6",
+        "loads": {
+            "L": "19"
+        },
+        "stores": {
+            "L": "14"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "top",
+        "file": "top_cmplx.cpp",
+        "fileloc": "51",
+        "instructions": "353",
+        "total_instructions": "2664",
+        "calls": "4 5 1 2 3 6",
+        "basicblocks": "4",
+        "loads": {
+            "L": "127"
+        },
+        "stores": {
+            "L": "51"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "top_Pipeline_READ_INIT_VITIS_LOOP_87_1",
+        "file": "top_cmplx.cpp",
+        "fileloc": "68",
+        "instructions": "263",
+        "total_instructions": "263",
+        "calls": "",
+        "basicblocks": "56",
+        "loads": {
+            "L": "8"
+        },
+        "stores": {
+            "L": "136"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "5": {
+        "name": "top_Pipeline_VITIS_LOOP_181_6_VITIS_LOOP_183_7",
+        "file": "top_cmplx.cpp",
+        "fileloc": "181",
+        "instructions": "121",
+        "total_instructions": "121",
+        "calls": "",
+        "basicblocks": "9",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "14"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "6": {
+        "name": "top_Pipeline_VITIS_LOOP_119_2",
+        "file": "top_cmplx.cpp",
+        "fileloc": "68",
+        "instructions": "1619",
+        "total_instructions": "1619",
+        "calls": "",
+        "basicblocks": "229",
+        "loads": {
+            "L": "113"
+        },
+        "stores": {
+            "L": "550"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

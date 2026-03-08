@@ -92,27 +92,13 @@ int XTop_Initialize(XTop *InstancePtr, const char* InstanceName);
 int XTop_Release(XTop *InstancePtr);
 #endif
 
-void XTop_Start(XTop *InstancePtr);
-u32 XTop_IsDone(XTop *InstancePtr);
-u32 XTop_IsIdle(XTop *InstancePtr);
-u32 XTop_IsReady(XTop *InstancePtr);
-void XTop_EnableAutoRestart(XTop *InstancePtr);
-void XTop_DisableAutoRestart(XTop *InstancePtr);
 
 void XTop_Set_A_DRAM(XTop *InstancePtr, u64 Data);
 u64 XTop_Get_A_DRAM(XTop *InstancePtr);
-void XTop_Set_Q_DRAM(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_Q_DRAM(XTop *InstancePtr);
-void XTop_Set_R_DRAM(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_R_DRAM(XTop *InstancePtr);
-
-void XTop_InterruptGlobalEnable(XTop *InstancePtr);
-void XTop_InterruptGlobalDisable(XTop *InstancePtr);
-void XTop_InterruptEnable(XTop *InstancePtr, u32 Mask);
-void XTop_InterruptDisable(XTop *InstancePtr, u32 Mask);
-void XTop_InterruptClear(XTop *InstancePtr, u32 Mask);
-u32 XTop_InterruptGetEnabled(XTop *InstancePtr);
-u32 XTop_InterruptGetStatus(XTop *InstancePtr);
+void XTop_Set_B_DRAM(XTop *InstancePtr, u64 Data);
+u64 XTop_Get_B_DRAM(XTop *InstancePtr);
+void XTop_Set_C_DRAM(XTop *InstancePtr, u64 Data);
+u64 XTop_Get_C_DRAM(XTop *InstancePtr);
 
 #ifdef __cplusplus
 }

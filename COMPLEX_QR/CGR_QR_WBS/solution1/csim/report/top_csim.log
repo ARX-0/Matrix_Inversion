@@ -1,0 +1,38 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../top_cmplx_tb.cpp in debug mode
+   Compiling ../../../../top_cmplx.cpp in debug mode
+   Generating csim.exe
+Mismatch at test 0 position (0,0)
+HW : 2.76496 2.76496
+REF: -23.2314 0
+Mismatch at test 0 position (0,1)
+HW : 9.36487 9.36487
+REF: -5.89331 -10.8078
+Mismatch at test 0 position (0,2)
+HW : 4.63366 4.63366
+REF: 1.06494 -2.5444
+Mismatch at test 0 position (0,3)
+HW : 12.247 12.247
+REF: -5.37074 6.45418
+Mismatch at test 0 position (1,1)
+HW : -13.7556 -13.7556
+REF: -17.0068 0
+Mismatch at test 0 position (1,2)
+HW : 4.08902 4.08902
+REF: 1.68481 7.76481
+Mismatch at test 0 position (1,3)
+HW : 5.72129 5.72129
+REF: 1.61971 -8.43323
+Mismatch at test 0 position (2,2)
+HW : 6.63365 6.63365
+REF: 21.197 0
+Mismatch at test 0 position (2,3)
+HW : 4.54632 4.54632
+REF: 0.0304261 -4.36302
+Mismatch at test 0 position (3,3)
+HW : -0.682668 -0.682668
+REF: 20.2687 0
+FAILED TEST 0
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 3] *************** CSIM finish ***************

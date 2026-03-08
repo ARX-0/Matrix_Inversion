@@ -157,17 +157,9 @@ extern "C" {
 # 2 "<built-in>" 2
 # 1 "../top.cpp" 2
 # 1 "../top.hpp" 1
-
-
-
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_float.h" 1
-
-
-
-
-
-
-
+# 35 "../top.hpp"
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_int.h" 1
+# 10 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_int.h"
 # 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\etc/ap_common.h" 1
 # 41 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\etc/ap_common.h"
 # 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\etc/ap_decl.h" 1
@@ -414,10 +406,7 @@ inline __attribute__((always_inline)) half rawBitsToHalf(unsigned short pi) {
 
 
 }
-# 9 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_float.h" 2
-
-# 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_int.h" 1
-# 11 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_int.h"
+# 11 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_int.h" 2
 # 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\etc/ap_int_base.h" 1
 # 40 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\etc/ap_int_base.h"
 template <int _AP_N, bool _AP_S>
@@ -5729,6 +5718,10 @@ inline __attribute__((nodebug)) bool operator!=(
 }
 # 366 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_fixed.h" 2
 # 361 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_int.h" 2
+# 36 "../top.hpp" 2
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_float.h" 1
+# 10 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_float.h"
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_int.h" 1
 # 11 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\ap_float.h" 2
 
 # 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\hls_math.h" 1
@@ -27066,98 +27059,182 @@ struct numeric_limits<ap_float<W, E>> {
   }
 };
 }
-# 5 "../top.hpp" 2
+# 37 "../top.hpp" 2
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\hls_burst_maxi.h" 1
+# 17 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\hls_burst_maxi.h"
+# 1 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include\\stddef.h" 1 3
+# 51 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include\\stddef.h" 3
+typedef long int ptrdiff_t;
+# 62 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include\\stddef.h" 3
+typedef long unsigned int size_t;
+# 118 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include\\stddef.h" 3
+# 1 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include/__stddef_max_align_t.h" 1 3
+# 35 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include/__stddef_max_align_t.h" 3
+typedef struct {
+  long long __clang_max_align_nonce1
+      __attribute__((__aligned__(__alignof__(long long))));
+  long double __clang_max_align_nonce2
+      __attribute__((__aligned__(__alignof__(long double))));
+} max_align_t;
+# 119 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include\\stddef.h" 2 3
+# 18 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\hls_burst_maxi.h" 2
 
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_int.h" 1
+# 20 "C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\\hls_burst_maxi.h" 2
 
+namespace hls {
 
+template<typename T>
+class burst_maxi {
+public:
+  __attribute__((nodebug)) burst_maxi(const burst_maxi<T> &p) : Ptr(p.Ptr) {
+#pragma HLS inline
+ }
 
-typedef float FIX_TYPE;
+  __attribute__((nodebug)) void read_request(size_t offset, unsigned len) {
+#pragma HLS inline
+ __fpga_maxi_read_req(&Ptr[offset], len);
+  }
 
-__attribute__((sdx_kernel("top", 0))) void top(
-    FIX_TYPE A_DRAM[4][4],
-    FIX_TYPE Q_DRAM[4][4],
-    FIX_TYPE R_DRAM[4][4]
+  __attribute__((nodebug)) T read() {
+#pragma HLS inline
+ T Tmp;
+    __fpga_maxi_read(Ptr, &Tmp);
+    return Tmp;
+  }
+
+  __attribute__((nodebug)) void write_request(size_t offset, unsigned len) {
+#pragma HLS inline
+ __fpga_maxi_write_req(&Ptr[offset], len);
+  }
+
+  __attribute__((nodebug)) void write(const T &val, ap_int<sizeof(T)> byte_enable_mask = -1) {
+#pragma HLS inline
+ __fpga_maxi_write(Ptr, &val, &byte_enable_mask);
+  }
+
+  __attribute__((nodebug)) void write_response() {
+#pragma HLS inline
+ __fpga_maxi_write_resp(Ptr);
+  }
+
+private:
+  T *Ptr;
+};
+
+}
+# 38 "../top.hpp" 2
+# 54 "../top.hpp"
+typedef float DTYPE;
+# 64 "../top.hpp"
+void top(
+    hls::burst_maxi<DTYPE> A_DRAM,
+    hls::burst_maxi<DTYPE> B_DRAM,
+    hls::burst_maxi<DTYPE> C_DRAM
 );
 # 2 "../top.cpp" 2
-
+# 286 "../top.cpp"
 __attribute__((sdx_kernel("top", 0))) void top(
-    FIX_TYPE A_DRAM[4][4],
-    FIX_TYPE Q_DRAM[4][4],
-    FIX_TYPE R_DRAM[4][4]
+    hls::burst_maxi<DTYPE> A_DRAM,
+    hls::burst_maxi<DTYPE> B_DRAM,
+    hls::burst_maxi<DTYPE> C_DRAM,
+    int size_A,
+    int size_B,
+    int size_C
 )
 {
 #line 21 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=top
-# 8 "../top.cpp"
-
-#line 7 "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/directives.tcl"
-#pragma HLSDIRECTIVE TOP name=top
-# 8 "../top.cpp"
-
-#pragma HLS INTERFACE mode=m_axi port=A_DRAM depth=4*4 offset=slave bundle=memA
-#pragma HLS INTERFACE mode=m_axi port=Q_DRAM depth=4*4 offset=slave bundle=memQ
-#pragma HLS INTERFACE mode=m_axi port=R_DRAM depth=4*4 offset=slave bundle=memR
-
-#pragma HLS interface s_axilite port=return
+# 294 "../top.cpp"
 
 
+
+    DTYPE A_local[25][8];
+    DTYPE B_local[8][25];
+    DTYPE C_local[25][25];
+
+#pragma HLS ARRAY_PARTITION variable=A_local dim=1 type=complete
+#pragma HLS ARRAY_PARTITION variable=B_local dim=2 type=complete
+#pragma HLS ARRAY_PARTITION variable=C_local dim=2 type=complete
 
 
 
 
- FIX_TYPE A[4][4];
- FIX_TYPE Q[4][4];
- FIX_TYPE R[4][4];
 
- FIX_TYPE Q_out[4][4];
- FIX_TYPE R_out[4][4];
 
- FIX_TYPE tmp;
+ {
+#pragma HLS latency max=250
 
-#pragma HLS ARRAY_PARTITION variable=A dim=2 type=complete
-#pragma HLS ARRAY_PARTITION variable=Q dim=2 type=complete
-#pragma HLS ARRAY_PARTITION variable=R dim=2 type=complete
+ A_DRAM.read_request(0, size_A);
 
-#pragma HLS ARRAY_PARTITION variable=R_out dim=2 type=complete
-#pragma HLS ARRAY_PARTITION variable=Q_out dim=2 type=complete
-
-int max_dim = 4;
-
-READ_INIT:
-for(int i = 0 ;i<max_dim;i++){
- VITIS_LOOP_40_1: for(int j = 0 ;j<max_dim;j++){
-
-  tmp = A_DRAM[i][j];
-  A[i][j] = tmp;
-  R[i][j] = tmp;
-  Q[i][j] = (i == j) ? FIX_TYPE(1.0f) : FIX_TYPE(0.0f);
- }
-}
-
-DUMMY_STAGE:
-for(int i=0; i<4; i++){
+        READ_A_OUTER: for(int i = 0; i < 25; i++) {
+            READ_A_INNER: for(int j = 0; j < 8; j++) {
+#pragma HLS loop_flatten
 #pragma HLS PIPELINE II=1
- VITIS_LOOP_52_2: for(int j=0; j<4; j++){
-
-  R_out[i][j] = R[i][j] + FIX_TYPE(1.0f);
-
-  if(i==j){
-   Q_out[i][j] = Q[i][j] + FIX_TYPE(1.0f);
-  }
-  else{
-   Q_out[i][j] = Q[i][j];
-  }
- }
-}
-
-WRITE_BACK:
-    for(int i = 0; i < 4; i++)
+ A_local[i][j] = A_DRAM.read();
+            }
+        }
+    }
 
     {
-        VITIS_LOOP_69_3: for(int j = 0; j < 4; j++)
-        {
-            Q_DRAM[i][j] = Q_out[i][j];
-            R_DRAM[i][j] = R_out[i][j];
+#pragma HLS latency max=250
+
+ B_DRAM.read_request(0, size_B);
+
+        READ_B_OUTER: for(int i = 0; i < 8; i++) {
+            READ_B_INNER: for(int j = 0; j < 25; j++) {
+#pragma HLS loop_flatten
+#pragma HLS PIPELINE II=1
+ B_local[i][j] = B_DRAM.read();
+            }
         }
+    }
+
+
+
+
+
+
+    COMPUTE_ROW: for(int i = 0; i < 25; i++) {
+#pragma HLS loop_tripcount min=25 max=25 avg=25
+
+ COMPUTE_COL: for(int j = 0; j < 25; j++) {
+#pragma HLS loop_tripcount min=25 max=25 avg=25
+#pragma HLS loop_flatten
+#pragma HLS PIPELINE II=1
+
+ DTYPE accumulator = 0;
+
+            COMPUTE_DOT: for(int k = 0; k < 8; k++) {
+#pragma HLS loop_tripcount min=8 max=8 avg=8
+#pragma HLS UNROLL
+
+ DTYPE temp = A_local[i][k] * B_local[k][j];
+                accumulator += temp;
+            }
+
+            C_local[i][j] = accumulator;
+        }
+    }
+
+
+
+
+
+
+    {
+#pragma HLS latency max=700
+
+ C_DRAM.write_request(0, size_C);
+
+        WRITE_C_OUTER: for(int i = 0; i < 25; i++) {
+            WRITE_C_INNER: for(int j = 0; j < 25; j++) {
+#pragma HLS loop_flatten
+#pragma HLS PIPELINE II=1
+ C_DRAM.write(C_local[i][j]);
+            }
+        }
+
+        C_DRAM.write_response();
     }
 }

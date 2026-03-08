@@ -10,7 +10,7 @@ A_DRAM {
 	offset 16
 	offset_end 27
 }
-Q_DRAM { 
+B_DRAM { 
 	dir I
 	width 64
 	depth 1
@@ -18,19 +18,13 @@ Q_DRAM {
 	offset 28
 	offset_end 39
 }
-R_DRAM { 
+C_DRAM { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
 	offset 40
 	offset_end 51
-}
-ap_start { }
-ap_done { }
-ap_ready { }
-ap_idle { }
-interrupt {
 }
 }
 dict set axilite_register_dict control $port_control

@@ -1,17 +1,17 @@
 {
   "0": {
-    "basicblocks": 33,
+    "basicblocks": 103,
     "calls": "",
     "file": "top.cpp",
-    "fileloc": 3,
-    "instructions": 250,
+    "fileloc": 286,
+    "instructions": 1539,
     "loads": {
-      "L": 20
+      "L": 425
     },
     "name": "top",
     "stores": {
-      "L": 20
+      "L": 75
     },
-    "total_instructions": 250
+    "total_instructions": 1539
   }
 }

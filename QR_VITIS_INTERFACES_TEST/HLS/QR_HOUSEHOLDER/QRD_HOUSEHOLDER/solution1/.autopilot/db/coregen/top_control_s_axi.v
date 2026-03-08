@@ -31,69 +31,45 @@ module top_control_s_axi
     output wire [1:0]                    RRESP,
     output wire                          RVALID,
     input  wire                          RREADY,
-    output wire                          interrupt,
     output wire [63:0]                   A_DRAM,
-    output wire [63:0]                   Q_DRAM,
-    output wire [63:0]                   R_DRAM,
-    output wire                          ap_start,
-    input  wire                          ap_done,
-    input  wire                          ap_ready,
-    input  wire                          ap_idle
+    output wire [63:0]                   B_DRAM,
+    output wire [63:0]                   C_DRAM
 );
 //------------------------Address Info-------------------
-// Protocol Used: ap_ctrl_hs
+// Protocol Used: ap_ctrl_none
 //
-// 0x00 : Control signals
-//        bit 0  - ap_start (Read/Write/COH)
-//        bit 1  - ap_done (Read/COR)
-//        bit 2  - ap_idle (Read)
-//        bit 3  - ap_ready (Read/COR)
-//        bit 7  - auto_restart (Read/Write)
-//        bit 9  - interrupt (Read)
-//        others - reserved
-// 0x04 : Global Interrupt Enable Register
-//        bit 0  - Global Interrupt Enable (Read/Write)
-//        others - reserved
-// 0x08 : IP Interrupt Enable Register (Read/Write)
-//        bit 0 - enable ap_done interrupt (Read/Write)
-//        bit 1 - enable ap_ready interrupt (Read/Write)
-//        others - reserved
-// 0x0c : IP Interrupt Status Register (Read/TOW)
-//        bit 0 - ap_done (Read/TOW)
-//        bit 1 - ap_ready (Read/TOW)
-//        others - reserved
+// 0x00 : reserved
+// 0x04 : reserved
+// 0x08 : reserved
+// 0x0c : reserved
 // 0x10 : Data signal of A_DRAM
 //        bit 31~0 - A_DRAM[31:0] (Read/Write)
 // 0x14 : Data signal of A_DRAM
 //        bit 31~0 - A_DRAM[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of Q_DRAM
-//        bit 31~0 - Q_DRAM[31:0] (Read/Write)
-// 0x20 : Data signal of Q_DRAM
-//        bit 31~0 - Q_DRAM[63:32] (Read/Write)
+// 0x1c : Data signal of B_DRAM
+//        bit 31~0 - B_DRAM[31:0] (Read/Write)
+// 0x20 : Data signal of B_DRAM
+//        bit 31~0 - B_DRAM[63:32] (Read/Write)
 // 0x24 : reserved
-// 0x28 : Data signal of R_DRAM
-//        bit 31~0 - R_DRAM[31:0] (Read/Write)
-// 0x2c : Data signal of R_DRAM
-//        bit 31~0 - R_DRAM[63:32] (Read/Write)
+// 0x28 : Data signal of C_DRAM
+//        bit 31~0 - C_DRAM[31:0] (Read/Write)
+// 0x2c : Data signal of C_DRAM
+//        bit 31~0 - C_DRAM[63:32] (Read/Write)
 // 0x30 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL       = 6'h00,
-    ADDR_GIE           = 6'h04,
-    ADDR_IER           = 6'h08,
-    ADDR_ISR           = 6'h0c,
     ADDR_A_DRAM_DATA_0 = 6'h10,
     ADDR_A_DRAM_DATA_1 = 6'h14,
     ADDR_A_DRAM_CTRL   = 6'h18,
-    ADDR_Q_DRAM_DATA_0 = 6'h1c,
-    ADDR_Q_DRAM_DATA_1 = 6'h20,
-    ADDR_Q_DRAM_CTRL   = 6'h24,
-    ADDR_R_DRAM_DATA_0 = 6'h28,
-    ADDR_R_DRAM_DATA_1 = 6'h2c,
-    ADDR_R_DRAM_CTRL   = 6'h30,
+    ADDR_B_DRAM_DATA_0 = 6'h1c,
+    ADDR_B_DRAM_DATA_1 = 6'h20,
+    ADDR_B_DRAM_CTRL   = 6'h24,
+    ADDR_C_DRAM_DATA_0 = 6'h28,
+    ADDR_C_DRAM_DATA_1 = 6'h2c,
+    ADDR_C_DRAM_CTRL   = 6'h30,
     WRIDLE             = 2'd0,
     WRDATA             = 2'd1,
     WRRESP             = 2'd2,
@@ -116,23 +92,9 @@ localparam
     wire                          ar_hs;
     wire [ADDR_BITS-1:0]          raddr;
     // internal registers
-    reg                           int_ap_idle;
-    reg                           int_ap_ready = 1'b0;
-    wire                          task_ap_ready;
-    reg                           int_ap_done = 1'b0;
-    wire                          task_ap_done;
-    reg                           int_task_ap_done = 1'b0;
-    reg                           int_ap_start = 1'b0;
-    reg                           int_interrupt = 1'b0;
-    reg                           int_auto_restart = 1'b0;
-    reg                           auto_restart_status = 1'b0;
-    wire                          auto_restart_done;
-    reg                           int_gie = 1'b0;
-    reg  [1:0]                    int_ier = 2'b0;
-    reg  [1:0]                    int_isr = 2'b0;
     reg  [63:0]                   int_A_DRAM = 'b0;
-    reg  [63:0]                   int_Q_DRAM = 'b0;
-    reg  [63:0]                   int_R_DRAM = 'b0;
+    reg  [63:0]                   int_B_DRAM = 'b0;
+    reg  [63:0]                   int_C_DRAM = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -225,40 +187,23 @@ always @(posedge ACLK) begin
         if (ar_hs) begin
             rdata <= 'b0;
             case (raddr)
-                ADDR_AP_CTRL: begin
-                    rdata[0] <= int_ap_start;
-                    rdata[1] <= int_task_ap_done;
-                    rdata[2] <= int_ap_idle;
-                    rdata[3] <= int_ap_ready;
-                    rdata[7] <= int_auto_restart;
-                    rdata[9] <= int_interrupt;
-                end
-                ADDR_GIE: begin
-                    rdata <= int_gie;
-                end
-                ADDR_IER: begin
-                    rdata <= int_ier;
-                end
-                ADDR_ISR: begin
-                    rdata <= int_isr;
-                end
                 ADDR_A_DRAM_DATA_0: begin
                     rdata <= int_A_DRAM[31:0];
                 end
                 ADDR_A_DRAM_DATA_1: begin
                     rdata <= int_A_DRAM[63:32];
                 end
-                ADDR_Q_DRAM_DATA_0: begin
-                    rdata <= int_Q_DRAM[31:0];
+                ADDR_B_DRAM_DATA_0: begin
+                    rdata <= int_B_DRAM[31:0];
                 end
-                ADDR_Q_DRAM_DATA_1: begin
-                    rdata <= int_Q_DRAM[63:32];
+                ADDR_B_DRAM_DATA_1: begin
+                    rdata <= int_B_DRAM[63:32];
                 end
-                ADDR_R_DRAM_DATA_0: begin
-                    rdata <= int_R_DRAM[31:0];
+                ADDR_C_DRAM_DATA_0: begin
+                    rdata <= int_C_DRAM[31:0];
                 end
-                ADDR_R_DRAM_DATA_1: begin
-                    rdata <= int_R_DRAM[63:32];
+                ADDR_C_DRAM_DATA_1: begin
+                    rdata <= int_C_DRAM[63:32];
                 end
             endcase
         end
@@ -267,146 +212,9 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt         = int_interrupt;
-assign ap_start          = int_ap_start;
-assign task_ap_done      = (ap_done && !auto_restart_status) || auto_restart_done;
-assign task_ap_ready     = ap_ready && !int_auto_restart;
-assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
-assign A_DRAM            = int_A_DRAM;
-assign Q_DRAM            = int_Q_DRAM;
-assign R_DRAM            = int_R_DRAM;
-// int_interrupt
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_interrupt <= 1'b0;
-    else if (ACLK_EN) begin
-        if (int_gie && (|int_isr))
-            int_interrupt <= 1'b1;
-        else
-            int_interrupt <= 1'b0;
-    end
-end
-
-// int_ap_start
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_ap_start <= 1'b0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_AP_CTRL && WSTRB[0] && WDATA[0])
-            int_ap_start <= 1'b1;
-        else if (ap_ready)
-            int_ap_start <= int_auto_restart; // clear on handshake/auto restart
-    end
-end
-
-// int_ap_done
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_ap_done <= 1'b0;
-    else if (ACLK_EN) begin
-            int_ap_done <= ap_done;
-    end
-end
-
-// int_task_ap_done
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_task_ap_done <= 1'b0;
-    else if (ACLK_EN) begin
-        if (task_ap_done)
-            int_task_ap_done <= 1'b1;
-        else if (ar_hs && raddr == ADDR_AP_CTRL)
-            int_task_ap_done <= 1'b0; // clear on read
-    end
-end
-
-// int_ap_idle
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_ap_idle <= 1'b0;
-    else if (ACLK_EN) begin
-            int_ap_idle <= ap_idle;
-    end
-end
-
-// int_ap_ready
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_ap_ready <= 1'b0;
-    else if (ACLK_EN) begin
-        if (task_ap_ready)
-            int_ap_ready <= 1'b1;
-        else if (ar_hs && raddr == ADDR_AP_CTRL)
-            int_ap_ready <= 1'b0;
-    end
-end
-
-// int_auto_restart
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_auto_restart <= 1'b0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_AP_CTRL && WSTRB[0])
-            int_auto_restart <=  WDATA[7];
-    end
-end
-
-// auto_restart_status
-always @(posedge ACLK) begin
-    if (ARESET)
-        auto_restart_status <= 1'b0;
-    else if (ACLK_EN) begin
-        if (int_auto_restart)
-            auto_restart_status <= 1'b1;
-        else if (ap_idle)
-            auto_restart_status <= 1'b0;
-    end
-end
-
-// int_gie
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_gie <= 1'b0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_GIE && WSTRB[0])
-            int_gie <= WDATA[0];
-    end
-end
-
-// int_ier
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_ier <= 1'b0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_IER && WSTRB[0])
-            int_ier <= WDATA[1:0];
-    end
-end
-
-// int_isr[0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_isr[0] <= 1'b0;
-    else if (ACLK_EN) begin
-        if (int_ier[0] & ap_done)
-            int_isr[0] <= 1'b1;
-        else if (w_hs && waddr == ADDR_ISR && WSTRB[0])
-            int_isr[0] <= int_isr[0] ^ WDATA[0]; // toggle on write
-    end
-end
-
-// int_isr[1]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_isr[1] <= 1'b0;
-    else if (ACLK_EN) begin
-        if (int_ier[1] & ap_ready)
-            int_isr[1] <= 1'b1;
-        else if (w_hs && waddr == ADDR_ISR && WSTRB[0])
-            int_isr[1] <= int_isr[1] ^ WDATA[1]; // toggle on write
-    end
-end
-
+assign A_DRAM = int_A_DRAM;
+assign B_DRAM = int_B_DRAM;
+assign C_DRAM = int_C_DRAM;
 // int_A_DRAM[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
@@ -427,56 +235,46 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_Q_DRAM[31:0]
+// int_B_DRAM[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_Q_DRAM[31:0] <= 0;
+        int_B_DRAM[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_Q_DRAM_DATA_0)
-            int_Q_DRAM[31:0] <= (WDATA[31:0] & wmask) | (int_Q_DRAM[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_B_DRAM_DATA_0)
+            int_B_DRAM[31:0] <= (WDATA[31:0] & wmask) | (int_B_DRAM[31:0] & ~wmask);
     end
 end
 
-// int_Q_DRAM[63:32]
+// int_B_DRAM[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_Q_DRAM[63:32] <= 0;
+        int_B_DRAM[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_Q_DRAM_DATA_1)
-            int_Q_DRAM[63:32] <= (WDATA[31:0] & wmask) | (int_Q_DRAM[63:32] & ~wmask);
+        if (w_hs && waddr == ADDR_B_DRAM_DATA_1)
+            int_B_DRAM[63:32] <= (WDATA[31:0] & wmask) | (int_B_DRAM[63:32] & ~wmask);
     end
 end
 
-// int_R_DRAM[31:0]
+// int_C_DRAM[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_R_DRAM[31:0] <= 0;
+        int_C_DRAM[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_R_DRAM_DATA_0)
-            int_R_DRAM[31:0] <= (WDATA[31:0] & wmask) | (int_R_DRAM[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_C_DRAM_DATA_0)
+            int_C_DRAM[31:0] <= (WDATA[31:0] & wmask) | (int_C_DRAM[31:0] & ~wmask);
     end
 end
 
-// int_R_DRAM[63:32]
+// int_C_DRAM[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_R_DRAM[63:32] <= 0;
+        int_C_DRAM[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_R_DRAM_DATA_1)
-            int_R_DRAM[63:32] <= (WDATA[31:0] & wmask) | (int_R_DRAM[63:32] & ~wmask);
+        if (w_hs && waddr == ADDR_C_DRAM_DATA_1)
+            int_C_DRAM[63:32] <= (WDATA[31:0] & wmask) | (int_C_DRAM[63:32] & ~wmask);
     end
 end
 
-//synthesis translate_off
-always @(posedge ACLK) begin
-    if (ACLK_EN) begin
-        if (int_gie & ~int_isr[0] & int_ier[0] & ap_done)
-            $display ("// Interrupt Monitor : interrupt for ap_done detected @ \"%0t\"", $time);
-        if (int_gie & ~int_isr[1] & int_ier[1] & ap_ready)
-            $display ("// Interrupt Monitor : interrupt for ap_ready detected @ \"%0t\"", $time);
-    end
-end
-//synthesis translate_on
 
 //------------------------Memory logic-------------------
 

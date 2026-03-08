@@ -13,7 +13,6 @@
     <UIConfigurations>
         <UIAutosynConf boardInfo="Zynq UltraScale+ ZCU104 Evaluation Board (xczu7ev-ffvc1156-2-e) " hideTrivialOp="true" isBasedOnBoard="true" isSolutionDirty="true" isStopAskAgain="false" showDetailDesignViewer="false">
             <Platform>xilinx/zynquplus/zynquplus</Platform>
-            <Platform>xilinx/zynquplus/zynquplus_fpv7</Platform>
             <customLibs/>
         </UIAutosynConf>
         <UIIPPackagerConf AskAgain="true" DescriptionButton="false" LibraryButton="false" RTLLanguage="verilog" UseNetList="none" VendorButton="false" VersionButton="false" evaluateRTL="false" setup="false">

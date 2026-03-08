@@ -1,41 +1,27 @@
 # This script segment is generated automatically by AutoPilot
 
-set name top_fadd_32ns_32ns_32_4_full_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 3 ALLOW_PRAGMA 1
-}
-
-
-set name top_fadd_32ns_32ns_32_4_full_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 3 ALLOW_PRAGMA 1
-}
-
-
-set name top_fadd_32ns_32ns_32_4_full_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 3 ALLOW_PRAGMA 1
-}
-
-
-set name top_fadd_32ns_32ns_32_4_full_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 3 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler top_A_local_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler top_memA_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+	::AP::rtl_comp_handler top_C_local_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler top_memQ_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+	::AP::rtl_comp_handler top_gmem0_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
 }
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler top_memR_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+	::AP::rtl_comp_handler top_gmem1_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler top_gmem2_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
 }
 
 
@@ -56,7 +42,7 @@ A_DRAM {
 	offset 16
 	offset_end 27
 }
-Q_DRAM { 
+B_DRAM { 
 	dir I
 	width 64
 	depth 1
@@ -64,19 +50,13 @@ Q_DRAM {
 	offset 28
 	offset_end 39
 }
-R_DRAM { 
+C_DRAM { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
 	offset 40
 	offset_end 51
-}
-ap_start { }
-ap_done { }
-ap_ready { }
-ap_idle { }
-interrupt {
 }
 }
 dict set axilite_register_dict control $port_control
@@ -86,7 +66,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 167 \
+			id 542 \
 			corename top_control_axilite \
 			name top_control_s_axi \
 			ports {$port_control} \
@@ -106,6 +86,65 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler top_control_s_axi BINDTYPE interface TYPE interface_s_axilite
 }
 
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 546 \
+    name size_A \
+    type other \
+    dir I \
+    reset_level 0 \
+    sync_rst true \
+    corename dc_size_A \
+    op interface \
+    ports { size_A { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 547 \
+    name size_B \
+    type other \
+    dir I \
+    reset_level 0 \
+    sync_rst true \
+    corename dc_size_B \
+    op interface \
+    ports { size_B { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 548 \
+    name size_C \
+    type other \
+    dir I \
+    reset_level 0 \
+    sync_rst true \
+    corename dc_size_C \
+    op interface \
+    ports { size_C { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id -1 \
+    name ap_ctrl \
+    type ap_ctrl \
+    reset_level 0 \
+    sync_rst true \
+    corename ap_ctrl \
+    op interface \
+    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
+} "
+}
+
 
 # Adapter definition:
 set PortName ap_clk
@@ -113,7 +152,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_clock] == "cg_default_interface_gen_clock"} {
 eval "cg_default_interface_gen_clock { \
-    id -1 \
+    id -2 \
     name ${PortName} \
     reset_level 0 \
     sync_rst true \
@@ -133,7 +172,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_reset] == "cg_default_interface_gen_reset"} {
 eval "cg_default_interface_gen_reset { \
-    id -2 \
+    id -3 \
     name ${PortName} \
     reset_level 0 \
     sync_rst true \

@@ -1,0 +1,12 @@
+<pragmas>
+<pragma file="top_cmplx.cpp" line="139" pragmaType="pipeline" parentfunction="top" off="0" ii="1" rewind="0" style=""/>
+<pragma file="top_cmplx.cpp" line="58" pragmaType="interface" parentfunction="top" mode="m_axi" port="A_DRAM" bundle="memA" offset="slave" name="" depth="28" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="top_cmplx.cpp" line="59" pragmaType="interface" parentfunction="top" mode="m_axi" port="Q_DRAM" bundle="memQ" offset="slave" name="" depth="28" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="top_cmplx.cpp" line="60" pragmaType="interface" parentfunction="top" mode="m_axi" port="R_DRAM" bundle="memR" offset="slave" name="" depth="16" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="top_cmplx.cpp" line="61" pragmaType="interface" parentfunction="top" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="top_cmplx.cpp" line="73" pragmaType="array_partition" parentfunction="top" dim="0" factor="0" mode="complete" dynamic="0" variable="A"/>
+<pragma file="top_cmplx.cpp" line="74" pragmaType="array_partition" parentfunction="top" dim="0" factor="0" mode="complete" dynamic="0" variable="Q"/>
+<pragma file="top_cmplx.cpp" line="75" pragmaType="array_partition" parentfunction="top" dim="0" factor="0" mode="complete" dynamic="0" variable="R"/>
+<pragma file="top_cmplx.cpp" line="77" pragmaType="array_partition" parentfunction="top" dim="2" factor="0" mode="complete" dynamic="0" variable="Q_out"/>
+<pragma file="top_cmplx.cpp" line="78" pragmaType="array_partition" parentfunction="top" dim="2" factor="0" mode="complete" dynamic="0" variable="R_out"/>
+</pragmas>

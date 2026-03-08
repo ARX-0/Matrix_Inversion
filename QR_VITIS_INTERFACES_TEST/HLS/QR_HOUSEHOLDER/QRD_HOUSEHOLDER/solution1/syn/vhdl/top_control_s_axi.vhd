@@ -34,53 +34,33 @@ port (
     RRESP                 :out  STD_LOGIC_VECTOR(1 downto 0);
     RVALID                :out  STD_LOGIC;
     RREADY                :in   STD_LOGIC;
-    interrupt             :out  STD_LOGIC;
     A_DRAM                :out  STD_LOGIC_VECTOR(63 downto 0);
-    Q_DRAM                :out  STD_LOGIC_VECTOR(63 downto 0);
-    R_DRAM                :out  STD_LOGIC_VECTOR(63 downto 0);
-    ap_start              :out  STD_LOGIC;
-    ap_done               :in   STD_LOGIC;
-    ap_ready              :in   STD_LOGIC;
-    ap_idle               :in   STD_LOGIC
+    B_DRAM                :out  STD_LOGIC_VECTOR(63 downto 0);
+    C_DRAM                :out  STD_LOGIC_VECTOR(63 downto 0)
 );
 end entity top_control_s_axi;
 
 -- ------------------------Address Info-------------------
--- Protocol Used: ap_ctrl_hs
+-- Protocol Used: ap_ctrl_none
 --
--- 0x00 : Control signals
---        bit 0  - ap_start (Read/Write/COH)
---        bit 1  - ap_done (Read/COR)
---        bit 2  - ap_idle (Read)
---        bit 3  - ap_ready (Read/COR)
---        bit 7  - auto_restart (Read/Write)
---        bit 9  - interrupt (Read)
---        others - reserved
--- 0x04 : Global Interrupt Enable Register
---        bit 0  - Global Interrupt Enable (Read/Write)
---        others - reserved
--- 0x08 : IP Interrupt Enable Register (Read/Write)
---        bit 0 - enable ap_done interrupt (Read/Write)
---        bit 1 - enable ap_ready interrupt (Read/Write)
---        others - reserved
--- 0x0c : IP Interrupt Status Register (Read/TOW)
---        bit 0 - ap_done (Read/TOW)
---        bit 1 - ap_ready (Read/TOW)
---        others - reserved
+-- 0x00 : reserved
+-- 0x04 : reserved
+-- 0x08 : reserved
+-- 0x0c : reserved
 -- 0x10 : Data signal of A_DRAM
 --        bit 31~0 - A_DRAM[31:0] (Read/Write)
 -- 0x14 : Data signal of A_DRAM
 --        bit 31~0 - A_DRAM[63:32] (Read/Write)
 -- 0x18 : reserved
--- 0x1c : Data signal of Q_DRAM
---        bit 31~0 - Q_DRAM[31:0] (Read/Write)
--- 0x20 : Data signal of Q_DRAM
---        bit 31~0 - Q_DRAM[63:32] (Read/Write)
+-- 0x1c : Data signal of B_DRAM
+--        bit 31~0 - B_DRAM[31:0] (Read/Write)
+-- 0x20 : Data signal of B_DRAM
+--        bit 31~0 - B_DRAM[63:32] (Read/Write)
 -- 0x24 : reserved
--- 0x28 : Data signal of R_DRAM
---        bit 31~0 - R_DRAM[31:0] (Read/Write)
--- 0x2c : Data signal of R_DRAM
---        bit 31~0 - R_DRAM[63:32] (Read/Write)
+-- 0x28 : Data signal of C_DRAM
+--        bit 31~0 - C_DRAM[31:0] (Read/Write)
+-- 0x2c : Data signal of C_DRAM
+--        bit 31~0 - C_DRAM[63:32] (Read/Write)
 -- 0x30 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -89,19 +69,15 @@ architecture behave of top_control_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL       : INTEGER := 16#00#;
-    constant ADDR_GIE           : INTEGER := 16#04#;
-    constant ADDR_IER           : INTEGER := 16#08#;
-    constant ADDR_ISR           : INTEGER := 16#0c#;
     constant ADDR_A_DRAM_DATA_0 : INTEGER := 16#10#;
     constant ADDR_A_DRAM_DATA_1 : INTEGER := 16#14#;
     constant ADDR_A_DRAM_CTRL   : INTEGER := 16#18#;
-    constant ADDR_Q_DRAM_DATA_0 : INTEGER := 16#1c#;
-    constant ADDR_Q_DRAM_DATA_1 : INTEGER := 16#20#;
-    constant ADDR_Q_DRAM_CTRL   : INTEGER := 16#24#;
-    constant ADDR_R_DRAM_DATA_0 : INTEGER := 16#28#;
-    constant ADDR_R_DRAM_DATA_1 : INTEGER := 16#2c#;
-    constant ADDR_R_DRAM_CTRL   : INTEGER := 16#30#;
+    constant ADDR_B_DRAM_DATA_0 : INTEGER := 16#1c#;
+    constant ADDR_B_DRAM_DATA_1 : INTEGER := 16#20#;
+    constant ADDR_B_DRAM_CTRL   : INTEGER := 16#24#;
+    constant ADDR_C_DRAM_DATA_0 : INTEGER := 16#28#;
+    constant ADDR_C_DRAM_DATA_1 : INTEGER := 16#2c#;
+    constant ADDR_C_DRAM_CTRL   : INTEGER := 16#30#;
     constant ADDR_BITS         : INTEGER := 6;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -116,23 +92,9 @@ architecture behave of top_control_s_axi is
     signal ARREADY_t           : STD_LOGIC;
     signal RVALID_t            : STD_LOGIC;
     -- internal registers
-    signal int_ap_idle         : STD_LOGIC := '0';
-    signal int_ap_ready        : STD_LOGIC := '0';
-    signal task_ap_ready       : STD_LOGIC;
-    signal int_ap_done         : STD_LOGIC := '0';
-    signal task_ap_done        : STD_LOGIC;
-    signal int_task_ap_done    : STD_LOGIC := '0';
-    signal int_ap_start        : STD_LOGIC := '0';
-    signal int_interrupt       : STD_LOGIC := '0';
-    signal int_auto_restart    : STD_LOGIC := '0';
-    signal auto_restart_status : STD_LOGIC := '0';
-    signal auto_restart_done   : STD_LOGIC;
-    signal int_gie             : STD_LOGIC := '0';
-    signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_A_DRAM          : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_Q_DRAM          : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_R_DRAM          : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_B_DRAM          : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_C_DRAM          : UNSIGNED(63 downto 0) := (others => '0');
 
 
 begin
@@ -248,31 +210,18 @@ begin
                 if (ar_hs = '1') then
                     rdata_data <= (others => '0');
                     case (TO_INTEGER(raddr)) is
-                    when ADDR_AP_CTRL =>
-                        rdata_data(9) <= int_interrupt;
-                        rdata_data(7) <= int_auto_restart;
-                        rdata_data(3) <= int_ap_ready;
-                        rdata_data(2) <= int_ap_idle;
-                        rdata_data(1) <= int_task_ap_done;
-                        rdata_data(0) <= int_ap_start;
-                    when ADDR_GIE =>
-                        rdata_data(0) <= int_gie;
-                    when ADDR_IER =>
-                        rdata_data(1 downto 0) <= int_ier;
-                    when ADDR_ISR =>
-                        rdata_data(1 downto 0) <= int_isr;
                     when ADDR_A_DRAM_DATA_0 =>
                         rdata_data <= RESIZE(int_A_DRAM(31 downto 0), 32);
                     when ADDR_A_DRAM_DATA_1 =>
                         rdata_data <= RESIZE(int_A_DRAM(63 downto 32), 32);
-                    when ADDR_Q_DRAM_DATA_0 =>
-                        rdata_data <= RESIZE(int_Q_DRAM(31 downto 0), 32);
-                    when ADDR_Q_DRAM_DATA_1 =>
-                        rdata_data <= RESIZE(int_Q_DRAM(63 downto 32), 32);
-                    when ADDR_R_DRAM_DATA_0 =>
-                        rdata_data <= RESIZE(int_R_DRAM(31 downto 0), 32);
-                    when ADDR_R_DRAM_DATA_1 =>
-                        rdata_data <= RESIZE(int_R_DRAM(63 downto 32), 32);
+                    when ADDR_B_DRAM_DATA_0 =>
+                        rdata_data <= RESIZE(int_B_DRAM(31 downto 0), 32);
+                    when ADDR_B_DRAM_DATA_1 =>
+                        rdata_data <= RESIZE(int_B_DRAM(63 downto 32), 32);
+                    when ADDR_C_DRAM_DATA_0 =>
+                        rdata_data <= RESIZE(int_C_DRAM(31 downto 0), 32);
+                    when ADDR_C_DRAM_DATA_1 =>
+                        rdata_data <= RESIZE(int_C_DRAM(63 downto 32), 32);
                     when others =>
                         NULL;
                     end case;
@@ -282,184 +231,9 @@ begin
     end process;
 
 -- ----------------------- Register logic ----------------
-    interrupt            <= int_interrupt;
-    ap_start             <= int_ap_start;
-    task_ap_done         <= (ap_done and not auto_restart_status) or auto_restart_done;
-    task_ap_ready        <= ap_ready and not int_auto_restart;
-    auto_restart_done    <= auto_restart_status and (ap_idle and not int_ap_idle);
     A_DRAM               <= STD_LOGIC_VECTOR(int_A_DRAM);
-    Q_DRAM               <= STD_LOGIC_VECTOR(int_Q_DRAM);
-    R_DRAM               <= STD_LOGIC_VECTOR(int_R_DRAM);
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_interrupt <= '0';
-            elsif (ACLK_EN = '1') then
-                if (int_gie = '1' and (int_isr(0) or int_isr(1)) = '1') then
-                    int_interrupt <= '1';
-                else
-                    int_interrupt <= '0';
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_ap_start <= '0';
-            elsif (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_AP_CTRL and WSTRB(0) = '1' and WDATA(0) = '1') then
-                    int_ap_start <= '1';
-                elsif (ap_ready = '1') then
-                    int_ap_start <= int_auto_restart; -- clear on handshake/auto restart
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_ap_done <= '0';
-            elsif (ACLK_EN = '1') then
-                if (true) then
-                    int_ap_done <= ap_done;
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_task_ap_done <= '0';
-            elsif (ACLK_EN = '1') then
-                if (task_ap_done = '1') then
-                    int_task_ap_done <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_AP_CTRL) then
-                    int_task_ap_done <= '0'; -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_ap_idle <= '0';
-            elsif (ACLK_EN = '1') then
-                if (true) then
-                    int_ap_idle <= ap_idle;
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_ap_ready <= '0';
-            elsif (ACLK_EN = '1') then
-                if (task_ap_ready = '1') then
-                    int_ap_ready <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_AP_CTRL) then
-                    int_ap_ready <= '0';
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_auto_restart <= '0';
-            elsif (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_AP_CTRL and WSTRB(0) = '1') then
-                    int_auto_restart <= WDATA(7);
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                auto_restart_status <= '0';
-            elsif (ACLK_EN = '1') then
-                if (int_auto_restart = '1') then
-                    auto_restart_status <= '1';
-                elsif (ap_idle = '1') then
-                    auto_restart_status <= '0';
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_gie <= '0';
-            elsif (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_GIE and WSTRB(0) = '1') then
-                    int_gie <= WDATA(0);
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_ier <= (others=>'0');
-            elsif (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_IER and WSTRB(0) = '1') then
-                    int_ier <= UNSIGNED(WDATA(1 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_isr(0) <= '0';
-            elsif (ACLK_EN = '1') then
-                if (int_ier(0) = '1' and ap_done = '1') then
-                    int_isr(0) <= '1';
-                elsif (w_hs = '1' and waddr = ADDR_ISR and WSTRB(0) = '1') then
-                    int_isr(0) <= int_isr(0) xor WDATA(0); -- toggle on write
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_isr(1) <= '0';
-            elsif (ACLK_EN = '1') then
-                if (int_ier(1) = '1' and ap_ready = '1') then
-                    int_isr(1) <= '1';
-                elsif (w_hs = '1' and waddr = ADDR_ISR and WSTRB(0) = '1') then
-                    int_isr(1) <= int_isr(1) xor WDATA(1); -- toggle on write
-                end if;
-            end if;
-        end if;
-    end process;
+    B_DRAM               <= STD_LOGIC_VECTOR(int_B_DRAM);
+    C_DRAM               <= STD_LOGIC_VECTOR(int_C_DRAM);
 
     process (ACLK)
     begin
@@ -487,8 +261,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_Q_DRAM_DATA_0) then
-                    int_Q_DRAM(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_Q_DRAM(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_B_DRAM_DATA_0) then
+                    int_B_DRAM(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_B_DRAM(31 downto 0));
                 end if;
             end if;
         end if;
@@ -498,8 +272,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_Q_DRAM_DATA_1) then
-                    int_Q_DRAM(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_Q_DRAM(63 downto 32));
+                if (w_hs = '1' and waddr = ADDR_B_DRAM_DATA_1) then
+                    int_B_DRAM(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_B_DRAM(63 downto 32));
                 end if;
             end if;
         end if;
@@ -509,8 +283,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_R_DRAM_DATA_0) then
-                    int_R_DRAM(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_R_DRAM(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_C_DRAM_DATA_0) then
+                    int_C_DRAM(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_C_DRAM(31 downto 0));
                 end if;
             end if;
         end if;
@@ -520,8 +294,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_R_DRAM_DATA_1) then
-                    int_R_DRAM(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_R_DRAM(63 downto 32));
+                if (w_hs = '1' and waddr = ADDR_C_DRAM_DATA_1) then
+                    int_C_DRAM(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_C_DRAM(63 downto 32));
                 end if;
             end if;
         end if;

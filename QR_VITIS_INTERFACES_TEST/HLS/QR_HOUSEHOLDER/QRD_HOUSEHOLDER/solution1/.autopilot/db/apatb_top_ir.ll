@@ -3,147 +3,60 @@ source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:2048-i4096:4096-n8:16:32:64-S128-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024"
 target triple = "fpga64-xilinx-none"
 
-; Function Attrs: inaccessiblemem_or_argmemonly noinline willreturn
-define void @apatb_top_ir([4 x float]* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="4" "maxi" %A_DRAM, [4 x float]* noalias nocapture nonnull "fpga.decayed.dim.hint"="4" "maxi" %Q_DRAM, [4 x float]* noalias nocapture nonnull "fpga.decayed.dim.hint"="4" "maxi" %R_DRAM) local_unnamed_addr #0 {
+%"class.hls::burst_maxi<float>" = type { float* }
+
+; Function Attrs: noinline willreturn
+define void @apatb_top_ir(%"class.hls::burst_maxi<float>"* nocapture readonly %A_DRAM, %"class.hls::burst_maxi<float>"* nocapture readonly %B_DRAM, %"class.hls::burst_maxi<float>"* nocapture readonly %C_DRAM, i32 %size_A, i32 %size_B, i32 %size_C) local_unnamed_addr #0 {
 entry:
-  %A_DRAM_copy = alloca [4 x [4 x float]], align 512
-  %Q_DRAM_copy = alloca [4 x [4 x float]], align 512
-  %R_DRAM_copy = alloca [4 x [4 x float]], align 512
-  %0 = bitcast [4 x float]* %A_DRAM to [4 x [4 x float]]*
-  %1 = bitcast [4 x float]* %Q_DRAM to [4 x [4 x float]]*
-  %2 = bitcast [4 x float]* %R_DRAM to [4 x [4 x float]]*
-  call fastcc void @copy_in([4 x [4 x float]]* nonnull %0, [4 x [4 x float]]* nonnull align 512 %A_DRAM_copy, [4 x [4 x float]]* nonnull %1, [4 x [4 x float]]* nonnull align 512 %Q_DRAM_copy, [4 x [4 x float]]* nonnull %2, [4 x [4 x float]]* nonnull align 512 %R_DRAM_copy)
-  call void @apatb_top_hw([4 x [4 x float]]* %A_DRAM_copy, [4 x [4 x float]]* %Q_DRAM_copy, [4 x [4 x float]]* %R_DRAM_copy)
-  call void @copy_back([4 x [4 x float]]* %0, [4 x [4 x float]]* %A_DRAM_copy, [4 x [4 x float]]* %1, [4 x [4 x float]]* %Q_DRAM_copy, [4 x [4 x float]]* %2, [4 x [4 x float]]* %R_DRAM_copy)
+  call fastcc void @copy_in()
+  %0 = getelementptr inbounds %"class.hls::burst_maxi<float>", %"class.hls::burst_maxi<float>"* %A_DRAM, i64 0, i32 0
+  %1 = load float*, float** %0, align 8
+  %2 = getelementptr inbounds %"class.hls::burst_maxi<float>", %"class.hls::burst_maxi<float>"* %B_DRAM, i64 0, i32 0
+  %3 = load float*, float** %2, align 8
+  %4 = getelementptr inbounds %"class.hls::burst_maxi<float>", %"class.hls::burst_maxi<float>"* %C_DRAM, i64 0, i32 0
+  %5 = load float*, float** %4, align 8
+  call void @apatb_top_hw(float* %1, float* %3, float* %5, i32 %size_A, i32 %size_B, i32 %size_C)
+  call void @copy_back()
   ret void
 }
 
-; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_in([4 x [4 x float]]* noalias readonly, [4 x [4 x float]]* noalias align 512, [4 x [4 x float]]* noalias readonly, [4 x [4 x float]]* noalias align 512, [4 x [4 x float]]* noalias readonly, [4 x [4 x float]]* noalias align 512) unnamed_addr #1 {
+; Function Attrs: argmemonly noinline norecurse readnone willreturn
+define internal fastcc void @copy_in() unnamed_addr #1 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a4a4f32([4 x [4 x float]]* align 512 %1, [4 x [4 x float]]* %0)
-  call fastcc void @onebyonecpy_hls.p0a4a4f32([4 x [4 x float]]* align 512 %3, [4 x [4 x float]]* %2)
-  call fastcc void @onebyonecpy_hls.p0a4a4f32([4 x [4 x float]]* align 512 %5, [4 x [4 x float]]* %4)
   ret void
 }
 
-; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @onebyonecpy_hls.p0a4a4f32([4 x [4 x float]]* noalias align 512 %dst, [4 x [4 x float]]* noalias readonly %src) unnamed_addr #2 {
+; Function Attrs: argmemonly noinline norecurse readnone willreturn
+define internal fastcc void @copy_out() unnamed_addr #2 {
 entry:
-  %0 = icmp eq [4 x [4 x float]]* %dst, null
-  %1 = icmp eq [4 x [4 x float]]* %src, null
-  %2 = or i1 %0, %1
-  br i1 %2, label %ret, label %copy
-
-copy:                                             ; preds = %entry
-  call void @arraycpy_hls.p0a4a4f32([4 x [4 x float]]* nonnull %dst, [4 x [4 x float]]* nonnull %src, i64 4)
-  br label %ret
-
-ret:                                              ; preds = %copy, %entry
   ret void
 }
 
-; Function Attrs: argmemonly noinline norecurse willreturn
-define void @arraycpy_hls.p0a4a4f32([4 x [4 x float]]* %dst, [4 x [4 x float]]* readonly %src, i64 %num) local_unnamed_addr #3 {
+declare void @apatb_top_hw(float*, float*, float*, i32, i32, i32)
+
+; Function Attrs: argmemonly noinline norecurse readnone willreturn
+define internal fastcc void @copy_back() unnamed_addr #2 {
 entry:
-  %0 = icmp eq [4 x [4 x float]]* %src, null
-  %1 = icmp eq [4 x [4 x float]]* %dst, null
-  %2 = or i1 %1, %0
-  br i1 %2, label %ret, label %copy
-
-copy:                                             ; preds = %entry
-  %for.loop.cond1 = icmp sgt i64 %num, 0
-  br i1 %for.loop.cond1, label %for.loop.lr.ph, label %copy.split
-
-for.loop.lr.ph:                                   ; preds = %copy
-  br label %for.loop
-
-for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
-  %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %dst.addr = getelementptr [4 x [4 x float]], [4 x [4 x float]]* %dst, i64 0, i64 %for.loop.idx2
-  %src.addr = getelementptr [4 x [4 x float]], [4 x [4 x float]]* %src, i64 0, i64 %for.loop.idx2
-  call void @arraycpy_hls.p0a4f32([4 x float]* %dst.addr, [4 x float]* %src.addr, i64 4)
-  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
-  %exitcond = icmp ne i64 %for.loop.idx.next, %num
-  br i1 %exitcond, label %for.loop, label %copy.split
-
-copy.split:                                       ; preds = %for.loop, %copy
-  br label %ret
-
-ret:                                              ; preds = %copy.split, %entry
   ret void
 }
 
-; Function Attrs: argmemonly noinline norecurse willreturn
-define void @arraycpy_hls.p0a4f32([4 x float]* %dst, [4 x float]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @top_hw_stub_wrapper(float*, float*, float*, i32, i32, i32) #3 {
 entry:
-  %0 = icmp eq [4 x float]* %src, null
-  %1 = icmp eq [4 x float]* %dst, null
-  %2 = or i1 %1, %0
-  br i1 %2, label %ret, label %copy
-
-copy:                                             ; preds = %entry
-  %for.loop.cond1 = icmp sgt i64 %num, 0
-  br i1 %for.loop.cond1, label %for.loop.lr.ph, label %copy.split
-
-for.loop.lr.ph:                                   ; preds = %copy
-  br label %for.loop
-
-for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
-  %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %dst.addr = getelementptr [4 x float], [4 x float]* %dst, i64 0, i64 %for.loop.idx2
-  %src.addr = getelementptr [4 x float], [4 x float]* %src, i64 0, i64 %for.loop.idx2
-  %3 = load float, float* %src.addr, align 4
-  store float %3, float* %dst.addr, align 4
-  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
-  %exitcond = icmp ne i64 %for.loop.idx.next, %num
-  br i1 %exitcond, label %for.loop, label %copy.split
-
-copy.split:                                       ; preds = %for.loop, %copy
-  br label %ret
-
-ret:                                              ; preds = %copy.split, %entry
+  call void @copy_out()
+  %6 = bitcast float* %0 to %"class.hls::burst_maxi<float>"*
+  %7 = bitcast float* %1 to %"class.hls::burst_maxi<float>"*
+  %8 = bitcast float* %2 to %"class.hls::burst_maxi<float>"*
+  call void @top_hw_stub(%"class.hls::burst_maxi<float>"* %6, %"class.hls::burst_maxi<float>"* %7, %"class.hls::burst_maxi<float>"* %8, i32 %3, i32 %4, i32 %5)
+  call void @copy_in()
   ret void
 }
 
-; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_out([4 x [4 x float]]* noalias, [4 x [4 x float]]* noalias readonly align 512, [4 x [4 x float]]* noalias, [4 x [4 x float]]* noalias readonly align 512, [4 x [4 x float]]* noalias, [4 x [4 x float]]* noalias readonly align 512) unnamed_addr #4 {
-entry:
-  call fastcc void @onebyonecpy_hls.p0a4a4f32([4 x [4 x float]]* %0, [4 x [4 x float]]* align 512 %1)
-  call fastcc void @onebyonecpy_hls.p0a4a4f32([4 x [4 x float]]* %2, [4 x [4 x float]]* align 512 %3)
-  call fastcc void @onebyonecpy_hls.p0a4a4f32([4 x [4 x float]]* %4, [4 x [4 x float]]* align 512 %5)
-  ret void
-}
+declare void @top_hw_stub(%"class.hls::burst_maxi<float>"*, %"class.hls::burst_maxi<float>"*, %"class.hls::burst_maxi<float>"*, i32, i32, i32)
 
-declare void @apatb_top_hw([4 x [4 x float]]*, [4 x [4 x float]]*, [4 x [4 x float]]*)
-
-; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_back([4 x [4 x float]]* noalias, [4 x [4 x float]]* noalias readonly align 512, [4 x [4 x float]]* noalias, [4 x [4 x float]]* noalias readonly align 512, [4 x [4 x float]]* noalias, [4 x [4 x float]]* noalias readonly align 512) unnamed_addr #4 {
-entry:
-  call fastcc void @onebyonecpy_hls.p0a4a4f32([4 x [4 x float]]* %2, [4 x [4 x float]]* align 512 %3)
-  call fastcc void @onebyonecpy_hls.p0a4a4f32([4 x [4 x float]]* %4, [4 x [4 x float]]* align 512 %5)
-  ret void
-}
-
-define void @top_hw_stub_wrapper([4 x [4 x float]]*, [4 x [4 x float]]*, [4 x [4 x float]]*) #5 {
-entry:
-  call void @copy_out([4 x [4 x float]]* null, [4 x [4 x float]]* %0, [4 x [4 x float]]* null, [4 x [4 x float]]* %1, [4 x [4 x float]]* null, [4 x [4 x float]]* %2)
-  %3 = bitcast [4 x [4 x float]]* %0 to [4 x float]*
-  %4 = bitcast [4 x [4 x float]]* %1 to [4 x float]*
-  %5 = bitcast [4 x [4 x float]]* %2 to [4 x float]*
-  call void @top_hw_stub([4 x float]* %3, [4 x float]* %4, [4 x float]* %5)
-  call void @copy_in([4 x [4 x float]]* null, [4 x [4 x float]]* %0, [4 x [4 x float]]* null, [4 x [4 x float]]* %1, [4 x [4 x float]]* null, [4 x [4 x float]]* %2)
-  ret void
-}
-
-declare void @top_hw_stub([4 x float]*, [4 x float]*, [4 x float]*)
-
-attributes #0 = { inaccessiblemem_or_argmemonly noinline willreturn "fpga.wrapper.func"="wrapper" }
-attributes #1 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="copyin" }
-attributes #2 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="onebyonecpy_hls" }
-attributes #3 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="arraycpy_hls" }
-attributes #4 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="copyout" }
-attributes #5 = { "fpga.wrapper.func"="stub" }
+attributes #0 = { noinline willreturn "fpga.wrapper.func"="wrapper" }
+attributes #1 = { argmemonly noinline norecurse readnone willreturn "fpga.wrapper.func"="copyin" }
+attributes #2 = { argmemonly noinline norecurse readnone willreturn "fpga.wrapper.func"="copyout" }
+attributes #3 = { "fpga.wrapper.func"="stub" }
 
 !llvm.dbg.cu = !{}
 !llvm.ident = !{!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0}

@@ -1,65 +1,83 @@
 {
-    "1": {
-        "name": "top_Pipeline_READ_INIT_VITIS_LOOP_40_1",
-        "file": "..\/top.cpp",
-        "fileloc": "27",
-        "instructions": "206",
-        "total_instructions": "206",
-        "calls": "",
-        "basicblocks": "45",
+    "0": {
+        "name": "top",
+        "file": "top.cpp",
+        "fileloc": "286",
+        "instructions": "927",
+        "total_instructions": "1837",
+        "calls": "4 2 3 1",
+        "basicblocks": "1",
         "loads": {
-            "L": "35"
+            "L": "400"
+        }
+    },
+    "1": {
+        "name": "top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER",
+        "file": "..\/top.cpp",
+        "fileloc": "375",
+        "instructions": "161",
+        "total_instructions": "161",
+        "calls": "",
+        "basicblocks": "6",
+        "loads": {
+            "L": "53"
         },
         "stores": {
-            "L": "38"
+            "L": "31"
         },
         "loops": {
             "L": "1"
         }
     },
-    "0": {
-        "name": "top",
-        "file": "top.cpp",
-        "fileloc": "3",
-        "instructions": "167",
-        "total_instructions": "703",
-        "calls": "1 2 3",
-        "basicblocks": "1",
-        "loads": {
-            "L": "64"
-        }
-    },
     "2": {
-        "name": "top_Pipeline_DUMMY_STAGE",
+        "name": "top_Pipeline_READ_B_OUTER_READ_B_INNER",
         "file": "..\/top.cpp",
-        "fileloc": "50",
-        "instructions": "246",
-        "total_instructions": "246",
+        "fileloc": "329",
+        "instructions": "107",
+        "total_instructions": "107",
         "calls": "",
-        "basicblocks": "50",
+        "basicblocks": "30",
         "loads": {
-            "L": "33"
+            "L": "3"
         },
         "stores": {
-            "L": "36"
+            "L": "31"
         },
         "loops": {
             "L": "1"
         }
     },
     "3": {
-        "name": "top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3",
+        "name": "top_Pipeline_COMPUTE_ROW_COMPUTE_COL",
         "file": "..\/top.cpp",
-        "fileloc": "66",
-        "instructions": "84",
-        "total_instructions": "84",
+        "fileloc": "343",
+        "instructions": "535",
+        "total_instructions": "535",
         "calls": "",
-        "basicblocks": "4",
+        "basicblocks": "30",
         "loads": {
             "L": "3"
         },
         "stores": {
-            "L": "6"
+            "L": "31"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "top_Pipeline_READ_A_OUTER_READ_A_INNER",
+        "file": "..\/top.cpp",
+        "fileloc": "315",
+        "instructions": "107",
+        "total_instructions": "107",
+        "calls": "",
+        "basicblocks": "30",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "31"
         },
         "loops": {
             "L": "1"

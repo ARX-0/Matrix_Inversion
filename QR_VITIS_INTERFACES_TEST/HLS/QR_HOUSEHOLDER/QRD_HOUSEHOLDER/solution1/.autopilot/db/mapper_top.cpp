@@ -242,45 +242,45 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 using hls::sim::Byte;
-extern "C" void top(Byte<4>*, Byte<4>*, Byte<4>*, int, int, int);
-extern "C" void apatb_top_hw(volatile void * __xlx_apatb_param_A_DRAM, volatile void * __xlx_apatb_param_Q_DRAM, volatile void * __xlx_apatb_param_R_DRAM) {
+extern "C" void top(Byte<4>*, Byte<4>*, Byte<4>*, int, int, int, int, int, int);
+extern "C" void apatb_top_hw(volatile void * __xlx_apatb_param_A_DRAM, volatile void * __xlx_apatb_param_B_DRAM, volatile void * __xlx_apatb_param_C_DRAM, int __xlx_apatb_param_size_A, int __xlx_apatb_param_size_B, int __xlx_apatb_param_size_C) {
 using hls::sim::createStream;
   // Collect __xlx_A_DRAM__tmp_vec
 std::vector<Byte<4>> __xlx_A_DRAM__tmp_vec;
-for (size_t i = 0; i < 16; ++i){
+for (size_t i = 0; i < 1; ++i){
 __xlx_A_DRAM__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_A_DRAM)[i]);
 }
-  int __xlx_size_param_A_DRAM = 16;
+  int __xlx_size_param_A_DRAM = 1;
   int __xlx_offset_param_A_DRAM = 0;
   int __xlx_offset_byte_param_A_DRAM = 0*4;
-  // Collect __xlx_Q_DRAM__tmp_vec
-std::vector<Byte<4>> __xlx_Q_DRAM__tmp_vec;
-for (size_t i = 0; i < 16; ++i){
-__xlx_Q_DRAM__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_Q_DRAM)[i]);
+  // Collect __xlx_B_DRAM__tmp_vec
+std::vector<Byte<4>> __xlx_B_DRAM__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_B_DRAM__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_B_DRAM)[i]);
 }
-  int __xlx_size_param_Q_DRAM = 16;
-  int __xlx_offset_param_Q_DRAM = 0;
-  int __xlx_offset_byte_param_Q_DRAM = 0*4;
-  // Collect __xlx_R_DRAM__tmp_vec
-std::vector<Byte<4>> __xlx_R_DRAM__tmp_vec;
-for (size_t i = 0; i < 16; ++i){
-__xlx_R_DRAM__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_R_DRAM)[i]);
+  int __xlx_size_param_B_DRAM = 1;
+  int __xlx_offset_param_B_DRAM = 0;
+  int __xlx_offset_byte_param_B_DRAM = 0*4;
+  // Collect __xlx_C_DRAM__tmp_vec
+std::vector<Byte<4>> __xlx_C_DRAM__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_C_DRAM__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_C_DRAM)[i]);
 }
-  int __xlx_size_param_R_DRAM = 16;
-  int __xlx_offset_param_R_DRAM = 0;
-  int __xlx_offset_byte_param_R_DRAM = 0*4;
+  int __xlx_size_param_C_DRAM = 1;
+  int __xlx_offset_param_C_DRAM = 0;
+  int __xlx_offset_byte_param_C_DRAM = 0*4;
   // DUT call
-  top(__xlx_A_DRAM__tmp_vec.data(), __xlx_Q_DRAM__tmp_vec.data(), __xlx_R_DRAM__tmp_vec.data(), __xlx_offset_byte_param_A_DRAM, __xlx_offset_byte_param_Q_DRAM, __xlx_offset_byte_param_R_DRAM);
+  top(__xlx_A_DRAM__tmp_vec.data(), __xlx_B_DRAM__tmp_vec.data(), __xlx_C_DRAM__tmp_vec.data(), __xlx_offset_byte_param_A_DRAM, __xlx_offset_byte_param_B_DRAM, __xlx_offset_byte_param_C_DRAM, __xlx_apatb_param_size_A, __xlx_apatb_param_size_B, __xlx_apatb_param_size_C);
 // print __xlx_apatb_param_A_DRAM
 for (size_t i = 0; i < __xlx_size_param_A_DRAM; ++i) {
 ((Byte<4>*)__xlx_apatb_param_A_DRAM)[i] = __xlx_A_DRAM__tmp_vec[__xlx_offset_param_A_DRAM+i];
 }
-// print __xlx_apatb_param_Q_DRAM
-for (size_t i = 0; i < __xlx_size_param_Q_DRAM; ++i) {
-((Byte<4>*)__xlx_apatb_param_Q_DRAM)[i] = __xlx_Q_DRAM__tmp_vec[__xlx_offset_param_Q_DRAM+i];
+// print __xlx_apatb_param_B_DRAM
+for (size_t i = 0; i < __xlx_size_param_B_DRAM; ++i) {
+((Byte<4>*)__xlx_apatb_param_B_DRAM)[i] = __xlx_B_DRAM__tmp_vec[__xlx_offset_param_B_DRAM+i];
 }
-// print __xlx_apatb_param_R_DRAM
-for (size_t i = 0; i < __xlx_size_param_R_DRAM; ++i) {
-((Byte<4>*)__xlx_apatb_param_R_DRAM)[i] = __xlx_R_DRAM__tmp_vec[__xlx_offset_param_R_DRAM+i];
+// print __xlx_apatb_param_C_DRAM
+for (size_t i = 0; i < __xlx_size_param_C_DRAM; ++i) {
+((Byte<4>*)__xlx_apatb_param_C_DRAM)[i] = __xlx_C_DRAM__tmp_vec[__xlx_offset_param_C_DRAM+i];
 }
 }

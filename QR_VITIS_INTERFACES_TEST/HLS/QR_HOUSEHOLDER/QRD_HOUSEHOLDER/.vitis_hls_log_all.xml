@@ -3,23 +3,61 @@
   <errorLogs>
     <logs>
       <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:26.209+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_BREADY' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.880+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWUSER' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.867+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWREGION' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.836+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWQOS' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.817+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWPROT' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.790+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWCACHE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.753+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWLOCK' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.667+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWBURST' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.587+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWSIZE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.464+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3/m_axi_memR_AWLEN' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-04T12:56:25.375+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:25.338+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_BREADY' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:24.095+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWUSER' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:24.062+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWREGION' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:24.030+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWQOS' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.999+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWPROT' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.967+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWCACHE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.935+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWLOCK' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.900+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWBURST' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.872+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWSIZE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.835+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWLEN' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.757+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWID' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.714+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWADDR' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.680+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWVALID' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:23.651+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARUSER' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.886+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARREGION' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.857+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARQOS' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.826+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARPROT' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.795+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARCACHE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.764+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARLOCK' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.735+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARBURST' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.706+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARSIZE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.668+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARLEN' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.636+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARID' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.610+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARADDR' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.573+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARVALID' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:18.525+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARUSER' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.479+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARREGION' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.445+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARQOS' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.412+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARPROT' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.388+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARCACHE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.361+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARLOCK' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.334+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARBURST' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.303+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARSIZE' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.270+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARLEN' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.237+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARID' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.207+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARADDR' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.169+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARVALID' to 0." projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:17.110+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-893] User specified latency constraint discarded for region xcl_latency.for.end68.0 since region contains function calls with variable latency.&#xD;&#xA;Resolution: For help on HLS 200-893 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-893.html" projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:15.491+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-893] User specified latency constraint discarded for region xcl_latency.for.end12.1 since region contains function calls with variable latency.&#xD;&#xA;Resolution: For help on HLS 200-893 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-893.html" projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:15.328+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-893] User specified latency constraint discarded for region xcl_latency.entry.2 since region contains function calls with variable latency.&#xD;&#xA;Resolution: For help on HLS 200-893 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-893.html" projectName="QRD_HOUSEHOLDER" solutionName="solution1" date="2026-03-08T19:31:15.277+0530" type="Warning"/>
       </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

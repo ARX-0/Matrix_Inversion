@@ -12,12 +12,12 @@ add_files ../top.hpp
 add_files ../top_tb.cpp
 add_files -tb ../top_tb.cpp -cflags "-Wno-unknown-pragmas"
 open_solution "solution1" -flow_target vivado
-set_part {xc7z020-clg400-1}
+set_part {xczu7ev-ffvc1156-2-e}
 create_clock -period 10 -name default
 config_cosim -tool xsim -trace_level all
 config_export -format ip_catalog -output C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/QR_IP_UNOPTIMISED -rtl verilog
 set_clock_uncertainty 1.25
-source "./QRD_HOUSEHOLDER/solution1/directives.tcl"
+#source "./QRD_HOUSEHOLDER/solution1/directives.tcl"
 csim_design
 csynth_design
 cosim_design -trace_level all

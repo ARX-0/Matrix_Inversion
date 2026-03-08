@@ -1,12 +1,29 @@
 <pragmas>
-<pragma file="../top.cpp" line="51" pragmaType="pipeline" parentfunction="top" off="0" ii="1" rewind="0" style=""/>
-<pragma file="../top.cpp" line="9" pragmaType="interface" parentfunction="top" mode="m_axi" port="A_DRAM" bundle="memA" offset="slave" name="" depth="16" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
-<pragma file="../top.cpp" line="10" pragmaType="interface" parentfunction="top" mode="m_axi" port="Q_DRAM" bundle="memQ" offset="slave" name="" depth="16" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
-<pragma file="../top.cpp" line="11" pragmaType="interface" parentfunction="top" mode="m_axi" port="R_DRAM" bundle="memR" offset="slave" name="" depth="16" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
-<pragma file="../top.cpp" line="13" pragmaType="interface" parentfunction="top" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="../top.cpp" line="29" pragmaType="array_partition" parentfunction="top" dim="2" factor="0" mode="complete" dynamic="0" variable="A"/>
-<pragma file="../top.cpp" line="30" pragmaType="array_partition" parentfunction="top" dim="2" factor="0" mode="complete" dynamic="0" variable="Q"/>
-<pragma file="../top.cpp" line="31" pragmaType="array_partition" parentfunction="top" dim="2" factor="0" mode="complete" dynamic="0" variable="R"/>
-<pragma file="../top.cpp" line="33" pragmaType="array_partition" parentfunction="top" dim="2" factor="0" mode="complete" dynamic="0" variable="R_out"/>
-<pragma file="../top.cpp" line="34" pragmaType="array_partition" parentfunction="top" dim="2" factor="0" mode="complete" dynamic="0" variable="Q_out"/>
+<pragma file="../top.cpp" line="378" pragmaType="pipeline" parentfunction="top" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../top.cpp" line="377" pragmaType="loop_flatten" parentfunction="top" off="0"/>
+<pragma file="../top.cpp" line="344" pragmaType="loop_tripcount" parentfunction="top" min="25" max="25" avg="25"/>
+<pragma file="../top.cpp" line="349" pragmaType="pipeline" parentfunction="top" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../top.cpp" line="348" pragmaType="loop_flatten" parentfunction="top" off="0"/>
+<pragma file="../top.cpp" line="347" pragmaType="loop_tripcount" parentfunction="top" min="25" max="25" avg="25"/>
+<pragma file="../top.cpp" line="355" pragmaType="unroll" parentfunction="top" factor="-1" skip_exit_check="0"/>
+<pragma file="../top.cpp" line="354" pragmaType="loop_tripcount" parentfunction="top" min="8" max="8" avg="8"/>
+<pragma file="../top.cpp" line="332" pragmaType="pipeline" parentfunction="top" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../top.cpp" line="331" pragmaType="loop_flatten" parentfunction="top" off="0"/>
+<pragma file="../top.cpp" line="318" pragmaType="pipeline" parentfunction="top" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../top.cpp" line="317" pragmaType="loop_flatten" parentfunction="top" off="0"/>
+<pragma file="../top.cpp" line="301" pragmaType="array_partition" parentfunction="top" dim="1" factor="0" mode="complete" dynamic="0" variable="A_local"/>
+<pragma file="../top.cpp" line="302" pragmaType="array_partition" parentfunction="top" dim="2" factor="0" mode="complete" dynamic="0" variable="B_local"/>
+<pragma file="../top.cpp" line="303" pragmaType="array_partition" parentfunction="top" dim="2" factor="0" mode="complete" dynamic="0" variable="C_local"/>
+<pragma file="../top.cpp" line="311" pragmaType="latency" parentfunction="top" min="0" max="250"/>
+<pragma file="../top.cpp" line="325" pragmaType="latency" parentfunction="top" min="0" max="250"/>
+<pragma file="../top.cpp" line="371" pragmaType="latency" parentfunction="top" min="0" max="700"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write_request" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<4>::ap_int(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read_request" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write_response" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi4ELb1EEC2EDq4_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<4, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
 </pragmas>

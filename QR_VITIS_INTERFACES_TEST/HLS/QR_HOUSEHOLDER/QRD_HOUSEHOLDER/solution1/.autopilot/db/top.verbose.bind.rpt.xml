@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top'" level="0">
-<item name = "Date">Wed Mar  4 12:56:21 2026
+<item name = "Date">Sun Mar  8 19:31:16 2026
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">QRD_HOUSEHOLDER</item>
@@ -24,16 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">67, 67, 0.670 us, 0.670 us, 68, 68, no</column>
+<column name="">1515, 1515, 15.150 us, 15.150 us, 1516, 1516, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_top_Pipeline_READ_INIT_VITIS_LOOP_40_1_fu_373">top_Pipeline_READ_INIT_VITIS_LOOP_40_1, 18, 18, 0.180 us, 0.180 us, 18, 18, no</column>
-<column name="grp_top_Pipeline_DUMMY_STAGE_fu_412">top_Pipeline_DUMMY_STAGE, 8, 8, 80.000 ns, 80.000 ns, 8, 8, no</column>
-<column name="grp_top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3_fu_482">top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3, 18, 18, 0.180 us, 0.180 us, 18, 18, no</column>
+<column name="grp_top_Pipeline_READ_A_OUTER_READ_A_INNER_fu_4125">top_Pipeline_READ_A_OUTER_READ_A_INNER, 203, 203, 2.030 us, 2.030 us, 203, 203, no</column>
+<column name="grp_top_Pipeline_READ_B_OUTER_READ_B_INNER_fu_4156">top_Pipeline_READ_B_OUTER_READ_B_INNER, 203, 203, 2.030 us, 2.030 us, 203, 203, no</column>
+<column name="grp_top_Pipeline_COMPUTE_ROW_COMPUTE_COL_fu_4187">top_Pipeline_COMPUTE_ROW_COMPUTE_COL, 660, 660, 6.600 us, 6.600 us, 660, 660, no</column>
+<column name="grp_top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER_fu_4716">top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER, 629, 629, 6.290 us, 6.290 us, 629, 629, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
