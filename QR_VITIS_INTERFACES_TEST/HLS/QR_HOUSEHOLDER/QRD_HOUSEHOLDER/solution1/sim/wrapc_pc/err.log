@@ -1,5 +1,5 @@
    Build using "C:/Xilinx/Vitis_HLS/2023.2/tps/win64/msys64/mingw64/bin/g++"
-   Compiling apatb_top_1.cpp
+   Compiling apatb_top_qr.cpp
 In file included from C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:150:0,
                  from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140,
                  from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
@@ -7,7 +7,7 @@ In file included from C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bit
                  from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
                  from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
                  from C:/Xilinx/Vitis_HLS/2023.2/include/ap_fixed.h:9,
-                 from apatb_top_1.cpp:12:
+                 from apatb_top_qr.cpp:12:
 C:/Xilinx/Vitis_HLS/2023.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
  #define __GMP_LIBGMP_DLL  0
  
@@ -17,7 +17,7 @@ In file included from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140:0,
                  from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
                  from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
                  from C:/Xilinx/Vitis_HLS/2023.2/include/ap_fixed.h:9,
-                 from apatb_top_1.cpp:12:
+                 from apatb_top_qr.cpp:12:
 C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:142:0: note: this is the location of the previous definition
  #define __GMP_LIBGMP_DLL 1
  

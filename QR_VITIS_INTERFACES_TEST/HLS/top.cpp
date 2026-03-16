@@ -1,387 +1,318 @@
+/*******************************************************************************
+ * QR_Serial.cpp
+ *
+ * Complex Givens QR decomposition kernel:  A    R  (Q discarded)
+ *   A : P×L  (complex float, flat row-major)
+ *   R : L×L  (complex float, flat row-major, upper-triangular after QR)
+ *
+ * AXI4-Master interface follows the same pattern as top_interface.cpp:
+ *   • Plain DTYPE* pointers — NOT hls::burst_maxi<>
+ *   • m_axi pragma on each pointer  (separate bundle per port)
+ *   • max_read/write_burst_length must be a power of 2
+ *   • Sequential nested loops + #pragma HLS PIPELINE + loop_flatten
+ *      HLS auto-infers one AXI burst per transfer phase
+ *******************************************************************************/
+
 #include "top.hpp"
-/*
-void top(
-    hls::burst_maxi<DTYPE> A_DRAM,
-	hls::burst_maxi<DTYPE> B_DRAM,
-	hls::burst_maxi<DTYPE> C_DRAM,
-	int sizeA, // Size of A (M*K = 25*8 = 200)
-	int sizeB,// Size of B (K*P = 8*25 = 200)
-	int sizeC// Size of C (M*P = 25*25 = 625)
-){
-    // ========================================================================
-    // EXERCISE 1: M_AXI INTERFACE CONFIGURATION WITH BURST_MAXI
-    // ========================================================================
-    // TODO: Configure the M_AXI interfaces
-    // Think about:
-    // - depth: Total number of elements that can be transferred
-    // - latency: Expected DDR latency (typically 32-100 cycles)
-    // - bundle: Should A, B, C be on separate bundles?
-    // - offset: Use slave mode for runtime address configuration
+#include <cmath>   // sqrtf, fabsf
 
-    // Matrix A interface (READ-ONLY, will use CACHE)
-#pragma HLS INTERFACE m_axi port=A_DRAM depth=200 offset=slave bundle=gmem_A \
-    latency=64 num_read_outstanding=16 max_read_burst_length=16
-    // TODO: Add CACHE pragma for A_DRAM
-    // Questions to answer:
-    // Q1: How many ROWS of A do we want to read in parallel?
-    //     - If we process 1 row at a time: ports=1
-    //     - If we process ALL 25 rows in parallel: ports=25
-    //     - Somewhere in between: ports=4, 8, 16?
-    //
-    // Q2: What should 'depth' be for each cache line?
-    //     - Matrix A has K=8 columns per row
-    //     - If depth=8, one cache line = one complete row
-    //     - If depth=16, one cache line = two rows
-    //     - Align with burst_length for efficiency
-    //
-    // Q3: How many cache 'lines' per L1 cache?
-    //     - lines=2: Can hold 2 different row-regions
-    //     - lines=4: Can hold 4 different row-regions
-    //     - More lines = more capacity but more BRAM
-    //
-    // Q4: What should 'l2_lines' be for the shared L2?
-    //     - Must be > lines
-    //     - Typical: 2-4x the L1 lines
-    //     - For ports=25: maybe l2_lines=16-32?
+// ============================================================================
+// ComplexCS — holds the 4 floats of one complex Givens rotation
+// ============================================================================
+struct ComplexCS {
+    float c_r;   //  Re(conj(a)/r)  =  +a_r / r
+    float c_i;   //  Im(conj(a)/r)  =  -a_i / r   (note: minus)
+    float s_r;   //  Re(conj(b)/r)  =  +b_r / r
+    float s_i;   //  Im(conj(b)/r)  =  -b_i / r   (note: minus)
+};
 
-    // #pragma HLS cache port=A_DRAM lines=??? depth=??? ports=??? l2_lines=???
-#pragma HLS CACHE port=A_DRAM depth=16 lines=8 l2_lines =32 ports=25
+// ============================================================================
+// compute_complex_givens()
+// Takes pivot (a) and target (b), both complex  returns rotation (c, s)
+// ============================================================================
+static inline ComplexCS compute_complex_givens(
+    float a_r, float a_i,
+    float b_r, float b_i)
+{
+    #pragma HLS INLINE
 
-    // Matrix B interface (READ-ONLY, will use CACHE)
-#pragma HLS INTERFACE m_axi port=B_DRAM depth=200 offset=slave bundle=gmem_B \
-     latency=64 num_read_outstanding=16 max_read_burst_length=32
+    ComplexCS cs;
 
-    // TODO: Add CACHE pragma for B_DRAM
-    // Questions to answer:
-    // Q1: How many COLUMNS of B do we want to read in parallel?
-    //     - If we compute 1 column of C at a time: ports=1
-    //     - If we compute ALL 25 columns in parallel: ports=25
-    //     - Match with A's ports for balanced parallelism
-    //
-    // Q2: What should 'depth' be for column access?
-    //     - Column access is STRIDED (stride = P = 25)
-    //     - B[0][j], B[1][j], B[2][j]... are 25 elements apart in memory
-    //     - Need larger depth to capture multiple column elements
-    //     - Try depth=32 or 64 to span multiple rows
-    //
-    // Q3: How many 'lines' for column reuse?
-    //     - Columns are scattered, need more lines than A
-    //     - Try lines=8 or 16 (more than A)
-    //
-    // Q4: What should 'l2_lines' be?
-    //     - Larger than A's L2 due to strided access
-    //     - Try l2_lines=32-64
+    float r     = sqrtf(a_r*a_r + a_i*a_i + b_r*b_r + b_i*b_i);
+    float inv_r = (r > 0.0f) ? (1.0f / r) : 0.0f;
 
-    // #pragma HLS cache port=B_DRAM lines=??? depth=??? ports=??? l2_lines=???
-#pragma HLS cache port=B_DRAM lines=8 depth=32 ports=25 l2_lines=64
+    cs.c_r = (r > 0.0f) ?  (a_r * inv_r) : 1.0f;
+    cs.c_i = (r > 0.0f) ? -(a_i * inv_r) : 0.0f;
+    cs.s_r = (r > 0.0f) ?  (b_r * inv_r) : 0.0f;
+    cs.s_i = (r > 0.0f) ? -(b_i * inv_r) : 0.0f;
 
-    // Matrix C interface (WRITE-ONLY, NO CACHE NEEDED)
-    #pragma HLS INTERFACE m_axi port=C_DRAM depth=sizeC latency=3 offset=slave bundle=GMEMC
+    return cs;
+}
 
+// ============================================================================
+// apply_complex_rotation()
+// Updates one (pivot-row, target-row) element pair using rotation (c, s):
+//   top_new =  c * top  +  s * bot
+//   bot_new = -conj(s) * top  +  conj(c) * bot
+// ============================================================================
+static inline void apply_complex_rotation(
+    float  c_r, float  c_i,
+    float  s_r, float  s_i,
+    float &top_r, float &top_i,
+    float &bot_r, float &bot_i)
+{
+    #pragma HLS INLINE
 
-    // S_AXILITE control interface (for CPU control)
-    #pragma HLS INTERFACE s_axilite port=A_DRAM
-    #pragma HLS INTERFACE s_axilite port=B_DRAM
-    #pragma HLS INTERFACE s_axilite port=C_DRAM
-    #pragma HLS INTERFACE s_axilite port=sizeA
-    #pragma HLS INTERFACE s_axilite port=sizeB
-    #pragma HLS INTERFACE s_axilite port=sizeC
-    #pragma HLS INTERFACE s_axilite port=return
+    float tr = top_r, ti = top_i;
+    float br = bot_r, bi = bot_i;
 
+    // Stage 1: 8 multiplies
+    float m0 = c_r*tr;  float m1 = c_i*ti;
+    float m2 = s_r*br;  float m3 = s_i*bi;
+    float m4 = c_r*ti;  float m5 = c_i*tr;
+    float m6 = s_r*bi;  float m7 = s_i*br;
 
-    // ========================================================================
-    // EXERCISE 2: LOCAL BRAM BUFFERS
-    // ========================================================================
-    // We'll use local buffers to give you manual control over burst transfers
-    // This mimics the DRAM->BRAM->Processing->BRAM->DRAM pattern
+    // top_new = c*top + s*bot
+    top_r = (m0 - m1) + (m2 - m3);
+    top_i = (m4 + m5) + (m6 + m7);
 
-    // Local buffers in BRAM (on-chip memory)
-    DTYPE A_local[M][K];  // 25x8 = 200 elements
-    DTYPE B_local[K][P];  // 8x25 = 200 elements
-    DTYPE C_local[M][P];  // 25x25 = 625 elements
+    // bot_new = -conj(s)*top + conj(c)*bot
+    float m8  = s_r*tr; float m9  = s_i*ti;
+    float m10 = s_r*ti; float m11 = s_i*tr;
+    float m12 = c_r*br; float m13 = c_i*bi;
+    float m14 = c_r*bi; float m15 = c_i*br;
 
-    // TODO: ARRAY_PARTITION pragmas
-    // Think about:
-    // Q1: Which dimension of A_local should be partitioned for parallel row access?
-    //     - dim=1 (rows): Enables parallel access to different rows
-    //     - dim=2 (cols): Enables parallel access to different columns within a row
-    //     - complete: Fully partitions (becomes registers, very expensive)
-    //     - cyclic/block with factor: Partial partitioning
-    //
-    // Q2: Which dimension of B_local for parallel column access?
-    //
-    // Q3: Should C_local be partitioned?
+    bot_r = (-m8  + m9)  + (m12 + m13);
+    bot_i = (-m10 + m11) + (m14 - m15);
+}
 
-    // Example options (choose one approach):
-    // Option A: No partitioning (simplest, sequential access)
-    // (no pragma)
+// ============================================================================
+// qr_complex_givens()
+// In-place complex Givens QR on flat 1-D arrays.
+// After this call: rows 0..L-1 of A_real/A_imag hold upper-triangular R.
+// ============================================================================
+static inline void qr_complex_givens(
+    float A_real[SIZE_A],
+    float A_imag[SIZE_A])
+{
+    #pragma HLS INLINE
 
-    // Option B: Partial partitioning (moderate parallelism)
-    // #pragma HLS ARRAY_PARTITION variable=A_local dim=1 type=cyclic factor=???
-    // #pragma HLS ARRAY_PARTITION variable=B_local dim=2 type=cyclic factor=???
-    // #pragma HLS ARRAY_PARTITION variable=C_local dim=2 type=cyclic factor=???
+    COL_LOOP:
+    for (int k = 0; k < L; k++)
+    {
+        #pragma HLS LOOP_TRIPCOUNT min=8 max=8
 
-    // Option C: Complete partitioning (maximum parallelism, high resource cost)
-     #pragma HLS ARRAY_PARTITION variable=A_local dim=1 type=complete
-     #pragma HLS ARRAY_PARTITION variable=B_local dim=2 type=complete
-     #pragma HLS ARRAY_PARTITION variable=C_local dim=2 type=complete
+        ROW_LOOP:
+        for (int i = P - 1; i > k; i--)
+        {
+            #pragma HLS PIPELINE II=2
+            #pragma HLS LOOP_TRIPCOUNT min=1 max=24
 
+            float a_r = A_real[IDX_A(i-1, k)];
+            float a_i = A_imag[IDX_A(i-1, k)];
+            float b_r = A_real[IDX_A(i,   k)];
+            float b_i = A_imag[IDX_A(i,   k)];
 
-    // ========================================================================
-    // EXERCISE 3: MANUAL BURST READ - Matrix A (DRAM -> BRAM)
-    // ========================================================================
-    // TODO: Use burst_maxi to manually control reading Matrix A from DDR
-    //
-    // The burst_maxi interface provides:
-    // - read_request(offset, length): Request a burst read
-    // - read(): Read one element from the burst stream
-    //
-    // Your task: Fill A_local from A_DRAM
+            ComplexCS cs = compute_complex_givens(a_r, a_i, b_r, b_i);
 
-    // Step 1: Issue read request for entire matrix A
-    // A_DRAM.read_request(???, ???);
-    A_DRAM.read_request(0, sizeA);
-    // Step 2: Read data into A_local
-    // HINT: You need nested loops for 2D matrix [M][K]
-    // HINT: Think about the memory layout - row-major storage!
-    //       A[0][0], A[0][1], ..., A[0][7], A[1][0], A[1][1], ...
+            float c_r = cs.c_r, c_i = cs.c_i;
+            float s_r = cs.s_r, s_i = cs.s_i;
 
-    // READ_A_OUTER: for(int i = 0; i < ???; i++) {
-    //     READ_A_INNER: for(int j = 0; j < ???; j++) {
-    //         #pragma HLS PIPELINE II=1
-    //         // TODO: Read one element and store in A_local
-    //         A_local[i][j] = ???;
-    //     }
-    // }
+            TILE_LOOP:
+            for (int j = k; j < L; j += TILE)
+            {
+                #pragma HLS PIPELINE II=2
+                #pragma HLS LOOP_TRIPCOUNT min=1 max=2
 
-    READ_A_OUTER: for(int i=0;i<M;i++){
-#pragma HLS PIPELINE
-    	READ_A_INNER:for(int j = 0;j<K;j++){
-    		A_local[i][j] = A_DRAM.read();
-    	}
-    }
+                float tp_r[TILE], tp_i[TILE];
+                float tg_r[TILE], tg_i[TILE];
+                #pragma HLS ARRAY_PARTITION variable=tp_r complete dim=1
+                #pragma HLS ARRAY_PARTITION variable=tp_i complete dim=1
+                #pragma HLS ARRAY_PARTITION variable=tg_r complete dim=1
+                #pragma HLS ARRAY_PARTITION variable=tg_i complete dim=1
 
-    // ========================================================================
-    // EXERCISE 4: MANUAL BURST READ - Matrix B (DRAM -> BRAM)
-    // ========================================================================
-    // TODO: Similar to A, but for Matrix B [K][P]
+                READ_TILE:
+                for (int jj = 0; jj < TILE; jj++) {
+                    #pragma HLS UNROLL
+                    int col = j + jj;
+                    if (col < L) {
+                        tp_r[jj] = A_real[IDX_A(i-1, col)];
+                        tp_i[jj] = A_imag[IDX_A(i-1, col)];
+                        tg_r[jj] = A_real[IDX_A(i,   col)];
+                        tg_i[jj] = A_imag[IDX_A(i,   col)];
+                    }
+                }
 
-    // B_DRAM.read_request(???, ???);
-    B_DRAM.read_request(0, sizeB);
-    // READ_B_OUTER: for(int i = 0; i < ???; i++) {
-    //     READ_B_INNER: for(int j = 0; j < ???; j++) {
-    //         #pragma HLS PIPELINE II=1
-    //         B_local[i][j] = ???;
-    //     }
-    // }
-    READ_B_OUTER: for(int i=0;i<K;i++){
-#pragma HLS PIPELINE
-    	READ_B_INNER:for(int j = 0;j<P;j++){
-    		B_local[i][j] = B_DRAM.read();
-    	}
-    }
+                COMPUTE_TILE:
+                for (int jj = 0; jj < TILE; jj++) {
+                    #pragma HLS UNROLL
+                    int col = j + jj;
+                    if (col < L) {
+                        apply_complex_rotation(c_r, c_i, s_r, s_i,
+                                               tp_r[jj], tp_i[jj],
+                                               tg_r[jj], tg_i[jj]);
+                    }
+                }
 
-    // ========================================================================
-    // EXERCISE 5: MATRIX MULTIPLICATION COMPUTATION
-    // ========================================================================
-    // Standard algorithm: C[i][j] = (A[i][k] * B[k][j]) for k=0 to K-1
-    //
-    // Now A and B are in BRAM (fast on-chip memory)
-    // This is where the cache would help if we were accessing DRAM directly
-
-    // Outer loop: Iterate over rows of C (and A)
-    COMPUTE_ROW: for(int i = 0; i < M; i++) {
-
-        // TODO: Consider loop optimizations
-        // Options:
-        //(pipeline this level)
-        // - No pragma (let inner loops be pipelined instead)
-
-        // Middle loop: Iterate over columns of C (and B)
-        COMPUTE_COL: for(int j = 0; j < P; j++) {
-#pragma HLS PIPELINE II=1
-            // TODO: Consider optimizations
-            // - #pragma HLS PIPELINE II=1
-            // - #pragma HLS UNROLL factor=???
-
-            // Accumulator for dot product
-            DTYPE accumulator = 0;
-
-            // TODO: If using ap_float with accumulation issues, consider:
-            // DTYPE accumulator;
-            // accumulator = (DTYPE)0.0f;  // explicit conversion
-
-            // Inner loop: Dot product A[i][:] · B[:][j]
-            COMPUTE_DOT: for(int k = 0; k < K; k++) {
-
-                // TODO: THIS IS THE CRITICAL LOOP!
-                // Question: How should this be optimized?
-                //
-                // Option 1: Pipeline with II=1
-                // #pragma HLS PIPELINE II=1
-                //
-                // Option 2: Fully unroll (since K=8 is small)
-                #pragma HLS UNROLL
-                //
-                // Option 3: Partial unroll
-                // #pragma HLS UNROLL factor=4
-                //
-                // Think about:
-                // - K=8 is small, so full unroll is feasible
-                // - Full unroll + array partitioning = all 8 MACs in parallel
-                // - But this requires partitioned arrays
-
-                // The actual MAC operation
-                // TODO: Complete this line
-                // accumulator += A_local[???][???] * B_local[???][???];
-
-                // HINT for ap_float: If you get accumulation errors, try:
-                 DTYPE temp = A_local[i][k] * B_local[k][j];
-                 accumulator += temp;
+                WRITE_TILE:
+                for (int jj = 0; jj < TILE; jj++) {
+                    #pragma HLS UNROLL
+                    int col = j + jj;
+                    if (col < L) {
+                        A_real[IDX_A(i-1, col)] = tp_r[jj];
+                        A_imag[IDX_A(i-1, col)] = tp_i[jj];
+                        A_real[IDX_A(i,   col)] = tg_r[jj];
+                        A_imag[IDX_A(i,   col)] = tg_i[jj];
+                    }
+                }
             }
 
-            // Store result in local buffer
-            C_local[i][j] = accumulator;
+            A_real[IDX_A(i, k)] = 0.0f;
+            A_imag[IDX_A(i, k)] = 0.0f;
+        }
+
+        // Branchless sign normalisation — diagonal must be real and positive
+        float diag_r   = A_real[IDX_A(k, k)];
+        float sign_bit = (diag_r >= 0.0f) ? 1.0f : -1.0f;
+
+        SIGN_LOOP:
+        for (int j = k; j < L; j++) {
+            #pragma HLS UNROLL
+            #pragma HLS LOOP_TRIPCOUNT min=1 max=8
+            A_real[IDX_A(k, j)] *= sign_bit;
+            A_imag[IDX_A(k, j)] *= sign_bit;
         }
     }
-
-
-    // ========================================================================
-    // EXERCISE 6: MANUAL BURST WRITE - Matrix C (BRAM -> DRAM)
-    // ========================================================================
-    // TODO: Write C_local back to C_DRAM using manual burst control
-    //
-    // The burst_maxi interface provides:
-    // - write_request(offset, length): Request a burst write
-    // - write(value): Write one element to the burst stream
-    // - write_response(): Wait for write completion
-
-    // Step 1: Issue write request for entire matrix C
-    // C_DRAM.write_request(???, ???);
-    C_DRAM.write_request(0, sizeC);
-    // Step 2: Write data from C_local
-    // WRITE_C_OUTER: for(int i = 0; i < ???; i++) {
-    //     WRITE_C_INNER: for(int j = 0; j < ???; j++) {
-    //         #pragma HLS PIPELINE II=1
-    //         // TODO: Write one element
-    //         C_DRAM.write(???);
-    //     }
-    // }
-     WRITE_C_OUTER: for(int i = 0; i < M; i++) {
-         WRITE_C_INNER: for(int j = 0; j < P; j++) {
-             #pragma HLS PIPELINE II=1
-        	 // CRITICAL FIX: Don't convert to int!
-        C_DRAM.write(C_local[i][j]);  //  Write DTYPE directly
-         }
-     }
-    // Step 3: Wait for write completion
-    C_DRAM.write_response();
-
 }
-*/
 
-////////////////////////////////////////////////////////////////////////////////
+// ============================================================================
+// END OF SUPPORTING FUNCTIONS
+// ============================================================================
 
 
-void top(
-    hls::burst_maxi<DTYPE> A_DRAM,
-    hls::burst_maxi<DTYPE> B_DRAM,
-    hls::burst_maxi<DTYPE> C_DRAM,
-    int size_A,
-    int size_B,
-    int size_C
+// ============================================================================
+// top_qr() — top-level kernel
+//
+// Interface model: identical to top_interface.cpp
+//   • Separate m_axi bundle per pointer
+//   • max_read/write_burst_length are powers of 2
+//     - SIZE_A = 200   burst_length = 256 (next power of 2  200)
+//     - SIZE_R =  64   burst_length =  64 (exact power of 2)
+//   • Burst inferred from sequential nested loops + PIPELINE + loop_flatten
+//   • No .read_request() / .read() / .write_request() / .write() calls
+// ============================================================================
+void top_qr(
+    DTYPE* A_DRAM_REAL,
+    DTYPE* A_DRAM_IMAG,
+    DTYPE* R_DRAM_REAL,
+    DTYPE* R_DRAM_IMAG,
+    int    size_A,
+    int    size_R
 )
 {
-    // ... Interface configuration ...
+    // -------------------------------------------------------------------------
+    // AXI4-MASTER INTERFACE DIRECTIVES (same pattern as top_interface.cpp)
+    // -------------------------------------------------------------------------
+    // depth  = max number of elements the pointer addresses
+    // max_read/write_burst_length must be a power of 2
+    // Separate bundles so read-A, read-A_imag, write-R, write-R_imag
+    // can be issued on independent AXI channels.
 
-    DTYPE A_local[M][K];
-    DTYPE B_local[K][P];
-    DTYPE C_local[M][P];
+    #pragma HLS INTERFACE m_axi port=A_DRAM_REAL \
+        offset=slave bundle=gmem_A_REAL          \
+        depth=200                                \
+        max_read_burst_length=256                \
+        num_read_outstanding=4
+    #pragma HLS INTERFACE m_axi port=A_DRAM_IMAG \
+        offset=slave bundle=gmem_A_IMAG          \
+        depth=200                                \
+        max_read_burst_length=256                \
+        num_read_outstanding=4
 
-    #pragma HLS ARRAY_PARTITION variable=A_local dim=1 type=complete
-    #pragma HLS ARRAY_PARTITION variable=B_local dim=2 type=complete
-    #pragma HLS ARRAY_PARTITION variable=C_local dim=2 type=complete
+    #pragma HLS INTERFACE m_axi port=R_DRAM_REAL \
+        offset=slave bundle=gmem_R_REAL          \
+        depth=64                                 \
+        max_write_burst_length=64                \
+        num_write_outstanding=4
+    #pragma HLS INTERFACE m_axi port=R_DRAM_IMAG \
+        offset=slave bundle=gmem_R_IMAG          \
+        depth=64                                 \
+        max_write_burst_length=64                \
+        num_write_outstanding=4
 
+    // AXI-Lite slave: all scalars + return
+    #pragma HLS INTERFACE s_axilite port=A_DRAM_REAL bundle=control
+    #pragma HLS INTERFACE s_axilite port=A_DRAM_IMAG bundle=control
+    #pragma HLS INTERFACE s_axilite port=R_DRAM_REAL bundle=control
+    #pragma HLS INTERFACE s_axilite port=R_DRAM_IMAG bundle=control
+    #pragma HLS INTERFACE s_axilite port=size_A      bundle=control
+    #pragma HLS INTERFACE s_axilite port=size_R      bundle=control
+    #pragma HLS INTERFACE s_axilite port=return      bundle=control
 
-    // ========================================================================
-    // READ with Latency Constraint + Flatten
-    // ========================================================================
+    // -------------------------------------------------------------------------
+    // LOCAL BRAM BUFFERS  (on-chip — no DRAM latency during compute)
+    // -------------------------------------------------------------------------
+    DTYPE A_local_real[SIZE_A];
+    DTYPE A_local_imag[SIZE_A];
+    DTYPE R_local_real[SIZE_R];
+    DTYPE R_local_imag[SIZE_R];
 
-    {  // Region for A read
-        #pragma HLS latency max=250  // Hint: 200 elements + overhead
+    #pragma HLS ARRAY_PARTITION variable=A_local_real cyclic factor=4 dim=1
+    #pragma HLS ARRAY_PARTITION variable=A_local_imag cyclic factor=4 dim=1
+    #pragma HLS ARRAY_PARTITION variable=R_local_real cyclic factor=4 dim=1
+    #pragma HLS ARRAY_PARTITION variable=R_local_imag cyclic factor=4 dim=1
 
-        A_DRAM.read_request(0, size_A);
+    #pragma HLS DEPENDENCE variable=A_local_real type=intra false
+    #pragma HLS DEPENDENCE variable=A_local_imag type=intra false
 
-        READ_A_OUTER: for(int i = 0; i < M; i++) {
-            READ_A_INNER: for(int j = 0; j < K; j++) {
-                #pragma HLS loop_flatten
-                #pragma HLS PIPELINE II=1
-                A_local[i][j] = A_DRAM.read();
-            }
+    // -------------------------------------------------------------------------
+    // BURST READ — Matrix A  (flattened DRAM  1-D local BRAM)
+    // -------------------------------------------------------------------------
+    // Flat address: A_DRAM[i*L + j]    A_local[IDX_A(i, j)]
+    // loop_flatten merges (i, j) into one monotonic counter  single AXI burst.
+
+    READ_A_OUTER: for (int i = 0; i < P; i++) {
+        READ_A_INNER: for (int j = 0; j < L; j++) {
+#pragma HLS loop_flatten
+#pragma HLS PIPELINE II=1
+#pragma HLS LOOP_TRIPCOUNT min=1 max=SIZE_A
+            A_local_real[IDX_A(i, j)] = A_DRAM_REAL[IDX_A(i, j)];
+            A_local_imag[IDX_A(i, j)] = A_DRAM_IMAG[IDX_A(i, j)];
         }
     }
 
-    {  // Region for B read
-        #pragma HLS latency max=250
+    // -------------------------------------------------------------------------
+    // QR DECOMPOSITION — modifies A_local in place
+    // After this call: rows 0..L-1 hold upper-triangular R
+    // -------------------------------------------------------------------------
+    qr_complex_givens(A_local_real, A_local_imag);
 
-        B_DRAM.read_request(0, size_B);
-
-        READ_B_OUTER: for(int i = 0; i < K; i++) {
-            READ_B_INNER: for(int j = 0; j < P; j++) {
-                #pragma HLS loop_flatten
-                #pragma HLS PIPELINE II=1
-                B_local[i][j] = B_DRAM.read();
-            }
+    // -------------------------------------------------------------------------
+    // EXTRACT R — copy top L×L block of A_local into R_local
+    // -------------------------------------------------------------------------
+    EXTRACT_R_OUTER: for (int i = 0; i < L; i++) {
+        EXTRACT_R_INNER: for (int j = 0; j < L; j++) {
+#pragma HLS loop_flatten
+#pragma HLS PIPELINE II=1
+#pragma HLS LOOP_TRIPCOUNT min=1 max=SIZE_R
+            R_local_real[IDX_R(i, j)] = A_local_real[IDX_A(i, j)];
+            R_local_imag[IDX_R(i, j)] = A_local_imag[IDX_A(i, j)];
         }
     }
 
+    // -------------------------------------------------------------------------
+    // BURST WRITE — Matrix R  (1-D local BRAM  flattened DRAM output)
+    // -------------------------------------------------------------------------
+    // Flat address: R_DRAM[i*L + j]    R_local[IDX_R(i, j)]
+    // Sequential write + PIPELINE + loop_flatten  single AXI burst per channel.
 
-    // ========================================================================
-    // COMPUTE with Tripcount Hints
-    // ========================================================================
-
-    COMPUTE_ROW: for(int i = 0; i < M; i++) {
-        #pragma HLS loop_tripcount min=25 max=25 avg=25
-
-        COMPUTE_COL: for(int j = 0; j < P; j++) {
-            #pragma HLS loop_tripcount min=25 max=25 avg=25
-            #pragma HLS loop_flatten
-            #pragma HLS PIPELINE II=1
-
-            DTYPE accumulator = 0;
-
-            COMPUTE_DOT: for(int k = 0; k < K; k++) {
-                #pragma HLS loop_tripcount min=8 max=8 avg=8
-                #pragma HLS UNROLL
-
-                DTYPE temp = A_local[i][k] * B_local[k][j];
-                accumulator += temp;
-            }
-
-            C_local[i][j] = accumulator;
+    WRITE_R_OUTER: for (int i = 0; i < L; i++) {
+        WRITE_R_INNER: for (int j = 0; j < L; j++) {
+#pragma HLS loop_flatten
+#pragma HLS PIPELINE II=1
+#pragma HLS LOOP_TRIPCOUNT min=1 max=SIZE_R
+            R_DRAM_REAL[IDX_R(i, j)] = R_local_real[IDX_R(i, j)];
+            R_DRAM_IMAG[IDX_R(i, j)] = R_local_imag[IDX_R(i, j)];
         }
-    }
-
-
-    // ========================================================================
-    // WRITE with Latency Constraint
-    // ========================================================================
-
-    {  // Region for C write
-        #pragma HLS latency max=700  // 625 elements + overhead
-
-        C_DRAM.write_request(0, size_C);
-
-        WRITE_C_OUTER: for(int i = 0; i < M; i++) {
-            WRITE_C_INNER: for(int j = 0; j < P; j++) {
-                #pragma HLS loop_flatten
-                #pragma HLS PIPELINE II=1
-                C_DRAM.write(C_local[i][j]);
-            }
-        }
-
-        C_DRAM.write_response();
     }
 }
-
-//////////////////////////////////////////////////////////////////////////

@@ -1,14 +1,14 @@
 ECHO is off.
 ECHO is off.
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'varad' on host 'asusvivobook' (Windows NT_amd64 version 6.2) on Sun Mar 08 19:29:59 +0530 2026
+INFO: [HLS 200-10] For user 'varad' on host 'asusvivobook' (Windows NT_amd64 version 6.2) on Mon Mar 16 12:14:21 +0530 2026
 INFO: [HLS 200-10] In directory 'C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER'
 INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
-Sourcing Tcl script 'C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/csynth.tcl'
-INFO: [HLS 200-1510] Running: source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/csynth.tcl
+Sourcing Tcl script 'C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/csim.tcl
 INFO: [HLS 200-1510] Running: open_project QRD_HOUSEHOLDER 
 INFO: [HLS 200-10] Opening project 'C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER'.
-INFO: [HLS 200-1510] Running: set_top top 
+INFO: [HLS 200-1510] Running: set_top top_qr 
 INFO: [HLS 200-1510] Running: add_files ../fns.cpp 
 INFO: [HLS 200-10] Adding design file '../fns.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files ../top.cpp 
@@ -19,6 +19,8 @@ INFO: [HLS 200-1510] Running: add_files ../top_tb.cpp
 INFO: [HLS 200-10] Adding design file '../top_tb.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files -tb ../top_tb.cpp -cflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file '../top_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb golden_inputs_outputs/HLS_1000_inputs_1000_outputs -cflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'golden_inputs_outputs/HLS_1000_inputs_1000_outputs' to the project
 INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
 INFO: [HLS 200-10] Opening solution 'C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
@@ -36,217 +38,36 @@ INFO: [HLS 200-1510] Running: create_clock -period 10 -name default
 INFO: [HLS 200-1510] Running: config_cosim -tool xsim -trace_level all 
 INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/QR_IP_UNOPTIMISED -rtl verilog 
 INFO: [HLS 200-1510] Running: set_clock_uncertainty 1.25 
-INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.282 seconds; current allocated memory: 132.484 MB.
-INFO: [HLS 200-10] Analyzing design file '../fns.cpp' ... 
-INFO: [HLS 200-10] Analyzing design file '../top.cpp' ... 
-INFO: [HLS 200-10] Analyzing design file '../top_tb.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 45.733 seconds; current allocated memory: 139.219 MB.
-INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 204 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 135 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 124 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 122 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 122 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,497 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,482 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,482 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,482 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,482 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,482 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,482 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,482 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,482 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,506 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,539 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 214-291] Loop 'COMPUTE_DOT' is marked as complete unroll implied by the pipeline pragma (../top.cpp:353:26)
-INFO: [HLS 214-186] Unrolling loop 'COMPUTE_DOT' (../top.cpp:353:26) in function 'top' completely with a factor of 8 (../top.cpp:294:0)
-INFO: [HLS 214-248] Applying array_partition to 'A_local': Complete partitioning on dimension 1. (../top.cpp:297:11)
-INFO: [HLS 214-248] Applying array_partition to 'B_local': Complete partitioning on dimension 2. (../top.cpp:298:11)
-INFO: [HLS 214-248] Applying array_partition to 'C_local': Complete partitioning on dimension 2. (../top.cpp:299:11)
-INFO: [HLS 214-306] Performing burst_maxi read of variable length and bit width 32 on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (../top.cpp:313:9)
-INFO: [HLS 214-306] Performing burst_maxi read of variable length and bit width 32 on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (../top.cpp:327:9)
-INFO: [HLS 214-306] Performing burst_maxi write of variable length and bit width 32 on bundle 'gmem2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (../top.cpp:373:9)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 15.462 seconds; current allocated memory: 140.801 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 140.801 MB.
-INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.571 seconds; current allocated memory: 149.312 MB.
-INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.261 seconds; current allocated memory: 150.848 MB.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.684 seconds; current allocated memory: 178.379 MB.
-INFO: [HLS 200-2061] Successfully converted nested loops 'READ_B_OUTER'(../top.cpp:329:23) and 'READ_B_INNER'(../top.cpp:330:27) in function 'top' into perfectly nested loops.
-INFO: [HLS 200-2061] Successfully converted nested loops 'COMPUTE_ROW'(../top.cpp:343:18) and 'COMPUTE_COL'(../top.cpp:346:15) in function 'top' into perfectly nested loops.
-INFO: [HLS 200-2061] Successfully converted nested loops 'WRITE_C_OUTER'(../top.cpp:375:24) and 'WRITE_C_INNER'(../top.cpp:376:28) in function 'top' into perfectly nested loops.
-INFO: [XFORM 203-541] Flattening a loop nest 'READ_A_OUTER' (../top.cpp:315:23) in function 'top'.
-INFO: [XFORM 203-541] Flattening a loop nest 'READ_B_OUTER' (../top.cpp:329:23) in function 'top'.
-INFO: [XFORM 203-541] Flattening a loop nest 'COMPUTE_ROW' (../top.cpp:343:18) in function 'top'.
-INFO: [XFORM 203-541] Flattening a loop nest 'WRITE_C_OUTER' (../top.cpp:375:24) in function 'top'.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.197 seconds; current allocated memory: 213.023 MB.
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'top' ...
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'top_Pipeline_READ_A_OUTER_READ_A_INNER' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'READ_A_OUTER_READ_A_INNER'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'READ_A_OUTER_READ_A_INNER'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.917 seconds; current allocated memory: 218.656 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.206 seconds; current allocated memory: 220.387 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'top_Pipeline_READ_B_OUTER_READ_B_INNER' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'READ_B_OUTER_READ_B_INNER'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'READ_B_OUTER_READ_B_INNER'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.301 seconds; current allocated memory: 221.656 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.194 seconds; current allocated memory: 221.691 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'top_Pipeline_COMPUTE_ROW_COMPUTE_COL' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'COMPUTE_ROW_COMPUTE_COL'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 35, loop 'COMPUTE_ROW_COMPUTE_COL'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.155 seconds; current allocated memory: 227.156 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.435 seconds; current allocated memory: 227.234 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'WRITE_C_OUTER_WRITE_C_INNER'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'WRITE_C_OUTER_WRITE_C_INNER'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.762 seconds; current allocated memory: 228.172 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.222 seconds; current allocated memory: 228.203 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'top' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-WARNING: [HLS 200-893] User specified latency constraint discarded for region xcl_latency.entry.2 since region contains function calls with variable latency.
-Resolution: For help on HLS 200-893 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-893.html
-WARNING: [HLS 200-893] User specified latency constraint discarded for region xcl_latency.for.end12.1 since region contains function calls with variable latency.
-Resolution: For help on HLS 200-893 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-893.html
-WARNING: [HLS 200-893] User specified latency constraint discarded for region xcl_latency.for.end68.0 since region contains function calls with variable latency.
-Resolution: For help on HLS 200-893 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-893.html
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.428 seconds; current allocated memory: 235.941 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.653 seconds; current allocated memory: 236.180 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'top_Pipeline_READ_A_OUTER_READ_A_INNER' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'top_Pipeline_READ_A_OUTER_READ_A_INNER' pipeline 'READ_A_OUTER_READ_A_INNER' pipeline type 'loop pipeline'
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARVALID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARADDR' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARLEN' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARSIZE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARBURST' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARLOCK' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARCACHE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARPROT' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARQOS' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARREGION' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_A_OUTER_READ_A_INNER/m_axi_gmem0_ARUSER' to 0.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'top_Pipeline_READ_A_OUTER_READ_A_INNER'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.247 seconds; current allocated memory: 238.672 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'top_Pipeline_READ_B_OUTER_READ_B_INNER' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'top_Pipeline_READ_B_OUTER_READ_B_INNER' pipeline 'READ_B_OUTER_READ_B_INNER' pipeline type 'loop pipeline'
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARVALID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARADDR' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARLEN' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARSIZE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARBURST' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARLOCK' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARCACHE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARPROT' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARQOS' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARREGION' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_READ_B_OUTER_READ_B_INNER/m_axi_gmem1_ARUSER' to 0.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'top_Pipeline_READ_B_OUTER_READ_B_INNER'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.399 seconds; current allocated memory: 242.316 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'top_Pipeline_COMPUTE_ROW_COMPUTE_COL' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'top_Pipeline_COMPUTE_ROW_COMPUTE_COL' pipeline 'COMPUTE_ROW_COMPUTE_COL' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 8 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 8 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sparsemux_51_5_32_1_1': 16 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'top_Pipeline_COMPUTE_ROW_COMPUTE_COL'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.809 seconds; current allocated memory: 252.691 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER' pipeline 'WRITE_C_OUTER_WRITE_C_INNER' pipeline type 'loop pipeline'
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWVALID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWADDR' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWLEN' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWSIZE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWBURST' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWLOCK' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWCACHE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWPROT' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWQOS' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWREGION' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_AWUSER' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER/m_axi_gmem2_BREADY' to 0.
-INFO: [RTGEN 206-100] Generating core module 'sparsemux_51_5_32_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.384 seconds; current allocated memory: 263.129 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'top' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem0' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem1' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem2' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top/A_DRAM' to 's_axilite & ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top/B_DRAM' to 's_axilite & ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top/C_DRAM' to 's_axilite & ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top/size_A' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top/size_B' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top/size_C' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'top' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Bundling port 'A_DRAM', 'B_DRAM' and 'C_DRAM' to AXI-Lite port control.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'top'.
-INFO: [RTMG 210-278] Implementing memory 'top_A_local_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'top_C_local_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 2.092 seconds; current allocated memory: 275.520 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 3.633 seconds; current allocated memory: 292.824 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 5 seconds. CPU system time: 2 seconds. Elapsed time: 7.77 seconds; current allocated memory: 305.309 MB.
-INFO: [VHDL 208-304] Generating VHDL RTL for top.
-INFO: [VLOG 209-307] Generating Verilog RTL for top.
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 114.29 MHz
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 22 seconds. CPU system time: 8 seconds. Elapsed time: 95.271 seconds; current allocated memory: 173.113 MB.
-INFO: [HLS 200-112] Total CPU user time: 25 seconds. Total CPU system time: 10 seconds. Total elapsed time: 99.544 seconds; peak allocated memory: 305.613 MB.
+INFO: [HLS 200-1510] Running: source ./QRD_HOUSEHOLDER/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name top_qr top_qr 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+make: 'csim.exe' is up to date.
+=================================================
+HLS Dataset-Driven QR Testbench
+Samples    : 10
+Matrix A   : 25 x 8  (SIZE_A=200)
+Matrix R   : 8 x 8  (SIZE_R=64)
+Tolerance  : 0.0001
+=================================================
+[PASS] Sample 0  max_err=0
+[PASS] Sample 1  max_err=0
+[PASS] Sample 2  max_err=0
+[PASS] Sample 3  max_err=0
+[PASS] Sample 4  max_err=0
+[PASS] Sample 5  max_err=0
+[PASS] Sample 6  max_err=0
+[PASS] Sample 7  max_err=0
+[PASS] Sample 8  max_err=0
+[PASS] Sample 9  max_err=0
+=================================================
+FINAL RESULT
+PASS : 10 / 10
+FAIL : 0 / 10
+=================================================
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.371 seconds; current allocated memory: 0.426 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 2 seconds. Total elapsed time: 9.032 seconds; peak allocated memory: 141.367 MB.

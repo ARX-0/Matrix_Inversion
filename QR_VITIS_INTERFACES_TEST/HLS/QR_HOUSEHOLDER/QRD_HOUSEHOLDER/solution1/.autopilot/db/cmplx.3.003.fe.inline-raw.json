@@ -1,17 +1,19 @@
 {
   "0": {
-    "basicblocks": 17,
+    "basicblocks": 39,
     "calls": "",
     "file": "top.cpp",
-    "fileloc": 286,
-    "instructions": 122,
+    "fileloc": 204,
+    "instructions": 462,
     "loads": {
-      "L": 17
+      "L": 51,
+      "T": 2
     },
-    "name": "top",
+    "name": "top_qr",
     "stores": {
-      "L": 3
+      "L": 56,
+      "T": 2
     },
-    "total_instructions": 122
+    "total_instructions": 462
   }
 }

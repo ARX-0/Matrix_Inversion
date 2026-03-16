@@ -1,83 +1,108 @@
 {
-    "0": {
-        "name": "top",
-        "file": "top.cpp",
-        "fileloc": "286",
-        "instructions": "927",
-        "total_instructions": "1837",
-        "calls": "4 2 3 1",
-        "basicblocks": "1",
-        "loads": {
-            "L": "400"
-        }
-    },
     "1": {
-        "name": "top_Pipeline_WRITE_C_OUTER_WRITE_C_INNER",
+        "name": "top_qr_Pipeline_WRITE_R_OUTER_WRITE_R_INNER",
         "file": "..\/top.cpp",
-        "fileloc": "375",
-        "instructions": "161",
-        "total_instructions": "161",
+        "fileloc": "309",
+        "instructions": "64",
+        "total_instructions": "64",
         "calls": "",
-        "basicblocks": "6",
+        "basicblocks": "4",
         "loads": {
-            "L": "53"
+            "L": "11"
         },
         "stores": {
-            "L": "31"
+            "L": "6"
         },
         "loops": {
             "L": "1"
         }
     },
     "2": {
-        "name": "top_Pipeline_READ_B_OUTER_READ_B_INNER",
+        "name": "top_qr_Pipeline_SIGN_LOOP",
         "file": "..\/top.cpp",
-        "fileloc": "329",
-        "instructions": "107",
-        "total_instructions": "107",
+        "fileloc": "288",
+        "instructions": "55",
+        "total_instructions": "55",
         "calls": "",
-        "basicblocks": "30",
+        "basicblocks": "9",
         "loads": {
-            "L": "3"
+            "L": "9"
         },
         "stores": {
-            "L": "31"
+            "L": "10"
         },
         "loops": {
             "L": "1"
         }
     },
     "3": {
-        "name": "top_Pipeline_COMPUTE_ROW_COMPUTE_COL",
+        "name": "top_qr_Pipeline_READ_A_OUTER_READ_A_INNER",
         "file": "..\/top.cpp",
-        "fileloc": "343",
-        "instructions": "535",
-        "total_instructions": "535",
+        "fileloc": "274",
+        "instructions": "65",
+        "total_instructions": "65",
         "calls": "",
-        "basicblocks": "30",
+        "basicblocks": "9",
         "loads": {
             "L": "3"
         },
         "stores": {
-            "L": "31"
+            "L": "14"
         },
         "loops": {
             "L": "1"
         }
     },
     "4": {
-        "name": "top_Pipeline_READ_A_OUTER_READ_A_INNER",
+        "name": "top_qr_Pipeline_TILE_LOOP",
         "file": "..\/top.cpp",
-        "fileloc": "315",
-        "instructions": "107",
-        "total_instructions": "107",
+        "fileloc": "288",
+        "instructions": "409",
+        "total_instructions": "409",
         "calls": "",
         "basicblocks": "30",
         "loads": {
-            "L": "3"
+            "L": "65"
         },
         "stores": {
-            "L": "31"
+            "L": "66"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "top_qr",
+        "file": "top.cpp",
+        "fileloc": "204",
+        "instructions": "201",
+        "total_instructions": "865",
+        "calls": "3 5 1 2 4",
+        "basicblocks": "12",
+        "loads": {
+            "L": "21"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
+        }
+    },
+    "5": {
+        "name": "top_qr_Pipeline_EXTRACT_R_OUTER_EXTRACT_R_INNER",
+        "file": "..\/top.cpp",
+        "fileloc": "293",
+        "instructions": "71",
+        "total_instructions": "71",
+        "calls": "",
+        "basicblocks": "9",
+        "loads": {
+            "L": "11"
+        },
+        "stores": {
+            "L": "14"
         },
         "loops": {
             "L": "1"

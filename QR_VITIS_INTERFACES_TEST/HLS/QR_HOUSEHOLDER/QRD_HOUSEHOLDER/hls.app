@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" name="QRD_HOUSEHOLDER" top="top" projectType="C/C++">
+<project xmlns="com.autoesl.autopilot.project" name="QRD_HOUSEHOLDER" top="top_qr" projectType="C/C++">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
@@ -10,6 +10,7 @@
         <file name="../top.hpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="../top_tb.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="../../../top_tb.cpp" sc="0" tb="1" cflags="-Wno-unknown-pragmas" csimflags="" blackbox="false"/>
+        <file name="../../golden_inputs_outputs/HLS_1000_inputs_1000_outputs" sc="0" tb="1" cflags="-Wno-unknown-pragmas" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>
