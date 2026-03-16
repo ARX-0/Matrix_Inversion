@@ -1,0 +1,187 @@
+
+#include "top.hpp"
+
+void top(
+    hls::burst_maxi<DTYPE> A_DRAM_REAL,
+    hls::burst_maxi<DTYPE> A_DRAM_IMAG,
+    hls::burst_maxi<DTYPE> B_DRAM_REAL,
+    hls::burst_maxi<DTYPE> B_DRAM_IMAG,
+    hls::burst_maxi<DTYPE> C_DRAM_REAL,
+    hls::burst_maxi<DTYPE> C_DRAM_IMAG,
+    int size_A,
+    int size_B,
+    int size_C
+)
+{
+    // ========================================================================
+    // INTERFACE CONFIGURATION
+    // ========================================================================
+
+    // Matrix A: Separate bundle required for multi-port cache
+    #pragma HLS INTERFACE m_axi port=A_DRAM_REAL depth=200 offset=slave bundle=gmem_A_R \
+        latency=64 num_read_outstanding=32 max_read_burst_length=16
+    #pragma HLS INTERFACE m_axi port=A_DRAM_IMAG depth=200 offset=slave bundle=gmem_A_I \
+        latency=64 num_read_outstanding=32 max_read_burst_length=16
+
+    // Multi-port cache for parallel row access
+    #pragma HLS cache port=A_DRAM_REAL lines=8 depth=16 ports=25 l2_lines=32
+    #pragma HLS cache port=A_DRAM_IMAG lines=8 depth=16 ports=25 l2_lines=32
+
+    // Matrix B: Separate bundle required for multi-port cache
+    #pragma HLS INTERFACE m_axi port=B_DRAM_REAL depth=200 offset=slave bundle=gmem_B_R \
+     latency=64 num_read_outstanding=32 max_read_burst_length=32
+
+    #pragma HLS INTERFACE m_axi port=B_DRAM_IMAG depth=200 offset=slave bundle=gmem_B_I \
+     latency=64 num_read_outstanding=32 max_read_burst_length=32
+
+    // Multi-port cache for parallel column access
+    #pragma HLS cache port=B_DRAM_IMAG lines=8 depth=32 ports=25 l2_lines=64
+    #pragma HLS cache port=B_DRAM_IMAG lines=8 depth=32 ports=25 l2_lines=64
+
+    // Matrix C: Write-only, separate bundle
+    #pragma HLS INTERFACE m_axi port=C_DRAM depth=SIZE_C offset=slave bundle=gmem_C_R \
+        latency=64 num_write_outstanding=32 max_write_burst_length=32
+    #pragma HLS INTERFACE m_axi port=C_DRAM depth=SIZE_C offset=slave bundle=gmem_C_I \
+        latency=64 num_write_outstanding=32 max_write_burst_length=32
+
+    // S_AXILITE control
+/*  
+    #pragma HLS INTERFACE s_axilite port=A_DRAM_REAL
+    #pragma HLS INTERFACE s_axilite port=A_DRAM_IMAG
+
+    #pragma HLS INTERFACE s_axilite port=B_DRAM_REAL
+    #pragma HLS INTERFACE s_axilite port=B_DRAM_IMAG
+
+    #pragma HLS INTERFACE s_axilite port=C_DRAM_REAL
+    #pragma HLS INTERFACE s_axilite port=C_DRAM_IMAG
+*/
+    #pragma HLS INTERFACE s_axilite port=size_A
+    #pragma HLS INTERFACE s_axilite port=size_B
+    #pragma HLS INTERFACE s_axilite port=size_C
+    #pragma HLS INTERFACE s_axilite port=return
+
+
+    // ========================================================================
+    // LOCAL BRAM BUFFERS - 2D Arrays (Natural Structure)
+    // ========================================================================
+
+    DTYPE A_local_real[M][K];  // 25x8
+    DTYPE A_local_imag[M][K];  // 25x8
+    DTYPE B_local_real[K][P];  // 8x25
+    DTYPE B_local_imag[K][P];  // 8x25
+    DTYPE C_local_real[M][P];  // 25x25
+    DTYPE C_local_imag[M][P];  // 25x25
+
+    // Array partitioning for parallel access
+    // A: Partition rows (dim=1) for parallel row reads
+    // B: Partition columns (dim=2) for parallel column reads
+    // C: Partition columns (dim=2) for parallel writes
+    #pragma HLS ARRAY_PARTITION variable=A_local_real dim=1 type=complete
+    #pragma HLS ARRAY_PARTITION variable=B_local_real dim=2 type=complete
+    #pragma HLS ARRAY_PARTITION variable=C_local_real dim=2 type=complete
+
+    #pragma HLS ARRAY_PARTITION variable=A_local_imag dim=1 type=complete
+    #pragma HLS ARRAY_PARTITION variable=B_local_imag dim=2 type=complete
+    #pragma HLS ARRAY_PARTITION variable=C_local_imag dim=2 type=complete
+
+    // ========================================================================
+    // BURST READ - Matrix A (Nested Loops + Loop Flatten)
+    // ========================================================================
+    // Natural 2D loop structure, but flattened for efficient burst transfer
+
+    A_DRAM_REAL.write_request(0, size_A);
+    A_DRAM_IMAG.write_request(0,size_A);
+
+    READ_A_OUTER: for(int i = 0; i < M; i++) {
+        READ_A_INNER: for(int j = 0; j < K; j++) {
+            // LOOP FLATTEN: Collapses both loops into single pipeline
+            // This transforms the 2D loop into a single 200-iteration loop
+            // Benefits: Single pipeline, no loop transition overhead
+            #pragma HLS loop_flatten
+            #pragma HLS UNROLL II=1
+            A_local_real[i][j] = A_DRAM_REAL.read();
+            A_local_imag[i][j] = A_DRAM_IMAG.read()
+        }
+    }
+
+
+    // ========================================================================
+    // BURST READ - Matrix B (Nested Loops + Loop Flatten)
+    // ========================================================================
+
+    B_DRAM_REAL.write_request(0, size_B);
+    B_DRAM_IMAG.write_request(0,size_B);
+
+    READ_B_OUTER: for(int i = 0; i < K; i++) {
+        READ_B_INNER: for(int j = 0; j < P; j++) {
+            // LOOP FLATTEN: Same benefit as A
+            #pragma HLS loop_flatten
+            #pragma HLS UNROLL II=1
+            B_local_real[i][j] = B_DRAM_REAL.read();
+            B_local_imag[i][j] = B_DRAM_IMAG.read()
+        }
+    }
+
+
+    // ========================================================================
+    // MATRIX MULTIPLICATION - NESTED STRUCTURE PRESERVED
+    // ========================================================================
+    // Keep natural triple-nested loop structure for clarity
+    // Strategic flattening + pipelining for performance
+
+    COMPUTE_ROW: for(int i = 0; i < M; i++) {
+        // Outer loop: Iterate over output rows
+        // NO pipeline here - let inner loops handle it
+
+        COMPUTE_COL: for(int j = 0; j < P; j++) {
+            // Middle loop: Iterate over output columns
+
+            // LOOP FLATTEN: Flatten ROW and COL loops together
+            // This creates a single 625-iteration loop (25x25)
+            // Benefits: Better pipelining across row boundaries
+            #pragma HLS loop_flatten
+            #pragma HLS PIPELINE II=1
+
+            // Accumulator for C[i][j]
+            DTYPE accumulator_r =0;
+            DTYPE accumulator_i =0;
+            COMPUTE_DOT: for(int k = 0; k < K; k++) {
+                // Inner loop: Dot product
+
+                // UNROLL: K=8 is small, unroll completely
+                // This creates 8 parallel MAC operations
+                // Works perfectly with array partitioning
+                #pragma HLS UNROLL
+
+                DTYPE temp_r = A_local_real[i][k] * B_local_real[k][j];
+                DTYPE temp_i = A_local_imag[i][k] * B_local_imag[k][j];
+                accumulator_r += temp_r;
+                accumulator_i += temp_i;
+            }
+
+            C_local_real[i][j] = accumulator_r;
+            C_local_imag[i][j] = accumulator_i;
+        }
+    }
+
+
+    // ========================================================================
+    // BURST WRITE - Matrix C (Nested Loops + Loop Flatten)
+    // ========================================================================
+
+    C_DRAM_REAL.write_request(0, size_C);
+    C_DRAM_IMAG.write_request(0,size_C);
+
+    WRITE_C_OUTER: for(int i = 0; i < M; i++) {
+        WRITE_C_INNER: for(int j = 0; j < P; j++) {
+            // LOOP FLATTEN: Single 625-iteration pipeline for writes
+            #pragma HLS loop_flatten
+            #pragma HLS PIPELINE II=1
+
+            C_DRAM_REAL.write(C_local_real[i][j]);
+            C_DRAM_IMAG.write(C_local_imag[i][j])
+        }
+    }
+
+    C_DRAM_REAL.write_response();
+}

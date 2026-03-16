@@ -1,122 +1,181 @@
-#include <iostream>
-#include <cmath>
+
+// ================================================================
+// tb_qr_dataset.cpp
+// Deterministic HLS testbench using MATLAB dataset
+// ================================================================
+
+#include "hls_burst_maxi.h"
 #include "top.hpp"
 
-#define TOL 1e-3
-#define NUM_TESTS 30
+#include <iostream>
+#include <fstream>
+#include <cmath>
 
-// ================= Utility Functions =================
+#define SAMPLES 10
+#define TOLERANCE 1e-4f
 
-void print_matrix(const char* name, FIX_TYPE M[N][N])
+// ================================================================
+// DATASET LOCATION
+// ================================================================
+
+const char* INPUT_REAL_FILE =
+"C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/golden_inputs_outputs/HLS_1000_inputs_1000_outputs/input_DUT_real.dat";
+
+const char* INPUT_IMAG_FILE =
+"C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/golden_inputs_outputs/HLS_1000_inputs_1000_outputs/input_DUT_imag.dat";
+
+const char* GOLDEN_REAL_FILE =
+"C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/golden_inputs_outputs/HLS_1000_inputs_1000_outputs/S_real_cmpwDUT.dat";
+
+const char* GOLDEN_IMAG_FILE =
+"C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/golden_inputs_outputs/HLS_1000_inputs_1000_outputs/S_imag_cmpwDUT.dat";
+// ================================================================
+// compare_R()
+// Returns the maximum element-wise magnitude error between
+// hw output and golden reference for the L×L R matrix.
+// ================================================================
+static float compare_R(
+    DTYPE hw_real[SIZE_R], DTYPE hw_imag[SIZE_R],
+    float sw_real[SIZE_R], float sw_imag[SIZE_R])
 {
-    std::cout << name << ":\n";
-    for(int i=0;i<N;i++){
-        for(int j=0;j<N;j++)
-            std::cout << M[i][j] << " ";
-        std::cout << "\n";
-    }
-    std::cout << "\n";
-}
+    float max_err = 0.0f;
 
-void matmul(FIX_TYPE A[N][N], FIX_TYPE B[N][N], FIX_TYPE C[N][N])
-{
-    for(int i=0;i<N;i++)
-        for(int j=0;j<N;j++)
-        {
-            C[i][j] = 0;
-            for(int k=0;k<N;k++)
-                C[i][j] += A[i][k] * B[k][j];
+    for (int i = 0; i < L; i++) {
+        for (int j = 0; j < L; j++) {
+            int idx = IDX_R(i, j);
+
+            float hw_mag = sqrtf((float)(hw_real[idx]) * (float)(hw_real[idx]) +
+                                 (float)(hw_imag[idx]) * (float)(hw_imag[idx]));
+
+            float sw_mag = sqrtf(sw_real[idx] * sw_real[idx] +
+                                 sw_imag[idx] * sw_imag[idx]);
+
+            float err = fabsf(hw_mag - sw_mag);
+            if (err > max_err) max_err = err;
         }
+    }
+    return max_err;
 }
 
-void transpose(FIX_TYPE A[N][N], FIX_TYPE AT[N][N])
-{
-    for(int i=0;i<N;i++)
-        for(int j=0;j<N;j++)
-            AT[j][i] = A[i][j];
-}
-
-bool is_upper_triangular(FIX_TYPE R[N][N])
-{
-    for(int i=1;i<N;i++)
-        for(int j=0;j<i;j++)
-            if(fabs(R[i][j]) > TOL)
-                return false;
-    return true;
-}
-
-// ================= MAIN =================
-
+// ================================================================
+// MAIN
+// ================================================================
 int main()
 {
-    FIX_TYPE A[N][N];
-    FIX_TYPE Q[N][N];
-    FIX_TYPE R[N][N];
+    std::ifstream fin_real(INPUT_REAL_FILE);
+    std::ifstream fin_imag(INPUT_IMAG_FILE);
+    std::ifstream golden_real(GOLDEN_REAL_FILE);
+    std::ifstream golden_imag(GOLDEN_IMAG_FILE);
 
-    FIX_TYPE QR[N][N];
-    FIX_TYPE QT[N][N];
-    FIX_TYPE QTQ[N][N];
+    if (!fin_real || !fin_imag || !golden_real || !golden_imag) {
+        std::cout << "ERROR: Could not open one or more dataset files.\n";
+        std::cout << "  " << INPUT_REAL_FILE  << "\n";
+        std::cout << "  " << INPUT_IMAG_FILE  << "\n";
+        std::cout << "  " << GOLDEN_REAL_FILE << "\n";
+        std::cout << "  " << GOLDEN_IMAG_FILE << "\n";
+        return 1;
+    }
 
-    for(int test = 0; test < NUM_TESTS; test++)
-    {
-        std::cout << "=====================================\n";
-        std::cout << "Running Test #" << test << "\n";
+    std::cout << "=================================================\n";
+    std::cout << "HLS Dataset-Driven QR Testbench\n";
+    std::cout << "Samples    : " << SAMPLES  << "\n";
+    std::cout << "Matrix A   : " << P << " x " << L
+              << "  (SIZE_A=" << SIZE_A << ")\n";
+    std::cout << "Matrix R   : " << L << " x " << L
+              << "  (SIZE_R=" << SIZE_R << ")\n";
+    std::cout << "Tolerance  : " << TOLERANCE << "\n";
+    std::cout << "=================================================\n";
 
-        // Generate different matrices
-        for(int i=0;i<N;i++)
-            for(int j=0;j<N;j++)
-            	A[i][j] = (i*7 + j*11 + test*3) % 17 + 1;
+    // ------------------------------------------------------------------
+    // Static flat arrays — decay to DTYPE* when passed to top_qr(),
+    // matching the plain DTYPE* m_axi port signature exactly.
+    // ------------------------------------------------------------------
+    static DTYPE  A_real   [SIZE_A];   // flat P×L input
+    static DTYPE  A_imag   [SIZE_A];
+    static DTYPE  R_hw_real[SIZE_R];   // flat L×L DUT output
+    static DTYPE  R_hw_imag[SIZE_R];
+    static float  R_sw_real[SIZE_R];   // flat L×L golden reference
+    static float  R_sw_imag[SIZE_R];
 
-        top(A, Q, R);
+    int pass_count = 0;
+    int fail_count = 0;
 
-        matmul(Q, R, QR);
+    for (int sample = 0; sample < SAMPLES; sample++) {
 
-        bool pass_qr = true;
-        for(int i=0;i<N;i++)
-            for(int j=0;j<N;j++)
-                if(fabs(QR[i][j] - A[i][j]) > TOL * fabs(A[i][j] + 1))
-                    pass_qr = false;
-
-        transpose(Q, QT);
-        matmul(QT, Q, QTQ);
-
-        bool pass_ortho = true;
-        for(int i=0;i<N;i++)
-            for(int j=0;j<N;j++)
-            {
-                if(i==j)
-                {
-                    if(fabs(QTQ[i][j] - 1.0) > TOL)
-                        pass_ortho = false;
-                }
-                else
-                {
-                    if(fabs(QTQ[i][j]) > TOL)
-                        pass_ortho = false;
-                }
-            }
-
-        bool pass_tri = is_upper_triangular(R);
-
-        if(pass_qr && pass_ortho && pass_tri)
-        {
-            std::cout << "TEST PASSED\n\n";
-            print_matrix("Input A", A);
-            print_matrix("Output Q", Q);
-            print_matrix("Output R", R);
+        // ---------------------------------------------------------------
+        // 1. Read input matrix A  (flat, row-major, P×L = SIZE_A elements)
+        // ---------------------------------------------------------------
+        for (int i = 0; i < SIZE_A; i++) {
+            float r, im;
+            fin_real >> r;
+            fin_imag >> im;
+            A_real[i] = (DTYPE)r;
+            A_imag[i] = (DTYPE)im;
         }
-        else
-        {
-            std::cout << "TEST FAILED\n\n";
-            print_matrix("Input A", A);
-            print_matrix("Output Q", Q);
-            print_matrix("Output R", R);
-            return 1;
+
+        // ---------------------------------------------------------------
+        // 2. Read golden R  (flat, row-major, L×L = SIZE_R elements)
+        // ---------------------------------------------------------------
+        for (int i = 0; i < SIZE_R; i++) {
+            golden_real >> R_sw_real[i];
+            golden_imag >> R_sw_imag[i];
+        }
+
+        // ---------------------------------------------------------------
+        // 3. Zero DUT output buffer
+        // ---------------------------------------------------------------
+        for (int i = 0; i < SIZE_R; i++) {
+            R_hw_real[i] = (DTYPE)0;
+            R_hw_imag[i] = (DTYPE)0;
+        }
+
+        // ---------------------------------------------------------------
+        // 4. Call DUT — passes flat DTYPE* pointers (no stream API)
+        // ---------------------------------------------------------------
+        top_qr(A_real,    A_imag,
+               R_hw_real, R_hw_imag,
+               SIZE_A,    SIZE_R);
+
+        // ---------------------------------------------------------------
+        // 5. Compare DUT output against golden reference
+        // ---------------------------------------------------------------
+        float max_err = compare_R(R_hw_real, R_hw_imag,
+                                  R_sw_real, R_sw_imag);
+
+        if (max_err < TOLERANCE) {
+            pass_count++;
+            std::cout << "[PASS] Sample " << sample
+                      << "  max_err=" << max_err << "\n";
+        } else {
+            fail_count++;
+            std::cout << "[FAIL] Sample " << sample
+                      << "  max_err=" << max_err << "\n";
+
+            // Print full R matrix on first failure for debugging
+            if (fail_count == 1) {
+                std::cout << "\n--- First failure: R matrix (|hw|  vs  |sw|) ---\n";
+                for (int i = 0; i < L; i++) {
+                    for (int j = 0; j < L; j++) {
+                        int idx = IDX_R(i, j);
+                        float hw = sqrtf((float)R_hw_real[idx]*(float)R_hw_real[idx] +
+                                         (float)R_hw_imag[idx]*(float)R_hw_imag[idx]);
+                        float sw = sqrtf(R_sw_real[idx]*R_sw_real[idx] +
+                                         R_sw_imag[idx]*R_sw_imag[idx]);
+                        std::cout << "  [" << i << "][" << j << "]"
+                                  << "  HW=" << hw << "  SW=" << sw
+                                  << "  err=" << fabsf(hw - sw) << "\n";
+                    }
+                }
+                std::cout << "-------------------------------------------\n\n";
+            }
         }
     }
 
-    std::cout << "=====================================\n";
-    std::cout << "ALL TESTS PASSED\n";
+    std::cout << "=================================================\n";
+    std::cout << "FINAL RESULT\n";
+    std::cout << "PASS : " << pass_count << " / " << SAMPLES << "\n";
+    std::cout << "FAIL : " << fail_count << " / " << SAMPLES << "\n";
+    std::cout << "=================================================\n";
 
-    return 0;
+    return (fail_count == 0) ? 0 : 1;
 }

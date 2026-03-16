@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Mar 13 14:54:53 2026
+# Process ID: 21072
+# Current directory: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/.autopilot/db/ip_tmp
+# Command line: vivado.exe -notrace -log vivado.log -mode batch -source run_vivado_gen_ip.tcl
+# Log file: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/.autopilot/db/ip_tmp/vivado.log
+# Journal file: C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/.autopilot/db/ip_tmp\vivado.jou
+# Running On: ASUSVivobook, OS: Windows, CPU Frequency: 3110 MHz, CPU Physical cores: 12, Host memory: 16781 MB
+#-----------------------------------------------------------
+source run_vivado_gen_ip.tcl -notrace

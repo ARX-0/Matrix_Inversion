@@ -57,7 +57,7 @@ IFLAG += -D__SIM_FIR__
 
 IFLAG += -D__SIM_DDS__
 
-IFLAG += -D__DSP48E1__
+IFLAG += -D__DSP48E2__
 LFLAG += -Wl,--stack,0x40000000
 IFLAG += -g
 IFLAG += -DNT

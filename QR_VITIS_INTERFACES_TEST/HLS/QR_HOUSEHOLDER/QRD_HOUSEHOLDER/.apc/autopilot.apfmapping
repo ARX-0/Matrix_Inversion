@@ -8,5 +8,6 @@
   </source>
   <testbench>
     <originFiles name="top_tb.cpp" path="C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\top_tb.cpp"/>
+    <originFiles name="HLS_1000_inputs_1000_outputs" path="C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\QR_VITIS_INTERFACES_TEST\HLS\QR_HOUSEHOLDER\golden_inputs_outputs\HLS_1000_inputs_1000_outputs"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

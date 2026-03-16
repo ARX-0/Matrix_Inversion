@@ -1,0 +1,502 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'top_Pipeline_READ_INIT_VITIS_LOOP_87_1'" level="0">
+<item name = "Date">Thu Mar  5 00:42:45 2026
+</item>
+<item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
+<item name = "Project">CGR_QR_WBS</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu7ev-ffvc1156-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 8.750 ns, 1.25 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">67, 67, 0.670 us, 0.670 us, 67, 67, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- READ_INIT_VITIS_LOOP_87_1">65, 65, 12, 2, 1, 28, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 860, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 742, -</column>
+<column name="Register">-, -, 468, 64, -</column>
+<specialColumn name="Available">624, 1728, 460800, 230400, 96</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln85_1_fu_711_p2">+, 0, 0, 10, 3, 1</column>
+<column name="add_ln85_fu_685_p2">+, 0, 0, 12, 5, 1</column>
+<column name="add_ln87_fu_759_p2">+, 0, 0, 10, 3, 1</column>
+<column name="add_ln91_1_fu_838_p2">+, 0, 0, 71, 64, 64</column>
+<column name="add_ln91_fu_743_p2">+, 0, 0, 71, 64, 64</column>
+<column name="ap_block_state2_io">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred554_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred560_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred566_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred572_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred579_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred585_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred591_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred597_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred604_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred610_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred616_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred622_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred629_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred635_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred641_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred647_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred654_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred660_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred666_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred672_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred679_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred685_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred691_state11">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred697_state11">and, 0, 0, 2, 1, 1</column>
+<column name="grp_fu_278_p2">icmp, 0, 0, 10, 2, 3</column>
+<column name="icmp_ln105_1_fu_976_p2">icmp, 0, 0, 9, 2, 1</column>
+<column name="icmp_ln105_2_fu_953_p2">icmp, 0, 0, 9, 2, 2</column>
+<column name="icmp_ln105_3_fu_884_p2">icmp, 0, 0, 9, 2, 1</column>
+<column name="icmp_ln105_4_fu_861_p2">icmp, 0, 0, 9, 2, 1</column>
+<column name="icmp_ln105_fu_999_p2">icmp, 0, 0, 9, 2, 1</column>
+<column name="icmp_ln85_fu_679_p2">icmp, 0, 0, 12, 5, 4</column>
+<column name="icmp_ln87_fu_697_p2">icmp, 0, 0, 12, 3, 4</column>
+<column name="icmp_ln98_fu_853_p2">icmp, 0, 0, 10, 3, 3</column>
+<column name="lshr_ln91_1_fu_1221_p2">lshr, 0, 0, 179, 64, 64</column>
+<column name="lshr_ln91_fu_1029_p2">lshr, 0, 0, 179, 64, 64</column>
+<column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_pp0_stage1_11001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred496_state11">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred507_state11">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred517_state11">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_pred526_state11">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln87_fu_787_p2">or, 0, 0, 6, 6, 1</column>
+<column name="or_ln91_fu_808_p2">or, 0, 0, 3, 3, 1</column>
+<column name="select_ln105_1_fu_981_p3">select, 0, 0, 32, 1, 1</column>
+<column name="select_ln105_2_fu_958_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln105_3_fu_889_p3">select, 0, 0, 32, 1, 1</column>
+<column name="select_ln105_4_fu_866_p3">select, 0, 0, 32, 1, 1</column>
+<column name="select_ln105_fu_1004_p3">select, 0, 0, 32, 1, 1</column>
+<column name="select_ln85_1_fu_717_p3">select, 0, 0, 3, 1, 3</column>
+<column name="select_ln85_fu_703_p3">select, 0, 0, 3, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">14, 3, 1, 3</column>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter0">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_sig_allocacmp_i_load">9, 2, 3, 6</column>
+<column name="ap_sig_allocacmp_indvar_flatten_load">9, 2, 5, 10</column>
+<column name="ap_sig_allocacmp_j_load">9, 2, 3, 6</column>
+<column name="i_fu_228">9, 2, 3, 6</column>
+<column name="indvar_flatten_fu_232">9, 2, 5, 10</column>
+<column name="j_fu_224">9, 2, 3, 6</column>
+<column name="m_axi_memA_ARADDR">14, 3, 64, 192</column>
+<column name="memA_blk_n_AR">9, 2, 1, 2</column>
+<column name="memA_blk_n_R">9, 2, 1, 2</column>
+<column name="mux_case_01022980_out">9, 2, 32, 64</column>
+<column name="mux_case_01073032_out">9, 2, 32, 64</column>
+<column name="mux_case_01113084_out">9, 2, 32, 64</column>
+<column name="mux_case_01153133_out">9, 2, 32, 64</column>
+<column name="mux_case_01203180_out">9, 2, 32, 64</column>
+<column name="mux_case_01253232_out">9, 2, 32, 64</column>
+<column name="mux_case_01303284_out">9, 2, 32, 64</column>
+<column name="mux_case_01353336_out">9, 2, 32, 64</column>
+<column name="mux_case_01403388_out">9, 2, 32, 64</column>
+<column name="mux_case_01703438_out">9, 2, 32, 64</column>
+<column name="mux_case_01993482_out">9, 2, 32, 64</column>
+<column name="mux_case_02829_out">9, 2, 32, 64</column>
+<column name="mux_case_04303523_out_o">20, 4, 32, 128</column>
+<column name="mux_case_04503655_out_o">14, 3, 32, 96</column>
+<column name="mux_case_0922876_out">9, 2, 32, 64</column>
+<column name="mux_case_0972928_out">9, 2, 32, 64</column>
+<column name="mux_case_11032993_out">9, 2, 32, 64</column>
+<column name="mux_case_11083045_out">9, 2, 32, 64</column>
+<column name="mux_case_11123097_out">9, 2, 32, 64</column>
+<column name="mux_case_11163144_out">9, 2, 32, 64</column>
+<column name="mux_case_11213193_out">9, 2, 32, 64</column>
+<column name="mux_case_11263245_out">9, 2, 32, 64</column>
+<column name="mux_case_11313297_out">9, 2, 32, 64</column>
+<column name="mux_case_11363349_out">9, 2, 32, 64</column>
+<column name="mux_case_11413401_out">9, 2, 32, 64</column>
+<column name="mux_case_11713449_out">9, 2, 32, 64</column>
+<column name="mux_case_12003493_out">9, 2, 32, 64</column>
+<column name="mux_case_12840_out">9, 2, 32, 64</column>
+<column name="mux_case_14363564_out_o">20, 4, 32, 128</column>
+<column name="mux_case_14563696_out_o">14, 3, 32, 96</column>
+<column name="mux_case_1932889_out">9, 2, 32, 64</column>
+<column name="mux_case_1982941_out">9, 2, 32, 64</column>
+<column name="mux_case_21043006_out">9, 2, 32, 64</column>
+<column name="mux_case_21093058_out">9, 2, 32, 64</column>
+<column name="mux_case_21133110_out">9, 2, 32, 64</column>
+<column name="mux_case_21173155_out">9, 2, 32, 64</column>
+<column name="mux_case_21223206_out">9, 2, 32, 64</column>
+<column name="mux_case_21273258_out">9, 2, 32, 64</column>
+<column name="mux_case_21323310_out">9, 2, 32, 64</column>
+<column name="mux_case_21373362_out">9, 2, 32, 64</column>
+<column name="mux_case_21423414_out">9, 2, 32, 64</column>
+<column name="mux_case_21723460_out">9, 2, 32, 64</column>
+<column name="mux_case_22013504_out">9, 2, 32, 64</column>
+<column name="mux_case_22851_out">9, 2, 32, 64</column>
+<column name="mux_case_24423605_out">14, 3, 32, 96</column>
+<column name="mux_case_25173935_out">9, 2, 32, 64</column>
+<column name="mux_case_2942902_out">9, 2, 32, 64</column>
+<column name="mux_case_2992954_out">9, 2, 32, 64</column>
+<column name="mux_case_31002967_out">9, 2, 32, 64</column>
+<column name="mux_case_31053019_out">9, 2, 32, 64</column>
+<column name="mux_case_31103071_out">9, 2, 32, 64</column>
+<column name="mux_case_31143123_out">9, 2, 32, 64</column>
+<column name="mux_case_31183166_out">9, 2, 32, 64</column>
+<column name="mux_case_31233219_out">9, 2, 32, 64</column>
+<column name="mux_case_31283271_out">9, 2, 32, 64</column>
+<column name="mux_case_31333323_out">9, 2, 32, 64</column>
+<column name="mux_case_31383375_out">9, 2, 32, 64</column>
+<column name="mux_case_31433427_out">9, 2, 32, 64</column>
+<column name="mux_case_31733471_out">9, 2, 32, 64</column>
+<column name="mux_case_32023515_out">9, 2, 32, 64</column>
+<column name="mux_case_32862_out">9, 2, 32, 64</column>
+<column name="mux_case_34483646_out_o">20, 4, 32, 128</column>
+<column name="mux_case_3952915_out">9, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">2, 0, 2, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter0_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter5">1, 0, 1, 0</column>
+<column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="ap_loop_exit_ready_pp0_iter2_reg">1, 0, 1, 0</column>
+<column name="ap_loop_exit_ready_pp0_iter3_reg">1, 0, 1, 0</column>
+<column name="ap_loop_exit_ready_pp0_iter4_reg">1, 0, 1, 0</column>
+<column name="ap_predicate_pred496_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred496_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred507_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred507_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred517_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred517_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred526_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred526_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred554_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred554_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred560_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred560_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred566_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred566_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred572_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred572_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred579_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred579_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred585_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred585_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred591_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred591_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred597_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred597_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred604_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred604_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred610_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred610_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred616_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred616_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred622_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred622_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred629_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred629_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred635_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred635_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred641_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred641_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred647_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred647_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred654_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred654_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred660_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred660_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred666_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred666_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred672_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred672_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred679_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred679_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred685_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred685_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred691_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred691_state12">1, 0, 1, 0</column>
+<column name="ap_predicate_pred697_state11">1, 0, 1, 0</column>
+<column name="ap_predicate_pred697_state12">1, 0, 1, 0</column>
+<column name="i_fu_228">3, 0, 3, 0</column>
+<column name="icmp_ln85_reg_1438">1, 0, 1, 0</column>
+<column name="icmp_ln98_reg_1480">1, 0, 1, 0</column>
+<column name="indvar_flatten_fu_232">5, 0, 5, 0</column>
+<column name="j_fu_224">3, 0, 3, 0</column>
+<column name="memA_addr_1_read_reg_1501">64, 0, 64, 0</column>
+<column name="memA_addr_read_reg_1496">64, 0, 64, 0</column>
+<column name="select_ln85_1_reg_1448">3, 0, 3, 0</column>
+<column name="select_ln85_reg_1442">3, 0, 3, 0</column>
+<column name="trunc_ln87_reg_1454">2, 0, 2, 0</column>
+<column name="trunc_ln91_2_reg_1464">61, 0, 61, 0</column>
+<column name="trunc_ln91_3_reg_1475">61, 0, 61, 0</column>
+<column name="select_ln85_1_reg_1448">64, 32, 3, 0</column>
+<column name="trunc_ln87_reg_1454">64, 32, 2, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, top_Pipeline_READ_INIT_VITIS_LOOP_87_1, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, top_Pipeline_READ_INIT_VITIS_LOOP_87_1, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, top_Pipeline_READ_INIT_VITIS_LOOP_87_1, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, top_Pipeline_READ_INIT_VITIS_LOOP_87_1, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, top_Pipeline_READ_INIT_VITIS_LOOP_87_1, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, top_Pipeline_READ_INIT_VITIS_LOOP_87_1, return value</column>
+<column name="m_axi_memA_AWVALID">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWREADY">in, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWADDR">out, 64, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWID">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWLEN">out, 32, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWSIZE">out, 3, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWBURST">out, 2, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWLOCK">out, 2, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWCACHE">out, 4, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWPROT">out, 3, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWQOS">out, 4, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWREGION">out, 4, m_axi, memA, pointer</column>
+<column name="m_axi_memA_AWUSER">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_WVALID">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_WREADY">in, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_WDATA">out, 64, m_axi, memA, pointer</column>
+<column name="m_axi_memA_WSTRB">out, 8, m_axi, memA, pointer</column>
+<column name="m_axi_memA_WLAST">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_WID">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_WUSER">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARVALID">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARREADY">in, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARADDR">out, 64, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARID">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARLEN">out, 32, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARSIZE">out, 3, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARBURST">out, 2, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARLOCK">out, 2, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARCACHE">out, 4, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARPROT">out, 3, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARQOS">out, 4, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARREGION">out, 4, m_axi, memA, pointer</column>
+<column name="m_axi_memA_ARUSER">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_RVALID">in, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_RREADY">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_RDATA">in, 64, m_axi, memA, pointer</column>
+<column name="m_axi_memA_RLAST">in, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_RID">in, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_RFIFONUM">in, 9, m_axi, memA, pointer</column>
+<column name="m_axi_memA_RUSER">in, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_RRESP">in, 2, m_axi, memA, pointer</column>
+<column name="m_axi_memA_BVALID">in, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_BREADY">out, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_BRESP">in, 2, m_axi, memA, pointer</column>
+<column name="m_axi_memA_BID">in, 1, m_axi, memA, pointer</column>
+<column name="m_axi_memA_BUSER">in, 1, m_axi, memA, pointer</column>
+<column name="A_DRAM">in, 64, ap_none, A_DRAM, scalar</column>
+<column name="empty">in, 3, ap_none, empty, scalar</column>
+<column name="xor_ln85">in, 3, ap_none, xor_ln85, scalar</column>
+<column name="mux_case_25173935_out">out, 32, ap_vld, mux_case_25173935_out, pointer</column>
+<column name="mux_case_25173935_out_ap_vld">out, 1, ap_vld, mux_case_25173935_out, pointer</column>
+<column name="mux_case_14563696_out_i">in, 32, ap_ovld, mux_case_14563696_out, pointer</column>
+<column name="mux_case_14563696_out_o">out, 32, ap_ovld, mux_case_14563696_out, pointer</column>
+<column name="mux_case_14563696_out_o_ap_vld">out, 1, ap_ovld, mux_case_14563696_out, pointer</column>
+<column name="mux_case_04503655_out_i">in, 32, ap_ovld, mux_case_04503655_out, pointer</column>
+<column name="mux_case_04503655_out_o">out, 32, ap_ovld, mux_case_04503655_out, pointer</column>
+<column name="mux_case_04503655_out_o_ap_vld">out, 1, ap_ovld, mux_case_04503655_out, pointer</column>
+<column name="mux_case_34483646_out_i">in, 32, ap_ovld, mux_case_34483646_out, pointer</column>
+<column name="mux_case_34483646_out_o">out, 32, ap_ovld, mux_case_34483646_out, pointer</column>
+<column name="mux_case_34483646_out_o_ap_vld">out, 1, ap_ovld, mux_case_34483646_out, pointer</column>
+<column name="mux_case_24423605_out">out, 32, ap_vld, mux_case_24423605_out, pointer</column>
+<column name="mux_case_24423605_out_ap_vld">out, 1, ap_vld, mux_case_24423605_out, pointer</column>
+<column name="mux_case_14363564_out_i">in, 32, ap_ovld, mux_case_14363564_out, pointer</column>
+<column name="mux_case_14363564_out_o">out, 32, ap_ovld, mux_case_14363564_out, pointer</column>
+<column name="mux_case_14363564_out_o_ap_vld">out, 1, ap_ovld, mux_case_14363564_out, pointer</column>
+<column name="mux_case_04303523_out_i">in, 32, ap_ovld, mux_case_04303523_out, pointer</column>
+<column name="mux_case_04303523_out_o">out, 32, ap_ovld, mux_case_04303523_out, pointer</column>
+<column name="mux_case_04303523_out_o_ap_vld">out, 1, ap_ovld, mux_case_04303523_out, pointer</column>
+<column name="mux_case_32023515_out">out, 32, ap_vld, mux_case_32023515_out, pointer</column>
+<column name="mux_case_32023515_out_ap_vld">out, 1, ap_vld, mux_case_32023515_out, pointer</column>
+<column name="mux_case_22013504_out">out, 32, ap_vld, mux_case_22013504_out, pointer</column>
+<column name="mux_case_22013504_out_ap_vld">out, 1, ap_vld, mux_case_22013504_out, pointer</column>
+<column name="mux_case_12003493_out">out, 32, ap_vld, mux_case_12003493_out, pointer</column>
+<column name="mux_case_12003493_out_ap_vld">out, 1, ap_vld, mux_case_12003493_out, pointer</column>
+<column name="mux_case_01993482_out">out, 32, ap_vld, mux_case_01993482_out, pointer</column>
+<column name="mux_case_01993482_out_ap_vld">out, 1, ap_vld, mux_case_01993482_out, pointer</column>
+<column name="mux_case_31733471_out">out, 32, ap_vld, mux_case_31733471_out, pointer</column>
+<column name="mux_case_31733471_out_ap_vld">out, 1, ap_vld, mux_case_31733471_out, pointer</column>
+<column name="mux_case_21723460_out">out, 32, ap_vld, mux_case_21723460_out, pointer</column>
+<column name="mux_case_21723460_out_ap_vld">out, 1, ap_vld, mux_case_21723460_out, pointer</column>
+<column name="mux_case_11713449_out">out, 32, ap_vld, mux_case_11713449_out, pointer</column>
+<column name="mux_case_11713449_out_ap_vld">out, 1, ap_vld, mux_case_11713449_out, pointer</column>
+<column name="mux_case_01703438_out">out, 32, ap_vld, mux_case_01703438_out, pointer</column>
+<column name="mux_case_01703438_out_ap_vld">out, 1, ap_vld, mux_case_01703438_out, pointer</column>
+<column name="mux_case_31433427_out">out, 32, ap_vld, mux_case_31433427_out, pointer</column>
+<column name="mux_case_31433427_out_ap_vld">out, 1, ap_vld, mux_case_31433427_out, pointer</column>
+<column name="mux_case_21423414_out">out, 32, ap_vld, mux_case_21423414_out, pointer</column>
+<column name="mux_case_21423414_out_ap_vld">out, 1, ap_vld, mux_case_21423414_out, pointer</column>
+<column name="mux_case_11413401_out">out, 32, ap_vld, mux_case_11413401_out, pointer</column>
+<column name="mux_case_11413401_out_ap_vld">out, 1, ap_vld, mux_case_11413401_out, pointer</column>
+<column name="mux_case_01403388_out">out, 32, ap_vld, mux_case_01403388_out, pointer</column>
+<column name="mux_case_01403388_out_ap_vld">out, 1, ap_vld, mux_case_01403388_out, pointer</column>
+<column name="mux_case_31383375_out">out, 32, ap_vld, mux_case_31383375_out, pointer</column>
+<column name="mux_case_31383375_out_ap_vld">out, 1, ap_vld, mux_case_31383375_out, pointer</column>
+<column name="mux_case_21373362_out">out, 32, ap_vld, mux_case_21373362_out, pointer</column>
+<column name="mux_case_21373362_out_ap_vld">out, 1, ap_vld, mux_case_21373362_out, pointer</column>
+<column name="mux_case_11363349_out">out, 32, ap_vld, mux_case_11363349_out, pointer</column>
+<column name="mux_case_11363349_out_ap_vld">out, 1, ap_vld, mux_case_11363349_out, pointer</column>
+<column name="mux_case_01353336_out">out, 32, ap_vld, mux_case_01353336_out, pointer</column>
+<column name="mux_case_01353336_out_ap_vld">out, 1, ap_vld, mux_case_01353336_out, pointer</column>
+<column name="mux_case_31333323_out">out, 32, ap_vld, mux_case_31333323_out, pointer</column>
+<column name="mux_case_31333323_out_ap_vld">out, 1, ap_vld, mux_case_31333323_out, pointer</column>
+<column name="mux_case_21323310_out">out, 32, ap_vld, mux_case_21323310_out, pointer</column>
+<column name="mux_case_21323310_out_ap_vld">out, 1, ap_vld, mux_case_21323310_out, pointer</column>
+<column name="mux_case_11313297_out">out, 32, ap_vld, mux_case_11313297_out, pointer</column>
+<column name="mux_case_11313297_out_ap_vld">out, 1, ap_vld, mux_case_11313297_out, pointer</column>
+<column name="mux_case_01303284_out">out, 32, ap_vld, mux_case_01303284_out, pointer</column>
+<column name="mux_case_01303284_out_ap_vld">out, 1, ap_vld, mux_case_01303284_out, pointer</column>
+<column name="mux_case_31283271_out">out, 32, ap_vld, mux_case_31283271_out, pointer</column>
+<column name="mux_case_31283271_out_ap_vld">out, 1, ap_vld, mux_case_31283271_out, pointer</column>
+<column name="mux_case_21273258_out">out, 32, ap_vld, mux_case_21273258_out, pointer</column>
+<column name="mux_case_21273258_out_ap_vld">out, 1, ap_vld, mux_case_21273258_out, pointer</column>
+<column name="mux_case_11263245_out">out, 32, ap_vld, mux_case_11263245_out, pointer</column>
+<column name="mux_case_11263245_out_ap_vld">out, 1, ap_vld, mux_case_11263245_out, pointer</column>
+<column name="mux_case_01253232_out">out, 32, ap_vld, mux_case_01253232_out, pointer</column>
+<column name="mux_case_01253232_out_ap_vld">out, 1, ap_vld, mux_case_01253232_out, pointer</column>
+<column name="mux_case_31233219_out">out, 32, ap_vld, mux_case_31233219_out, pointer</column>
+<column name="mux_case_31233219_out_ap_vld">out, 1, ap_vld, mux_case_31233219_out, pointer</column>
+<column name="mux_case_21223206_out">out, 32, ap_vld, mux_case_21223206_out, pointer</column>
+<column name="mux_case_21223206_out_ap_vld">out, 1, ap_vld, mux_case_21223206_out, pointer</column>
+<column name="mux_case_11213193_out">out, 32, ap_vld, mux_case_11213193_out, pointer</column>
+<column name="mux_case_11213193_out_ap_vld">out, 1, ap_vld, mux_case_11213193_out, pointer</column>
+<column name="mux_case_01203180_out">out, 32, ap_vld, mux_case_01203180_out, pointer</column>
+<column name="mux_case_01203180_out_ap_vld">out, 1, ap_vld, mux_case_01203180_out, pointer</column>
+<column name="mux_case_31183166_out">out, 32, ap_vld, mux_case_31183166_out, pointer</column>
+<column name="mux_case_31183166_out_ap_vld">out, 1, ap_vld, mux_case_31183166_out, pointer</column>
+<column name="mux_case_21173155_out">out, 32, ap_vld, mux_case_21173155_out, pointer</column>
+<column name="mux_case_21173155_out_ap_vld">out, 1, ap_vld, mux_case_21173155_out, pointer</column>
+<column name="mux_case_11163144_out">out, 32, ap_vld, mux_case_11163144_out, pointer</column>
+<column name="mux_case_11163144_out_ap_vld">out, 1, ap_vld, mux_case_11163144_out, pointer</column>
+<column name="mux_case_01153133_out">out, 32, ap_vld, mux_case_01153133_out, pointer</column>
+<column name="mux_case_01153133_out_ap_vld">out, 1, ap_vld, mux_case_01153133_out, pointer</column>
+<column name="mux_case_31143123_out">out, 32, ap_vld, mux_case_31143123_out, pointer</column>
+<column name="mux_case_31143123_out_ap_vld">out, 1, ap_vld, mux_case_31143123_out, pointer</column>
+<column name="mux_case_21133110_out">out, 32, ap_vld, mux_case_21133110_out, pointer</column>
+<column name="mux_case_21133110_out_ap_vld">out, 1, ap_vld, mux_case_21133110_out, pointer</column>
+<column name="mux_case_11123097_out">out, 32, ap_vld, mux_case_11123097_out, pointer</column>
+<column name="mux_case_11123097_out_ap_vld">out, 1, ap_vld, mux_case_11123097_out, pointer</column>
+<column name="mux_case_01113084_out">out, 32, ap_vld, mux_case_01113084_out, pointer</column>
+<column name="mux_case_01113084_out_ap_vld">out, 1, ap_vld, mux_case_01113084_out, pointer</column>
+<column name="mux_case_31103071_out">out, 32, ap_vld, mux_case_31103071_out, pointer</column>
+<column name="mux_case_31103071_out_ap_vld">out, 1, ap_vld, mux_case_31103071_out, pointer</column>
+<column name="mux_case_21093058_out">out, 32, ap_vld, mux_case_21093058_out, pointer</column>
+<column name="mux_case_21093058_out_ap_vld">out, 1, ap_vld, mux_case_21093058_out, pointer</column>
+<column name="mux_case_11083045_out">out, 32, ap_vld, mux_case_11083045_out, pointer</column>
+<column name="mux_case_11083045_out_ap_vld">out, 1, ap_vld, mux_case_11083045_out, pointer</column>
+<column name="mux_case_01073032_out">out, 32, ap_vld, mux_case_01073032_out, pointer</column>
+<column name="mux_case_01073032_out_ap_vld">out, 1, ap_vld, mux_case_01073032_out, pointer</column>
+<column name="mux_case_31053019_out">out, 32, ap_vld, mux_case_31053019_out, pointer</column>
+<column name="mux_case_31053019_out_ap_vld">out, 1, ap_vld, mux_case_31053019_out, pointer</column>
+<column name="mux_case_21043006_out">out, 32, ap_vld, mux_case_21043006_out, pointer</column>
+<column name="mux_case_21043006_out_ap_vld">out, 1, ap_vld, mux_case_21043006_out, pointer</column>
+<column name="mux_case_11032993_out">out, 32, ap_vld, mux_case_11032993_out, pointer</column>
+<column name="mux_case_11032993_out_ap_vld">out, 1, ap_vld, mux_case_11032993_out, pointer</column>
+<column name="mux_case_01022980_out">out, 32, ap_vld, mux_case_01022980_out, pointer</column>
+<column name="mux_case_01022980_out_ap_vld">out, 1, ap_vld, mux_case_01022980_out, pointer</column>
+<column name="mux_case_31002967_out">out, 32, ap_vld, mux_case_31002967_out, pointer</column>
+<column name="mux_case_31002967_out_ap_vld">out, 1, ap_vld, mux_case_31002967_out, pointer</column>
+<column name="mux_case_2992954_out">out, 32, ap_vld, mux_case_2992954_out, pointer</column>
+<column name="mux_case_2992954_out_ap_vld">out, 1, ap_vld, mux_case_2992954_out, pointer</column>
+<column name="mux_case_1982941_out">out, 32, ap_vld, mux_case_1982941_out, pointer</column>
+<column name="mux_case_1982941_out_ap_vld">out, 1, ap_vld, mux_case_1982941_out, pointer</column>
+<column name="mux_case_0972928_out">out, 32, ap_vld, mux_case_0972928_out, pointer</column>
+<column name="mux_case_0972928_out_ap_vld">out, 1, ap_vld, mux_case_0972928_out, pointer</column>
+<column name="mux_case_3952915_out">out, 32, ap_vld, mux_case_3952915_out, pointer</column>
+<column name="mux_case_3952915_out_ap_vld">out, 1, ap_vld, mux_case_3952915_out, pointer</column>
+<column name="mux_case_2942902_out">out, 32, ap_vld, mux_case_2942902_out, pointer</column>
+<column name="mux_case_2942902_out_ap_vld">out, 1, ap_vld, mux_case_2942902_out, pointer</column>
+<column name="mux_case_1932889_out">out, 32, ap_vld, mux_case_1932889_out, pointer</column>
+<column name="mux_case_1932889_out_ap_vld">out, 1, ap_vld, mux_case_1932889_out, pointer</column>
+<column name="mux_case_0922876_out">out, 32, ap_vld, mux_case_0922876_out, pointer</column>
+<column name="mux_case_0922876_out_ap_vld">out, 1, ap_vld, mux_case_0922876_out, pointer</column>
+<column name="mux_case_32862_out">out, 32, ap_vld, mux_case_32862_out, pointer</column>
+<column name="mux_case_32862_out_ap_vld">out, 1, ap_vld, mux_case_32862_out, pointer</column>
+<column name="mux_case_22851_out">out, 32, ap_vld, mux_case_22851_out, pointer</column>
+<column name="mux_case_22851_out_ap_vld">out, 1, ap_vld, mux_case_22851_out, pointer</column>
+<column name="mux_case_12840_out">out, 32, ap_vld, mux_case_12840_out, pointer</column>
+<column name="mux_case_12840_out_ap_vld">out, 1, ap_vld, mux_case_12840_out, pointer</column>
+<column name="mux_case_02829_out">out, 32, ap_vld, mux_case_02829_out, pointer</column>
+<column name="mux_case_02829_out_ap_vld">out, 1, ap_vld, mux_case_02829_out, pointer</column>
+</table>
+</item>
+</section>
+</profile>

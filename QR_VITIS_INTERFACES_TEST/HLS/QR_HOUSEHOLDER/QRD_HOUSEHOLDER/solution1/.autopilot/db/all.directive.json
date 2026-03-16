@@ -1,7 +1,7 @@
 [
   {
     "functionLabel": "",
-    "functionName": "top",
+    "functionName": "top_qr",
     "id": 0,
     "ifcond": "",
     "insert_position": "",
@@ -11,7 +11,7 @@
       "option": [
         {
           "name": "name",
-          "value": "top"
+          "value": "top_qr"
         }
       ]
     },
@@ -22,7 +22,7 @@
   },
   {
     "functionLabel": "",
-    "functionName": "top",
+    "functionName": "top_qr",
     "id": 1,
     "ifcond": "",
     "insert_position": "",
@@ -32,13 +32,13 @@
       "option": [
         {
           "name": "name",
-          "value": "top"
+          "value": "top_qr"
         }
       ]
     },
     "slx": false,
     "sourceFile": "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/QR_VITIS_INTERFACES_TEST/HLS/QR_HOUSEHOLDER/QRD_HOUSEHOLDER/solution1/csynth.tcl",
-    "sourceLine": 21,
+    "sourceLine": 22,
     "success": true
   }
 ]

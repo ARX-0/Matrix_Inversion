@@ -1,5 +1,5 @@
 
-set TopModule "top"
+set TopModule "top_qr"
 set ClockPeriod 10
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
@@ -23,7 +23,7 @@ set ResetRegisterNum 0
 set FsmEncStyle onehot
 set MaxFanout 0
 set RtlPrefix {}
-set RtlSubPrefix top_
+set RtlSubPrefix top_qr_
 set ExtraCCFlags {}
 set ExtraCLdFlags {}
 set SynCheckOptions {}
@@ -45,12 +45,12 @@ set TargetInfo xczu7ev:-ffvc1156:-2-e
 set SourceFiles {sc {} c {../../../fns.cpp ../../../top.cpp ../../../top_tb.cpp}}
 set SourceFlags {sc {} c {{} {} {}}}
 set DirectiveFile {}
-set TBFiles {verilog ../../../top_tb.cpp bc ../../../top_tb.cpp vhdl ../../../top_tb.cpp sc ../../../top_tb.cpp cas ../../../top_tb.cpp c {}}
+set TBFiles {verilog {../../../top_tb.cpp ../../golden_inputs_outputs/HLS_1000_inputs_1000_outputs} bc {../../../top_tb.cpp ../../golden_inputs_outputs/HLS_1000_inputs_1000_outputs} sc {../../../top_tb.cpp ../../golden_inputs_outputs/HLS_1000_inputs_1000_outputs} vhdl {../../../top_tb.cpp ../../golden_inputs_outputs/HLS_1000_inputs_1000_outputs} c {} cas {../../../top_tb.cpp ../../golden_inputs_outputs/HLS_1000_inputs_1000_outputs}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set TBTVFileNotFound {}

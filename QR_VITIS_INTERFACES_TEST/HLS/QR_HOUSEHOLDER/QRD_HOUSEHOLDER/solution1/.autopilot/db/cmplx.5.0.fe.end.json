@@ -1,65 +1,108 @@
 {
     "1": {
-        "name": "top_Pipeline_READ_INIT_VITIS_LOOP_40_1",
+        "name": "top_qr_Pipeline_WRITE_R_OUTER_WRITE_R_INNER",
         "file": "..\/top.cpp",
-        "fileloc": "27",
-        "instructions": "206",
-        "total_instructions": "206",
+        "fileloc": "309",
+        "instructions": "64",
+        "total_instructions": "64",
         "calls": "",
-        "basicblocks": "45",
+        "basicblocks": "4",
         "loads": {
-            "L": "35"
+            "L": "11"
         },
         "stores": {
-            "L": "38"
+            "L": "6"
         },
         "loops": {
             "L": "1"
         }
     },
-    "0": {
-        "name": "top",
-        "file": "top.cpp",
-        "fileloc": "3",
-        "instructions": "167",
-        "total_instructions": "703",
-        "calls": "1 2 3",
-        "basicblocks": "1",
-        "loads": {
-            "L": "64"
-        }
-    },
     "2": {
-        "name": "top_Pipeline_DUMMY_STAGE",
+        "name": "top_qr_Pipeline_SIGN_LOOP",
         "file": "..\/top.cpp",
-        "fileloc": "50",
-        "instructions": "246",
-        "total_instructions": "246",
+        "fileloc": "288",
+        "instructions": "55",
+        "total_instructions": "55",
         "calls": "",
-        "basicblocks": "50",
+        "basicblocks": "9",
         "loads": {
-            "L": "33"
+            "L": "9"
         },
         "stores": {
-            "L": "36"
+            "L": "10"
         },
         "loops": {
             "L": "1"
         }
     },
     "3": {
-        "name": "top_Pipeline_WRITE_BACK_VITIS_LOOP_69_3",
+        "name": "top_qr_Pipeline_READ_A_OUTER_READ_A_INNER",
         "file": "..\/top.cpp",
-        "fileloc": "66",
-        "instructions": "84",
-        "total_instructions": "84",
+        "fileloc": "274",
+        "instructions": "65",
+        "total_instructions": "65",
         "calls": "",
-        "basicblocks": "4",
+        "basicblocks": "9",
         "loads": {
             "L": "3"
         },
         "stores": {
-            "L": "6"
+            "L": "14"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "top_qr_Pipeline_TILE_LOOP",
+        "file": "..\/top.cpp",
+        "fileloc": "288",
+        "instructions": "409",
+        "total_instructions": "409",
+        "calls": "",
+        "basicblocks": "30",
+        "loads": {
+            "L": "65"
+        },
+        "stores": {
+            "L": "66"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "top_qr",
+        "file": "top.cpp",
+        "fileloc": "204",
+        "instructions": "201",
+        "total_instructions": "865",
+        "calls": "3 5 1 2 4",
+        "basicblocks": "12",
+        "loads": {
+            "L": "21"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
+        }
+    },
+    "5": {
+        "name": "top_qr_Pipeline_EXTRACT_R_OUTER_EXTRACT_R_INNER",
+        "file": "..\/top.cpp",
+        "fileloc": "293",
+        "instructions": "71",
+        "total_instructions": "71",
+        "calls": "",
+        "basicblocks": "9",
+        "loads": {
+            "L": "11"
+        },
+        "stores": {
+            "L": "14"
         },
         "loops": {
             "L": "1"

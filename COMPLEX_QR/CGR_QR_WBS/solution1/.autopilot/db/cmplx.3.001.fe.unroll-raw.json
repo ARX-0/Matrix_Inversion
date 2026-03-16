@@ -1,0 +1,49 @@
+{
+  "0": {
+    "basicblocks": 57,
+    "calls": "1 2 2 2 2",
+    "file": "top_cmplx.cpp",
+    "fileloc": 51,
+    "instructions": 346,
+    "loads": {
+      "L": 26,
+      "T": 2
+    },
+    "name": "top",
+    "stores": {
+      "L": 18,
+      "T": 4
+    },
+    "total_instructions": 557
+  },
+  "1": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "top_cmplx.cpp",
+    "fileloc": 5,
+    "instructions": 25,
+    "loads": {
+      "L": 2
+    },
+    "name": "compute_givens_rotation",
+    "stores": {
+      "L": 6
+    },
+    "total_instructions": 27
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "top_cmplx.cpp",
+    "fileloc": 32,
+    "instructions": 45,
+    "loads": {
+      "L": 4
+    },
+    "name": "rotate_rows",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 45
+  }
+}

@@ -1,0 +1,27 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+make: 'csim.exe' is up to date.
+=================================================
+HLS Dataset-Driven QR Testbench
+Samples    : 10
+Matrix A   : 25 x 8  (SIZE_A=200)
+Matrix R   : 8 x 8  (SIZE_R=64)
+Tolerance  : 0.0001
+=================================================
+[PASS] Sample 0  max_err=0
+[PASS] Sample 1  max_err=0
+[PASS] Sample 2  max_err=0
+[PASS] Sample 3  max_err=0
+[PASS] Sample 4  max_err=0
+[PASS] Sample 5  max_err=0
+[PASS] Sample 6  max_err=0
+[PASS] Sample 7  max_err=0
+[PASS] Sample 8  max_err=0
+[PASS] Sample 9  max_err=0
+=================================================
+FINAL RESULT
+PASS : 10 / 10
+FAIL : 0 / 10
+=================================================
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

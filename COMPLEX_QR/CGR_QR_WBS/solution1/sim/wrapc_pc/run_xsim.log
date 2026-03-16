@@ -1,0 +1,985 @@
+
+=========== TESTBENCH START ===========
+
+INPUT MATRIX A
+(1, 0i) (2, -1i) (3, -2i) (4, -3i) (5, -4i) (6, -5i) (7, -6i) (8, -7i) 
+(2, 1i) (4, 0i) (6, -1i) (8, -2i) (10, -3i) (12, -4i) (14, -5i) (16, -6i) 
+(3, 2i) (6, 1i) (9, 0i) (12, -1i) (15, -2i) (18, -3i) (21, -4i) (24, -5i) 
+(4, 3i) (8, 2i) (12, 1i) (16, 0i) (20, -1i) (24, -2i) (28, -3i) (32, -4i) 
+(5, 4i) (10, 3i) (15, 2i) (20, 1i) (25, 0i) (30, -1i) (35, -2i) (40, -3i) 
+(6, 5i) (12, 4i) (18, 3i) (24, 2i) (30, 1i) (36, 0i) (42, -1i) (48, -2i) 
+(7, 6i) (14, 5i) (21, 4i) (28, 3i) (35, 2i) (42, 1i) (49, 0i) (56, -1i) 
+(8, 7i) (16, 6i) (24, 5i) (32, 4i) (40, 3i) (48, 2i) (56, 1i) (64, 0i) 
+(9, 8i) (18, 7i) (27, 6i) (36, 5i) (45, 4i) (54, 3i) (63, 2i) (72, 1i) 
+(10, 9i) (20, 8i) (30, 7i) (40, 6i) (50, 5i) (60, 4i) (70, 3i) (80, 2i) 
+(11, 10i) (22, 9i) (33, 8i) (44, 7i) (55, 6i) (66, 5i) (77, 4i) (88, 3i) 
+(12, 11i) (24, 10i) (36, 9i) (48, 8i) (60, 7i) (72, 6i) (84, 5i) (96, 4i) 
+(13, 12i) (26, 11i) (39, 10i) (52, 9i) (65, 8i) (78, 7i) (91, 6i) (104, 5i) 
+(14, 13i) (28, 12i) (42, 11i) (56, 10i) (70, 9i) (84, 8i) (98, 7i) (112, 6i) 
+(15, 14i) (30, 13i) (45, 12i) (60, 11i) (75, 10i) (90, 9i) (105, 8i) (120, 7i) 
+(16, 15i) (32, 14i) (48, 13i) (64, 12i) (80, 11i) (96, 10i) (112, 9i) (128, 8i) 
+(17, 16i) (34, 15i) (51, 14i) (68, 13i) (85, 12i) (102, 11i) (119, 10i) (136, 9i) 
+(18, 17i) (36, 16i) (54, 15i) (72, 14i) (90, 13i) (108, 12i) (126, 11i) (144, 10i) 
+(19, 18i) (38, 17i) (57, 16i) (76, 15i) (95, 14i) (114, 13i) (133, 12i) (152, 11i) 
+(20, 19i) (40, 18i) (60, 17i) (80, 16i) (100, 15i) (120, 14i) (140, 13i) (160, 12i) 
+(21, 20i) (42, 19i) (63, 18i) (84, 17i) (105, 16i) (126, 15i) (147, 14i) (168, 13i) 
+(22, 21i) (44, 20i) (66, 19i) (88, 18i) (110, 17i) (132, 16i) (154, 15i) (176, 14i) 
+(23, 22i) (46, 21i) (69, 20i) (92, 19i) (115, 18i) (138, 17i) (161, 16i) (184, 15i) 
+(24, 23i) (48, 22i) (72, 21i) (96, 20i) (120, 19i) (144, 18i) (168, 17i) (192, 16i) 
+(25, 24i) (50, 23i) (75, 22i) (100, 21i) (125, 20i) (150, 19i) (175, 18i) (200, 17i) 
+
+EXPECTED Q
+(2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+
+HARDWARE Q
+(2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+
+EXPECTED R
+(2, 0i) (4, -2i) (6, -4i) (8, -6i) (10, -8i) (12, -10i) (14, -12i) (16, -14i) 
+(4, 2i) (8, 0i) (12, -2i) (16, -4i) (20, -6i) (24, -8i) (28, -10i) (32, -12i) 
+(6, 4i) (12, 2i) (18, 0i) (24, -2i) (30, -4i) (36, -6i) (42, -8i) (48, -10i) 
+(8, 6i) (16, 4i) (24, 2i) (32, 0i) (40, -2i) (48, -4i) (56, -6i) (64, -8i) 
+(10, 8i) (20, 6i) (30, 4i) (40, 2i) (50, 0i) (60, -2i) (70, -4i) (80, -6i) 
+(12, 10i) (24, 8i) (36, 6i) (48, 4i) (60, 2i) (72, 0i) (84, -2i) (96, -4i) 
+(14, 12i) (28, 10i) (42, 8i) (56, 6i) (70, 4i) (84, 2i) (98, 0i) (112, -2i) 
+(16, 14i) (32, 12i) (48, 10i) (64, 8i) (80, 6i) (96, 4i) (112, 2i) (128, 0i) 
+
+HARDWARE R
+(2, 0i) (4, -2i) (6, -4i) (8, -6i) (10, -8i) (12, -10i) (14, -12i) (16, -14i) 
+(4, 2i) (8, 0i) (12, -2i) (16, -4i) (20, -6i) (24, -8i) (28, -10i) (32, -12i) 
+(6, 4i) (12, 2i) (18, 0i) (24, -2i) (30, -4i) (36, -6i) (42, -8i) (48, -10i) 
+(8, 6i) (16, 4i) (24, 2i) (32, 0i) (40, -2i) (48, -4i) (56, -6i) (64, -8i) 
+(10, 8i) (20, 6i) (30, 4i) (40, 2i) (50, 0i) (60, -2i) (70, -4i) (80, -6i) 
+(12, 10i) (24, 8i) (36, 6i) (48, 4i) (60, 2i) (72, 0i) (84, -2i) (96, -4i) 
+(14, 12i) (28, 10i) (42, 8i) (56, 6i) (70, 4i) (84, 2i) (98, 0i) (112, -2i) 
+(16, 14i) (32, 12i) (48, 10i) (64, 8i) (80, 6i) (96, 4i) (112, 2i) (128, 0i) 
+
+=========== TEST PASSED ===========
+
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\COMPLEX_QR\CGR_QR_WBS\solution1\sim\verilog>set PATH= 
+
+C:\Users\varad\OneDrive\Documents\GitHub\Matrix_Inversion\COMPLEX_QR\CGR_QR_WBS\solution1\sim\verilog>call C:/Xilinx/Vivado/2023.2/bin/xelab xil_defaultlib.apatb_top_top glbl -Oenable_linking_all_libraries  -prj top.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_1_16 -L floating_point_v7_0_21 --lib "ieee_proposed=./ieee_proposed" -s top -debug all 
+ECHO is off.
+ECHO is off.
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_top_top glbl -Oenable_linking_all_libraries -prj top.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_16 -L floating_point_v7_0_21 --lib ieee_proposed=./ieee_proposed -s top -debug all 
+Multi-threading is on. Using 14 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/ip/xil_defaultlib/top_fadd_32ns_32ns_32_4_full_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_fadd_32ns_32ns_32_4_full_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/ip/xil_defaultlib/top_fmul_32ns_32ns_32_2_max_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_fmul_32ns_32ns_32_2_max_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/AESL_axi_master_memA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_memA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/AESL_axi_master_memQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_memQ
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/AESL_axi_master_memR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_memR
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/AESL_axi_slave_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_top_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_fadd_32ns_32ns_32_4_full_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_fadd_32ns_32ns_32_4_full_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_fmul_32ns_32ns_32_2_max_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_fmul_32ns_32ns_32_2_max_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_memA_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_load
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_store
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_read
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_write
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_srl
+INFO: [VRFC 10-311] analyzing module top_memA_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_memQ_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_load
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_store
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_read
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_write
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_srl
+INFO: [VRFC 10-311] analyzing module top_memQ_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_memR_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_load
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_store
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_read
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_write
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_srl
+INFO: [VRFC 10-311] analyzing module top_memR_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_Q_real_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_Q_real_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_sparsemux_17_3_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_sparsemux_17_3_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_top_Pipeline_DUMMY_STAGE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_top_Pipeline_DUMMY_STAGE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_top_Pipeline_READ_INIT_VITIS_LOOP_37_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_top_Pipeline_READ_INIT_VITIS_LOOP_37_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_top_Pipeline_WRITE_Q_VITIS_LOOP_99_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_top_Pipeline_WRITE_Q_VITIS_LOOP_99_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top_top_Pipeline_WRITE_R_VITIS_LOOP_110_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_top_Pipeline_WRITE_R_VITIS_LOOP_110_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package floating_point_v7_1_16.floating_point_v7_1_16_viv_comp
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_11.xbip_utils_v3_0_11_pkg
+Compiling package axi_utils_v2_0_7.axi_utils_v2_0_7_pkg
+Compiling package floating_point_v7_1_16.floating_point_v7_1_16_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_1_16.floating_point_v7_1_16_exp_table...
+Compiling package mult_gen_v12_0_19.mult_gen_v12_0_19_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package floating_point_v7_1_16.floating_point_v7_1_16_pkg
+Compiling package floating_point_v7_1_16.flt_utils
+Compiling package unisim.vcomponents
+Compiling package xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv_comp
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.top_Q_real_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.top_flow_control_loop_pipe_seque...
+Compiling module xil_defaultlib.top_top_Pipeline_READ_INIT_VITIS...
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=7,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=4,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=16,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=24,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=17,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=25,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_16.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=48,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_16.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_16.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl(registers=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.fix_mult [\fix_mult(c_xdevicefamily="zynqu...]
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_16.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=32,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_16.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_16.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture rtl of entity floating_point_v7_1_16.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=3,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=14,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_16.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="z...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=30,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=18,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_16.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_16.flt_round_dsp_opt_full [\flt_round_dsp_opt_full(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_16.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_16.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.flt_mult [\flt_mult(c_xdevicefamily="zynqu...]
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture xilinx of entity floating_point_v7_1_16.floating_point_v7_1_16_viv [\floating_point_v7_1_16_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_16.floating_point_v7_1_16 [\floating_point_v7_1_16(c_xdevic...]
+Compiling module xil_defaultlib.top_fmul_32ns_32ns_32_2_max_dsp_...
+Compiling module xil_defaultlib.top_fmul_32ns_32ns_32_2_max_dsp_...
+Compiling module xil_defaultlib.top_top_Pipeline_DUMMY_STAGE
+Compiling module xil_defaultlib.top_sparsemux_17_3_32_1_1(din0_W...
+Compiling module xil_defaultlib.top_top_Pipeline_WRITE_Q_VITIS_L...
+Compiling module xil_defaultlib.top_top_Pipeline_WRITE_R_VITIS_L...
+Compiling module xil_defaultlib.top_control_s_axi
+Compiling module xil_defaultlib.top_memA_m_axi_srl(DATA_WIDTH=96...
+Compiling module xil_defaultlib.top_memA_m_axi_fifo(DATA_WIDTH=9...
+Compiling module xil_defaultlib.top_memA_m_axi_mem(MEM_STYLE="bl...
+Compiling module xil_defaultlib.top_memA_m_axi_fifo(MEM_STYLE="b...
+Compiling module xil_defaultlib.top_memA_m_axi_srl(DATA_WIDTH=1,...
+Compiling module xil_defaultlib.top_memA_m_axi_fifo(DATA_WIDTH=1...
+Compiling module xil_defaultlib.top_memA_m_axi_srl(DATA_WIDTH=1,...
+Compiling module xil_defaultlib.top_memA_m_axi_fifo(DATA_WIDTH=1...
+Compiling module xil_defaultlib.top_memA_m_axi_store(NUM_WRITE_O...
+Compiling module xil_defaultlib.top_memA_m_axi_mem(MEM_STYLE="bl...
+Compiling module xil_defaultlib.top_memA_m_axi_fifo(MEM_STYLE="b...
+Compiling module xil_defaultlib.top_memA_m_axi_load(NUM_READ_OUT...
+Compiling module xil_defaultlib.top_memA_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memA_m_axi_burst_converter(D...
+Compiling module xil_defaultlib.top_memA_m_axi_srl(DATA_WIDTH=8,...
+Compiling module xil_defaultlib.top_memA_m_axi_fifo(DATA_WIDTH=8...
+Compiling module xil_defaultlib.top_memA_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memA_m_axi_srl(DATA_WIDTH=72...
+Compiling module xil_defaultlib.top_memA_m_axi_fifo(DATA_WIDTH=7...
+Compiling module xil_defaultlib.top_memA_m_axi_srl(DATA_WIDTH=73...
+Compiling module xil_defaultlib.top_memA_m_axi_fifo(DATA_WIDTH=7...
+Compiling module xil_defaultlib.top_memA_m_axi_throttle(CONSERVA...
+Compiling module xil_defaultlib.top_memA_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memA_m_axi_write(CONSERVATIV...
+Compiling module xil_defaultlib.top_memA_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memA_m_axi_read(C_USER_VALUE...
+Compiling module xil_defaultlib.top_memA_m_axi(CONSERVATIVE=1,NU...
+Compiling module xil_defaultlib.top_memQ_m_axi_srl(DATA_WIDTH=96...
+Compiling module xil_defaultlib.top_memQ_m_axi_fifo(DATA_WIDTH=9...
+Compiling module xil_defaultlib.top_memQ_m_axi_mem(MEM_STYLE="bl...
+Compiling module xil_defaultlib.top_memQ_m_axi_fifo(MEM_STYLE="b...
+Compiling module xil_defaultlib.top_memQ_m_axi_srl(DATA_WIDTH=1,...
+Compiling module xil_defaultlib.top_memQ_m_axi_fifo(DATA_WIDTH=1...
+Compiling module xil_defaultlib.top_memQ_m_axi_srl(DATA_WIDTH=1,...
+Compiling module xil_defaultlib.top_memQ_m_axi_fifo(DATA_WIDTH=1...
+Compiling module xil_defaultlib.top_memQ_m_axi_store(NUM_WRITE_O...
+Compiling module xil_defaultlib.top_memQ_m_axi_mem(MEM_STYLE="bl...
+Compiling module xil_defaultlib.top_memQ_m_axi_fifo(MEM_STYLE="b...
+Compiling module xil_defaultlib.top_memQ_m_axi_load(NUM_READ_OUT...
+Compiling module xil_defaultlib.top_memQ_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memQ_m_axi_burst_converter(D...
+Compiling module xil_defaultlib.top_memQ_m_axi_srl(DATA_WIDTH=8,...
+Compiling module xil_defaultlib.top_memQ_m_axi_fifo(DATA_WIDTH=8...
+Compiling module xil_defaultlib.top_memQ_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memQ_m_axi_srl(DATA_WIDTH=72...
+Compiling module xil_defaultlib.top_memQ_m_axi_fifo(DATA_WIDTH=7...
+Compiling module xil_defaultlib.top_memQ_m_axi_srl(DATA_WIDTH=73...
+Compiling module xil_defaultlib.top_memQ_m_axi_fifo(DATA_WIDTH=7...
+Compiling module xil_defaultlib.top_memQ_m_axi_throttle(CONSERVA...
+Compiling module xil_defaultlib.top_memQ_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memQ_m_axi_write(CONSERVATIV...
+Compiling module xil_defaultlib.top_memQ_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memQ_m_axi_read(C_USER_VALUE...
+Compiling module xil_defaultlib.top_memQ_m_axi(CONSERVATIVE=1,NU...
+Compiling module xil_defaultlib.top_memR_m_axi_srl(DATA_WIDTH=96...
+Compiling module xil_defaultlib.top_memR_m_axi_fifo(DATA_WIDTH=9...
+Compiling module xil_defaultlib.top_memR_m_axi_mem(MEM_STYLE="bl...
+Compiling module xil_defaultlib.top_memR_m_axi_fifo(MEM_STYLE="b...
+Compiling module xil_defaultlib.top_memR_m_axi_srl(DATA_WIDTH=1,...
+Compiling module xil_defaultlib.top_memR_m_axi_fifo(DATA_WIDTH=1...
+Compiling module xil_defaultlib.top_memR_m_axi_srl(DATA_WIDTH=1,...
+Compiling module xil_defaultlib.top_memR_m_axi_fifo(DATA_WIDTH=1...
+Compiling module xil_defaultlib.top_memR_m_axi_store(NUM_WRITE_O...
+Compiling module xil_defaultlib.top_memR_m_axi_mem(MEM_STYLE="bl...
+Compiling module xil_defaultlib.top_memR_m_axi_fifo(MEM_STYLE="b...
+Compiling module xil_defaultlib.top_memR_m_axi_load(NUM_READ_OUT...
+Compiling module xil_defaultlib.top_memR_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memR_m_axi_burst_converter(D...
+Compiling module xil_defaultlib.top_memR_m_axi_srl(DATA_WIDTH=8,...
+Compiling module xil_defaultlib.top_memR_m_axi_fifo(DATA_WIDTH=8...
+Compiling module xil_defaultlib.top_memR_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memR_m_axi_srl(DATA_WIDTH=72...
+Compiling module xil_defaultlib.top_memR_m_axi_fifo(DATA_WIDTH=7...
+Compiling module xil_defaultlib.top_memR_m_axi_srl(DATA_WIDTH=73...
+Compiling module xil_defaultlib.top_memR_m_axi_fifo(DATA_WIDTH=7...
+Compiling module xil_defaultlib.top_memR_m_axi_throttle(CONSERVA...
+Compiling module xil_defaultlib.top_memR_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memR_m_axi_write(CONSERVATIV...
+Compiling module xil_defaultlib.top_memR_m_axi_reg_slice(DATA_WI...
+Compiling module xil_defaultlib.top_memR_m_axi_read(C_USER_VALUE...
+Compiling module xil_defaultlib.top_memR_m_axi(CONSERVATIVE=1,NU...
+Compiling architecture struct of entity floating_point_v7_1_16.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_16.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture struct of entity floating_point_v7_1_16.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=24,length=0,fast_in...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_16.dsp48e1_wrapper [\dsp48e1_wrapper(c_part="xczu7ev...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=13,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=27,length=0)\]
+Compiling architecture synth of entity floating_point_v7_1_16.align_add_dsp48e1_sgl [\align_add_dsp48e1_sgl(c_xdevice...]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fde_v of entity unisim.FDE [fde_default]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000001111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000000...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=27)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [delay_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=5,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_16.lead_zero_encode_shift [\lead_zero_encode_shift(ab_fw=24...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=4)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=3)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111110010101001011...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00010001010111110000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11101110101000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=2,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_16.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,c_wi...]
+Compiling architecture rtl of entity floating_point_v7_1_16.norm_and_round_dsp48e1_sgl [\norm_and_round_dsp48e1_sgl(c_mu...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10011001100110011001...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111000000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=9,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_16.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=10,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_16.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_16.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_1_16.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_16.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_16.compare_gt [\compare_gt(c_xdevicefamily="zyn...]
+Compiling architecture synth of entity floating_point_v7_1_16.compare [\compare(c_xdevicefamily="zynqup...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=8)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=9)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=2,fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=12,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_16.flt_add_exp_sp [\flt_add_exp_sp(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_16.delay [\delay(width=23)\]
+Compiling architecture synth of entity floating_point_v7_1_16.flt_dec_op [\flt_dec_op(c_xdevicefamily="zyn...]
+Compiling architecture rtl of entity floating_point_v7_1_16.flt_add_dsp [\flt_add_dsp(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_16.flt_add [\flt_add(c_xdevicefamily="zynqup...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture xilinx of entity floating_point_v7_1_16.floating_point_v7_1_16_viv [\floating_point_v7_1_16_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_16.floating_point_v7_1_16 [\floating_point_v7_1_16(c_xdevic...]
+Compiling module xil_defaultlib.top_fadd_32ns_32ns_32_4_full_dsp...
+Compiling module xil_defaultlib.top_fadd_32ns_32ns_32_4_full_dsp...
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.AESL_axi_master_memA
+Compiling module xil_defaultlib.AESL_axi_master_memQ
+Compiling module xil_defaultlib.AESL_axi_master_memR
+Compiling module xil_defaultlib.AESL_axi_slave_control
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.upc_loop_intf
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_top_top
+Compiling module work.glbl
+Built simulation snapshot top
+ECHO is off.
+ECHO is off.
+
+****** xsim v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/top/xsim_script.tcl
+# xsim {top} -view {{top_dataflow_ana.wcfg}} -tclbatch {top.tcl} -protoinst {top.protoinst}
+INFO: [Wavedata 42-565] Reading protoinst file top.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_top_top/AESL_inst_top//AESL_inst_top_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_top_top/AESL_inst_top/grp_top_Pipeline_DUMMY_STAGE_fu_642/grp_top_Pipeline_DUMMY_STAGE_fu_642_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_top_top/AESL_inst_top/grp_top_Pipeline_READ_INIT_VITIS_LOOP_37_1_fu_568/grp_top_Pipeline_READ_INIT_VITIS_LOOP_37_1_fu_568_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_top_top/AESL_inst_top/grp_top_Pipeline_WRITE_Q_VITIS_LOOP_99_3_fu_726/grp_top_Pipeline_WRITE_Q_VITIS_LOOP_99_3_fu_726_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_top_top/AESL_inst_top/grp_top_Pipeline_WRITE_R_VITIS_LOOP_110_4_fu_753/grp_top_Pipeline_WRITE_R_VITIS_LOOP_110_4_fu_753_activity
+Time resolution is 1 ps
+open_wave_config top_dataflow_ana.wcfg
+source top.tcl
+## log_wave -r /
+WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of object type or size limitations.  To see details please rerun the command with -verbose (-v).
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set cinoutgroup [add_wave_group "C InOuts" -into $designtopgroup]
+## set A_DRAM__Q_DRAM__R_DRAM__return_group [add_wave_group A_DRAM__Q_DRAM__R_DRAM__return(axi_slave) -into $cinoutgroup]
+## add_wave /apatb_top_top/AESL_inst_top/interrupt -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_BRESP -into $A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_BREADY -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_BVALID -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_RRESP -into $A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_RDATA -into $A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_RREADY -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_RVALID -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_ARREADY -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_ARVALID -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_ARADDR -into $A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_WSTRB -into $A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_WDATA -into $A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_WREADY -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_WVALID -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_AWREADY -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_AWVALID -into $A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/s_axi_control_AWADDR -into $A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
+## set R_DRAM_group [add_wave_group R_DRAM(axi_master) -into $coutputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $R_DRAM_group]
+## set wdata_group [add_wave_group "Write Channel" -into $R_DRAM_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $R_DRAM_group]
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_BID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_RID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_WID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memR_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set Q_DRAM_group [add_wave_group Q_DRAM(axi_master) -into $coutputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $Q_DRAM_group]
+## set wdata_group [add_wave_group "Write Channel" -into $Q_DRAM_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $Q_DRAM_group]
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_BID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_RID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_WID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memQ_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
+## set A_DRAM_group [add_wave_group A_DRAM(axi_master) -into $cinputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $A_DRAM_group]
+## set wdata_group [add_wave_group "Write Channel" -into $A_DRAM_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $A_DRAM_group]
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_BID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_RID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_WID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/AESL_inst_top/m_axi_memA_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set blocksiggroup [add_wave_group "Block-level IO Handshake(internal)" -into $designtopgroup]
+## add_wave /apatb_top_top/AESL_inst_top/ap_done -into $blocksiggroup
+## add_wave /apatb_top_top/AESL_inst_top/ap_idle -into $blocksiggroup
+## add_wave /apatb_top_top/AESL_inst_top/ap_ready -into $blocksiggroup
+## add_wave /apatb_top_top/AESL_inst_top/ap_start -into $blocksiggroup
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## add_wave /apatb_top_top/AESL_inst_top/ap_rst_n -into $resetgroup
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## add_wave /apatb_top_top/AESL_inst_top/ap_clk -into $clockgroup
+## set testbenchgroup [add_wave_group "Test Bench Signals"]
+## set tbinternalsiggroup [add_wave_group "Internal Signals" -into $testbenchgroup]
+## set tb_simstatus_group [add_wave_group "Simulation Status" -into $tbinternalsiggroup]
+## set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
+## add_wave /apatb_top_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
+## add_wave /apatb_top_top/ready_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_top_top/done_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_top_top/LENGTH_A_DRAM -into $tb_portdepth_group -radix hex
+## add_wave /apatb_top_top/LENGTH_Q_DRAM -into $tb_portdepth_group -radix hex
+## add_wave /apatb_top_top/LENGTH_R_DRAM -into $tb_portdepth_group -radix hex
+## add_wave /apatb_top_top/LENGTH_memA -into $tb_portdepth_group -radix hex
+## add_wave /apatb_top_top/LENGTH_memQ -into $tb_portdepth_group -radix hex
+## add_wave /apatb_top_top/LENGTH_memR -into $tb_portdepth_group -radix hex
+## set tbcinoutgroup [add_wave_group "C InOuts" -into $testbenchgroup]
+## set tb_A_DRAM__Q_DRAM__R_DRAM__return_group [add_wave_group A_DRAM__Q_DRAM__R_DRAM__return(axi_slave) -into $tbcinoutgroup]
+## add_wave /apatb_top_top/control_INTERRUPT -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_BRESP -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/control_BREADY -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_BVALID -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_RRESP -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/control_RDATA -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/control_RREADY -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_RVALID -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_ARREADY -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_ARVALID -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_ARADDR -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/control_WSTRB -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/control_WDATA -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## add_wave /apatb_top_top/control_WREADY -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_WVALID -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_AWREADY -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_AWVALID -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/control_AWADDR -into $tb_A_DRAM__Q_DRAM__R_DRAM__return_group -radix hex
+## set tbcoutputgroup [add_wave_group "C Outputs" -into $testbenchgroup]
+## set tb_R_DRAM_group [add_wave_group R_DRAM(axi_master) -into $tbcoutputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $tb_R_DRAM_group]
+## set wdata_group [add_wave_group "Write Channel" -into $tb_R_DRAM_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $tb_R_DRAM_group]
+## add_wave /apatb_top_top/memR_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_BID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_RID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memR_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_WID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memR_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memR_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set tb_Q_DRAM_group [add_wave_group Q_DRAM(axi_master) -into $tbcoutputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $tb_Q_DRAM_group]
+## set wdata_group [add_wave_group "Write Channel" -into $tb_Q_DRAM_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $tb_Q_DRAM_group]
+## add_wave /apatb_top_top/memQ_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_BID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_RID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memQ_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_WID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memQ_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memQ_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
+## set tb_A_DRAM_group [add_wave_group A_DRAM(axi_master) -into $tbcinputgroup]
+## set rdata_group [add_wave_group "Read Channel" -into $tb_A_DRAM_group]
+## set wdata_group [add_wave_group "Write Channel" -into $tb_A_DRAM_group]
+## set ctrl_group [add_wave_group "Handshakes" -into $tb_A_DRAM_group]
+## add_wave /apatb_top_top/memA_BUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_BID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_BRESP -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_BREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_BVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_RRESP -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_RUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_RID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_RLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_RDATA -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_RREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_RVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_ARUSER -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARREGION -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARQOS -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARPROT -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARCACHE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARLOCK -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARBURST -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARSIZE -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARLEN -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARID -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARADDR -into $rdata_group -radix hex
+## add_wave /apatb_top_top/memA_ARREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_ARVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_WUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_WID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_WLAST -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_WSTRB -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_WDATA -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_WREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_WVALID -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_AWUSER -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWREGION -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWQOS -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWPROT -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWCACHE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWLOCK -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWBURST -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWSIZE -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWLEN -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWID -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWADDR -into $wdata_group -radix hex
+## add_wave /apatb_top_top/memA_AWREADY -into $ctrl_group -color #ffff00 -radix hex
+## add_wave /apatb_top_top/memA_AWVALID -into $ctrl_group -color #ffff00 -radix hex
+## save_wave_config top.wcfg
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "125000"
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U183/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U184/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U185/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U186/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U187/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U188/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U189/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U190/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U191/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U192/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U193/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U194/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U195/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U196/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U197/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7065 ns  Iteration: 12  Process: /apatb_top_top/AESL_inst_top/fadd_32ns_32ns_32_4_full_dsp_1_U198/top_fadd_32ns_32ns_32_4_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: C:/Xilinx/Vivado/2023.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+// RTL Simulation : 1 / 1 [100.00%] @ "18635000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 18695 ns : File "C:/Users/varad/OneDrive/Documents/GitHub/Matrix_Inversion/COMPLEX_QR/CGR_QR_WBS/solution1/sim/verilog/top.autotb.v" Line 733
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Mar  4 15:55:33 2026...
+
+=========== TESTBENCH START ===========
+
+INPUT MATRIX A
+(1, 0i) (2, -1i) (3, -2i) (4, -3i) (5, -4i) (6, -5i) (7, -6i) (8, -7i) 
+(2, 1i) (4, 0i) (6, -1i) (8, -2i) (10, -3i) (12, -4i) (14, -5i) (16, -6i) 
+(3, 2i) (6, 1i) (9, 0i) (12, -1i) (15, -2i) (18, -3i) (21, -4i) (24, -5i) 
+(4, 3i) (8, 2i) (12, 1i) (16, 0i) (20, -1i) (24, -2i) (28, -3i) (32, -4i) 
+(5, 4i) (10, 3i) (15, 2i) (20, 1i) (25, 0i) (30, -1i) (35, -2i) (40, -3i) 
+(6, 5i) (12, 4i) (18, 3i) (24, 2i) (30, 1i) (36, 0i) (42, -1i) (48, -2i) 
+(7, 6i) (14, 5i) (21, 4i) (28, 3i) (35, 2i) (42, 1i) (49, 0i) (56, -1i) 
+(8, 7i) (16, 6i) (24, 5i) (32, 4i) (40, 3i) (48, 2i) (56, 1i) (64, 0i) 
+(9, 8i) (18, 7i) (27, 6i) (36, 5i) (45, 4i) (54, 3i) (63, 2i) (72, 1i) 
+(10, 9i) (20, 8i) (30, 7i) (40, 6i) (50, 5i) (60, 4i) (70, 3i) (80, 2i) 
+(11, 10i) (22, 9i) (33, 8i) (44, 7i) (55, 6i) (66, 5i) (77, 4i) (88, 3i) 
+(12, 11i) (24, 10i) (36, 9i) (48, 8i) (60, 7i) (72, 6i) (84, 5i) (96, 4i) 
+(13, 12i) (26, 11i) (39, 10i) (52, 9i) (65, 8i) (78, 7i) (91, 6i) (104, 5i) 
+(14, 13i) (28, 12i) (42, 11i) (56, 10i) (70, 9i) (84, 8i) (98, 7i) (112, 6i) 
+(15, 14i) (30, 13i) (45, 12i) (60, 11i) (75, 10i) (90, 9i) (105, 8i) (120, 7i) 
+(16, 15i) (32, 14i) (48, 13i) (64, 12i) (80, 11i) (96, 10i) (112, 9i) (128, 8i) 
+(17, 16i) (34, 15i) (51, 14i) (68, 13i) (85, 12i) (102, 11i) (119, 10i) (136, 9i) 
+(18, 17i) (36, 16i) (54, 15i) (72, 14i) (90, 13i) (108, 12i) (126, 11i) (144, 10i) 
+(19, 18i) (38, 17i) (57, 16i) (76, 15i) (95, 14i) (114, 13i) (133, 12i) (152, 11i) 
+(20, 19i) (40, 18i) (60, 17i) (80, 16i) (100, 15i) (120, 14i) (140, 13i) (160, 12i) 
+(21, 20i) (42, 19i) (63, 18i) (84, 17i) (105, 16i) (126, 15i) (147, 14i) (168, 13i) 
+(22, 21i) (44, 20i) (66, 19i) (88, 18i) (110, 17i) (132, 16i) (154, 15i) (176, 14i) 
+(23, 22i) (46, 21i) (69, 20i) (92, 19i) (115, 18i) (138, 17i) (161, 16i) (184, 15i) 
+(24, 23i) (48, 22i) (72, 21i) (96, 20i) (120, 19i) (144, 18i) (168, 17i) (192, 16i) 
+(25, 24i) (50, 23i) (75, 22i) (100, 21i) (125, 20i) (150, 19i) (175, 18i) (200, 17i) 
+
+EXPECTED Q
+(2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+
+HARDWARE Q
+(2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (2, 2i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+(0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) (0, 0i) 
+
+EXPECTED R
+(2, 0i) (4, -2i) (6, -4i) (8, -6i) (10, -8i) (12, -10i) (14, -12i) (16, -14i) 
+(4, 2i) (8, 0i) (12, -2i) (16, -4i) (20, -6i) (24, -8i) (28, -10i) (32, -12i) 
+(6, 4i) (12, 2i) (18, 0i) (24, -2i) (30, -4i) (36, -6i) (42, -8i) (48, -10i) 
+(8, 6i) (16, 4i) (24, 2i) (32, 0i) (40, -2i) (48, -4i) (56, -6i) (64, -8i) 
+(10, 8i) (20, 6i) (30, 4i) (40, 2i) (50, 0i) (60, -2i) (70, -4i) (80, -6i) 
+(12, 10i) (24, 8i) (36, 6i) (48, 4i) (60, 2i) (72, 0i) (84, -2i) (96, -4i) 
+(14, 12i) (28, 10i) (42, 8i) (56, 6i) (70, 4i) (84, 2i) (98, 0i) (112, -2i) 
+(16, 14i) (32, 12i) (48, 10i) (64, 8i) (80, 6i) (96, 4i) (112, 2i) (128, 0i) 
+
+HARDWARE R
+(2, 0i) (4, -2i) (6, -4i) (8, -6i) (10, -8i) (12, -10i) (14, -12i) (16, -14i) 
+(4, 2i) (8, 0i) (12, -2i) (16, -4i) (20, -6i) (24, -8i) (28, -10i) (32, -12i) 
+(6, 4i) (12, 2i) (18, 0i) (24, -2i) (30, -4i) (36, -6i) (42, -8i) (48, -10i) 
+(8, 6i) (16, 4i) (24, 2i) (32, 0i) (40, -2i) (48, -4i) (56, -6i) (64, -8i) 
+(10, 8i) (20, 6i) (30, 4i) (40, 2i) (50, 0i) (60, -2i) (70, -4i) (80, -6i) 
+(12, 10i) (24, 8i) (36, 6i) (48, 4i) (60, 2i) (72, 0i) (84, -2i) (96, -4i) 
+(14, 12i) (28, 10i) (42, 8i) (56, 6i) (70, 4i) (84, 2i) (98, 0i) (112, -2i) 
+(16, 14i) (32, 12i) (48, 10i) (64, 8i) (80, 6i) (96, 4i) (112, 2i) (128, 0i) 
+
+=========== TEST PASSED ===========
